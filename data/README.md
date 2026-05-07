@@ -9,9 +9,11 @@ project consumes. Approximately 1.6 MB, ~14,600 rows, safe to commit.
 
 It is a one-way extract from the [`cinderhaven-data`](https://github.com/MsShawnP/cinderhaven-data)
 repo's built database (`cinderhaven_product_master.db`, ~172 MB).
-Schemas, primary keys, NOT NULL constraints, and indexes are preserved
-verbatim. To rebuild, run `scripts/extract_cinderhaven.py` against a
-local build of the source database.
+Schemas, primary keys, NOT NULL constraints, and indexes for the
+eight verbatim tables are preserved exactly as written upstream. To
+rebuild, run `scripts/extract_cinderhaven.py` against a local build of
+the source database, then `scripts/extract_velocity.py` to populate
+the derived `sku_velocity` rollup.
 
 ### Tables included
 
@@ -25,6 +27,7 @@ local build of the source database.
 | `price_history` | 398 | Time-keyed wholesale prices by SKU × retailer over the 18–24-month window |
 | `chargebacks` | 381 | Historical compliance chargebacks by month / retailer / reason / SKU. Includes "Short shipment" and "Late delivery" reasons alongside the data-quality reasons that drive most of them |
 | `retailer_requirements` | 29 | Field-level compliance requirements by retailer (e.g., Walmart requires `gtin14` with valid check digit). Drives the `chargebacks` table |
+| `sku_velocity` | 90 | **Derived** rollup from upstream `scan_data`. Per-SKU `avg_weekly_units` (total scan-data units ÷ 104 weeks), `total_annual_units` (annualized = avg_weekly × 52), and `velocity_rank` (1 = highest). Used by the order generator to size weekly production proportionally and to weight order frequency / volume toward higher-velocity SKUs |
 
 ### What is NOT included and why
 
