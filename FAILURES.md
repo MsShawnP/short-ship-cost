@@ -1,4 +1,4 @@
-# [PROJECT NAME] — Failure Log
+# short-ship-cost — Failure Log
 
 What was attempted that didn't work, why it didn't work, and what was
 tried next.
@@ -31,4 +31,4 @@ quarto" or "scope, scrollytelling, decoration"]
 
 ## Entries
 
-[New entries get added here, most recent at the top]
+(No entries yet)

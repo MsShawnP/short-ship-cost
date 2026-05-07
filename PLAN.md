@@ -1,8 +1,4 @@
-# [PROJECT NAME] — Current Work Plan
-
-> **Note:** Tasks to be filled in after running the 95% confidence
-> prompt in chat. See
-> `~/projects/reference/claude-solo-dev-workflow/workflow-package/reference/95-percent-confidence-prompt.md`.
+# short-ship-cost — Current Work Plan
 
 The current arc of work. Updated when the arc changes, not every
 session. For session-by-session state, see HANDOFF.md.
@@ -11,53 +7,84 @@ session. For session-by-session state, see HANDOFF.md.
 
 ## Goal
 
-[One sentence — what "done" looks like for this arc.]
+Generate the synthetic order dataset (original orders and edited/shipped
+orders) and build the cost engine that calculates all cost dimensions
+of a short — validated against Cinderhaven's existing data.
 
 ## Why this arc, why now
 
-[One or two sentences. The reason matters when you come back in three
-weeks and wonder why this was the priority.]
+Everything downstream (the interactive tool, the export, the narrative)
+depends on realistic data and a correct cost engine. If the data
+doesn't feel real or the cost math is wrong, the portfolio piece
+falls apart. Data and engine first.
 
 ## Business question this arc answers
 
-[One sentence. Direct connection to the project-level business question
-in CLAUDE.md.]
+What does it cost a business when it can't fulfill retail partner
+orders as submitted, and why must the original order be captured
+alongside the edited order to make that cost visible?
 
 ## Tasks
 
-Work in vertical slices — one section/feature end-to-end before moving
-to the next. Visualizations get reviewed in their own slice, not
-deferred to a polish phase.
-
-- [ ] Specific, scoped, actionable
-- [ ] Each one is a thing Claude Code could plausibly finish in one
-      session
-- [ ] If a task feels too big, break it down before adding it
-- [x] Completed items stay struck or checked, so the trail is visible
+- [ ] Determine Cinderhaven data consumption approach — full DB
+      reference vs. self-contained extract. Decide based on what
+      tables/columns are actually needed.
+- [ ] Design the synthetic order data model: schema for original
+      orders, edited orders, and the linkage between them. Include
+      retailer-specific ordering patterns (Walmart DC-level, Costco
+      contract-based, Whole Foods stock-level, distributors mixed,
+      regionals sporadic, DTC individual).
+- [ ] Design the short/triage logic: how orders get edited down.
+      Reflect systemic high short rates (make-to-order, no inventory),
+      loose retailer priority hierarchy, due-date and fulfillment-
+      completeness factors, even small orders getting shorted.
+- [ ] Write the order generation scripts. Original orders should
+      total roughly 25–40% more than shipped orders (the gap). Same
+      18–24 month window as existing Cinderhaven scan data.
+- [ ] Build the cost engine — calculates all cost dimensions from
+      the order gap:
+      1. Lost revenue (units not shipped)
+      2. OTIF fines (retailer-specific)
+      3. Chargebacks
+      4. Deauthorization risk (compounding future revenue loss)
+      5. DTC full-order cancellations
+      6. DTC-to-retail margin leakage
+      7. Distributor returns/claims
+      8. Triage labor tax
+- [ ] Add buffer simulation layer — "what if fill rate improved
+      from X% to Y%" showing recovery across all cost dimensions.
+      Framed as fine avoidance, not production planning.
+- [ ] Validate: revenue totals make sense against Cinderhaven's
+      $23–27M annual wholesale revenue. Original order demand
+      should be meaningfully higher. Short patterns should vary
+      by retailer and SKU in realistic ways.
+- [ ] Document the data model and cost engine logic so the
+      interactive tool can consume it cleanly.
 
 ## Out of scope for this arc
 
-- Things explicitly NOT being done in this round
-- Captures the decisions about what to defer
-- Prevents scope creep mid-session
+- Interactive tool UI (that's the next arc)
+- Export/PDF generation
+- Production planning, manufacturing scheduling, or capacity
+  optimization — the buffer simulation shows cost impact of
+  improved fill rate without prescribing how to get there
+- Moving the order data to a separate repo (do later if warranted)
+- Connecting to actual client data
 
 ## Definition of done for this arc
 
-- [ ] Specific, verifiable conditions
-- [ ] Not "the prose is better" — "every section's executive summary
-      has been reviewed and either approved or marked for domain
-      insertion"
-- [ ] When all of these are checked, the arc is done and a new PLAN.md
-      arc gets defined
+- [ ] Synthetic order data generates successfully and covers all
+      retailer types with realistic patterns
+- [ ] Cost engine calculates all eight cost dimensions correctly
+- [ ] Buffer simulation / fill rate "what if" works across all
+      cost dimensions
+- [ ] Revenue validation passes — shipped revenue aligns with
+      Cinderhaven's $23–27M, original demand is 25–40% higher
+- [ ] Data model is documented clearly enough for the interactive
+      tool arc to consume without ambiguity
 
 ---
 
 ## Arc history
 
-When an arc completes, archive its goal, completion date, and outcome
-here. Then start a new arc above. Provides continuity without bloating
-the active plan.
-
-### [Date completed] — [Goal]
-- Outcome: [what shipped or what was decided]
-- Tag: [git tag if one was created]
+(No completed arcs yet)

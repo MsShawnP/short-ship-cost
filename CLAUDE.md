@@ -1,20 +1,112 @@
-# [PROJECT NAME] — Project Context for Claude
+# short-ship-cost — Project Context for Claude
 
 ## What this project is
 
-[One paragraph. What it is, who it's for, what done looks like at the
-highest level. Filled in based on the 95% confidence prompt conversation.]
+A portfolio piece for Lailara LLC that quantifies the full cost of
+short-shipping orders in a specialty food business. Built around
+Cinderhaven Provisions (~$25M fictional brand, 90 SKUs). The project
+generates synthetic order data (original orders from retail partners
+vs. edited/shipped orders), calculates the revenue gap and cascading
+costs (fines, chargebacks, deauthorization, DTC cancellations, margin
+leakage, returns), and presents findings through a polished interactive
+tool with an exportable Economist-style analysis document. The
+interactive tool is built in React or HTML/JS, hosted on Netlify or
+GitHub Pages, and designed to look like a product — not a prototype.
 
-**Business question this project answers:** [One sentence. If you can't
-write this sentence cleanly, the project isn't scoped enough yet.]
+**Business question this project answers:** What does it cost a
+business when it can't fulfill retail partner orders as submitted,
+and why must the original order be captured alongside the edited
+order to make that cost visible?
+
+## Domain context
+
+This project models a business with these characteristics:
+
+- Almost no inventory buffer — virtually everything is manufactured
+  to order
+- Production capacity is undersized for actual demand — the standard
+  production schedule cannot keep up with orders AND build safety stock
+- Every order goes through human triage: an EDI/sales admin checks
+  inventory, prioritizes by retailer importance and fulfillment
+  completeness, then escalates uncertain items to production
+- The triage is blind — no visibility into retailer fine structures
+  or the true cost of each prioritization decision
+- The legacy system overwrites original orders with edited orders —
+  there is literally no record of what was originally requested
+- The business thinks it's a $20–25M company. Actual demand is likely
+  $28–30M+. The gap is invisible because the evidence is destroyed
+- The business has a goal to grow to $50M by 2030 but cannot get
+  there while leaking unfulfilled demand it can't even measure
+- The business is migrating to NetSuite — the message includes
+  ensuring the new system captures both original and shipped orders
+
+### Retailer ordering patterns
+
+- **Walmart** — orders at DC level, highly variable (1 case to 100
+  cases per order)
+- **Costco** — orders against contracted volume for a time period,
+  variable size per order
+- **Whole Foods** — stocks to a target level across stores in an
+  area/DC
+- **UNFI/KeHE** — mixed: some do replenishment ordering based on
+  actual demand, some over-order on trade promo and return unsold
+  product or claim losses
+- **Regionals** — smaller, more sporadic
+- **DTC** — individual consumer orders, held until 100% complete
+  before shipping (some cancel due to delays, some buy in-store
+  instead at lower margin)
+
+### Retailer triage priority
+
+Loose hierarchy (Walmart/Costco → Whole Foods → UNFI/KeHE →
+Regionals → DTC) but overridden by due dates and fulfillment
+completeness ("can we get this order to 75% and eat a smaller fine?").
+Even small 1-case orders get shorted because inventory simply does
+not exist.
+
+### Costs of a short
+
+1. Lost revenue — units not shipped, sale gone (or delayed for
+   backorder retailers)
+2. OTIF fines — significant, especially Walmart, Costco, UNFI, KeHE
+3. Chargebacks — retailer compliance charges
+4. Deauthorization — lost shelf placement = compounding future
+   revenue loss
+5. DTC full-order cancellations — hold-for-complete delays push
+   past customer patience
+6. DTC-to-retail margin leakage — cancelled DTC customer buys
+   in-store at wholesale margin instead
+7. Distributor returns/claims — over-ordered promo product returned
+   or written off
+8. Triage labor tax — cost of human time spent manually editing
+   every order
+
+### Buffer simulation
+
+Included as a "what if" — framed as "here's what even a small
+inventory buffer would have saved in fines alone." Not a production
+planning tool. Does not prescribe how to build the buffer.
 
 ## Stack and tools
 
-- Primary language: [R / Python / etc.]
-- Key packages/libraries: [list]
-- Database: [if applicable]
-- Entry point: [run_all.R or equivalent]
-- Rendering: [Quarto / etc.]
+- Primary language: JavaScript (React) for interactive tool, Python
+  for data generation and cost engine
+- Key packages/libraries: TBD — will be decided during build
+- Database: SQLite (Cinderhaven lineage) or JSON for order data
+- Rendering: React app hosted on Netlify or GitHub Pages
+- Export: Economist-style PDF generated from the tool
+- Data source: Synthetic order data generated in this repo, drawing
+  on Cinderhaven product master, sku_costs, stores, and retailer
+  data
+
+## Cinderhaven data relationship
+
+This project consumes data from the cinderhaven-data repo (product
+master, SKU costs, stores, retailer info). Whether we reference the
+full DB or include a self-contained extract will be decided when we
+design the schema and understand what we actually need. The synthetic
+order data (original orders, edited orders) is new to this project.
+Eventually the order data may move to its own repo.
 
 ## Project files
 
@@ -29,13 +121,18 @@ FAILURES.md as relevant.
 
 ## Voice and standards
 
-- Economist style for written deliverables: sober, declarative,
-  data-forward
+- Economist style for all written output: sober, declarative,
+  data-forward, plain English that tells the truth as presented
+  by the data
+- Economist-style graphics: clean, clear labels, no decorative
+  nonsense, charts that respect the reader's intelligence
 - No marketing voice or consultant filler ("leverage," "synergy,"
   "best-in-class," "unlock," "drive value")
 - No hedging that softens a real finding
 - Charts must be readable by non-data-scientist, non-researcher
   audiences
+- The interactive tool should look like a product, not a data
+  science prototype
 
 ## Rules
 
