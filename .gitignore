@@ -1,0 +1,49 @@
+# Rendered output
+_freeze/
+_site/
+*.html
+!index.html
+
+# R
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/local/
+renv/staging/
+renv/python/
+renv/cellar/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+
+# Env / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Databases / large files
+*.db
+*.sqlite
+*.sqlite3
+*.parquet
+*.duckdb
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
