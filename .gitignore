@@ -41,6 +41,9 @@ node_modules/
 *.duckdb
 # Self-contained Cinderhaven extract (~1.6 MB) is a committed artifact
 !data/cinderhaven_extract.db
+# Synthetic order data (~20-40 MB) is also committed so the portfolio
+# piece runs without forcing a multi-step Python build
+!data/short_ship_orders.db
 
 # Logs
 *.log
