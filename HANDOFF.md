@@ -53,3 +53,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 3 — design the short / triage logic that decides how original orders get edited down (priority hierarchy, due-date, completeness pressure, even-small-orders-shorted dynamic).
 
 ---
+
+## 2026-05-07 19:04
+
+**What changed:** Wrote `docs/triage-logic.md` (committed at `a4e896f`). Five-step weekly algorithm — production-as-supply sized to ~75% of demand, tier+due-date+completeness queue, top-down allocation, deliberate noise, separate DTC hold-for-complete path.
+
+**Why:** PLAN task 3 — the order generator (task 4) needs a single canonical description of how the triage edits original orders down before any code is written. Doc also carries the user's framing note that the human triager is not the problem.
+
+**State:** Working — algorithm spec is complete and consistent with the schema (task 2) and the benchmarks (task 2). Untouched: order generators, velocity rollup, fine compute, no synthetic data created. Four implementation parameters explicitly flagged as TBD in the doc itself (velocity source, completeness measure, noise frequencies, production stochasticity); these get resolved during PLAN task 4.
+
+**Next:** PLAN task 4 — write the order generation scripts. First decision will be the velocity-input source (re-attach upstream scan_data vs. add a derived rollup table to the extract vs. flat file).
+
+---
