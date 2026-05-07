@@ -29,6 +29,13 @@ the derived `sku_velocity` rollup.
 | `retailer_requirements` | 29 | Field-level compliance requirements by retailer (e.g., Walmart requires `gtin14` with valid check digit). Drives the `chargebacks` table |
 | `sku_velocity` | 90 | **Derived** rollup from upstream `scan_data`. Per-SKU `avg_weekly_units` (total scan-data units ÷ 104 weeks), `total_annual_units` (annualized = avg_weekly × 52), and `velocity_rank` (1 = highest). Used by the order generator to size weekly production proportionally and to weight order frequency / volume toward higher-velocity SKUs |
 
+`stores` and `distribution_log` also carry a synthetic **KeHE** entry not
+present in upstream Cinderhaven: a single `KEHE-AGG` aggregated row in
+`stores`, plus 58 `distribution_log` rows mirroring the SKU set
+authorized through UNFI. KeHE pricing reuses `sku_costs.wholesale_unfi`
+(no separate KeHE column upstream). See `scripts/add_kehe.py` for
+the rationale.
+
 ### What is NOT included and why
 
 **`scan_data`** (~1.19 M rows, ~140 MB in the source DB). POS sell-through
