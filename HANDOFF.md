@@ -41,3 +41,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 2 — design the synthetic order data model (schema for `original_orders`, `shipped_orders`, and the linkage between them) reflecting retailer-specific ordering patterns.
 
 ---
+
+## 2026-05-07 18:48
+
+**What changed:** Wrote `docs/order-data-schema.md` (six new tables) and `docs/cost-engine-benchmarks.md` (OTIF, fill rates, DTC cancellation, distributor returns, triage labor). Committed at `0c33f80`.
+
+**Why:** PLAN task 2 — design the synthetic order data model and capture default cost-engine parameters before any code is written. Documentation only; nothing is built yet.
+
+**State:** Working — schema spec covers `orders`, `order_lines_original`, `order_lines_shipped`, `order_shorts`, `dtc_outcomes`, `distributor_returns`, with linkage on `(order_id, sku)` and `order_line_id` as a per-table surrogate. Benchmarks doc lists Walmart/Costco/Whole Foods/UNFI/KeHE/Regional fine rules, channel-specific fill rates, the DTC hold-duration cancellation curve and 35/65 leakage split, 12%/5% distributor return rates, and 20-min × $30/hr × 90% triage labor. Untouched: order generators, OTIF compute, no synthetic data created. Three open implementation questions flagged in the schema doc (cache vs. recompute `quantity_shorted`; deliberate duplication of `unit_price`; one-line-per-SKU-per-order assumption).
+
+**Next:** PLAN task 3 — design the short / triage logic that decides how original orders get edited down (priority hierarchy, due-date, completeness pressure, even-small-orders-shorted dynamic).
+
+---
