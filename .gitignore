@@ -39,6 +39,8 @@ node_modules/
 *.sqlite3
 *.parquet
 *.duckdb
+# Self-contained Cinderhaven extract (~1.6 MB) is a committed artifact
+!data/cinderhaven_extract.db
 
 # Logs
 *.log
