@@ -12,6 +12,15 @@
       "lost_revenue": 2871998.4,
       "otif_fines": 127908.21
     },
+    "by_retailer": {
+      "Costco": 364011.6,
+      "DTC": 7270.24,
+      "KeHE": 377455.53,
+      "Regional": 560892.69,
+      "UNFI": 535606.95,
+      "Walmart": 1259667.46,
+      "Whole Foods": 366217.91
+    },
     "by_month": [
       {
         "month": "2024-06",
@@ -218,6 +227,13 @@
       "dtc_margin_leakage": 585.81,
       "lost_revenue": 1751213.04,
       "otif_fines": 93863.37
+    },
+    "by_retailer": {
+      "DTC": 6005.64,
+      "KeHE": 316846.68,
+      "UNFI": 530393.64,
+      "Walmart": 1096943.7,
+      "Whole Foods": 346181.9
     },
     "by_month": [
       {
@@ -431,6 +447,12 @@
       "lost_revenue": 1400938.56,
       "otif_fines": 63763.36
     },
+    "by_retailer": {
+      "KeHE": 186922.88,
+      "Regional": 450821.35,
+      "UNFI": 432333.92,
+      "Walmart": 727426.67
+    },
     "by_month": [
       {
         "month": "2024-06",
@@ -588,6 +610,12 @@
       "deauthorization": 311064.0,
       "lost_revenue": 1300477.44,
       "otif_fines": 60440.09
+    },
+    "by_retailer": {
+      "KeHE": 235841.9,
+      "UNFI": 359187.88,
+      "Walmart": 789887.91,
+      "Whole Foods": 292455.23
     },
     "by_month": [
       {
@@ -752,6 +780,11 @@
       "deauthorization": 332056.92,
       "lost_revenue": 1075376.4,
       "otif_fines": 64022.79
+    },
+    "by_retailer": {
+      "KeHE": 241058.6,
+      "UNFI": 408853.41,
+      "Walmart": 826307.65
     },
     "by_month": [
       {
@@ -918,6 +951,13 @@
       "dtc_margin_leakage": 488.58,
       "lost_revenue": 565087.68,
       "otif_fines": 31500.54
+    },
+    "by_retailer": {
+      "DTC": 5701.18,
+      "KeHE": 101666.77,
+      "UNFI": 172612.59,
+      "Walmart": 839805.28,
+      "Whole Foods": 116397.16
     },
     "by_month": [
       {
@@ -1132,6 +1172,13 @@
       "lost_revenue": 585102.48,
       "otif_fines": 22820.44
     },
+    "by_retailer": {
+      "Costco": 280051.94,
+      "DTC": 796.7,
+      "KeHE": 66629.8,
+      "UNFI": 158654.7,
+      "Walmart": 523561.22
+    },
     "by_month": [
       {
         "month": "2024-06",
@@ -1313,6 +1360,13 @@
       "dtc_margin_leakage": 229.9,
       "lost_revenue": 793393.44,
       "otif_fines": 16357.55
+    },
+    "by_retailer": {
+      "Costco": 244453.48,
+      "DTC": 1964.6,
+      "KeHE": 122914.94,
+      "Regional": 345602.81,
+      "UNFI": 311393.78
     },
     "by_month": [
       {
@@ -1514,6 +1568,13 @@
       "dtc_margin_leakage": 251.1,
       "lost_revenue": 587010.84,
       "otif_fines": 23399.25
+    },
+    "by_retailer": {
+      "Costco": 154597.47,
+      "DTC": 2883.6,
+      "KeHE": 95541.69,
+      "UNFI": 166425.93,
+      "Walmart": 330627.68
     },
     "by_month": [
       {
@@ -1722,6 +1783,13 @@
       "lost_revenue": 525860.16,
       "otif_fines": 29661.46
     },
+    "by_retailer": {
+      "DTC": 1181.98,
+      "KeHE": 96020.54,
+      "UNFI": 216782.13,
+      "Walmart": 312132.18,
+      "Whole Foods": 93693.49
+    },
     "by_month": [
       {
         "month": "2024-05",
@@ -1923,6 +1991,12 @@
       "lost_revenue": 532822.68,
       "otif_fines": 25193.45
     },
+    "by_retailer": {
+      "KeHE": 87581.14,
+      "UNFI": 190890.04,
+      "Walmart": 325542.34,
+      "Whole Foods": 97038.8
+    },
     "by_month": [
       {
         "month": "2024-05",
@@ -2085,6 +2159,12 @@
       "dtc_margin_leakage": 375.56,
       "lost_revenue": 502863.12,
       "otif_fines": 26963.43
+    },
+    "by_retailer": {
+      "DTC": 3838.04,
+      "KeHE": 112075.69,
+      "UNFI": 181547.19,
+      "Walmart": 395932.61
     },
     "by_month": [
       {
@@ -2285,6 +2365,13 @@
       "dtc_margin_leakage": 262.22,
       "lost_revenue": 542395.68,
       "otif_fines": 25038.3
+    },
+    "by_retailer": {
+      "DTC": 2520.26,
+      "KeHE": 83020.59,
+      "Regional": 161943.2,
+      "UNFI": 144165.02,
+      "Walmart": 298384.13
     },
     "by_month": [
       {
@@ -2500,6 +2587,13 @@
       "lost_revenue": 485129.28,
       "otif_fines": 12511.56
     },
+    "by_retailer": {
+      "DTC": 1099.32,
+      "KeHE": 80950.59,
+      "Regional": 221397.83,
+      "UNFI": 232495.11,
+      "Whole Foods": 108632.86
+    },
     "by_month": [
       {
         "month": "2024-06",
@@ -2697,6 +2791,12 @@
       "lost_revenue": 482894.28,
       "otif_fines": 22058.23
     },
+    "by_retailer": {
+      "KeHE": 91421.87,
+      "UNFI": 164679.16,
+      "Walmart": 279310.47,
+      "Whole Foods": 102177.95
+    },
     "by_month": [
       {
         "month": "2024-05",
@@ -2865,6 +2965,13 @@
       "dtc_margin_leakage": 218.77,
       "lost_revenue": 339829.44,
       "otif_fines": 8888.94
+    },
+    "by_retailer": {
+      "DTC": 2554.81,
+      "KeHE": 63199.23,
+      "Regional": 149511.89,
+      "UNFI": 154271.51,
+      "Whole Foods": 93869.96
     },
     "by_month": [
       {
@@ -3070,6 +3177,12 @@
       "dtc_margin_leakage": 266.35,
       "lost_revenue": 315773.76,
       "otif_fines": 20969.68
+    },
+    "by_retailer": {
+      "DTC": 2297.47,
+      "KeHE": 76095.0,
+      "UNFI": 140209.24,
+      "Walmart": 237826.21
     },
     "by_month": [
       {
@@ -3284,6 +3397,11 @@
       "lost_revenue": 342768.96,
       "otif_fines": 18579.57
     },
+    "by_retailer": {
+      "DTC": 2272.54,
+      "Walmart": 271279.63,
+      "Whole Foods": 91607.67
+    },
     "by_month": [
       {
         "month": "2024-05",
@@ -3495,6 +3613,12 @@
       "lost_revenue": 234042.24,
       "otif_fines": 6187.49
     },
+    "by_retailer": {
+      "KeHE": 72692.6,
+      "Regional": 104173.12,
+      "UNFI": 125281.3,
+      "Whole Foods": 46003.88
+    },
     "by_month": [
       {
         "month": "2024-06",
@@ -3649,6 +3773,11 @@
       "deauthorization": 67828.56,
       "lost_revenue": 236202.48,
       "otif_fines": 11187.1
+    },
+    "by_retailer": {
+      "KeHE": 32607.61,
+      "UNFI": 108703.27,
+      "Walmart": 174946.34
     },
     "by_month": [
       {
@@ -3816,6 +3945,15 @@
       "dtc_margin_leakage": 1422.19,
       "lost_revenue": 3243431.94,
       "otif_fines": 114847.42
+    },
+    "by_retailer": {
+      "Costco": 557417.43,
+      "DTC": 14474.52,
+      "KeHE": 551236.95,
+      "Regional": 866250.58,
+      "UNFI": 1360801.07,
+      "Walmart": 693598.74,
+      "Whole Foods": 718604.43
     },
     "by_month": [
       {

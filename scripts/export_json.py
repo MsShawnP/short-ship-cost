@@ -265,11 +265,14 @@ def build_cost_by_sku(dim_results: dict, db: sqlite3.Connection) -> list[dict]:
     sku_dim_month: dict[str, dict[str, dict[str, float]]] = defaultdict(
         lambda: defaultdict(lambda: defaultdict(float))
     )
+    sku_retailer: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
     for dim, res in dim_results.items():
         for r in res.get("by_sku", []):
             sku_dim[r["sku"]][dim] += r["cost"]
         for r in res.get("by_sku_month", []):
             sku_dim_month[r["sku"]][r["month"]][dim] += r["cost"]
+        for r in res.get("by_sku_retailer", []):
+            sku_retailer[r["sku"]][r["retailer"]] += r["cost"]
 
     sku_totals = {sku: sum(d.values()) for sku, d in sku_dim.items()}
 
@@ -298,16 +301,22 @@ def build_cost_by_sku(dim_results: dict, db: sqlite3.Connection) -> list[dict]:
             "by_dimension": {
                 d: round_dollar(c) for d, c in sorted(sku_dim[sku].items())
             },
+            "by_retailer": {
+                r: round_dollar(c) for r, c in sorted(sku_retailer[sku].items())
+            },
             "by_month": by_month_rows(sku_dim_month[sku]),
         })
 
     if rest:
         other_total = sum(t for _, t in rest)
         other_by_dim: dict[str, float] = defaultdict(float)
+        other_by_retailer: dict[str, float] = defaultdict(float)
         other_by_month: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
         for sku, _ in rest:
             for d, c in sku_dim[sku].items():
                 other_by_dim[d] += c
+            for r, c in sku_retailer[sku].items():
+                other_by_retailer[r] += c
             for month, dim_costs in sku_dim_month[sku].items():
                 for d, c in dim_costs.items():
                     other_by_month[month][d] += c
@@ -318,6 +327,9 @@ def build_cost_by_sku(dim_results: dict, db: sqlite3.Connection) -> list[dict]:
             "total_cost": round_dollar(other_total),
             "by_dimension": {
                 d: round_dollar(c) for d, c in sorted(other_by_dim.items())
+            },
+            "by_retailer": {
+                r: round_dollar(c) for r, c in sorted(other_by_retailer.items())
             },
             "by_month": by_month_rows(other_by_month),
         })

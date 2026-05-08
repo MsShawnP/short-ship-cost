@@ -67,6 +67,7 @@ def aggregate_breakdowns(rows: Iterable[dict]) -> dict:
     by_month: dict[str, float] = defaultdict(float)
     by_retailer_month: dict[tuple[str, str], float] = defaultdict(float)
     by_sku_month: dict[tuple[str, str], float] = defaultdict(float)
+    by_sku_retailer: dict[tuple[str, str], float] = defaultdict(float)
     for r in rows:
         retailer = r["retailer"]
         sku = r.get("sku")
@@ -81,6 +82,8 @@ def aggregate_breakdowns(rows: Iterable[dict]) -> dict:
             by_retailer_month[(retailer, month)] += cost
         if sku and month:
             by_sku_month[(sku, month)] += cost
+        if sku and retailer:
+            by_sku_retailer[(sku, retailer)] += cost
     return {
         "by_retailer": [{"retailer": k, "cost": v} for k, v in sorted(by_retailer.items())],
         "by_sku": [{"sku": k, "cost": v} for k, v in sorted(by_sku.items(), key=lambda x: -x[1])],
@@ -92,5 +95,9 @@ def aggregate_breakdowns(rows: Iterable[dict]) -> dict:
         "by_sku_month": [
             {"sku": s, "month": m, "cost": v}
             for (s, m), v in sorted(by_sku_month.items())
+        ],
+        "by_sku_retailer": [
+            {"sku": s, "retailer": r, "cost": v}
+            for (s, r), v in sorted(by_sku_retailer.items())
         ],
     }
