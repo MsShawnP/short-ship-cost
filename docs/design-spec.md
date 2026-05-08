@@ -39,19 +39,20 @@ render — this is the starting point, not a locked contract.
 ## Color palette
 
 ### Primary
-- **Data primary (navy):** #1B3A5C
-- **Accent/alert (muted red):** #C54B4B
 - **Background:** #F8F6F1 (warm off-white)
+- **Data primary:** the darkest tone of the dimension palette below
 
-### Dimension color mapping
-- Lost revenue: #1B3A5C (navy)
-- OTIF fines: #4A7BA7 (steel blue)
-- Chargebacks: #4A7BA7 (steel blue — same group as OTIF)
-- Deauthorization: #C54B4B (muted red)
-- DTC cancellations: #8C7D6D (warm gray)
-- DTC margin leakage: #8C7D6D (warm gray — same group)
-- Distributor returns: #B8AFA6 (light gray)
-- Triage labor: #B8AFA6 (light gray — same group)
+### Dimension color mapping (sequential teal, darkest = largest)
+- Lost revenue: #0A3D3D
+- Deauthorization: #14605C
+- OTIF fines: #1F8078
+- Chargebacks: #2A9D93
+- DTC cancellations: #45B5AA
+- Triage labor: #6BCABD
+- Distributor returns: #93DCD2
+- DTC margin leakage: #BDEEE8
+
+The palette is sequential by magnitude rank, not categorical. The same dimension reads the same color page-wide so the eye can track it across sections.
 
 ### Text
 - Body text: #2A2A2A (dark charcoal, not pure black)
