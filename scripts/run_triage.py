@@ -372,7 +372,12 @@ def main() -> int:
         all_shipped.extend(shipped)
         all_shorts.extend(shorts)
         for o in sorted_orders:
-            ship_dates[o["order_id"]] = week.isoformat()
+            # week is the Monday of the due_date's week. If the order
+            # was placed mid-week and its due_date falls on Sunday,
+            # that Monday is BEFORE order_date — guard against it.
+            ship_dates[o["order_id"]] = max(
+                week.isoformat(), o["order_date"]
+            )
 
     print(f"  shipped lines: {len(all_shipped):,}")
     print(f"  shorts:        {len(all_shorts):,}")

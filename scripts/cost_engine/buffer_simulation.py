@@ -235,8 +235,17 @@ def simulate_at(target_fill: float, current_fill: float, rng: random.Random) -> 
 
     db = sqlite3.connect(temp_orders)
     db.row_factory = sqlite3.Row
-    n_retail_modified = recover_retail_shorts(db, target_fill)
-    n_dtc_recovered = recover_dtc_outcomes(db, target_fill, current_fill, rng)
+    # Short-circuit when no improvement is asked for. At target <=
+    # current_fill, "what if we did nothing" must reproduce baseline
+    # exactly — the per-line lift would otherwise distort it because
+    # individual lines below their channel target would still get
+    # raised toward the global target.
+    if target_fill > current_fill:
+        n_retail_modified = recover_retail_shorts(db, target_fill)
+        n_dtc_recovered = recover_dtc_outcomes(db, target_fill, current_fill, rng)
+    else:
+        n_retail_modified = 0
+        n_dtc_recovered = 0
     db.commit()
     db.close()
 
