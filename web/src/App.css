@@ -4,9 +4,99 @@ main {
   padding: 48px 24px;
 }
 
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
 h1 {
   font-size: 28px;
   font-weight: 600;
   line-height: 1.25;
-  margin: 0 0 24px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.caption {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.print-button {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-family: var(--sans);
+  color: #ffffff;
+  background: #0f4c81;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.print-button:hover {
+  background: #0a3a64;
+}
+
+.chart {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+@media print {
+  /* Print baseline: white background, no shadows or interactive chrome. */
+  :root,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  main {
+    max-width: none;
+    margin: 0;
+    padding: 0.5in;
+  }
+
+  header {
+    margin-bottom: 24px;
+  }
+
+  /* Keep section + chart together on one page when possible. */
+  section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .chart {
+    /* Constrain to a printable size; SVG scales to fit. */
+    width: 100%;
+    height: 4in;
+  }
+
+  /* Recharts injects an absolutely-sized wrapper via ResponsiveContainer.
+     Force it to fill the print box rather than the screen-measured size. */
+  .recharts-responsive-container {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+@page {
+  size: letter;
+  margin: 0.5in;
 }
