@@ -251,3 +251,39 @@ $25.6M callout, waterfall chart of the eight dimensions, contextual
 benchmarks below. Pulls from `cost_summary.json` and `meta.json`.
 
 ---
+
+## 2026-05-08 14:21
+
+**What changed:** PLAN arc-2 task 4 done — Section 1 built as a
+custom-SVG flow-split chart (left total block, sankey curves, right
+blocks min 20px), sequential teal palette swapped in globally, and
+a global time-range filter (Header dropdown + custom month inputs)
+wired to all sections via React Context. Commits `fa0e56c` and
+`acbf08e` pushed.
+
+**Why:** Section 1 is the first thing a visitor sees. Spent the
+session iterating on the chart form (waterfall → 2-tier → single
+horizontal stack → vertical stack → flow-split) until composition
+read at-a-glance. Added the filter so every downstream section
+inherits time-range semantics without re-plumbing.
+
+**State:** Working — `npm run build` clean, dev server at
+:5178. Components: `Header`/`FilterBar`/`CostStack` plus
+`lib/timeRange.jsx` (Context + `filterByMonth` helper).
+`scripts/export_json.py` now also emits `orders_by_month.json`
+(monthly shipped + demand). Filter recomputes total, dimension
+breakdown, shipped/demand/fill, benchmarks. Deauthorization is
+omitted under filter (events are SKU/retailer-level, not monthly)
+with a footnote; buffer simulation will share the same caveat.
+Hover dims non-selected flows; subtitle becomes a contextual
+tooltip. `docs/design-spec.md` updated to document the teal
+palette. Untouched: arc-2 tasks 5-11 and the Netlify deploy hookup.
+
+**Next:** Task 5 — Section 2 (Where the Pain Lands): grouped
+horizontal bar by retailer × dimension, top-20 SKU table with
+"Other" row. Both will need to be filterable; `cost_by_retailer`
+and `cost_by_sku` JSON currently lack monthly breakdown, so first
+sub-step is extending `export_json.py` to add per-month variants
+or accept the static-table tradeoff.
+
+---
