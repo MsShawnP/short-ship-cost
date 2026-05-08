@@ -65,3 +65,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 4 — write the order generation scripts. First decision will be the velocity-input source (re-attach upstream scan_data vs. add a derived rollup table to the extract vs. flat file).
 
 ---
+
+## 2026-05-07 20:40
+
+**What changed:** PLAN task 4 — full synthetic order pipeline landed end-to-end. Six sub-tasks: sku_velocity rollup, generate_orders, KeHE split + retune, run_triage, generate_dtc_outcomes (+ ship_date NULL fix on cancelled DTC), generate_returns, validate_orders. Commits 3325335 → abc4762.
+
+**Why:** This data layer underpins everything downstream — cost engine, interactive tool, narrative. Had to actually generate it before any analysis could mean anything.
+
+**State:** Working — 43,110 orders, 125,748 lines original/shipped (1:1), 30,915 retail/distributor shorts, 38,792 dtc_outcomes, 32 distributor_returns. $51.9M shipped over 2 yr ($25.9M/yr, inside the $23-27M Cinderhaven target). Original demand +36% over shipped (mid-band of 25-40%). validate_orders.py runs 25 checks and all pass: channel fill rates ±3pp of target, channel revenue share ±3pp, promo-order alignment 100%, DTC cancel curve within ±7pp of doc, distributor returns within ±1pp of 12%/5%, no auth violations or invalid quantities. Algorithm departure flagged: strict tier priority + noise (per docs/triage-logic.md) does not land the documented fill targets with our synthetic demand because Costco's narrow SKU set overlaps Walmart's and Costco's generated case quantities exceed total brand supply on some authorized SKUs; switched to direct target-driven allocation with per-line Gaussian noise — user accepted when surfaced. Untouched: cost engine (PLAN task 5), buffer simulation (task 6), validation against Cinderhaven scan data (task 7), data-model documentation refresh (task 8).
+
+**Next:** PLAN task 5 — build the cost engine that calculates the eight cost dimensions (lost revenue, OTIF fines, chargebacks, deauth risk, DTC cancellations, DTC-to-retail margin leakage, distributor returns, triage labor) from the order gap. All inputs are now in place.
+
+---
