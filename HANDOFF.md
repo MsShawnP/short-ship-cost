@@ -287,3 +287,36 @@ sub-step is extending `export_json.py` to add per-month variants
 or accept the static-table tradeoff.
 
 ---
+
+## 2026-05-08 17:56
+
+**What changed:** PLAN arc-2 task 5 done — `cost_by_retailer.json`
+now (dimension × retailer × month), `cost_by_sku.json` carries
+`by_month` + `by_retailer` per row, and `RetailerDrilldown`
+component renders a custom-SVG stacked-bar chart (12px min segment,
+hover-breakdown chips) plus a sortable top-20 SKU heatmap table.
+Commits `729d571`, `b536c12`, `fb37899` pushed.
+
+**Why:** Section 2 is the drill-down from the headline. Adding
+monthly granularity to retailer/SKU JSON lets the global
+time-range filter flex Section 2 the same way it flexes Section 1.
+
+**State:** Working — `npm run build` clean (212 KB / 67 KB gz),
+Recharts no longer imported anywhere (custom SVG throughout). Cost
+engine `aggregate_breakdowns` extended with `by_retailer_month`,
+`by_sku_month`, and `by_sku_retailer` (additive — runner ignores
+extras). Export script imports cost engine modules and runs them
+once per export to capture the new aggregates. Bundle JSON now
+253 KB (cost_by_sku is the bulk at 107 KB). Validation still
+35/35 pass; `cost_summary` total reconciles. Section 2 chart click
+filters the SKU table; sort headers work; heatmap shading uses
+teal alpha (text always dark per request); Other row consistent
+with the rest of the table. Untouched: arc-2 tasks 6-11 and the
+Netlify deploy hookup.
+
+**Next:** Task 6 — Section 3 (The Trend): monthly time series
+across the 18-24 month window, stacked area chart by dimension,
+declarative title based on whether costs are stable, growing, or
+seasonal. Already has the data — `cost_by_month.json` is the input.
+
+---
