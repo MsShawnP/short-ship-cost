@@ -1,0 +1,349 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid var(--color-border);
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* ---------- Chart block ---------- */
+
+.chartBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chartTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin: 0 0 4px;
+  max-width: 760px;
+}
+
+.chartSubtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0 0 16px;
+  min-height: 21px;
+}
+
+.chartSubtitle strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.breakdownRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  background: rgba(31, 128, 120, 0.06);
+  border-left: 3px solid var(--color-navy);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.breakdownChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.breakdownChip strong {
+  font-weight: 600;
+}
+
+.breakdownSwatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+.breakdownPct {
+  color: var(--color-text-secondary);
+}
+
+.retailerRow {
+  cursor: pointer;
+  transition: opacity 120ms ease-out;
+}
+
+.retailerLabel {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--color-text);
+}
+
+.totalLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  fill: var(--color-text);
+}
+
+.chartFootnote {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+.tooltip {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  min-width: 180px;
+}
+
+.tooltipRetailer {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.tooltipTotal {
+  font-weight: 600;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tooltipRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.tooltipSwatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* ---------- SKU table block ---------- */
+
+.tableBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tableHead {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tableTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.retailerFilterRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  padding: 8px 12px;
+  background: rgba(31, 128, 120, 0.08);
+  border-left: 3px solid var(--color-navy);
+}
+
+.retailerFilterRow strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.clearButton {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 3px 8px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.clearButton:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--color-text);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  background: transparent;
+}
+
+.table th.numeric {
+  text-align: right;
+}
+
+.table th:hover {
+  color: var(--color-navy);
+}
+
+.sortIndicator {
+  margin-left: 4px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.table td {
+  padding: 8px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table tr:hover td {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.table td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table td.totalCell {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.skuCode {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.productName {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.productLine {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+
+.otherRow td {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--color-text);
+}
+
+.otherRow .skuCode,
+.otherRow .productName,
+.otherRow .productLine {
+  color: var(--color-text);
+}
+
+.tableFootnote {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 8px 0 0;
+  font-style: italic;
+}
+
+.colSku {
+  width: 80px;
+}
+
+.colProduct {
+  width: 200px;
+}
+
+.colLine {
+  width: 130px;
+}
+
+.colTotal {
+  width: 80px;
+}
+
+.colDim {
+  width: 70px;
+}
+
+.heatCell {
+  position: relative;
+}

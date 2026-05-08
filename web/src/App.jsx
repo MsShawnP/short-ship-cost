@@ -2,10 +2,18 @@ import { useEffect, useMemo, useState } from 'react'
 
 import Header from './components/Header.jsx'
 import CostStack from './components/CostStack.jsx'
+import RetailerDrilldown from './components/RetailerDrilldown.jsx'
 import { TimeRangeProvider } from './lib/timeRange.jsx'
 import './App.css'
 
-const SOURCES = ['meta', 'cost_summary', 'cost_by_month', 'orders_by_month']
+const SOURCES = [
+  'meta',
+  'cost_summary',
+  'cost_by_month',
+  'orders_by_month',
+  'cost_by_retailer',
+  'cost_by_sku',
+]
 
 function App() {
   const [data, setData] = useState(null)
@@ -56,6 +64,10 @@ function App() {
           summary={data.cost_summary}
           costByMonth={data.cost_by_month}
           ordersByMonth={data.orders_by_month}
+        />
+        <RetailerDrilldown
+          costByRetailer={data.cost_by_retailer}
+          costBySku={data.cost_by_sku}
         />
       </main>
       <footer className="footer">
