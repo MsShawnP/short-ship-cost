@@ -222,3 +222,32 @@ arc-2 tasks 3-11 and the Netlify deploy connection.
 (documented spec, not code). Builds Sections 1-4 reference this.
 
 ---
+
+## 2026-05-08 11:57
+
+**What changed:** PLAN arc-2 task 3 done — `docs/design-spec.md`
+added (178 lines): page structure, typography (Playfair + Source
+Sans Pro), color palette + dimension mapping, Economist chart
+rules, per-section spec for Sections 1-4, parameter panel,
+layout, print layout. Commit `6787b70` pushed.
+
+**Why:** Tasks 4-9 build Sections 1-4 plus the parameter panel
+and print CSS. They reference this spec for chart types, colors,
+typography, copy voice, and layout instead of reinventing each.
+Doc only — no code changed.
+
+**State:** Working — spec is the agreed starting point, explicitly
+non-locking ("Chart types and layouts may be adjusted after seeing
+how they render"). Dimension color groups: navy/steel-blue/red/warm-
+gray/light-gray, with related dimensions sharing a color (OTIF +
+chargebacks; DTC cancellations + DTC leakage; distributor returns +
+triage labor) — keeps the cost stack readable. Parameter panel is
+specified as a non-reflowing 320px sidebar with sliders bound to
+`cost_parameters`, validating against the JSON exported in task 2.
+Untouched: arc-2 tasks 4-11 and the Netlify deploy connection.
+
+**Next:** Task 4 — build Section 1 (the headline cost stack):
+$25.6M callout, waterfall chart of the eight dimensions, contextual
+benchmarks below. Pulls from `cost_summary.json` and `meta.json`.
+
+---
