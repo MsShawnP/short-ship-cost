@@ -1,0 +1,24 @@
+:root {
+  --text: #1a1a1a;
+  --text-muted: #5a5a5a;
+  --bg: #ffffff;
+  --border: #d8d8d8;
+
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
