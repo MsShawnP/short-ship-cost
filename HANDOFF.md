@@ -320,3 +320,35 @@ declarative title based on whether costs are stable, growing, or
 seasonal. Already has the data — `cost_by_month.json` is the input.
 
 ---
+
+## 2026-05-08 18:14
+
+**What changed:** PLAN arc-2 task 6 done — `TimeSeries` component:
+Recharts stacked area, 7 monthly-attributed dimensions, dynamic
+trend title (rising/eased/steady from first-half vs second-half
+average), per-month tooltip with full breakdown, three stat blocks
+(monthly avg, peak month, low month). Commit `9ad3133` pushed.
+
+**Why:** Section 3 answers whether the cost-of-shorts story is
+getting worse, stable, or seasonal. The dynamic title puts the
+finding in plain English; the stat blocks reinforce with numbers.
+
+**State:** Working — `npm run build` clean (600 KB / 170 KB gz —
+Recharts back in the bundle for the AreaChart). Honors the global
+time filter; recomputes title and stats on filter change. Layer
+heights enforce a 12px minimum (~4% of plot area at peak month) so
+small dimensions like DTC leakage stay visible against
+lost_revenue. Y-axis shows padded scale; tooltip preserves real
+values; footnote calls out the discrepancy. Deauthorization
+omitted (events are SKU/retailer-level, not monthly), consistent
+with Sections 1/2. Untouched: arc-2 tasks 7-11 and the Netlify
+deploy hookup.
+
+**Next:** Task 7 — Section 4 (What Recovery Looks Like): buffer
+simulation staircase from `buffer_scenarios.json`, four scenarios
+(80/85/90/95% fill rate), baseline reference at $25.6M, deauth
+cliff annotation at 90%. Note that buffer_scenarios is full-period
+only — when a time filter is active, show a note (same pattern as
+deauth in Section 1).
+
+---
