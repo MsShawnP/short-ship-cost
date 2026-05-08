@@ -113,3 +113,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 7 — validate the synthetic order data and cost engine against Cinderhaven's existing scan data and revenue benchmarks. Confirm the numbers tell a coherent story end-to-end before the interactive tool arc.
 
 ---
+
+## 2026-05-07 22:12
+
+**What changed:** PLAN tasks 7 + 8 — `scripts/validate_cost_engine.py` (35 PASS/FAIL checks across 9 sections, all passing) and `docs/cost-engine-docs.md` (interactive-tool reference). Commits `0796f2f` and `d8ea5e5`.
+
+**Why:** Last gates before the interactive tool arc — confirm the order/cost data is internally consistent and document the schema so the tool developer can consume it without ambiguity.
+
+**State:** Working — 35/35 checks pass: impossible values, FK integrity, duplicates, distribution sanity, cost-engine reconciliation, boundary, buffer baseline reproduction, OTIF threshold logic, deauth event integrity. Two issues surfaced and fixed during validation: (1) 45 retail/distributor orders had `ship_date < order_date` because `monday_of(due_date)` could go 6 days back when `due_date` was Sunday; fixed in `run_triage.py` with `max(week_monday, order_date)` and DB rows patched. (2) Buffer simulation didn't reproduce baseline at current fill rate; fixed by short-circuiting `recover_retail_shorts` and `recover_dtc_outcomes` when `target_fill <= current_fill`. Active-SKU check tightened to "well-established" — two late-launch SKUs (CHP-0054, CHP-0067) were authorized only in the final 5 weeks and had no orders; documented as realistic, not a defect. `docs/cost-engine-docs.md` covers DB inventory, every cost-DB table schema, cross-DB join paths, per-dimension definitions tied to `cost_parameters`, buffer-simulation algorithm and reading, and the honest known-limitations list. **PLAN arc complete.** Untouched: interactive tool (next arc).
+
+**Next:** Begin the interactive tool arc — React or polished HTML/JS app per `DECISIONS.md`, hosted on Netlify or GitHub Pages, consuming the three SQLite files via the schema documented in `docs/cost-engine-docs.md`. First step is a new `PLAN.md` arc definition.
+
+---
