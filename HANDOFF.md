@@ -125,3 +125,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** Begin the interactive tool arc — React or polished HTML/JS app per `DECISIONS.md`, hosted on Netlify or GitHub Pages, consuming the three SQLite files via the schema documented in `docs/cost-engine-docs.md`. First step is a new `PLAN.md` arc definition.
 
 ---
+
+## 2026-05-07 22:20 — wrap
+
+**Started from:** Project freshly initialized. CLAUDE.md, PLAN.md, HANDOFF.md, DECISIONS.md, FAILURES.md scaffolded earlier in the day. PLAN task 1 ("determine Cinderhaven data consumption approach") was first up.
+
+**Did:** Worked through the entire eight-task PLAN arc in one extended session — Cinderhaven extract with synthesized KeHE distributor; schema, triage, and benchmarks docs; full synthetic order pipeline (orders, lines, shorts, DTC outcomes, distributor returns); modular cost engine across all eight dimensions with output in `data/short_ship_cost.db`; buffer simulation across 80/85/90/95% scenarios; 35-check validation script; and `docs/cost-engine-docs.md` as the single reference for the next arc. Settled on direct target-driven allocation in triage after three failed attempts (strict priority, noisy-tier scoring, fair-share with tier weights). Settled on per-(sku, week) supply-scaled allocation in the cost engine. Captured two new firm decisions for the interactive tool (React + JSON data delivery).
+
+**State:** PLAN arc complete. Three SQLite DBs working and committed: `cinderhaven_extract.db` (1.6 MB), `short_ship_orders.db` (22 MB), `short_ship_cost.db` (0.5 MB). 35/35 validation checks pass. Headline: $25.6M total cost of shorts on $51.9M shipped revenue (49.4%); buffer simulation recovers 86% at 95% scenario. Open opinion items deferred to the tool arc: export mechanism (jsPDF / html2pdf / print-CSS), single page vs multi-view, hosting (Netlify vs GH Pages).
+
+**Next:** Define a new PLAN.md arc for the interactive tool. Three open sub-decisions to settle before code: export mechanism, single-page vs multi-view, and Netlify vs GH Pages. React + JSON delivery already locked in (this wrap commit).
+
+---

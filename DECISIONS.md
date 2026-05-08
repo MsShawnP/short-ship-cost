@@ -29,6 +29,16 @@ Each entry:
 - **Scope:** Interactive tool deliverable
 - **Do not:** Use Streamlit, Power BI, or Shiny for this project's interactive piece.
 
+### 2026-05-07 — Use React for the interactive tool framework
+- **Why:** Better fit for the kind of multi-control parameter-driven UI this project needs (channel filters, parameter overrides, scenario sliders). Component model gives cleaner state management than vanilla HTML/JS for the level of interactivity planned. Refines the earlier "React or polished HTML/JS" decision into a firm choice.
+- **Scope:** Interactive tool framework
+- **Do not:** Reach for vanilla HTML/JS or jQuery for this app.
+
+### 2026-05-07 — Deliver data to the browser as pre-extracted JSON, not by loading the SQLite files via sql.js
+- **Why:** The cost-engine output (`short_ship_cost.db`) is small enough to extract to JSON at build time. Avoiding `sql.js` keeps the bundle smaller, removes WASM loading overhead, and means the tool starts faster on first paint. The orders DB (22 MB) doesn't need to ship to the browser at all — only its summarized cost output does.
+- **Scope:** Data delivery to the interactive tool
+- **Do not:** Load `short_ship_orders.db` or `cinderhaven_extract.db` directly in the browser via `sql.js`. Pre-extract whatever the tool needs at build time.
+
 ### 2026-05-07 — Use the same 18–24 month time window as existing Cinderhaven scan data
 - **Why:** Keeps the door open for future projects to JOIN the order data with scan data. Consistency across the Cinderhaven dataset.
 - **Scope:** Synthetic order data generation
