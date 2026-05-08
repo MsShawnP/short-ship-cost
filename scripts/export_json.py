@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +26,31 @@ EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 COST_DB = REPO / "data" / "short_ship_cost.db"
 OUT_DIR = REPO / "web" / "public" / "data"
+
+# Make cost_engine importable when running this script directly.
+sys.path.insert(0, str(REPO / "scripts"))
+from cost_engine import (  # noqa: E402
+    chargebacks,
+    deauthorization,
+    distributor_returns,
+    dtc_cancellations,
+    dtc_margin_leakage,
+    lost_revenue,
+    otif_fines,
+    triage_labor,
+)
+
+# Order matters for downstream display — keep aligned with cost_summary.
+DIM_MODULES = {
+    "lost_revenue": lost_revenue,
+    "otif_fines": otif_fines,
+    "chargebacks": chargebacks,
+    "deauthorization": deauthorization,
+    "dtc_cancellations": dtc_cancellations,
+    "dtc_margin_leakage": dtc_margin_leakage,
+    "distributor_returns": distributor_returns,
+    "triage_labor": triage_labor,
+}
 
 DOLLAR_PLACES = 2
 PCT_PLACES = 4
@@ -138,20 +164,36 @@ def build_cost_summary(db: sqlite3.Connection) -> list[dict]:
     return rows
 
 
-def build_cost_by_retailer(db: sqlite3.Connection) -> list[dict]:
-    cur = db.cursor()
-    cur.execute(
-        "SELECT retailer, dimension, cost FROM cost_by_retailer "
-        "ORDER BY retailer, dimension"
+def build_cost_by_retailer(dim_results: dict) -> list[dict]:
+    """Per (retailer, dimension, month) cost. For dimensions without
+    monthly attribution (deauthorization), emit one row per (retailer,
+    dimension) with month=None — the React app should treat those as
+    full-window-only and exclude them when a time filter is active."""
+    rows = []
+    for dim, res in dim_results.items():
+        rm_costs = {(r["retailer"], r["month"]): r["cost"] for r in res.get("by_retailer_month", [])}
+        if rm_costs:
+            for (retailer, month), cost in rm_costs.items():
+                rows.append({
+                    "retailer": retailer,
+                    "dimension": dim,
+                    "month": month,
+                    "cost": round_dollar(cost),
+                })
+        else:
+            # No monthly attribution (e.g., deauthorization). Use the
+            # full-window by_retailer aggregate instead.
+            for r in res.get("by_retailer", []):
+                rows.append({
+                    "retailer": r["retailer"],
+                    "dimension": dim,
+                    "month": None,
+                    "cost": round_dollar(r["cost"]),
+                })
+    rows.sort(
+        key=lambda x: (x["retailer"], x["dimension"], x["month"] or "")
     )
-    return [
-        {
-            "retailer": r["retailer"],
-            "dimension": r["dimension"],
-            "cost": round_dollar(r["cost"]),
-        }
-        for r in cur.fetchall()
-    ]
+    return rows
 
 
 def build_cost_by_month(db: sqlite3.Connection) -> list[dict]:
@@ -205,26 +247,45 @@ def build_orders_by_month(db: sqlite3.Connection) -> list[dict]:
     ]
 
 
-def build_cost_by_sku(db: sqlite3.Connection) -> list[dict]:
+def build_cost_by_sku(dim_results: dict, db: sqlite3.Connection) -> list[dict]:
     """Top-N SKUs by total cost across attributed dimensions, plus an
     'Other' row aggregating the remaining SKUs. The drill-down sums to
     (cost_summary total - triage_labor), since triage_labor has no SKU
-    attribution. The React app should surface that gap."""
+    attribution.
+
+    Each row carries:
+      - by_dimension: full-window per-dimension totals
+      - by_month: list of {month, <dim>: cost, ...} for dimensions with
+        monthly attribution (excludes deauthorization since events are
+        SKU/retailer-level, not monthly).
+
+    The React app re-sums by_month rows for the active time range; the
+    'Other' row's by_month is the residual so totals reconcile."""
+    sku_dim: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    sku_dim_month: dict[str, dict[str, dict[str, float]]] = defaultdict(
+        lambda: defaultdict(lambda: defaultdict(float))
+    )
+    for dim, res in dim_results.items():
+        for r in res.get("by_sku", []):
+            sku_dim[r["sku"]][dim] += r["cost"]
+        for r in res.get("by_sku_month", []):
+            sku_dim_month[r["sku"]][r["month"]][dim] += r["cost"]
+
+    sku_totals = {sku: sum(d.values()) for sku, d in sku_dim.items()}
+
     cur = db.cursor()
-
-    cur.execute("SELECT sku, dimension, cost FROM cost_by_sku")
-    by_sku: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
-    for r in cur.fetchall():
-        by_sku[r["sku"]][r["dimension"]] += r["cost"]
-
-    sku_totals = {sku: sum(d.values()) for sku, d in by_sku.items()}
-
     cur.execute("SELECT sku, product_name, product_line FROM ext.product_master")
     pm = {r["sku"]: (r["product_name"], r["product_line"]) for r in cur.fetchall()}
 
     sorted_skus = sorted(sku_totals.items(), key=lambda kv: -kv[1])
     top = sorted_skus[:TOP_N_SKUS]
     rest = sorted_skus[TOP_N_SKUS:]
+
+    def by_month_rows(month_map: dict[str, dict[str, float]]) -> list[dict]:
+        return [
+            {"month": m, **{d: round_dollar(c) for d, c in sorted(dims.items())}}
+            for m, dims in sorted(month_map.items())
+        ]
 
     rows = []
     for sku, total in top:
@@ -235,16 +296,21 @@ def build_cost_by_sku(db: sqlite3.Connection) -> list[dict]:
             "product_line": line,
             "total_cost": round_dollar(total),
             "by_dimension": {
-                d: round_dollar(c) for d, c in sorted(by_sku[sku].items())
+                d: round_dollar(c) for d, c in sorted(sku_dim[sku].items())
             },
+            "by_month": by_month_rows(sku_dim_month[sku]),
         })
 
     if rest:
         other_total = sum(t for _, t in rest)
         other_by_dim: dict[str, float] = defaultdict(float)
+        other_by_month: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
         for sku, _ in rest:
-            for d, c in by_sku[sku].items():
+            for d, c in sku_dim[sku].items():
                 other_by_dim[d] += c
+            for month, dim_costs in sku_dim_month[sku].items():
+                for d, c in dim_costs.items():
+                    other_by_month[month][d] += c
         rows.append({
             "sku": "Other",
             "product_name": f"Other ({len(rest)} SKUs)",
@@ -253,6 +319,7 @@ def build_cost_by_sku(db: sqlite3.Connection) -> list[dict]:
             "by_dimension": {
                 d: round_dollar(c) for d, c in sorted(other_by_dim.items())
             },
+            "by_month": by_month_rows(other_by_month),
         })
 
     return rows
@@ -348,15 +415,21 @@ def main() -> None:
     for f in OUT_DIR.glob("*.json"):
         f.unlink()
 
+    # Re-run the cost engine to capture the granular per-dimension
+    # by_retailer_month and by_sku_month aggregates the React app needs
+    # for time-range filtering. Cost-DB tables don't carry those keys.
+    print("Computing per-dimension breakdowns...", flush=True)
+    dim_results = {dim: mod.calculate() for dim, mod in DIM_MODULES.items()}
+
     db = open_cost_db()
     try:
         meta = build_meta(db)
         outputs = {
             "meta.json": meta,
             "cost_summary.json": build_cost_summary(db),
-            "cost_by_retailer.json": build_cost_by_retailer(db),
+            "cost_by_retailer.json": build_cost_by_retailer(dim_results),
             "cost_by_month.json": build_cost_by_month(db),
-            "cost_by_sku.json": build_cost_by_sku(db),
+            "cost_by_sku.json": build_cost_by_sku(dim_results, db),
             "deauthorization_events.json": build_deauthorization_events(db),
             "buffer_scenarios.json": build_buffer_scenarios(db),
             "validation.json": build_validation(db, meta),

@@ -58,19 +58,39 @@ def empty_result(dimension: str, description: str) -> dict:
 
 
 def aggregate_breakdowns(rows: Iterable[dict]) -> dict:
-    """Take a list of {retailer, sku, order_date_month, cost} rows
-    and return three aggregated lists: by_retailer, by_sku, by_month."""
+    """Take a list of {retailer, sku, month, cost} rows and return five
+    aggregated lists: by_retailer, by_sku, by_month, plus the cross
+    aggregates by_retailer_month and by_sku_month that the React app
+    needs for time-range filtering on Section 2."""
     by_retailer: dict[str, float] = defaultdict(float)
     by_sku: dict[str, float] = defaultdict(float)
     by_month: dict[str, float] = defaultdict(float)
+    by_retailer_month: dict[tuple[str, str], float] = defaultdict(float)
+    by_sku_month: dict[tuple[str, str], float] = defaultdict(float)
     for r in rows:
-        by_retailer[r["retailer"]] += r["cost"]
-        if r.get("sku"):
-            by_sku[r["sku"]] += r["cost"]
-        if r.get("month"):
-            by_month[r["month"]] += r["cost"]
+        retailer = r["retailer"]
+        sku = r.get("sku")
+        month = r.get("month")
+        cost = r["cost"]
+        by_retailer[retailer] += cost
+        if sku:
+            by_sku[sku] += cost
+        if month:
+            by_month[month] += cost
+        if retailer and month:
+            by_retailer_month[(retailer, month)] += cost
+        if sku and month:
+            by_sku_month[(sku, month)] += cost
     return {
         "by_retailer": [{"retailer": k, "cost": v} for k, v in sorted(by_retailer.items())],
         "by_sku": [{"sku": k, "cost": v} for k, v in sorted(by_sku.items(), key=lambda x: -x[1])],
         "by_month": [{"month": k, "cost": v} for k, v in sorted(by_month.items())],
+        "by_retailer_month": [
+            {"retailer": r, "month": m, "cost": v}
+            for (r, m), v in sorted(by_retailer_month.items())
+        ],
+        "by_sku_month": [
+            {"sku": s, "month": m, "cost": v}
+            for (s, m), v in sorted(by_sku_month.items())
+        ],
     }
