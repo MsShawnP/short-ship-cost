@@ -193,3 +193,32 @@ script that reads the three DBs and outputs pre-aggregated data +
 validation.json for the React app.
 
 ---
+
+## 2026-05-08 11:32
+
+**What changed:** PLAN arc-2 task 2 done — `scripts/export_json.py`
+emits 8 pre-aggregated JSON files (81.5 KB total) under
+`web/public/data/`: meta, cost_summary, cost_by_retailer,
+cost_by_month, cost_by_sku, deauthorization_events,
+buffer_scenarios, validation. Commit `077501c` pushed.
+
+**Why:** The React app needs summary-level data, not raw order
+lines. Pre-aggregating in Python keeps the browser fast, lets the
+JS cost-math be tested against `validation.json`, and bundles the
+parameter defaults the reset-to-baseline button restores.
+
+**State:** Working — script is idempotent (deletes prior \*.json,
+rewrites them) and prints a per-file size table plus a sanity check
+(cost_summary total == validation total, $25,597,978.19, PASS). All
+26 cost_parameters embedded in meta.json. cost_by_sku is top-20 +
+"Other (62 SKUs)"; sum reconciles to $25,559,116.17 = headline minus
+triage_labor (which has no SKU attribution by design — flagged in
+the script docstring and inline). Percentages emitted as fractions
+(0.36 not 36); dollars rounded to 2 dp, percentages to 4 dp. JSON
+files are committed so Netlify has them at build time. Untouched:
+arc-2 tasks 3-11 and the Netlify deploy connection.
+
+**Next:** Task 3 — wireframe the page structure and visual language
+(documented spec, not code). Builds Sections 1-4 reference this.
+
+---
