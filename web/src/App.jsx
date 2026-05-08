@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import Header from './components/Header.jsx'
 import CostStack from './components/CostStack.jsx'
 import RetailerDrilldown from './components/RetailerDrilldown.jsx'
+import TimeSeries from './components/TimeSeries.jsx'
 import { TimeRangeProvider } from './lib/timeRange.jsx'
 import './App.css'
 
@@ -69,6 +70,7 @@ function App() {
           costByRetailer={data.cost_by_retailer}
           costBySku={data.cost_by_sku}
         />
+        <TimeSeries costByMonth={data.cost_by_month} />
       </main>
       <footer className="footer">
         <span>
