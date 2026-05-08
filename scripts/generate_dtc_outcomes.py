@@ -10,8 +10,10 @@ Outputs (into the same DB):
     dtc_outcomes               — one row per DTC order
     order_lines_shipped        — DTC rows added (retail/distributor
                                  already populated by run_triage.py)
-    orders.ship_date           — populated for shipped/cancelled DTC orders
-                                 (= resolution_date)
+    orders.ship_date           — populated only for shipped_complete
+                                 (= resolution_date); cancelled and
+                                 in-store-buy resolutions leave
+                                 ship_date NULL — nothing shipped
 
 Mechanics:
 - Per-line per-day availability probability = 0.85.
@@ -151,8 +153,12 @@ def main() -> int:
             "days_held": days_held,
         })
 
-        # ship_date = resolution_date for shipped or cancelled
-        ship_dates[o["order_id"]] = resolution_date.isoformat()
+        # ship_date is set only when an actual shipment happened.
+        # Cancelled / in-store-buy resolutions leave ship_date NULL.
+        if resolution == "shipped_complete":
+            ship_dates[o["order_id"]] = resolution_date.isoformat()
+        else:
+            ship_dates[o["order_id"]] = None
 
         for L in order_lines:
             line_seq += 1
@@ -166,8 +172,13 @@ def main() -> int:
                 "original_line_id": L["order_line_id"],
             })
 
-    # Write outputs. dtc_outcomes is fresh; order_lines_shipped and
-    # orders are appended/updated.
+    # Write outputs. dtc_outcomes is fresh; order_lines_shipped DTC
+    # rows are removed and re-inserted so reruns stay idempotent;
+    # orders.ship_date is updated.
+    cur.execute(
+        "DELETE FROM order_lines_shipped WHERE order_id IN ("
+        "  SELECT order_id FROM orders WHERE channel_type = 'dtc')"
+    )
     cur.executescript("""
         DROP TABLE IF EXISTS dtc_outcomes;
         CREATE TABLE dtc_outcomes (
