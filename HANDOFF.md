@@ -89,3 +89,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 6 — add the buffer simulation layer. "What if fill rate moved from X% to Y%" recalculates every cost dimension at the new fill level and shows the recovery, framed as fine avoidance not production planning.
 
 ---
+
+## 2026-05-07 21:16
+
+**What changed:** Validation pass over cost engine outputs — DTC event counts, triage labor math, deauthorization concentration. No code or data changed.
+
+**Why:** User flagged that DTC ($55K total) and triage ($39K) looked small, and wanted to confirm deauthorization ($5.86M) wasn't driven by 1–2 outliers.
+
+**State:** All four numbers check out. DTC: 925 cancelled-by-customer + 484 purchased-in-store on 38,792 orders = 96.4% ship-complete; cost is correctly small because DTC is ~3% of revenue and ships nearly complete. Triage: 4,318 retail+distributor orders × 0.90 × $10 = $38,862 exactly. Deauthorization: 127 events (24 velocity-based, 103 distributor-consecutive-months); top 10 events = 42% of $5.86M total — meaningful concentration without being a 1–2 outlier story. Walmart's 2 events ($795K) are the clean small/outsized pattern; UNFI/KeHE's 103 events surface the chronic-low-fill narrative the project is built to make visible. Untouched: PLAN tasks 6–8.
+
+**Next:** PLAN task 6 — buffer simulation layer.
+
+---
