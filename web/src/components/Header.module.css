@@ -28,6 +28,14 @@
   text-transform: uppercase;
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .printButton {
   flex: 0 0 auto;
   padding: 8px 16px;

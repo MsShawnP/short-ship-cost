@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import Header from './components/Header.jsx'
 import CostStack from './components/CostStack.jsx'
+import { TimeRangeProvider } from './lib/timeRange.jsx'
 import './App.css'
 
-const SOURCES = ['meta', 'cost_summary']
+const SOURCES = ['meta', 'cost_summary', 'cost_by_month', 'orders_by_month']
 
 function App() {
   const [data, setData] = useState(null)
@@ -25,6 +26,11 @@ function App() {
       .catch(setError)
   }, [])
 
+  const allMonths = useMemo(() => {
+    if (!data) return []
+    return [...new Set(data.cost_by_month.map((r) => r.month))].sort()
+  }, [data])
+
   if (error) {
     return (
       <main className="page">
@@ -42,10 +48,15 @@ function App() {
   }
 
   return (
-    <>
+    <TimeRangeProvider allMonths={allMonths}>
       <Header />
       <main className="page">
-        <CostStack meta={data.meta} summary={data.cost_summary} />
+        <CostStack
+          meta={data.meta}
+          summary={data.cost_summary}
+          costByMonth={data.cost_by_month}
+          ordersByMonth={data.orders_by_month}
+        />
       </main>
       <footer className="footer">
         <span>
@@ -55,7 +66,7 @@ function App() {
         </span>
         <span>Lailara LLC portfolio piece</span>
       </footer>
-    </>
+    </TimeRangeProvider>
   )
 }
 

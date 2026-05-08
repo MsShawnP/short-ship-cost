@@ -1,0 +1,52 @@
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.select,
+.month {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text);
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.select:focus,
+.month:focus {
+  outline: 2px solid var(--color-text);
+  outline-offset: -1px;
+}
+
+.customInputs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dash {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.activeNote {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}

@@ -170,6 +170,41 @@ def build_cost_by_month(db: sqlite3.Connection) -> list[dict]:
     ]
 
 
+def build_orders_by_month(db: sqlite3.Connection) -> list[dict]:
+    """Monthly shipped revenue, demand, and order count, grouped by
+    order_date's year-month — matches cost_by_month's convention so the
+    React app can apply the same time filter to both."""
+    cur = db.cursor()
+    cur.execute(
+        """
+        SELECT
+          substr(o.order_date, 1, 7) AS month,
+          SUM(CASE WHEN ls.unit_of_measure = 'case'
+                   THEN ls.quantity_shipped * pm.case_pack_qty * ls.unit_price
+                   ELSE ls.quantity_shipped * ls.unit_price END) AS shipped_revenue,
+          SUM(CASE WHEN lo.unit_of_measure = 'case'
+                   THEN lo.quantity_ordered * pm.case_pack_qty * lo.unit_price
+                   ELSE lo.quantity_ordered * lo.unit_price END) AS demand,
+          COUNT(DISTINCT o.order_id) AS order_count
+        FROM ord.orders o
+        JOIN ord.order_lines_original lo ON lo.order_id = o.order_id
+        JOIN ord.order_lines_shipped ls   ON ls.original_line_id = lo.order_line_id
+        JOIN ext.product_master pm        ON pm.sku = lo.sku
+        GROUP BY month
+        ORDER BY month
+        """
+    )
+    return [
+        {
+            "month": r["month"],
+            "shipped_revenue": round_dollar(r["shipped_revenue"] or 0),
+            "demand": round_dollar(r["demand"] or 0),
+            "order_count": r["order_count"],
+        }
+        for r in cur.fetchall()
+    ]
+
+
 def build_cost_by_sku(db: sqlite3.Connection) -> list[dict]:
     """Top-N SKUs by total cost across attributed dimensions, plus an
     'Other' row aggregating the remaining SKUs. The drill-down sums to
@@ -325,6 +360,7 @@ def main() -> None:
             "deauthorization_events.json": build_deauthorization_events(db),
             "buffer_scenarios.json": build_buffer_scenarios(db),
             "validation.json": build_validation(db, meta),
+            "orders_by_month.json": build_orders_by_month(db),
         }
     finally:
         db.close()

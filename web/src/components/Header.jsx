@@ -1,3 +1,4 @@
+import FilterBar from './FilterBar.jsx'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -7,13 +8,16 @@ export default function Header() {
         <div className={styles.brandName}>Cinderhaven Provisions</div>
         <div className={styles.brandSub}>Cost of Short-Shipping Analysis</div>
       </div>
-      <button
-        type="button"
-        className={`${styles.printButton} no-print`}
-        onClick={() => window.print()}
-      >
-        Print / Export PDF
-      </button>
+      <div className={styles.controls}>
+        <FilterBar />
+        <button
+          type="button"
+          className={`${styles.printButton} no-print`}
+          onClick={() => window.print()}
+        >
+          Print / Export PDF
+        </button>
+      </div>
     </header>
   )
 }

@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 import { DIMENSION_LABEL } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
+import { useTimeRange, filterByMonth } from '../lib/timeRange.jsx'
 import styles from './CostStack.module.css'
 
 const ORDER = [
@@ -42,21 +43,19 @@ const RIGHT_RIGHT = RIGHT_X + RIGHT_W
 
 const LABEL_X = RIGHT_RIGHT + 22
 const LABEL_VALUE_X = VB_W - 4
-
 const CONNECTOR_X1 = RIGHT_RIGHT + 2
 const CONNECTOR_X2 = LABEL_X - 4
 
 const RIGHT_MIN_H = 20
 const RIGHT_GAP = 4
 
-function buildLayout(summary) {
-  const byDim = Object.fromEntries(summary.map((r) => [r.dimension, r]))
-  const total = summary.reduce((s, r) => s + r.total_cost, 0)
+function buildLayout(costsByDim, dims) {
+  const total = dims.reduce((s, d) => s + (costsByDim[d] || 0), 0)
 
-  const segs = ORDER.map((dim) => ({
+  const segs = dims.map((dim) => ({
     key: dim,
     label: DIMENSION_LABEL[dim],
-    value: byDim[dim].total_cost,
+    value: costsByDim[dim] || 0,
     color: SEQUENTIAL_TEALS[dim],
   }))
 
@@ -67,7 +66,7 @@ function buildLayout(summary) {
   let remainingValue = 0
   const locked = new Set()
   for (const s of segs) {
-    const propH = (s.value / total) * blockSpace
+    const propH = total > 0 ? (s.value / total) * blockSpace : 0
     if (propH < RIGHT_MIN_H) {
       locked.add(s.key)
       lockedTotal += RIGHT_MIN_H
@@ -79,7 +78,9 @@ function buildLayout(summary) {
   for (const s of segs) {
     s.rightHeight = locked.has(s.key)
       ? RIGHT_MIN_H
-      : (s.value / remainingValue) * remainingSpace
+      : remainingValue > 0
+        ? (s.value / remainingValue) * remainingSpace
+        : RIGHT_MIN_H
   }
 
   let rCursor = BAR_Y
@@ -92,7 +93,7 @@ function buildLayout(summary) {
 
   let lCursor = BAR_Y
   for (const s of segs) {
-    const sliceH = (s.value / total) * BAR_H
+    const sliceH = total > 0 ? (s.value / total) * BAR_H : 0
     s.leftTop = lCursor
     s.leftHeight = sliceH
     s.leftBottom = lCursor + sliceH
@@ -115,24 +116,61 @@ function flowPath(s) {
   ].join(' ')
 }
 
-export default function CostStack({ meta, summary }) {
-  const { segs, total } = buildLayout(summary)
+export default function CostStack({ meta, summary, costByMonth, ordersByMonth }) {
+  const range = useTimeRange()
   const [hovered, setHovered] = useState(null)
-  const hoveredSeg = hovered ? segs.find((s) => s.key === hovered) : null
 
-  const lostRevenue = segs[0].value
+  // Filter by month range.
+  const filteredCosts = useMemo(
+    () => filterByMonth(costByMonth, range),
+    [costByMonth, range],
+  )
+  const filteredOrders = useMemo(
+    () => filterByMonth(ordersByMonth, range),
+    [ordersByMonth, range],
+  )
+
+  // Sum filtered costs by dimension. Deauthorization is missing from
+  // cost_by_month (events are SKU/retailer-level, not monthly), so when
+  // filtered we omit it and surface a note. When unfiltered we pull
+  // deauth from cost_summary so the headline matches the full-period total.
+  const { dims, costsByDim, deauthFull } = useMemo(() => {
+    const byDim = {}
+    for (const r of filteredCosts) {
+      byDim[r.dimension] = (byDim[r.dimension] || 0) + r.cost
+    }
+    const deauthRow = summary.find((r) => r.dimension === 'deauthorization')
+    const deauthFull = deauthRow ? deauthRow.total_cost : 0
+    if (range.isFiltered) {
+      return {
+        dims: ORDER.filter((d) => d !== 'deauthorization'),
+        costsByDim: byDim,
+        deauthFull,
+      }
+    }
+    byDim.deauthorization = deauthFull
+    return { dims: ORDER, costsByDim: byDim, deauthFull }
+  }, [filteredCosts, summary, range.isFiltered])
+
+  const { segs, total } = useMemo(
+    () => buildLayout(costsByDim, dims),
+    [costsByDim, dims],
+  )
+
+  const lostRevenue = costsByDim.lost_revenue || 0
   const cascading = total - lostRevenue
 
-  const shipped = meta.shipped_revenue
-  const fillRate = meta.overall_fill_rate
-  const wholesaleMargin = meta.cost_parameters.wholesale_margin_pct.value
-  const estMargin = shipped * wholesaleMargin
-  const demand = fillRate > 0 ? shipped / fillRate : 0
+  const shipped = filteredOrders.reduce((s, r) => s + r.shipped_revenue, 0)
+  const demand = filteredOrders.reduce((s, r) => s + r.demand, 0)
+  const fillRate = demand > 0 ? shipped / demand : 0
   const demandGap = demand - shipped
 
-  const pctOfShipped = total / shipped
-  const pctOfMargin = total / estMargin
+  const wholesaleMargin = meta.cost_parameters.wholesale_margin_pct.value
+  const estMargin = shipped * wholesaleMargin
+  const pctOfShipped = shipped > 0 ? total / shipped : 0
+  const pctOfMargin = estMargin > 0 ? total / estMargin : 0
 
+  const hoveredSeg = hovered ? segs.find((s) => s.key === hovered) : null
   const totalCenterY = BAR_Y + BAR_H / 2
 
   const opacityFor = (key, baseActive, baseDimmed, baseDefault) => {
@@ -140,13 +178,17 @@ export default function CostStack({ meta, summary }) {
     return hovered === key ? baseActive : baseDimmed
   }
 
+  const periodLabel = range.isFiltered
+    ? `${range.startMonth} to ${range.endMonth}`
+    : `${meta.time_window.start} to ${meta.time_window.end}`
+
   return (
     <section className={styles.section}>
       <div className={styles.callout}>
         <div className={styles.calloutNumber}>{fmtCompact(total)}</div>
         <p className={styles.calloutPrimary}>
-          in total short-shipping costs &mdash; {fmtPct(pctOfShipped)} of shipped
-          revenue.
+          in {range.isFiltered ? 'short-shipping costs over the selected period' : 'total short-shipping costs'} &mdash;{' '}
+          {fmtPct(pctOfShipped)} of shipped revenue.
         </p>
         <p className={styles.calloutSecondary}>
           Cinderhaven received {fmtCompact(demand)} in orders from retail and
@@ -167,12 +209,13 @@ export default function CostStack({ meta, summary }) {
             <>
               <strong>{hoveredSeg.label}</strong> &mdash;{' '}
               {fmtCompact(hoveredSeg.value)} ({fmtPct(hoveredSeg.value / total)}{' '}
-              of total)
+              of period total)
             </>
           ) : (
             <>
-              The {fmtCompact(total)} total flows into eight cost dimensions.
-              Hover any block for details.
+              The {fmtCompact(total)} {range.isFiltered ? 'period' : 'total'}{' '}
+              flows into {dims.length} cost dimensions. Hover any block for
+              details.
             </>
           )}
         </p>
@@ -182,9 +225,8 @@ export default function CostStack({ meta, summary }) {
           viewBox={`0 0 ${VB_W} ${VB_H}`}
           preserveAspectRatio="xMidYMid meet"
           role="img"
-          aria-label="Flow split: total cost of shorts allocated across eight dimensions"
+          aria-label="Flow split: cost of shorts allocated across dimensions"
         >
-          {/* Left block: total */}
           <rect
             x={LEFT_X}
             y={BAR_Y}
@@ -209,7 +251,6 @@ export default function CostStack({ meta, summary }) {
             Total
           </text>
 
-          {/* Connector flows */}
           {segs.map((s) => (
             <path
               key={`flow-${s.key}`}
@@ -222,7 +263,6 @@ export default function CostStack({ meta, summary }) {
             />
           ))}
 
-          {/* Right side: hover groups (block + connector + labels) */}
           {segs.map((s) => {
             const opacity = opacityFor(s.key, 1, 0.3, 1)
             return (
@@ -233,7 +273,6 @@ export default function CostStack({ meta, summary }) {
                 onMouseLeave={() => setHovered(null)}
                 opacity={opacity}
               >
-                {/* Hover hit area covering block + label row */}
                 <rect
                   x={RIGHT_X - 4}
                   y={s.rightTop - 2}
@@ -241,7 +280,6 @@ export default function CostStack({ meta, summary }) {
                   height={s.rightHeight + 4}
                   fill="transparent"
                 />
-                {/* Right block */}
                 <rect
                   x={RIGHT_X}
                   y={s.rightTop}
@@ -249,7 +287,6 @@ export default function CostStack({ meta, summary }) {
                   height={s.rightHeight}
                   fill={s.color}
                 />
-                {/* Connector line from block to label */}
                 <line
                   x1={CONNECTOR_X1}
                   y1={s.rightCenter}
@@ -258,7 +295,6 @@ export default function CostStack({ meta, summary }) {
                   stroke={s.color}
                   className={styles.connector}
                 />
-                {/* Label */}
                 <text
                   className={styles.labelName}
                   x={LABEL_X}
@@ -280,11 +316,19 @@ export default function CostStack({ meta, summary }) {
         </svg>
 
         <p className={styles.chartFootnote}>
-          Source: Cinderhaven Provisions synthetic order data,{' '}
-          {meta.time_window.start} to {meta.time_window.end}. The six smallest
-          dimensions are drawn at a {RIGHT_MIN_H}-pixel minimum block height
-          for readability; the connecting flows preserve true proportional
-          width on the left.
+          Source: Cinderhaven Provisions synthetic order data, {periodLabel}.
+          The smallest dimensions are drawn at a {RIGHT_MIN_H}-pixel minimum
+          block height for readability; the connecting flows preserve true
+          proportional width on the left.
+          {range.isFiltered && (
+            <>
+              {' '}
+              Deauthorization ({fmtCompact(deauthFull)} full-period) is
+              omitted when a time filter is active because the underlying
+              events are SKU- and retailer-level, not monthly. Buffer
+              simulation is also full-period only.
+            </>
+          )}
         </p>
       </div>
 
