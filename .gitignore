@@ -44,6 +44,8 @@ node_modules/
 # Synthetic order data (~20-40 MB) is also committed so the portfolio
 # piece runs without forcing a multi-step Python build
 !data/short_ship_orders.db
+# Cost-engine output (small) is committed for the same reason
+!data/short_ship_cost.db
 
 # Logs
 *.log
