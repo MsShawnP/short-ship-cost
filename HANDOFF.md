@@ -77,3 +77,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 5 — build the cost engine that calculates the eight cost dimensions (lost revenue, OTIF fines, chargebacks, deauth risk, DTC cancellations, DTC-to-retail margin leakage, distributor returns, triage labor) from the order gap. All inputs are now in place.
 
 ---
+
+## 2026-05-07 21:10
+
+**What changed:** PLAN task 5 — cost engine across all 8 dimensions landed under `scripts/cost_engine/` (parameters.py, common.py, 8 modules, runner.py). Output materialized into new `data/short_ship_cost.db`. Commits c9e6a7c → 4f5d433.
+
+**Why:** This converts the order data into the cost story — the whole reason the order data exists. Each dimension is its own module so the interactive tool can show / let users tune any one.
+
+**State:** Working — engine produces $25.6M total cost of shorts on $51.9M shipped revenue (49.4% of shipped). Stack: lost_revenue $18.7M (36.1pp), deauthorization $5.86M (11.3pp), otif_fines $826K, chargebacks $75K, dtc_cancellations $50K, triage_labor $39K, distributor_returns $24K, dtc_margin_leakage $5K. Six output tables: cost_summary (8 rows), cost_by_retailer (33), cost_by_sku (404), cost_by_month (160), deauthorization_events (127), cost_parameters (26 — every tunable parameter). Doc updated: cost-engine-benchmarks.md UNFI line corrected to 3% of shorted goods value (was 2% of COGS) per task 5 spec. Untouched: buffer simulation (PLAN task 6), validation pass against Cinderhaven scan data (task 7), data-model documentation refresh (task 8), interactive tool (next arc).
+
+**Next:** PLAN task 6 — add the buffer simulation layer. "What if fill rate moved from X% to Y%" recalculates every cost dimension at the new fill level and shows the recovery, framed as fine avoidance not production planning.
+
+---
