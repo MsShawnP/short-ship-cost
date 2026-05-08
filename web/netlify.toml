@@ -1,0 +1,19 @@
+# Netlify build config for the short-ship-cost interactive tool.
+# The site lives in this web/ subdirectory of the repo, so Netlify must be
+# pointed at it via "Base directory" when connecting the repo. Once that is
+# set, Netlify runs the build relative to web/.
+
+[build]
+  base    = "web"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback: send all unknown paths to index.html so client-side routing
+# (if added later) and direct deep-links don't 404.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
