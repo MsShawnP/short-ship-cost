@@ -161,3 +161,35 @@ print spike.
 print compatibility spike with one Recharts SVG chart.
 
 ---
+
+## 2026-05-08 11:05
+
+**What changed:** PLAN arc-2 task 1 done — Vite + React app scaffolded
+in `web/`, `web/netlify.toml` added, print-CSS spike rendering a
+Recharts BarChart with window.print() — all three print checks
+passed in Chrome. Commits 9258621 → 80f728e → f0efb85.
+
+**Why:** Task 1 of the interactive-tool arc: prove the
+local → GitHub → Netlify → print-PDF pipeline works end-to-end
+before building any actual sections. Recharts' SVG output is the
+piece that determines whether the print-CSS export decision holds.
+
+**State:** Working — `npm run build` produces a 562 KB bundle
+(159 KB gzipped, Recharts is ~370 KB of that — flag for code-split
+later if it matters). `npm run dev` serves cleanly. Print preview
+in Chrome rendered the BarChart as crisp SVG, hid the print button,
+and scaled to the letter page. Vite default scaffold trimmed
+(removed react/vite/hero assets, simplified App.css/index.css to a
+neutral baseline). `web/netlify.toml` has base="web", command="npm
+run build", publish="dist", NODE_VERSION=20, and a SPA-fallback
+redirect. **Not yet deployed** — user will manually connect the
+repo to Netlify and trigger the first build. Untouched: arc-2
+tasks 2-11.
+
+**Next:** User connects repo to Netlify (set Base directory to `web`
+in the UI; the toml in `web/` handles the rest) and triggers the
+first deploy. Once a public URL exists, begin task 2 — JSON export
+script that reads the three DBs and outputs pre-aggregated data +
+validation.json for the React app.
+
+---
