@@ -19,14 +19,15 @@ retailer's fill-rate target.
 | Walmart | 3% | of COGS, per non-compliant PO line | 98% |
 | Costco | $250 flat | per short event (missed appointment window) | n/a — event-based |
 | Whole Foods | 2% | of COGS, per non-compliant PO | 95% |
-| UNFI | 2% | of COGS, per PO below fill-rate target | 95% |
+| UNFI | 3% | of shorted goods value, per PO below fill-rate target | 95% |
 | KeHE | 2% | of COGS, per PO below fill-rate target | 95% |
 | Regionals | 1% | of COGS, per non-compliant PO | 90% |
 
 COGS for the fine calculation is the per-unit `cogs_per_unit` from
-`sku_costs`, multiplied by units shorted (or units shipped, depending
-on the retailer's contract — to be specified per retailer in the cost
-engine).
+`sku_costs`, multiplied by units ordered for the line or PO. UNFI
+is the exception — its 3% fine is applied to the shorted goods'
+*wholesale value*, not COGS, so the formula is
+`quantity_shorted × pack × unit_price × 0.03`.
 
 ## Fill rates
 
