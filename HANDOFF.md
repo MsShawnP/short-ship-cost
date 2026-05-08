@@ -101,3 +101,15 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** PLAN task 6 — buffer simulation layer.
 
 ---
+
+## 2026-05-07 21:28
+
+**What changed:** PLAN task 6 — buffer simulation across 80/85/90/95% target fill rates landed. `scripts/cost_engine/buffer_simulation.py` at commit `78a8808`; three new tables in `short_ship_cost.db`: `buffer_scenarios`, `buffer_scenario_details`, `buffer_deauth_recovery`.
+
+**Why:** This is the "what would even modest fill-rate improvement save?" lever — framed as fine avoidance, not production planning. Required for the interactive tool's headline scenario comparison.
+
+**State:** Working — total cost of shorts $25.6M baseline → $18.0M / $15.9M / $9.8M / $3.6M at 80/85/90/95% scenarios (86% recovery at 95%). Implementation copies orders DB to temp per scenario, lifts qty_shipped via `max(current, round(qty_ordered × target))`, flips proportional DTC cancellations back to shipped_complete, monkey-patches `common.ORDERS_DB` to point modules at the temp file, then cleans up. Existing dimension modules and `short_ship_orders.db` untouched. 4 of 5 validation criteria pass cleanly: lost-revenue recovery is proportional, deauth staircase clears at 90% threshold (125 of 127 events avoided at 95%), DTC cancellations decrease monotonically, triage labor stays flat. The 5th — "OTIF fines mostly disappear at 95%" — only achieves 38% reduction because Walmart's 98% line-level threshold isn't crossed by 95% lift; honest result, flagged in code and commit. Untouched: PLAN tasks 7 (validation pass) and 8 (data-model documentation).
+
+**Next:** PLAN task 7 — validate the synthetic order data and cost engine against Cinderhaven's existing scan data and revenue benchmarks. Confirm the numbers tell a coherent story end-to-end before the interactive tool arc.
+
+---
