@@ -44,6 +44,21 @@ Each entry:
 - **Scope:** Synthetic order data generation
 - **Do not:** Create a different time window that would make cross-referencing impossible.
 
+### 2026-05-08 — Use React (Vite) for the interactive tool
+- **Why:** React's component model and state management fit the parameter adjustment panel and drill-down interactions. Vite for fast dev/build. Portfolio gap is a product-quality web tool — React fills it.
+- **Scope:** Interactive tool
+- **Do not:** Use vanilla HTML/JS, Streamlit, or any other framework.
+
+### 2026-05-08 — Pre-computed JSON for data delivery, not client-side SQLite
+- **Why:** React's ecosystem is built around JS objects. JSON is native — no translation layer, no wasm dependency (sql.js), no async queries fighting React's rendering model. Data is small enough to bundle. Pre-aggregate in a Python export script so the app gets summary-level data, not 125K raw order lines.
+- **Scope:** Data pipeline from cost engine to interactive tool
+- **Do not:** Load SQLite files in the browser or build a backend API.
+
+### 2026-05-08 — Host on Netlify
+- **Why:** Zero-config for React apps, auto-detects build command, instant deploys from GitHub, free tier generous. Less friction than GitHub Pages for a Vite + React project.
+- **Scope:** Deployment
+- **Do not:** Use GitHub Pages unless Netlify proves problematic.
+
 ---
 
 ## Data & Schema
@@ -62,7 +77,15 @@ Each entry:
 
 ## Visualization
 
-(No entries yet)
+### 2026-05-08 — Single scrollable page, not multi-view navigation
+- **Why:** The narrative is the structure — the argument builds top to bottom, Economist-style. Headline cost stack → retailer/SKU drill-down → time series → buffer simulation. Drill-downs use expandable sections or modals, not separate routes. Single page also maps cleanly to the print CSS export.
+- **Scope:** Interactive tool layout
+- **Do not:** Add client-side routing or multi-page navigation unless a section proves too heavy.
+
+### 2026-05-08 — Recharts for charting, validated for print compatibility
+- **Why:** SVG-based (critical for print CSS — renders as vectors, not rasterized canvas). React-native component API. Print compatibility spike in task 1 confirms it works before building all sections.
+- **Scope:** All charts in the interactive tool
+- **Do not:** Use Chart.js or other canvas-based charting libraries.
 
 ---
 
@@ -72,6 +95,11 @@ Each entry:
 - **Why:** More useful — user configures their view and exports a snapshot with analysis. Also a stronger portfolio piece (shows the tool produces client-ready output). Economist style: plain English, data-forward, clean graphics.
 - **Scope:** Export feature
 - **Do not:** Build a separate static PDF or document disconnected from the interactive tool.
+
+### 2026-05-08 — Use print CSS for the export, not jsPDF or html2pdf
+- **Why:** Print CSS produces the highest quality output — crisp vector text (searchable, sharp at any zoom), SVG charts render as vectors, small file sizes. jsPDF requires designing the PDF twice; html2pdf rasterizes everything. Tradeoffs (page break control, browser variation) are manageable for a portfolio piece where we control the demo environment.
+- **Scope:** Export feature
+- **Do not:** Use jsPDF, html2pdf, or any PDF generation library.
 
 ---
 

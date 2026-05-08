@@ -137,3 +137,27 @@ data consumption approach (full DB vs. self-contained extract).
 **Next:** Define a new PLAN.md arc for the interactive tool. Three open sub-decisions to settle before code: export mechanism, single-page vs multi-view, and Netlify vs GH Pages. React + JSON delivery already locked in (this wrap commit).
 
 ---
+
+## 2026-05-08 — Arc 2 planning session
+
+**Started from:** Arc 1 complete (tagged v0.1-data-and-cost-engine).
+All eight tasks done, 35/35 validation, three DBs, docs written.
+
+**Did:** Worked through all open decisions for the interactive tool
+arc. Settled React (Vite), pre-computed JSON, Netlify, print CSS,
+single scrollable page, Recharts. Drafted and reviewed PLAN.md arc 2
+with Gemini adversarial review. Key additions from review: print
+compatibility spike in task 1, validation.json in JSON export,
+useMemo for parameter panel performance, dynamic deauthorization
+threshold slider, "Other" category in drill-down aggregations,
+print footer with snapshot metadata.
+
+**State:** PLAN.md updated with arc 2. DECISIONS.md updated with six
+new entries. No code written yet — arc 2 is planning-complete,
+ready to build. First task is React scaffolding + Netlify deploy +
+print spike.
+
+**Next:** Begin task 1 — Vite + React scaffold, Netlify pipeline,
+print compatibility spike with one Recharts SVG chart.
+
+---
