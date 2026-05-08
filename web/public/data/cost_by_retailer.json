@@ -1,0 +1,167 @@
+[
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "cost": 7839.71
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "cost": 1567942.2
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "cost": 24750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "cost": 891.0
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "cost": 49610.3
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "cost": 5250.61
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "cost": 4413.77
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "deauthorization",
+    "cost": 1546924.17
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "cost": 11887.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "cost": 1471255.86
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "cost": 57299.35
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "cost": 1926.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "cost": 7921.71
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "deauthorization",
+    "cost": 173229.48
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "cost": 2640569.82
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "cost": 38872.47
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "cost": 4365.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "cost": 8619.41
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "deauthorization",
+    "cost": 3115332.63
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "cost": 12005.04
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "cost": 2873136.66
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "cost": 86194.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "cost": 1926.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "cost": 40071.32
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "deauthorization",
+    "cost": 794816.04
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "cost": 8014263.96
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "cost": 534028.9
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "cost": 25722.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "cost": 6442.33
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "deauthorization",
+    "cost": 233977.68
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "cost": 2147443.8
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "cost": 85017.43
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "cost": 4032.0
+  }
+]

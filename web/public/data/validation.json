@@ -1,0 +1,15 @@
+{
+  "baseline_totals": {
+    "lost_revenue": 18714612.3,
+    "otif_fines": 826162.25,
+    "chargebacks": 75308.25,
+    "deauthorization": 5864280.0,
+    "dtc_cancellations": 49610.3,
+    "dtc_margin_leakage": 5250.61,
+    "distributor_returns": 23892.48,
+    "triage_labor": 38862.0,
+    "total": 25597978.19
+  },
+  "shipped_revenue": 51856660.02,
+  "overall_fill_rate": 0.734
+}

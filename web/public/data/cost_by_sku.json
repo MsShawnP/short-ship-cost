@@ -1,0 +1,286 @@
+[
+  {
+    "sku": "CHP-0002",
+    "product_name": "Spicy Arrabbiata",
+    "product_line": "Artisan Sauces",
+    "total_cost": 3471122.37,
+    "by_dimension": {
+      "chargebacks": 11666.48,
+      "deauthorization": 452279.04,
+      "dtc_cancellations": 6658.74,
+      "dtc_margin_leakage": 611.5,
+      "lost_revenue": 2871998.4,
+      "otif_fines": 127908.21
+    }
+  },
+  {
+    "sku": "CHP-0020",
+    "product_name": "Truffle Mushroom Cream",
+    "product_line": "Artisan Sauces",
+    "total_cost": 2296371.56,
+    "by_dimension": {
+      "chargebacks": 7302.59,
+      "deauthorization": 437986.92,
+      "dtc_cancellations": 5419.83,
+      "dtc_margin_leakage": 585.81,
+      "lost_revenue": 1751213.04,
+      "otif_fines": 93863.37
+    }
+  },
+  {
+    "sku": "CHP-0027",
+    "product_name": "Artichoke & Lemon Cream",
+    "product_line": "Artisan Sauces",
+    "total_cost": 1797504.82,
+    "by_dimension": {
+      "chargebacks": 5555.71,
+      "deauthorization": 327247.2,
+      "lost_revenue": 1400938.56,
+      "otif_fines": 63763.36
+    }
+  },
+  {
+    "sku": "CHP-0042",
+    "product_name": "Everyday Sriracha",
+    "product_line": "Specialty Condiments",
+    "total_cost": 1677372.91,
+    "by_dimension": {
+      "chargebacks": 5391.38,
+      "deauthorization": 311064.0,
+      "lost_revenue": 1300477.44,
+      "otif_fines": 60440.09
+    }
+  },
+  {
+    "sku": "CHP-0009",
+    "product_name": "Classic Bolognese",
+    "product_line": "Artisan Sauces",
+    "total_cost": 1476219.65,
+    "by_dimension": {
+      "chargebacks": 4763.54,
+      "deauthorization": 332056.92,
+      "lost_revenue": 1075376.4,
+      "otif_fines": 64022.79
+    }
+  },
+  {
+    "sku": "CHP-0071",
+    "product_name": "Balsamic Vinegar - Aged 12yr",
+    "product_line": "Pantry Staples",
+    "total_cost": 1236182.98,
+    "by_dimension": {
+      "chargebacks": 2351.04,
+      "deauthorization": 631542.54,
+      "dtc_cancellations": 5212.6,
+      "dtc_margin_leakage": 488.58,
+      "lost_revenue": 565087.68,
+      "otif_fines": 31500.54
+    }
+  },
+  {
+    "sku": "CHP-0028",
+    "product_name": "Tuscan White Bean Ragu",
+    "product_line": "Artisan Sauces",
+    "total_cost": 1029694.36,
+    "by_dimension": {
+      "chargebacks": 2703.81,
+      "deauthorization": 418270.92,
+      "dtc_cancellations": 763.68,
+      "dtc_margin_leakage": 33.02,
+      "lost_revenue": 585102.48,
+      "otif_fines": 22820.44
+    }
+  },
+  {
+    "sku": "CHP-0011",
+    "product_name": "Calabrian Chili Marinara",
+    "product_line": "Artisan Sauces",
+    "total_cost": 1026329.61,
+    "by_dimension": {
+      "chargebacks": 2857.7,
+      "deauthorization": 211756.32,
+      "dtc_cancellations": 1734.7,
+      "dtc_margin_leakage": 229.9,
+      "lost_revenue": 793393.44,
+      "otif_fines": 16357.55
+    }
+  },
+  {
+    "sku": "CHP-0044",
+    "product_name": "Charred Scallion Relish",
+    "product_line": "Specialty Condiments",
+    "total_cost": 750076.37,
+    "by_dimension": {
+      "chargebacks": 2688.08,
+      "deauthorization": 131136.84,
+      "distributor_returns": 2957.76,
+      "dtc_cancellations": 2632.5,
+      "dtc_margin_leakage": 251.1,
+      "lost_revenue": 587010.84,
+      "otif_fines": 23399.25
+    }
+  },
+  {
+    "sku": "CHP-0001",
+    "product_name": "Roasted Tomato Basil Marinara",
+    "product_line": "Artisan Sauces",
+    "total_cost": 719810.32,
+    "by_dimension": {
+      "chargebacks": 2156.0,
+      "deauthorization": 160950.72,
+      "dtc_cancellations": 1066.92,
+      "dtc_margin_leakage": 115.06,
+      "lost_revenue": 525860.16,
+      "otif_fines": 29661.46
+    }
+  },
+  {
+    "sku": "CHP-0038",
+    "product_name": "Cherry Pepper Mostarda",
+    "product_line": "Specialty Condiments",
+    "total_cost": 701052.33,
+    "by_dimension": {
+      "chargebacks": 2211.88,
+      "deauthorization": 138086.4,
+      "distributor_returns": 2737.92,
+      "lost_revenue": 532822.68,
+      "otif_fines": 25193.45
+    }
+  },
+  {
+    "sku": "CHP-0043",
+    "product_name": "Cranberry Mostarda",
+    "product_line": "Specialty Condiments",
+    "total_cost": 693393.53,
+    "by_dimension": {
+      "chargebacks": 2251.98,
+      "deauthorization": 157476.96,
+      "dtc_cancellations": 3462.48,
+      "dtc_margin_leakage": 375.56,
+      "lost_revenue": 502863.12,
+      "otif_fines": 26963.43
+    }
+  },
+  {
+    "sku": "CHP-0063",
+    "product_name": "Everything Bagel Seasoning",
+    "product_line": "Pantry Staples",
+    "total_cost": 690033.2,
+    "by_dimension": {
+      "chargebacks": 2182.8,
+      "deauthorization": 117896.16,
+      "dtc_cancellations": 2258.04,
+      "dtc_margin_leakage": 262.22,
+      "lost_revenue": 542395.68,
+      "otif_fines": 25038.3
+    }
+  },
+  {
+    "sku": "CHP-0024",
+    "product_name": "Charred Tomato & Basil",
+    "product_line": "Artisan Sauces",
+    "total_cost": 644575.71,
+    "by_dimension": {
+      "chargebacks": 1455.39,
+      "deauthorization": 144380.16,
+      "dtc_cancellations": 959.56,
+      "dtc_margin_leakage": 139.76,
+      "lost_revenue": 485129.28,
+      "otif_fines": 12511.56
+    }
+  },
+  {
+    "sku": "CHP-0057",
+    "product_name": "Harissa Paste",
+    "product_line": "Specialty Condiments",
+    "total_cost": 637589.44,
+    "by_dimension": {
+      "chargebacks": 1975.82,
+      "deauthorization": 128998.98,
+      "distributor_returns": 1662.12,
+      "lost_revenue": 482894.28,
+      "otif_fines": 22058.23
+    }
+  },
+  {
+    "sku": "CHP-0046",
+    "product_name": "Gochujang Aioli",
+    "product_line": "Specialty Condiments",
+    "total_cost": 463407.4,
+    "by_dimension": {
+      "chargebacks": 1019.49,
+      "deauthorization": 111114.72,
+      "dtc_cancellations": 2336.04,
+      "dtc_margin_leakage": 218.77,
+      "lost_revenue": 339829.44,
+      "otif_fines": 8888.94
+    }
+  },
+  {
+    "sku": "CHP-0061",
+    "product_name": "Artisan Breadcrumbs - Italian Herb",
+    "product_line": "Pantry Staples",
+    "total_cost": 456427.92,
+    "by_dimension": {
+      "chargebacks": 1385.41,
+      "deauthorization": 116001.6,
+      "dtc_cancellations": 2031.12,
+      "dtc_margin_leakage": 266.35,
+      "lost_revenue": 315773.76,
+      "otif_fines": 20969.68
+    }
+  },
+  {
+    "sku": "CHP-0031",
+    "product_name": "Stone Ground Mustard",
+    "product_line": "Specialty Condiments",
+    "total_cost": 365159.84,
+    "by_dimension": {
+      "chargebacks": 1538.77,
+      "dtc_cancellations": 2021.76,
+      "dtc_margin_leakage": 250.78,
+      "lost_revenue": 342768.96,
+      "otif_fines": 18579.57
+    }
+  },
+  {
+    "sku": "CHP-0053",
+    "product_name": "Fermented Hot Sauce",
+    "product_line": "Specialty Condiments",
+    "total_cost": 348150.9,
+    "by_dimension": {
+      "chargebacks": 702.13,
+      "deauthorization": 100364.64,
+      "distributor_returns": 6854.4,
+      "lost_revenue": 234042.24,
+      "otif_fines": 6187.49
+    }
+  },
+  {
+    "sku": "CHP-0040",
+    "product_name": "Habanero Mango Hot Sauce",
+    "product_line": "Specialty Condiments",
+    "total_cost": 316257.22,
+    "by_dimension": {
+      "chargebacks": 1039.07,
+      "deauthorization": 67828.56,
+      "lost_revenue": 236202.48,
+      "otif_fines": 11187.1
+    }
+  },
+  {
+    "sku": "Other",
+    "product_name": "Other (62 SKUs)",
+    "product_line": "Other",
+    "total_cost": 4762383.73,
+    "by_dimension": {
+      "chargebacks": 12109.17,
+      "deauthorization": 1367840.4,
+      "distributor_returns": 9680.28,
+      "dtc_cancellations": 13052.33,
+      "dtc_margin_leakage": 1422.19,
+      "lost_revenue": 3243431.94,
+      "otif_fines": 114847.42
+    }
+  }
+]
