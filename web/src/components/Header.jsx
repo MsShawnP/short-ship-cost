@@ -1,7 +1,7 @@
 import FilterBar from './FilterBar.jsx'
 import styles from './Header.module.css'
 
-export default function Header() {
+export default function Header({ rightSlot }) {
   return (
     <header className={styles.header}>
       <div>
@@ -10,6 +10,7 @@ export default function Header() {
       </div>
       <div className={styles.controls}>
         <FilterBar />
+        {rightSlot}
         <button
           type="button"
           className={`${styles.printButton} no-print`}

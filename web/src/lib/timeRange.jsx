@@ -21,7 +21,11 @@ export const ALL_DIMENSIONS = [
   'dtc_margin_leakage',
 ]
 
-export function TimeRangeProvider({ allMonths, children }) {
+export function TimeRangeProvider({
+  allMonths,
+  baselineParams,
+  children,
+}) {
   const firstMonth = allMonths[0]
   const lastMonth = allMonths[allMonths.length - 1]
 
@@ -29,6 +33,7 @@ export function TimeRangeProvider({ allMonths, children }) {
   const [customStart, setCustomStart] = useState(firstMonth)
   const [customEnd, setCustomEnd] = useState(lastMonth)
   const [activeDims, setActiveDims] = useState(() => new Set(ALL_DIMENSIONS))
+  const [params, setParams] = useState(() => ({ ...(baselineParams || {}) }))
 
   const range = useMemo(() => {
     if (preset === 'full') {
@@ -68,6 +73,22 @@ export function TimeRangeProvider({ allMonths, children }) {
     setActiveDims(new Set(ALL_DIMENSIONS))
   }, [])
 
+  const setParam = useCallback((key, value) => {
+    setParams((prev) => ({ ...prev, [key]: value }))
+  }, [])
+
+  const resetParams = useCallback(() => {
+    setParams({ ...(baselineParams || {}) })
+  }, [baselineParams])
+
+  const paramsModified = useMemo(() => {
+    if (!baselineParams) return false
+    for (const k of Object.keys(baselineParams)) {
+      if (params[k] !== baselineParams[k]) return true
+    }
+    return false
+  }, [params, baselineParams])
+
   const value = {
     ...range,
     preset,
@@ -80,6 +101,11 @@ export function TimeRangeProvider({ allMonths, children }) {
     activeDims,
     toggleDim,
     resetDims,
+    params,
+    baselineParams,
+    setParam,
+    resetParams,
+    paramsModified,
   }
 
   return (

@@ -3,11 +3,23 @@ import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 import Header from './components/Header.jsx'
 import DimensionToggle from './components/DimensionToggle.jsx'
 import CostStack from './components/CostStack.jsx'
-import { TimeRangeProvider } from './lib/timeRange.jsx'
+import ParameterPanel, {
+  ParameterToggleButton,
+} from './components/ParameterPanel.jsx'
+import { TimeRangeProvider, useTimeRange } from './lib/timeRange.jsx'
+import {
+  getRatios,
+  filterDeauthEvents,
+  scaleCostByRetailer,
+  scaleCostByMonth,
+  scaleCostBySku,
+  scaleBufferScenarios,
+  summaryFromMonthly,
+  validateBaseline,
+  deauthTotal,
+} from './utils/costEngine.js'
 import './App.css'
 
-// Lazy-load Recharts-heavy sections so they ship in a separate chunk
-// after the initial header + Section 1 paint.
 const RetailerDrilldown = lazy(() => import('./components/RetailerDrilldown.jsx'))
 const TimeSeries = lazy(() => import('./components/TimeSeries.jsx'))
 const BufferSimulation = lazy(() => import('./components/BufferSimulation.jsx'))
@@ -20,10 +32,20 @@ const SOURCES = [
   'cost_by_retailer',
   'cost_by_sku',
   'buffer_scenarios',
+  'deauthorization_events',
+  'validation',
 ]
 
 function SectionFallback() {
   return <div className="section-fallback" aria-hidden="true" />
+}
+
+function extractBaselineParams(meta) {
+  const out = {}
+  for (const [k, v] of Object.entries(meta.cost_parameters || {})) {
+    out[k] = v.value
+  }
+  return out
 }
 
 function App() {
@@ -50,6 +72,11 @@ function App() {
     return [...new Set(data.cost_by_month.map((r) => r.month))].sort()
   }, [data])
 
+  const baselineParams = useMemo(
+    () => (data ? extractBaselineParams(data.meta) : null),
+    [data],
+  )
+
   if (error) {
     return (
       <main className="page">
@@ -67,27 +94,102 @@ function App() {
   }
 
   return (
-    <TimeRangeProvider allMonths={allMonths}>
-      <Header />
+    <TimeRangeProvider allMonths={allMonths} baselineParams={baselineParams}>
+      <AppShell data={data} />
+    </TimeRangeProvider>
+  )
+}
+
+function AppShell({ data }) {
+  const {
+    params,
+    baselineParams,
+    paramsModified,
+  } = useTimeRange()
+  const [panelOpen, setPanelOpen] = useState(false)
+
+  const scaled = useMemo(() => {
+    if (!params || !baselineParams) return null
+    const ratios = getRatios(params, baselineParams)
+    const events = filterDeauthEvents(data.deauthorization_events, params)
+    const cost_by_retailer = scaleCostByRetailer(
+      data.cost_by_retailer,
+      ratios,
+      events,
+    )
+    const cost_by_month = scaleCostByMonth(data.cost_by_month, ratios)
+    const cost_by_sku = scaleCostBySku(data.cost_by_sku, ratios, events)
+    const cost_summary = summaryFromMonthly(
+      data.cost_summary,
+      cost_by_month,
+      events,
+    )
+    const baselineDeauth = data.cost_summary.find(
+      (r) => r.dimension === 'deauthorization',
+    )?.total_cost || 1
+    const filteredDeauth = deauthTotal(events)
+    const deauthScale = filteredDeauth / baselineDeauth
+    const buffer_scenarios = {
+      scenarios: scaleBufferScenarios(
+        data.buffer_scenarios.scenarios,
+        ratios,
+        deauthScale,
+      ),
+    }
+    return {
+      cost_summary,
+      cost_by_retailer,
+      cost_by_month,
+      cost_by_sku,
+      deauthorization_events: events,
+      buffer_scenarios,
+    }
+  }, [data, params, baselineParams])
+
+  // Validate JS-baseline output against validation.json on first load (and
+  // again whenever params equal baseline — the check only matters then).
+  const validation = useMemo(() => {
+    if (!scaled || paramsModified) return null
+    const result = validateBaseline(scaled.cost_summary, data.validation)
+    if (result) {
+      // eslint-disable-next-line no-console
+      console.warn('JS cost engine baseline mismatch:', result)
+    }
+    return result
+  }, [scaled, paramsModified, data.validation])
+
+  if (!scaled) return null
+
+  return (
+    <>
+      <Header
+        rightSlot={
+          <ParameterToggleButton
+            open={panelOpen}
+            onToggle={() => setPanelOpen((v) => !v)}
+            modified={paramsModified}
+          />
+        }
+      />
       <DimensionToggle />
       <main className="page">
         <CostStack
           meta={data.meta}
-          summary={data.cost_summary}
-          costByMonth={data.cost_by_month}
+          summary={scaled.cost_summary}
+          costByMonth={scaled.cost_by_month}
           ordersByMonth={data.orders_by_month}
         />
         <Suspense fallback={<SectionFallback />}>
           <RetailerDrilldown
-            costByRetailer={data.cost_by_retailer}
-            costBySku={data.cost_by_sku}
+            costByRetailer={scaled.cost_by_retailer}
+            costBySku={scaled.cost_by_sku}
           />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
-          <TimeSeries costByMonth={data.cost_by_month} />
+          <TimeSeries costByMonth={scaled.cost_by_month} />
         </Suspense>
         <Suspense fallback={<SectionFallback />}>
-          <BufferSimulation bufferScenarios={data.buffer_scenarios} />
+          <BufferSimulation bufferScenarios={scaled.buffer_scenarios} />
         </Suspense>
       </main>
       <footer className="footer">
@@ -95,10 +197,21 @@ function App() {
           Data window: {data.meta.time_window.start} to{' '}
           {data.meta.time_window.end}. Synthetic order data &mdash;
           methodology in <code>docs/cost-engine-docs.md</code>.
+          {paramsModified && (
+            <span className="footer-mod">
+              {' '}
+              Parameters modified from baseline.
+            </span>
+          )}
         </span>
         <span>Lailara LLC portfolio piece</span>
       </footer>
-    </TimeRangeProvider>
+      <ParameterPanel
+        open={panelOpen}
+        onClose={() => setPanelOpen(false)}
+        validation={validation}
+      />
+    </>
   )
 }
 

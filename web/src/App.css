@@ -17,6 +17,12 @@
   border-top: 1px solid var(--color-border);
 }
 
+.footer-mod {
+  color: #c54b4b;
+  font-weight: 600;
+  font-style: italic;
+}
+
 .footer {
   max-width: var(--size-content-max);
   margin: 0 auto;
