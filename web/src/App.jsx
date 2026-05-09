@@ -1,11 +1,16 @@
-import { useEffect, useMemo, useState } from 'react'
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
 
 import Header from './components/Header.jsx'
+import DimensionToggle from './components/DimensionToggle.jsx'
 import CostStack from './components/CostStack.jsx'
-import RetailerDrilldown from './components/RetailerDrilldown.jsx'
-import TimeSeries from './components/TimeSeries.jsx'
 import { TimeRangeProvider } from './lib/timeRange.jsx'
 import './App.css'
+
+// Lazy-load Recharts-heavy sections so they ship in a separate chunk
+// after the initial header + Section 1 paint.
+const RetailerDrilldown = lazy(() => import('./components/RetailerDrilldown.jsx'))
+const TimeSeries = lazy(() => import('./components/TimeSeries.jsx'))
+const BufferSimulation = lazy(() => import('./components/BufferSimulation.jsx'))
 
 const SOURCES = [
   'meta',
@@ -14,7 +19,12 @@ const SOURCES = [
   'orders_by_month',
   'cost_by_retailer',
   'cost_by_sku',
+  'buffer_scenarios',
 ]
+
+function SectionFallback() {
+  return <div className="section-fallback" aria-hidden="true" />
+}
 
 function App() {
   const [data, setData] = useState(null)
@@ -59,6 +69,7 @@ function App() {
   return (
     <TimeRangeProvider allMonths={allMonths}>
       <Header />
+      <DimensionToggle />
       <main className="page">
         <CostStack
           meta={data.meta}
@@ -66,11 +77,18 @@ function App() {
           costByMonth={data.cost_by_month}
           ordersByMonth={data.orders_by_month}
         />
-        <RetailerDrilldown
-          costByRetailer={data.cost_by_retailer}
-          costBySku={data.cost_by_sku}
-        />
-        <TimeSeries costByMonth={data.cost_by_month} />
+        <Suspense fallback={<SectionFallback />}>
+          <RetailerDrilldown
+            costByRetailer={data.cost_by_retailer}
+            costBySku={data.cost_by_sku}
+          />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <TimeSeries costByMonth={data.cost_by_month} />
+        </Suspense>
+        <Suspense fallback={<SectionFallback />}>
+          <BufferSimulation bufferScenarios={data.buffer_scenarios} />
+        </Suspense>
       </main>
       <footer className="footer">
         <span>

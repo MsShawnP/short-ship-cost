@@ -2,20 +2,11 @@ import { useMemo, useState } from 'react'
 
 import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
-import { useTimeRange } from '../lib/timeRange.jsx'
+import { ALL_DIMENSIONS, useTimeRange } from '../lib/timeRange.jsx'
+import PinnedCallout from './PinnedCallout.jsx'
 import styles from './RetailerDrilldown.module.css'
 
-const ALL_DIMS = [
-  'lost_revenue',
-  'deauthorization',
-  'otif_fines',
-  'chargebacks',
-  'dtc_cancellations',
-  'triage_labor',
-  'distributor_returns',
-  'dtc_margin_leakage',
-]
-
+const ALL_DIMS = ALL_DIMENSIONS
 const FILTERED_DIMS = ALL_DIMS.filter((d) => d !== 'deauthorization')
 
 // ---- Helpers ---------------------------------------------------------------
@@ -156,8 +147,6 @@ function buildSegments(row, dims, scaleW) {
 }
 
 function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
-  const [hovered, setHovered] = useState(null)
-
   if (!rows.length) {
     return (
       <p className={styles.chartFootnote}>
@@ -182,52 +171,37 @@ function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
   }
   const title = titleParts.join(' — ')
 
-  const hoveredRow = hovered ? rows.find((r) => r.retailer === hovered) : null
-  const hoveredBreakdown = hoveredRow
+  const pinnedRow = selectedRetailer
+    ? rows.find((r) => r.retailer === selectedRetailer)
+    : null
+  const pinnedBreakdown = pinnedRow
     ? dims
         .map((d) => ({
-          dim: d,
-          cost: hoveredRow[d] || 0,
+          color: DIMENSION_COLOR[d],
+          label: DIMENSION_LABEL[d],
+          value: fmtCompact(pinnedRow[d] || 0),
+          pct: fmtPct((pinnedRow[d] || 0) / pinnedRow.total),
+          raw: pinnedRow[d] || 0,
         }))
-        .filter((e) => e.cost > 0)
-        .sort((a, b) => b.cost - a.cost)
+        .filter((e) => e.raw > 0)
+        .sort((a, b) => b.raw - a.raw)
     : null
 
   return (
     <div className={styles.chartBlock}>
       <h3 className={styles.chartTitle}>{title}</h3>
       <p className={styles.chartSubtitle}>
-        {hoveredRow ? (
-          <>
-            <strong>{hoveredRow.retailer}</strong> &mdash;{' '}
-            {fmtCompact(hoveredRow.total)} (
-            {fmtPct(hoveredRow.total / grandTotal)} of all retailers). Click
-            to filter SKUs below.
-          </>
-        ) : (
-          <>
-            Cost composition by retail partner. Click a bar to filter the
-            SKU table below; hover for the dimension breakdown.
-          </>
-        )}
+        Cost composition by retail partner. Click a bar to pin its breakdown
+        and filter the SKU table.
       </p>
 
-      {hoveredBreakdown && (
-        <div className={styles.breakdownRow}>
-          {hoveredBreakdown.map((e) => (
-            <span key={e.dim} className={styles.breakdownChip}>
-              <span
-                className={styles.breakdownSwatch}
-                style={{ background: DIMENSION_COLOR[e.dim] }}
-              />
-              {DIMENSION_LABEL[e.dim]}{' '}
-              <strong>{fmtCompact(e.cost)}</strong>{' '}
-              <span className={styles.breakdownPct}>
-                ({fmtPct(e.cost / hoveredRow.total)})
-              </span>
-            </span>
-          ))}
-        </div>
+      {pinnedRow && (
+        <PinnedCallout
+          title={pinnedRow.retailer}
+          subtitle={`${fmtCompact(pinnedRow.total)} · ${fmtPct(pinnedRow.total / grandTotal)} of all retailers`}
+          breakdown={pinnedBreakdown}
+          onUnpin={() => onSelect(null)}
+        />
       )}
 
       <svg
@@ -241,8 +215,7 @@ function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
           const rowTop = TOP_PAD + i * ROW_H
           const isSelected = selectedRetailer === r.retailer
           const isDimmed = selectedRetailer !== null && !isSelected
-          const isHoveredOther = hovered !== null && hovered !== r.retailer
-          const opacity = isDimmed ? 0.3 : isHoveredOther ? 0.55 : 1
+          const opacity = isDimmed ? 0.3 : 1
 
           const scaleW = (v) => (v / maxTotal) * MAX_BAR_W
           const segs = buildSegments(r, dims, scaleW)
@@ -255,8 +228,6 @@ function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
               onClick={() =>
                 onSelect((cur) => (cur === r.retailer ? null : r.retailer))
               }
-              onMouseEnter={() => setHovered(r.retailer)}
-              onMouseLeave={() => setHovered(null)}
               opacity={opacity}
             >
               <rect
@@ -301,8 +272,8 @@ function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
 
       <p className={styles.chartFootnote}>
         Each bar is stacked by cost dimension and sized by the retailer&rsquo;s
-        total. Segment widths have a minimum display size; hover for exact
-        values.
+        total. Segment widths have a minimum display size; click any bar
+        for exact values.
       </p>
     </div>
   )
@@ -484,10 +455,15 @@ function SkuTable({
 
 export default function RetailerDrilldown({ costByRetailer, costBySku }) {
   const range = useTimeRange()
+  const { activeDims } = range
   const [selectedRetailer, setSelectedRetailer] = useState(null)
   const [sortBy, setSortBy] = useState({ key: 'total', dir: 'desc' })
 
-  const dims = range.isFiltered ? FILTERED_DIMS : ALL_DIMS
+  const baseDims = range.isFiltered ? FILTERED_DIMS : ALL_DIMS
+  const dims = useMemo(
+    () => baseDims.filter((d) => activeDims.has(d)),
+    [baseDims, activeDims],
+  )
 
   const retailerRows = useMemo(
     () => buildRetailerRows(costByRetailer, range, dims),

@@ -2,19 +2,15 @@ import { useMemo, useState } from 'react'
 
 import { DIMENSION_LABEL } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
-import { useTimeRange, filterByMonth } from '../lib/timeRange.jsx'
+import {
+  ALL_DIMENSIONS,
+  filterByMonth,
+  useTimeRange,
+} from '../lib/timeRange.jsx'
+import PinnedCallout from './PinnedCallout.jsx'
 import styles from './CostStack.module.css'
 
-const ORDER = [
-  'lost_revenue',
-  'deauthorization',
-  'otif_fines',
-  'chargebacks',
-  'dtc_cancellations',
-  'triage_labor',
-  'distributor_returns',
-  'dtc_margin_leakage',
-]
+const ORDER = ALL_DIMENSIONS
 
 const SEQUENTIAL_TEALS = {
   lost_revenue: '#0A3D3D',
@@ -118,7 +114,8 @@ function flowPath(s) {
 
 export default function CostStack({ meta, summary, costByMonth, ordersByMonth }) {
   const range = useTimeRange()
-  const [hovered, setHovered] = useState(null)
+  const { activeDims } = range
+  const [pinned, setPinned] = useState(null)
 
   // Filter by month range.
   const filteredCosts = useMemo(
@@ -134,23 +131,26 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   // cost_by_month (events are SKU/retailer-level, not monthly), so when
   // filtered we omit it and surface a note. When unfiltered we pull
   // deauth from cost_summary so the headline matches the full-period total.
-  const { dims, costsByDim, deauthFull } = useMemo(() => {
+  // Then narrow further by the user's active-dimension toggles.
+  const { dims, costsByDim, deauthFull, deauthSuppressed } = useMemo(() => {
     const byDim = {}
     for (const r of filteredCosts) {
       byDim[r.dimension] = (byDim[r.dimension] || 0) + r.cost
     }
     const deauthRow = summary.find((r) => r.dimension === 'deauthorization')
     const deauthFull = deauthRow ? deauthRow.total_cost : 0
+    let availableDims
     if (range.isFiltered) {
-      return {
-        dims: ORDER.filter((d) => d !== 'deauthorization'),
-        costsByDim: byDim,
-        deauthFull,
-      }
+      availableDims = ORDER.filter((d) => d !== 'deauthorization')
+    } else {
+      byDim.deauthorization = deauthFull
+      availableDims = ORDER
     }
-    byDim.deauthorization = deauthFull
-    return { dims: ORDER, costsByDim: byDim, deauthFull }
-  }, [filteredCosts, summary, range.isFiltered])
+    const dims = availableDims.filter((d) => activeDims.has(d))
+    const deauthSuppressed =
+      availableDims.includes('deauthorization') && !activeDims.has('deauthorization')
+    return { dims, costsByDim: byDim, deauthFull, deauthSuppressed }
+  }, [filteredCosts, summary, range.isFiltered, activeDims])
 
   const { segs, total } = useMemo(
     () => buildLayout(costsByDim, dims),
@@ -170,13 +170,16 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   const pctOfShipped = shipped > 0 ? total / shipped : 0
   const pctOfMargin = estMargin > 0 ? total / estMargin : 0
 
-  const hoveredSeg = hovered ? segs.find((s) => s.key === hovered) : null
+  const activeSeg = pinned ? segs.find((s) => s.key === pinned) : null
   const totalCenterY = BAR_Y + BAR_H / 2
 
   const opacityFor = (key, baseActive, baseDimmed, baseDefault) => {
-    if (hovered === null) return baseDefault
-    return hovered === key ? baseActive : baseDimmed
+    if (pinned === null || pinned === undefined) return baseDefault
+    return pinned === key ? baseActive : baseDimmed
   }
+
+  const togglePin = (key) =>
+    setPinned((prev) => (prev === key ? null : key))
 
   const periodLabel = range.isFiltered
     ? `${range.startMonth} to ${range.endMonth}`
@@ -205,20 +208,18 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
           the business cannot see
         </h2>
         <p className={styles.chartSubtitle}>
-          {hoveredSeg ? (
-            <>
-              <strong>{hoveredSeg.label}</strong> &mdash;{' '}
-              {fmtCompact(hoveredSeg.value)} ({fmtPct(hoveredSeg.value / total)}{' '}
-              of period total)
-            </>
-          ) : (
-            <>
-              The {fmtCompact(total)} {range.isFiltered ? 'period' : 'total'}{' '}
-              flows into {dims.length} cost dimensions. Hover any block for
-              details.
-            </>
-          )}
+          The {fmtCompact(total)} {range.isFiltered ? 'period' : 'total'}{' '}
+          flows into {dims.length} cost dimensions. Click any block to pin
+          its details.
         </p>
+
+        {pinned && activeSeg && (
+          <PinnedCallout
+            title={activeSeg.label}
+            subtitle={`${fmtCompact(activeSeg.value)} · ${fmtPct(activeSeg.value / total)} of period`}
+            onUnpin={() => setPinned(null)}
+          />
+        )}
 
         <svg
           className={styles.svg}
@@ -258,8 +259,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
               d={flowPath(s)}
               fill={s.color}
               fillOpacity={opacityFor(s.key, 1, 0.2, 1)}
-              onMouseEnter={() => setHovered(s.key)}
-              onMouseLeave={() => setHovered(null)}
+              onClick={() => togglePin(s.key)}
             />
           ))}
 
@@ -269,8 +269,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
               <g
                 key={`r-${s.key}`}
                 className={`${styles.hoverGroup} ${styles.dimmable}`}
-                onMouseEnter={() => setHovered(s.key)}
-                onMouseLeave={() => setHovered(null)}
+                onClick={() => togglePin(s.key)}
                 opacity={opacity}
               >
                 <rect
@@ -329,7 +328,15 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
               simulation is also full-period only.
             </>
           )}
+          {deauthSuppressed && !range.isFiltered && (
+            <>
+              {' '}
+              Deauthorization ({fmtCompact(deauthFull)}) is excluded by the
+              dimension toggle.
+            </>
+          )}
         </p>
+
       </div>
 
       <div className={styles.benchmarks}>

@@ -1,22 +1,22 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import {
   AreaChart,
   Area,
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   ResponsiveContainer,
 } from 'recharts'
 
 import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
-import { fmtCompact } from '../lib/format.js'
+import { fmtCompact, fmtPct } from '../lib/format.js'
 import { useTimeRange, formatMonthLabel } from '../lib/timeRange.jsx'
+import PinnedCallout from './PinnedCallout.jsx'
 import styles from './TimeSeries.module.css'
 
 // cost_by_month covers 7 dimensions — deauthorization is event-level only
 // (no monthly attribution), per docs/cost-engine-docs.md.
-const MONTHLY_DIMS = [
+const ALL_MONTHLY_DIMS = [
   'lost_revenue',
   'otif_fines',
   'chargebacks',
@@ -48,15 +48,17 @@ const PAD_KEY = (d) => `_p_${d}`
 // purpose is showing the *trend*, not exact monthly totals.
 const MIN_LAYER_FRACTION = 0.04
 
-function buildMonthlyData(costByMonth, range) {
+function buildMonthlyData(costByMonth, range, dims) {
+  const dimSet = new Set(dims)
   const map = new Map()
   for (const r of costByMonth) {
     if (range.isFiltered) {
       if (r.month < range.startMonth || r.month > range.endMonth) continue
     }
+    if (!dimSet.has(r.dimension)) continue
     if (!map.has(r.month)) {
       const init = { month: r.month, label: fmtShortMonth(r.month), total: 0 }
-      for (const d of MONTHLY_DIMS) init[d] = 0
+      for (const d of dims) init[d] = 0
       map.set(r.month, init)
     }
     const row = map.get(r.month)
@@ -73,7 +75,7 @@ function buildMonthlyData(costByMonth, range) {
   const peakTotal = rows.reduce((max, r) => (r.total > max ? r.total : max), 0)
   const minDollar = peakTotal * MIN_LAYER_FRACTION
   for (const row of rows) {
-    for (const d of MONTHLY_DIMS) {
+    for (const d of dims) {
       const real = row[d]
       row[PAD_KEY(d)] = real > 0 ? Math.max(real, minDollar) : 0
     }
@@ -111,39 +113,19 @@ function buildTitle(rows, range) {
   return 'The cost of shorts held steady — the business never saw it'
 }
 
-function ChartTooltip({ active, payload, label }) {
-  if (!active || !payload || !payload.length) return null
-  const row = payload[0].payload
-  return (
-    <div className={styles.tooltip}>
-      <div className={styles.tooltipMonth}>{formatMonthLabel(row.month)}</div>
-      <div className={styles.tooltipTotal}>Total: {fmtCompact(row.total)}</div>
-      {MONTHLY_DIMS
-        .map((d) => ({ dim: d, cost: row[d] || 0 }))
-        .filter((e) => e.cost > 0)
-        .sort((a, b) => b.cost - a.cost)
-        .map((e) => (
-          <div key={e.dim} className={styles.tooltipRow}>
-            <span>
-              <span
-                className={styles.tooltipSwatch}
-                style={{ background: DIMENSION_COLOR[e.dim] }}
-              />
-              {DIMENSION_LABEL[e.dim]}
-            </span>
-            <span>{fmtCompact(e.cost)}</span>
-          </div>
-        ))}
-    </div>
-  )
-}
-
 export default function TimeSeries({ costByMonth }) {
   const range = useTimeRange()
+  const { activeDims } = range
+  const [pinned, setPinned] = useState(null) // 'YYYY-MM' or null
+
+  const dims = useMemo(
+    () => ALL_MONTHLY_DIMS.filter((d) => activeDims.has(d)),
+    [activeDims],
+  )
 
   const data = useMemo(
-    () => buildMonthlyData(costByMonth, range),
-    [costByMonth, range],
+    () => buildMonthlyData(costByMonth, range, dims),
+    [costByMonth, range, dims],
   )
 
   const stats = useMemo(() => {
@@ -181,9 +163,32 @@ export default function TimeSeries({ costByMonth }) {
       <div className={styles.chartBlock}>
         <h3 className={styles.chartTitle}>{title}</h3>
         <p className={styles.chartSubtitle}>
-          Stacked monthly cost across the seven dimensions with monthly
-          attribution. Hover any month for the full breakdown.
+          Stacked monthly cost across {dims.length} dimensions. Click any
+          month to pin its breakdown.
         </p>
+
+        {pinned && (() => {
+          const row = data.find((r) => r.month === pinned)
+          if (!row) return null
+          const breakdown = dims
+            .map((d) => ({
+              color: DIMENSION_COLOR[d],
+              label: DIMENSION_LABEL[d],
+              value: fmtCompact(row[d] || 0),
+              pct: fmtPct((row[d] || 0) / Math.max(row.total, 1)),
+              raw: row[d] || 0,
+            }))
+            .filter((e) => e.raw > 0)
+            .sort((a, b) => b.raw - a.raw)
+          return (
+            <PinnedCallout
+              title={formatMonthLabel(row.month)}
+              subtitle={`Total ${fmtCompact(row.total)}`}
+              breakdown={breakdown}
+              onUnpin={() => setPinned(null)}
+            />
+          )
+        })()}
 
         {data.length === 0 ? (
           <p className={styles.chartFootnote}>
@@ -195,6 +200,13 @@ export default function TimeSeries({ costByMonth }) {
               <AreaChart
                 data={data}
                 margin={{ top: 16, right: 24, bottom: 16, left: 8 }}
+                onClick={(state) => {
+                  if (state?.activePayload?.length) {
+                    const m = state.activePayload[0].payload.month
+                    setPinned((prev) => (prev === m ? null : m))
+                  }
+                }}
+                style={{ cursor: 'pointer' }}
               >
                 <CartesianGrid
                   stroke="var(--color-gridline)"
@@ -222,11 +234,7 @@ export default function TimeSeries({ costByMonth }) {
                   axisLine={false}
                   width={56}
                 />
-                <Tooltip
-                  content={<ChartTooltip />}
-                  cursor={{ stroke: 'var(--color-text)', strokeWidth: 1 }}
-                />
-                {MONTHLY_DIMS.map((dim) => (
+                {dims.map((dim) => (
                   <Area
                     key={dim}
                     type="monotone"
@@ -248,7 +256,7 @@ export default function TimeSeries({ costByMonth }) {
           Source: Cinderhaven Provisions synthetic order data. Deauthorization
           is omitted because the underlying events are SKU- and
           retailer-level, not monthly. Layer heights have a minimum display
-          size; hover for exact values.
+          size; click any month for exact values.
         </p>
       </div>
 

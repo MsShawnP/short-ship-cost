@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from 'react'
+import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 
 const TimeRangeContext = createContext(null)
 
@@ -10,6 +10,17 @@ export const PRESETS = [
   { id: 'custom', label: 'Custom range', monthsBack: null },
 ]
 
+export const ALL_DIMENSIONS = [
+  'lost_revenue',
+  'deauthorization',
+  'otif_fines',
+  'chargebacks',
+  'dtc_cancellations',
+  'triage_labor',
+  'distributor_returns',
+  'dtc_margin_leakage',
+]
+
 export function TimeRangeProvider({ allMonths, children }) {
   const firstMonth = allMonths[0]
   const lastMonth = allMonths[allMonths.length - 1]
@@ -17,6 +28,7 @@ export function TimeRangeProvider({ allMonths, children }) {
   const [preset, setPreset] = useState('full')
   const [customStart, setCustomStart] = useState(firstMonth)
   const [customEnd, setCustomEnd] = useState(lastMonth)
+  const [activeDims, setActiveDims] = useState(() => new Set(ALL_DIMENSIONS))
 
   const range = useMemo(() => {
     if (preset === 'full') {
@@ -43,6 +55,19 @@ export function TimeRangeProvider({ allMonths, children }) {
     }
   }, [preset, customStart, customEnd, allMonths, firstMonth, lastMonth])
 
+  const toggleDim = useCallback((dim) => {
+    setActiveDims((prev) => {
+      const next = new Set(prev)
+      if (next.has(dim)) next.delete(dim)
+      else next.add(dim)
+      return next
+    })
+  }, [])
+
+  const resetDims = useCallback(() => {
+    setActiveDims(new Set(ALL_DIMENSIONS))
+  }, [])
+
   const value = {
     ...range,
     preset,
@@ -52,6 +77,9 @@ export function TimeRangeProvider({ allMonths, children }) {
     setCustomStart,
     setCustomEnd,
     allMonths,
+    activeDims,
+    toggleDim,
+    resetDims,
   }
 
   return (

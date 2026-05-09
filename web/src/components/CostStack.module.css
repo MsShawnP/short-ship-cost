@@ -133,6 +133,90 @@
   font-style: italic;
 }
 
+.subtitleClear {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.subtitleClear:hover {
+  color: var(--color-text);
+}
+
+.pinnedDetail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+}
+
+.pinnedDetailHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pinnedDetailLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.pinnedDetailSwatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+.pinnedDetailValue {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.pinnedDetailClose {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: var(--font-sans);
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.pinnedDetailClose:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.pinnedDetailDesc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text);
+  line-height: 1.45;
+  margin: 0;
+}
+
 /* ---------- Benchmarks ---------- */
 
 .benchmarks {
