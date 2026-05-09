@@ -40,6 +40,23 @@
   padding: 10px 12px;
 }
 
+.staircaseBlock {
+  display: contents;
+}
+
+@media print {
+  .staircaseBlock {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .tableBlock {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+
 /* ---------- Staircase chart ---------- */
 
 .chartBlock {

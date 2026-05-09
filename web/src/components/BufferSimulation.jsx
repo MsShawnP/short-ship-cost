@@ -202,6 +202,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         </div>
       )}
 
+      <div className={styles.staircaseBlock}>
       <div className={styles.chartBlock}>
         <h3 className={styles.chartTitle}>{title}</h3>
         <p className={styles.chartSubtitle}>
@@ -339,6 +340,7 @@ export default function BufferSimulation({ bufferScenarios }) {
           </p>
         </div>
       )}
+      </div>
 
       <RecoveryTable scenarios={scenarios} activeDims={activeDims} />
     </section>

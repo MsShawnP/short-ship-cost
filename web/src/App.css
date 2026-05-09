@@ -49,39 +49,168 @@
   font-family: var(--font-sans);
 }
 
+/* Print metadata strip — visible only in print, sits below the header. */
+.print-meta {
+  display: none;
+}
+
+/* ---------- Print ---------------------------------------------------- */
+
+@page {
+  size: letter;
+  margin: 0.6in 0.5in 0.7in;
+
+  @bottom-left {
+    content: 'Cost of Short-Shipping Analysis — Cinderhaven Provisions';
+    font-family: 'Source Sans 3', 'Source Sans Pro', Helvetica, Arial,
+      sans-serif;
+    font-size: 9pt;
+    color: #555;
+  }
+  @bottom-right {
+    content: 'Page ' counter(page);
+    font-family: 'Source Sans 3', 'Source Sans Pro', Helvetica, Arial,
+      sans-serif;
+    font-size: 9pt;
+    color: #555;
+  }
+}
+
 @media print {
+  /* Disable any animations/transitions that could affect print rendering. */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
   :root,
+  html,
   body {
     background: #ffffff !important;
     color: #000000 !important;
+  }
+
+  body {
+    font-size: 11pt;
   }
 
   .no-print {
     display: none !important;
   }
 
+  /* Header: keep brand block, drop the controls row. */
+  header[class*='Header_header'] {
+    border-bottom: 1px solid #000;
+    padding: 0 0 12px;
+    margin: 0 0 16px;
+  }
+
+  header[class*='Header_header'] > div:last-child {
+    display: none;
+  }
+
+  /* Print metadata strip: date generated + parameter state. */
+  .print-meta {
+    display: block;
+    font-family: 'Source Sans 3', 'Source Sans Pro', Helvetica, Arial,
+      sans-serif;
+    font-size: 9pt;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+
+  .print-meta-modified {
+    color: #c54b4b;
+    font-weight: 600;
+  }
+
   .page {
     max-width: none;
     margin: 0;
-    padding: 0.5in;
+    padding: 0;
   }
 
   .footer {
     display: none;
   }
 
-  section {
+  /* Section breaks. CostStack is the first section; subsequent sections
+     start on a new page so each "Where the pain lands", "The trend",
+     "What recovery looks like" gets a clean header. */
+  main > section {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  .recharts-responsive-container {
-    width: 100% !important;
-    height: 100% !important;
+  main > section + section {
+    break-before: page;
+    page-break-before: always;
   }
-}
 
-@page {
-  size: letter;
-  margin: 0.5in;
+  /* Charts must not split across pages. */
+  div[class*='chartContainer'],
+  div[class*='chart_'],
+  svg {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* SVGs scale to page width without distortion. */
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Recharts wrapper still needs full width in print. */
+  .recharts-responsive-container,
+  .recharts-wrapper {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* SKU table: repeat header row on every page. */
+  table {
+    page-break-inside: auto;
+    border-collapse: collapse;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  /* The "Top products by cost" block (SkuTable in Section 2) starts on a
+     fresh page so it doesn't split awkwardly after the retailer chart. */
+  .print-break-before {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* No scrollbars in print. */
+  div[class*='tableScroll'] {
+    overflow: visible !important;
+  }
+
+  /* Pinned callout cards (dark cards) are interactive UI — drop them. */
+  div[class*='PinnedCallout'] {
+    display: none !important;
+  }
+
+  /* Remove "click to pin" instructional copy in chart subtitles. The
+     subtitles still render — just trim the trailing instructions via
+     the inline render path. (Handled at the JSX level where applicable.) */
+
+  /* The Section 1 flow chart: cap height so it fits a letter page. */
+  div[class*='CostStack_chart'] svg {
+    max-height: 4.4in;
+  }
+
+  /* Section 4 staircase: plenty of vertical room — leave alone. */
 }

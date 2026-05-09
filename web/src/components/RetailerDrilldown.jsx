@@ -321,7 +321,7 @@ function SkuTable({
     sortBy.key === key ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''
 
   return (
-    <div className={styles.tableBlock}>
+    <div className={`${styles.tableBlock} print-break-before`}>
       <div className={styles.tableHead}>
         <h3 className={styles.tableTitle}>Top products by cost</h3>
       </div>

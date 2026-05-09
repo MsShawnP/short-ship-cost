@@ -160,6 +160,19 @@ function AppShell({ data }) {
 
   if (!scaled) return null
 
+  const printMeta = useMemo(() => {
+    const generated = new Date(data.meta.last_updated).toLocaleDateString(
+      'en-US',
+      { year: 'numeric', month: 'long', day: 'numeric' },
+    )
+    const modifiedKeys = paramsModified
+      ? Object.keys(baselineParams || {}).filter(
+          (k) => params[k] !== baselineParams[k],
+        )
+      : []
+    return { generated, modifiedKeys }
+  }, [data.meta.last_updated, params, baselineParams, paramsModified])
+
   return (
     <>
       <Header
@@ -172,6 +185,18 @@ function AppShell({ data }) {
         }
       />
       <DimensionToggle />
+      <div className="print-meta">
+        Generated {printMeta.generated} &middot; Data window{' '}
+        {data.meta.time_window.start} to {data.meta.time_window.end}.{' '}
+        {paramsModified ? (
+          <span className="print-meta-modified">
+            Parameters modified from baseline:{' '}
+            {printMeta.modifiedKeys.join(', ')}.
+          </span>
+        ) : (
+          <span>Baseline parameters.</span>
+        )}
+      </div>
       <main className="page">
         <CostStack
           meta={data.meta}
