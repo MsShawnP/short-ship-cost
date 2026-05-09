@@ -428,3 +428,35 @@ sections cleanly, includes a footer with date and parameter
 modifications snapshot.
 
 ---
+
+## 2026-05-08 21:06
+
+**What changed:** PLAN arc-2 task 9 done — print CSS in `App.css`
+plus structural tweaks: per-page footer via `@page @bottom-left/right`
+(brand text + page counter), section page breaks, staircase + cliff
+kept together via wrapper, "Top products by cost" forced to a fresh
+page using a global `.print-break-before` class. Header print
+handler swaps `document.title` for a clean PDF filename and toggles
+a `.printing` body class. Commit `b2d8e13` pushed.
+
+**Why:** PDF export is what makes the tool client-shareable. Without
+clean pagination it reads as a screen capture, not a document.
+
+**State:** Working — `npm run build` clean. Print CSS hides
+parameter panel, dim toggles, filter bar, print button, dark
+pinned-callout cards, and "click to pin" instructional text. Print
+metadata strip shows generation date + parameter state (lists which
+params changed when modified). All four sections paginate; charts
+stay together (`break-inside: avoid`); SKU table header repeats on
+continuation pages (`thead { display: table-header-group }`).
+`@page` rule sets letter / 0.6"-margin / running footer with brand
++ page counter. Sub-pixel limitation of `[class*='Module_xxx']`
+selectors discovered (CSS-modules hash format isn't stable) and
+worked around with global `.print-break-before` class. Untouched:
+arc-2 tasks 10-11 (polish, Netlify deploy).
+
+**Next:** Task 10 — polish pass. Walk each section, fix loading
+states, edge cases, accessibility basics, final visual tuning.
+Then task 11 — Netlify deploy with README link.
+
+---
