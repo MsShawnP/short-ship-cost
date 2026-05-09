@@ -4,7 +4,7 @@ An interactive analysis of what it costs a specialty food business
 when it cannot fulfill retail partner orders as submitted — and why
 the true cost is invisible when the original order is overwritten.
 
-**[View the live tool →](https://short-ship-cost.netlify.app)**
+**[View the live tool →](https://short-ship-cost.msshawnp.workers.dev)**
 
 ## What this is
 
@@ -69,7 +69,7 @@ ships $52M. The demand it cannot see is $70M+.
   no API
 - **Cost engine (browser)** — JS implementation scaling aggregates
   by parameter ratios, validated against Python output
-- **Hosting** — Netlify (static site)
+- **Hosting** — Cloudflare Pages (static site)
 - **Typography** — Playfair Display + Source Sans 3
 
 ## Repository structure
