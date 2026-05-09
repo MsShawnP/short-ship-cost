@@ -28,43 +28,43 @@ visible?
 
 ## Tasks
 
-- [ ] Set up React project scaffolding — Vite + React, basic folder
+- [x] Set up React project scaffolding — Vite + React, basic folder
       structure, Netlify config, deploy an empty shell to confirm the
       pipeline works end-to-end (local → GitHub → Netlify → live URL).
       Include a print compatibility spike: render one SVG chart
       (Recharts), print to PDF, confirm it doesn't break before
       building all sections.
-- [ ] Build the JSON export script — Python script that reads all
+- [x] Build the JSON export script — Python script that reads all
       three DBs and outputs the JSON files the React app consumes.
       Pre-aggregate data: the React app gets summary-level data for
       rendering, not raw order lines. Include a `meta` object carrying
       last-updated date and the cost_parameters used. Output a
       `validation.json` with known totals per dimension so the JS
       math can be tested against the Python output.
-- [ ] Design the page structure and visual language — wireframe the
+- [x] Design the page structure and visual language — wireframe the
       single scrollable page: what sections exist, what order, what
       charts go where. Establish typography, color palette, and chart
       style (Economist-inspired). This is a design task, not a code
       task — output is a documented spec the build tasks reference.
-- [ ] Build Section 1: Headline cost stack — the $25.6M total,
+- [x] Build Section 1: Headline cost stack — the $25.6M total,
       eight-dimension breakdown, "your business thinks it shipped $X
       but the true cost of shorts is $Y" framing. Include contextual
       benchmark: total cost as % of shipped revenue, as % of estimated
       gross margin. Key chart: stacked bar or waterfall showing base
       lost revenue + cascading costs.
-- [ ] Build Section 2: Retailer and SKU drill-down — filterable
+- [x] Build Section 2: Retailer and SKU drill-down — filterable
       views by retailer and SKU. Show which retailers bear the most
       cost, which SKUs are most shorted, where deauthorization events
       cluster. Use pre-grouped data (top contributors, not all 90
       SKUs). Key charts: heatmap or bar charts by retailer × dimension,
       top-N SKU table.
-- [ ] Build Section 3: Time series — monthly cost trends across the
+- [x] Build Section 3: Time series — monthly cost trends across the
       18–24 month window. Show whether the problem is getting worse.
       Key chart: line or area chart by dimension over time.
-- [ ] Build Section 4: Buffer simulation — the staircase chart. Show
+- [x] Build Section 4: Buffer simulation — the staircase chart. Show
       cost recovery at 80/85/90/95% fill rates. Highlight the
       deauthorization cliff at 90%. Let users see what they'd save.
-- [ ] Build parameter adjustment panel — let users modify fine rates,
+- [x] Build parameter adjustment panel — let users modify fine rates,
       thresholds (including deauthorization thresholds — both retailer
       velocity thresholds and distributor fill rate threshold, so users
       can drag the 90% distributor threshold and watch the deauth cliff
@@ -75,7 +75,7 @@ visible?
       defaults. Use React Context + hooks for state management, with
       useMemo on cost calculations to avoid UI stutter during slider
       interaction.
-- [ ] Build print CSS export — @media print stylesheet that reformats
+- [x] Build print CSS export — @media print stylesheet that reformats
       the page into an Economist-style document. Clean typography,
       sharp SVG charts, proper page breaks between sections. Triggered
       by a button that calls window.print(). Include a print mode that

@@ -54,6 +54,11 @@ Each entry:
 - **Scope:** Data pipeline from cost engine to interactive tool
 - **Do not:** Load SQLite files in the browser or build a backend API.
 
+### 2026-05-08 — Browser-side parameter overrides operate by ratio scaling on pre-aggregated JSON, not by re-running the cost engine
+- **Why:** The Python cost engine reads from `short_ship_orders.db` (22 MB) — too big for the browser. To make the parameter sliders responsive, `web/src/utils/costEngine.js` derives per-(dimension, retailer) ratios from `params / baseline_params` and multiplies the pre-aggregated JSON aggregates. Deauthorization is the exception: it filters `deauthorization_events.json` by the user's threshold settings. Buffer scenarios use ratio scaling for the scenario-by-dimension breakdowns.
+- **Scope:** `ParameterPanel` recompute path
+- **Do not:** Ship the orders DB to the browser. Do not attempt to re-run the cost engine in JS over raw order lines. When a new parameter is added, decide upfront whether it's ratio-scalable; if not (e.g., a velocity threshold being *raised*), document the limitation rather than bolt on a new data shape.
+
 ### 2026-05-08 — Host on Netlify
 - **Why:** Zero-config for React apps, auto-detects build command, instant deploys from GitHub, free tier generous. Less friction than GitHub Pages for a Vite + React project.
 - **Scope:** Deployment
@@ -86,6 +91,16 @@ Each entry:
 - **Why:** SVG-based (critical for print CSS — renders as vectors, not rasterized canvas). React-native component API. Print compatibility spike in task 1 confirms it works before building all sections.
 - **Scope:** All charts in the interactive tool
 - **Do not:** Use Chart.js or other canvas-based charting libraries.
+
+### 2026-05-08 — Click-to-pin (no hover tooltips) is the canonical chart interaction
+- **Why:** Hover tooltips disappear when the mouse leaves; users want to read the breakdown at length, talk about it, hand the screen off. Click-to-pin keeps the detail visible. Dark `PinnedCallout` card above each chart unifies the pattern; dimming on non-selected items reinforces the focus.
+- **Scope:** All charts across all sections
+- **Do not:** Add hover tooltips. Do not put pinned details inline below the chart (they get lost). Do not vary the callout style per section.
+
+### 2026-05-08 — Sequential teal palette by magnitude rank for cost dimensions
+- **Why:** A categorical palette assigns colors by *type* (lost-revenue=navy, deauth=red), but eight categorical hues compete for attention. Sequential teal (`#0A3D3D` darkest → `#BDEEE8` lightest) sorted by dimension magnitude communicates the hierarchy at a glance and lets the same dimension read identically across every section. Documented in `docs/design-spec.md` and centralized in `web/src/lib/dimensions.js`.
+- **Scope:** All charts and tables in the interactive tool
+- **Do not:** Reintroduce the categorical navy/red/gray palette. Do not assign a brand color (e.g., red) to a single dimension — palette ordering is by magnitude, not by meaning.
 
 ---
 

@@ -67,4 +67,40 @@ quarto" or "scope, scrollytelling, decoration"]
 
 **Tags:** generator, sku-selection, costco, velocity-weighting
 
+### 2026-05-08 — Section 1 chart form took five iterations to land on flow-split
+
+**Attempted:** Started with a Recharts waterfall (stacked bars + invisible spacers) showing all 8 dimensions cumulatively building to the $25.6M total. Then a two-tier layout splitting "the gap you knew about" (lost revenue) from "the costs you didn't" (cascading). Then a single horizontal stacked bar with all 8 dimensions, with sequential blue palette and an outside legend. Then a vertical stacked bar with y-axis dollar scale and fan-out leader lines for clustered small dimensions.
+
+**Why it didn't work:** Lost revenue is ~73% of the total and deauthorization is another ~23%, so the remaining 6 dimensions live in the last few pixels of any proportional chart. Waterfall: the 90%+ dim was so dominant the smaller bars looked like noise. Two-tier: visually separated lost revenue from cascading costs but felt like two disconnected charts. Horizontal stacked bar: thin slivers on the right edge weren't readable even with an outside legend. Vertical stack: leader-line fan-out for sub-pixel segments was inherently chaotic.
+
+**What we tried instead:** A custom-SVG flow-split: a single navy "Total" block on the left, eight right-side blocks (each at minimum 20px height for readability), and Sankey-style curves connecting them. Block heights aren't strictly proportional for the smallest dimensions — accepted as an honest tradeoff and footnoted. Click-to-pin shows exact values. This is what shipped.
+
+**Status:** Resolved (flow-split is the production form)
+
+**Tags:** visualization, iteration, section-1, flow-chart, sankey
+
+### 2026-05-08 — CSS modules hash format isn't stable enough for cross-module print rules
+
+**Attempted:** Used `[class*='RetailerDrilldown_tableBlock']` attribute selectors in `App.css` print rules to force "Top products by cost" onto a new printed page, expecting CSS modules to namespace-mangle classes as `ComponentName_localName_hash`.
+
+**Why it didn't work:** Vite's CSS modules hash format isn't reliably `ComponentName_localName_hash`. The selectors didn't match in production builds, so the page-break rule silently did nothing. Tested in print preview, still no break — flagged by user after second attempt didn't take.
+
+**What we tried instead:** Added a global `.print-break-before` class (declared in `App.css`, not module-scoped) and applied it directly via JSX: `className={`${styles.tableBlock} print-break-before`}`. Same approach for the staircase-block grouping in BufferSimulation: explicit class names in `print-*` namespace. Print page breaks now apply reliably.
+
+**Status:** Resolved
+
+**Tags:** print-css, css-modules, vite, page-break
+
+### 2026-05-08 — Buffer scenario deauth recalc on threshold change is approximate
+
+**Attempted:** When the user changes the distributor fill rate threshold via the parameter panel, ideally the buffer simulation's deauth values for each scenario (80/85/90/95% fill) should be recomputed exactly: which events get avoided at each scenario depends on the new threshold. Original Python simulation has per-scenario per-event recovery flags (`buffer_deauth_recovery` table).
+
+**Why it didn't work:** The buffer simulation requires per-event monthly fill data and the per-scenario simulated retail/distributor lift, neither of which is in the JSON we ship to the browser. Replicating it would either require shipping the orders DB (22 MB, not viable) or pre-computing buffer scenarios for every possible threshold value.
+
+**What we tried instead:** Approximate via ratio scaling: `deauth_scale = filtered_total / baseline_total` where filtered = events that still trigger at the new threshold. Each scenario's by_dimension deauth value is multiplied by this scale. This preserves the cliff shape qualitatively but isn't exactly right when the threshold change moves the cliff position. Documented as a known approximation in code comments and accepted.
+
+**Status:** Worked-around, not fixed (would require additional pre-computed data)
+
+**Tags:** cost-engine, approximations, buffer-simulation, parameter-panel, deauthorization
+
 ---

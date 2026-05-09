@@ -460,3 +460,32 @@ states, edge cases, accessibility basics, final visual tuning.
 Then task 11 — Netlify deploy with README link.
 
 ---
+
+## 2026-05-08 21:08 — wrap
+
+**Started from:** Arc 2 just defined; nothing built. PLAN.md
+arc-2 listed 11 tasks.
+
+**Did:** Built tasks 1-9 of arc-2 in one extended session: Vite +
+React scaffold, JSON export with monthly granularity, design spec,
+Section 1 (custom-SVG flow chart, ~5 form iterations to land on
+flow-split), Section 2 (retailer + SKU heatmap), Section 3
+(stacked area), Section 4 (buffer staircase + cliff callout).
+Cross-cutting: global time-range filter (preset + custom),
+extended cost-engine `aggregate_breakdowns` for retailer × month
+and sku × month, shared dark `PinnedCallout` for click-to-pin
+across all charts (no hover tooltips), global dimension-exclude
+chips, React.lazy code-split (Recharts now lazy 371 KB),
+parameter sidebar + JS scaling cost engine, print CSS with
+paginated sections + repeating footer.
+
+**State:** 9/11 arc-2 tasks complete. App live in dev mode at
+:5178. Bundle 218 KB initial / 371 KB Recharts lazy. JS validation
+matches `validation.json` baseline. Netlify config in place but
+**not yet deployed**.
+
+**Next:** Task 10 — polish pass (loading states, accessibility,
+edge cases, visual tuning). Then task 11 — Netlify deploy + README
+link.
+
+---
