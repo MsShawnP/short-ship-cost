@@ -4,11 +4,96 @@
   padding: 48px 24px var(--size-section-gap);
 }
 
-.status {
+.statusBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  padding: 64px 0 96px;
   font-family: var(--font-sans);
+  color: var(--color-text);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.statusTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.statusBody {
+  font-family: var(--font-sans);
+  font-size: 14px;
   color: var(--color-text-secondary);
-  text-align: center;
-  padding: 96px 0;
+  margin: 0;
+}
+
+.statusRetry {
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--color-navy);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.statusRetry:hover {
+  background: #14304b;
+}
+
+.statusSkeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skelLineLg,
+.skelLineMd,
+.skelChart {
+  background: linear-gradient(
+    90deg,
+    var(--color-gridline) 0%,
+    #efeae0 50%,
+    var(--color-gridline) 100%
+  );
+  background-size: 200% 100%;
+  animation: skelPulse 1.4s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+.skelLineLg {
+  height: 56px;
+  width: 60%;
+}
+
+.skelLineMd {
+  height: 18px;
+  width: 80%;
+}
+
+.skelChart {
+  height: 280px;
+  margin-top: 16px;
+}
+
+@keyframes skelPulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skelLineLg,
+  .skelLineMd,
+  .skelChart {
+    animation: none;
+  }
 }
 
 .section-fallback {
@@ -32,8 +117,9 @@
   font-size: 12px;
   color: var(--color-text-secondary);
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 24px;
+  gap: 12px 24px;
 }
 
 .footer code {

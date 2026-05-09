@@ -79,16 +79,33 @@ function App() {
 
   if (error) {
     return (
-      <main className="page">
-        <p className="status">Failed to load data: {error.message}</p>
+      <main className="page" role="alert">
+        <div className="statusBlock">
+          <p className="statusTitle">Could not load analysis data</p>
+          <p className="statusBody">{error.message}</p>
+          <button
+            type="button"
+            className="statusRetry"
+            onClick={() => window.location.reload()}
+          >
+            Reload
+          </button>
+        </div>
       </main>
     )
   }
 
   if (!data) {
     return (
-      <main className="page">
-        <p className="status">Loading&hellip;</p>
+      <main className="page" aria-busy="true" aria-live="polite">
+        <div className="statusBlock">
+          <div className="statusSkeleton" aria-hidden="true">
+            <div className="skelLineLg" />
+            <div className="skelLineMd" />
+            <div className="skelChart" />
+          </div>
+          <p className="statusBody">Loading analysis&hellip;</p>
+        </div>
       </main>
     )
   }
@@ -152,13 +169,10 @@ function AppShell({ data }) {
     if (!scaled || paramsModified) return null
     const result = validateBaseline(scaled.cost_summary, data.validation)
     if (result) {
-      // eslint-disable-next-line no-console
       console.warn('JS cost engine baseline mismatch:', result)
     }
     return result
   }, [scaled, paramsModified, data.validation])
-
-  if (!scaled) return null
 
   const printMeta = useMemo(() => {
     const generated = new Date(data.meta.last_updated).toLocaleDateString(
@@ -172,6 +186,8 @@ function AppShell({ data }) {
       : []
     return { generated, modifiedKeys }
   }, [data.meta.last_updated, params, baselineParams, paramsModified])
+
+  if (!scaled) return null
 
   return (
     <>

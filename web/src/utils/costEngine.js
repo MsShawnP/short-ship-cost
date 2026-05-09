@@ -9,12 +9,19 @@
  * threshold settings, which can shift which (sku, retailer) pairs trigger.
  */
 
-const REGIONAL_KEYS = new Set(['Regional'])
-const WALMART_COSTCO = new Set(['Walmart', 'Costco'])
-
 function safeRatio(a, b) {
-  if (!b || b === 0) return 1
-  return a / b
+  if (!Number.isFinite(a) || !Number.isFinite(b) || b === 0) return 1
+  const r = a / b
+  if (!Number.isFinite(r) || r < 0) return 0
+  return r
+}
+
+// Final clamp before a cost value reaches the UI: kill non-finite values
+// and prevent negatives. Costs are inherently non-negative; if a parameter
+// combination would push one negative, the floor is zero.
+function clampCost(v) {
+  if (!Number.isFinite(v) || v < 0) return 0
+  return v
 }
 
 /** Build a lookup of per-(dimension, retailer) ratios. */
@@ -52,22 +59,24 @@ export function getRatios(params, baseline) {
     KeHE: cb_other,
     Regional: cb_other,
   }
+  // DTC margin leakage is the spread between DTC and wholesale margin.
+  // If the user pulls wholesale above DTC, the spread inverts; we clamp at
+  // zero so the displayed cost can't go negative or NaN.
+  const dtcNumerator = params.dtc_margin_pct - params.wholesale_margin_pct
+  const dtcDenominator =
+    baseline.dtc_margin_pct - baseline.wholesale_margin_pct
   const dtcSpread =
-    (params.dtc_margin_pct - params.wholesale_margin_pct) /
-    Math.max(
-      baseline.dtc_margin_pct - baseline.wholesale_margin_pct,
-      0.0001,
-    )
-  const triage =
-    (params.triage_minutes_per_order *
+    dtcNumerator <= 0 || dtcDenominator <= 0
+      ? 0
+      : safeRatio(dtcNumerator, dtcDenominator)
+  const triage = safeRatio(
+    params.triage_minutes_per_order *
       params.triage_hourly_rate *
-      params.triage_share_of_orders) /
-    Math.max(
-      baseline.triage_minutes_per_order *
-        baseline.triage_hourly_rate *
-        baseline.triage_share_of_orders,
-      0.0001,
-    )
+      params.triage_share_of_orders,
+    baseline.triage_minutes_per_order *
+      baseline.triage_hourly_rate *
+      baseline.triage_share_of_orders,
+  )
   return {
     otif,
     chargebacks,
@@ -92,12 +101,12 @@ export function scaleSkuTotals(byDimension, ratios, newDeauth) {
   const out = {}
   for (const [dim, value] of Object.entries(byDimension)) {
     if (dim === 'deauthorization') {
-      out[dim] = newDeauth
+      out[dim] = clampCost(newDeauth)
     } else {
       // SKU-level dims have no retailer breakdown — for OTIF and chargebacks
       // we approximate with a flat dim-level ratio (Walmart vs other averages
       // out at the SKU rollup level).
-      out[dim] = value * dimAverageRatio(dim, ratios)
+      out[dim] = clampCost(value * dimAverageRatio(dim, ratios))
     }
   }
   return out
@@ -172,14 +181,17 @@ export function scaleCostByRetailer(rawRows, ratios, deauthEvents) {
   const result = []
   for (const r of rawRows) {
     if (r.dimension === 'deauthorization') continue // replace below
-    result.push({ ...r, cost: r.cost * ratioFor(r.dimension, r.retailer, ratios) })
+    result.push({
+      ...r,
+      cost: clampCost(r.cost * ratioFor(r.dimension, r.retailer, ratios)),
+    })
   }
   for (const [retailer, cost] of deauthMap.entries()) {
     result.push({
       retailer,
       dimension: 'deauthorization',
       month: null,
-      cost,
+      cost: clampCost(cost),
     })
   }
   return result
@@ -190,7 +202,7 @@ export function scaleCostByRetailer(rawRows, ratios, deauthEvents) {
 export function scaleCostByMonth(rawRows, ratios) {
   return rawRows.map((r) => ({
     ...r,
-    cost: r.cost * dimAverageRatio(r.dimension, ratios),
+    cost: clampCost(r.cost * dimAverageRatio(r.dimension, ratios)),
   }))
 }
 
@@ -227,14 +239,14 @@ function scaleOneSkuRow(row, ratios, newDeauth) {
     const out = { month: m.month }
     for (const [k, v] of Object.entries(m)) {
       if (k === 'month') continue
-      out[k] = v * dimAverageRatio(k, ratios)
+      out[k] = clampCost(v * dimAverageRatio(k, ratios))
     }
     return out
   })
   const total = Object.values(newByDim).reduce((s, v) => s + v, 0)
   return {
     ...row,
-    total_cost: total,
+    total_cost: clampCost(total),
     by_dimension: newByDim,
     by_month: newByMonth,
   }
@@ -249,8 +261,9 @@ export function scaleBufferScenarios(rawScenarios, ratios, deauthScale) {
     for (const [dim, v] of Object.entries(s.by_dimension)) {
       const factor =
         dim === 'deauthorization' ? deauthScale : dimAverageRatio(dim, ratios)
-      const original = v.original * factor
-      const simulated = v.simulated * factor
+      const safeFactor = Number.isFinite(factor) && factor >= 0 ? factor : 0
+      const original = clampCost(v.original * safeFactor)
+      const simulated = clampCost(v.simulated * safeFactor)
       const recovery = original - simulated
       newByDim[dim] = {
         original,
@@ -267,7 +280,7 @@ export function scaleBufferScenarios(rawScenarios, ratios, deauthScale) {
     }
     return {
       ...s,
-      total_cost: totalCost,
+      total_cost: clampCost(totalCost),
       total_recovery: totalRecovery,
       recovery_pct:
         totalCost + totalRecovery > 0
@@ -284,10 +297,10 @@ export function summaryFromMonthly(rawSummary, scaledByMonth, deauthEvents) {
   for (const r of scaledByMonth) {
     totals.set(r.dimension, (totals.get(r.dimension) || 0) + r.cost)
   }
-  totals.set('deauthorization', deauthTotal(deauthEvents))
+  totals.set('deauthorization', clampCost(deauthTotal(deauthEvents)))
   return rawSummary.map((r) => ({
     ...r,
-    total_cost: totals.get(r.dimension) ?? r.total_cost,
+    total_cost: clampCost(totals.get(r.dimension) ?? r.total_cost),
   }))
 }
 

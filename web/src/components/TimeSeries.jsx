@@ -190,12 +190,18 @@ export default function TimeSeries({ costByMonth }) {
           )
         })()}
 
-        {data.length === 0 ? (
-          <p className={styles.chartFootnote}>
-            No monthly data for the selected range.
+        {data.length === 0 || dims.length === 0 ? (
+          <p className={styles.chartEmpty}>
+            {dims.length === 0
+              ? 'All monthly dimensions are excluded. Re-enable a dimension chip above to see the trend.'
+              : 'No monthly data for the selected range.'}
           </p>
         ) : (
-          <div className={styles.chartContainer}>
+          <div
+            className={styles.chartContainer}
+            role="img"
+            aria-label={`Stacked monthly cost of shorts across ${dims.length} dimensions over ${data.length} months. Peak month: ${stats ? stats.peak.month : ''}.`}
+          >
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart
                 data={data}

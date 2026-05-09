@@ -2,8 +2,7 @@ const compactCurrency = new Intl.NumberFormat('en-US', {
   notation: 'compact',
   style: 'currency',
   currency: 'USD',
-  minimumFractionDigits: 2,
-  maximumFractionDigits: 2,
+  maximumFractionDigits: 1,
 })
 
 const fullCurrency = new Intl.NumberFormat('en-US', {
@@ -18,8 +17,10 @@ const percent = new Intl.NumberFormat('en-US', {
   maximumFractionDigits: 1,
 })
 
-export const fmtCompact = (v) => compactCurrency.format(v)
-export const fmtFull = (v) => fullCurrency.format(v)
-export const fmtPct = (v) => percent.format(v)
+const safe = (v) => (Number.isFinite(v) ? v : 0)
 
-export const fmtMillions = (v) => `$${(v / 1e6).toFixed(0)}M`
+export const fmtCompact = (v) => compactCurrency.format(safe(v))
+export const fmtFull = (v) => fullCurrency.format(safe(v))
+export const fmtPct = (v) => percent.format(safe(v))
+
+export const fmtMillions = (v) => `$${(safe(v) / 1e6).toFixed(0)}M`

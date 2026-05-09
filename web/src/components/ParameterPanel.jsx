@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { fmtPct } from '../lib/format.js'
 import { useTimeRange } from '../lib/timeRange.jsx'
 import styles from './ParameterPanel.module.css'
@@ -59,23 +57,28 @@ function formatValue(field, value) {
 
 function ParameterField({ field, value, baseline, onChange }) {
   const changed = value !== baseline
+  const formatted = formatValue(field, value)
   return (
     <div className={styles.field}>
       <div className={styles.fieldHead}>
-        <span className={styles.fieldLabel}>{field.label}</span>
+        <label htmlFor={`param-${field.key}`} className={styles.fieldLabel}>
+          {field.label}
+        </label>
         <span
           className={`${styles.fieldValue} ${changed ? styles.fieldValueChanged : ''}`}
         >
-          {formatValue(field, value)}
+          {formatted}
         </span>
       </div>
       <input
+        id={`param-${field.key}`}
         type="range"
         className={styles.slider}
         min={field.min}
         max={field.max}
         step={field.step}
         value={value}
+        aria-valuetext={`${formatted}, baseline ${formatValue(field, baseline)}`}
         onChange={(e) => onChange(parseFloat(e.target.value))}
       />
       <div className={styles.fieldDefault}>

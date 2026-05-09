@@ -174,7 +174,9 @@ export default function BufferSimulation({ bufferScenarios }) {
   const s90 = barData.find((s) => s.target_fill_rate === 0.9)
   const recoveredAt90 = baseline - (s90?.total_cost ?? baseline)
 
-  const title = `At 90% fill rate, ${fmtCompact(recoveredAt90)} in costs disappear — most from deauthorization`
+  const title = activeDims.has('deauthorization')
+    ? `At 90% fill rate, ${fmtCompact(recoveredAt90)} in costs disappear — most from deauthorization`
+    : `At 90% fill rate, ${fmtCompact(recoveredAt90)} in costs disappear`
 
   const pinnedScenario =
     pinned !== null ? scenarios.find((s) => s.target_fill_rate === pinned) : null
@@ -222,7 +224,17 @@ export default function BufferSimulation({ bufferScenarios }) {
           />
         )}
 
-        <div className={styles.chartContainer}>
+        {baseline === 0 ? (
+          <p className={styles.chartEmpty}>
+            All dimensions are excluded. Re-enable a dimension chip above to
+            see the recovery curve.
+          </p>
+        ) : (
+        <div
+          className={styles.chartContainer}
+          role="img"
+          aria-label={`Bar chart: total cost of shorts across four target fill rates (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAt90)} recovered at 90% fill.`}
+        >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={barData}
@@ -317,6 +329,7 @@ export default function BufferSimulation({ bufferScenarios }) {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        )}
         <p className={styles.chartFootnote}>
           Source: Cinderhaven Provisions buffer-simulation outputs. Each
           scenario lifts every retail/distributor line to the target fill

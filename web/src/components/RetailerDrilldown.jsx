@@ -281,6 +281,34 @@ function RetailerChart({ rows, dims, selectedRetailer, onSelect }) {
 
 // ---- SKU table -------------------------------------------------------------
 
+function SortableTh({ label, title, sortKey, sortBy, onSort, numeric }) {
+  const active = sortBy.key === sortKey
+  const ariaSort = active
+    ? sortBy.dir === 'asc'
+      ? 'ascending'
+      : 'descending'
+    : 'none'
+  const indicator = active ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''
+  return (
+    <th
+      className={numeric ? styles.numeric : undefined}
+      aria-sort={ariaSort}
+      title={title}
+    >
+      <button
+        type="button"
+        className={styles.sortButton}
+        onClick={() => onSort(sortKey)}
+      >
+        {label}{' '}
+        <span className={styles.sortIndicator} aria-hidden="true">
+          {indicator}
+        </span>
+      </button>
+    </th>
+  )
+}
+
 function SkuTable({
   rows,
   dims,
@@ -317,9 +345,6 @@ function SkuTable({
     }
   }
 
-  const sortIndicator = (key) =>
-    sortBy.key === key ? (sortBy.dir === 'asc' ? '▲' : '▼') : ''
-
   return (
     <div className={`${styles.tableBlock} print-break-before`}>
       <div className={styles.tableHead}>
@@ -344,6 +369,13 @@ function SkuTable({
         </div>
       )}
 
+      {rows.length === 0 ? (
+        <p className={styles.tableEmpty}>
+          {selectedRetailer
+            ? `No SKUs with cost attributed to ${selectedRetailer} in this range.`
+            : 'No SKU-level cost data for the current filters.'}
+        </p>
+      ) : (
       <div className={styles.tableScroll}>
         <table className={styles.table}>
           <colgroup>
@@ -357,45 +389,41 @@ function SkuTable({
           </colgroup>
           <thead>
             <tr>
-              <th onClick={() => handleSort('sku')}>
-                SKU{' '}
-                <span className={styles.sortIndicator}>
-                  {sortIndicator('sku')}
-                </span>
-              </th>
-              <th onClick={() => handleSort('product_name')}>
-                Product{' '}
-                <span className={styles.sortIndicator}>
-                  {sortIndicator('product_name')}
-                </span>
-              </th>
-              <th onClick={() => handleSort('product_line')}>
-                Line{' '}
-                <span className={styles.sortIndicator}>
-                  {sortIndicator('product_line')}
-                </span>
-              </th>
-              <th
-                className={styles.numeric}
-                onClick={() => handleSort('total')}
-              >
-                Total{' '}
-                <span className={styles.sortIndicator}>
-                  {sortIndicator('total')}
-                </span>
-              </th>
+              <SortableTh
+                label="SKU"
+                sortKey="sku"
+                sortBy={sortBy}
+                onSort={handleSort}
+              />
+              <SortableTh
+                label="Product"
+                sortKey="product_name"
+                sortBy={sortBy}
+                onSort={handleSort}
+              />
+              <SortableTh
+                label="Line"
+                sortKey="product_line"
+                sortBy={sortBy}
+                onSort={handleSort}
+              />
+              <SortableTh
+                label="Total"
+                sortKey="total"
+                sortBy={sortBy}
+                onSort={handleSort}
+                numeric
+              />
               {dims.map((d) => (
-                <th
+                <SortableTh
                   key={d}
-                  className={styles.numeric}
-                  onClick={() => handleSort(d)}
+                  label={DIMENSION_LABEL[d].split(' ')[0]}
                   title={DIMENSION_LABEL[d]}
-                >
-                  {DIMENSION_LABEL[d].split(' ')[0]}{' '}
-                  <span className={styles.sortIndicator}>
-                    {sortIndicator(d)}
-                  </span>
-                </th>
+                  sortKey={d}
+                  sortBy={sortBy}
+                  onSort={handleSort}
+                  numeric
+                />
               ))}
             </tr>
           </thead>
@@ -440,6 +468,7 @@ function SkuTable({
           </tbody>
         </table>
       </div>
+      )}
 
       <p className={styles.tableFootnote}>
         Top 20 SKUs by total cost plus an &ldquo;Other&rdquo; row for the

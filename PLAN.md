@@ -80,7 +80,7 @@ visible?
       sharp SVG charts, proper page breaks between sections. Triggered
       by a button that calls window.print(). Include a print mode that
       disables chart animations before rendering.
-- [ ] Polish pass — responsive behavior, loading states, edge cases,
+- [x] Polish pass — responsive behavior, loading states, edge cases,
       accessibility basics, final visual tuning. Review each section
       as its own vertical slice. Desktop is the primary target;
       responsive but not mobile-first.

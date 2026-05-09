@@ -162,7 +162,6 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
   const shipped = filteredOrders.reduce((s, r) => s + r.shipped_revenue, 0)
   const demand = filteredOrders.reduce((s, r) => s + r.demand, 0)
-  const fillRate = demand > 0 ? shipped / demand : 0
   const demandGap = demand - shipped
 
   const wholesaleMargin = meta.cost_parameters.wholesale_margin_pct.value
@@ -184,6 +183,21 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   const periodLabel = range.isFiltered
     ? `${range.startMonth} to ${range.endMonth}`
     : `${meta.time_window.start} to ${meta.time_window.end}`
+
+  if (total === 0 || segs.length === 0) {
+    return (
+      <section className={styles.section}>
+        <div className={styles.emptyState}>
+          <p className={styles.emptyTitle}>No cost data to display</p>
+          <p className={styles.emptyBody}>
+            {dims.length === 0
+              ? 'All dimensions are excluded. Re-enable a dimension chip above to see the breakdown.'
+              : 'The current time range contains no cost data. Widen the range from the header filter.'}
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className={styles.section}>
