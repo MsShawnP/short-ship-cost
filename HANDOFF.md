@@ -352,3 +352,43 @@ only — when a time filter is active, show a note (same pattern as
 deauth in Section 1).
 
 ---
+
+## 2026-05-08 20:08
+
+**What changed:** PLAN arc-2 task 7 done — Section 4 buffer
+staircase shipped, plus three cross-cutting changes that reach all
+four sections: shared `PinnedCallout` (dark card, click-to-pin
+everywhere, hover tooltips removed), global dimension-toggle chips
+in a header bar (excluded chips dashed + strikethrough), and
+React.lazy code-split for the three Recharts-heavy sections so
+Recharts ships in its own ~370 KB chunk after first paint. Also
+forced `Intl.NumberFormat` to 2-decimal compact currency.
+Commit `f220cc2` pushed.
+
+**Why:** The user iterated on the Section 4 callout messaging
+(two-step deauth narrative), then asked for click-to-pin to match
+across all charts as the canonical interaction, plus dim toggles
+because "what does the cost look like *without* deauth" is a
+common question. Code-splitting cleared the build-time 500 KB
+warning and improves first paint.
+
+**State:** Working — `npm run build` clean, no chunk warnings.
+Initial JS 208 KB / 66 KB gz; Recharts split to a 371 KB / 99 KB
+gz lazy chunk that loads after Section 1 paints. `PinnedCallout`
+is the canonical interaction surface across Sections 1-4: hover
+no longer triggers tooltips, click pins a dark callout above the
+chart with `Pinned — click again to unpin` hint and (where it
+applies) a per-dimension breakdown. `DimensionToggle` lives in
+its own bar below the header; toggle state is in
+`TimeRangeContext.activeDims` and propagates to every section's
+charts/tables/callouts/footnotes. Section 4 cliff callout hides
+when deauthorization is toggled off. Untouched: arc-2 tasks 8-11
+and the Netlify deploy hookup.
+
+**Next:** Task 8 — parameter adjustment panel (collapsible right
+sidebar with sliders for OTIF rates, deauth thresholds, distributor
+fill threshold, DTC margin, triage cost). Sliders bind to
+`meta.cost_parameters`; recompute via `useMemo`; reset-to-baseline
+button; validate JS math against `validation.json`.
+
+---
