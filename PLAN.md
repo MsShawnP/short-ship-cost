@@ -84,7 +84,7 @@ visible?
       accessibility basics, final visual tuning. Review each section
       as its own vertical slice. Desktop is the primary target;
       responsive but not mobile-first.
-- [ ] Deploy to Netlify — final production deploy, confirm everything
+- [x] Deploy to Netlify — final production deploy, confirm everything
       works at the live URL, update README with the link.
 
 ## Out of scope for this arc
