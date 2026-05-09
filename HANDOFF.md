@@ -392,3 +392,39 @@ fill threshold, DTC margin, triage cost). Sliders bind to
 button; validate JS math against `validation.json`.
 
 ---
+
+## 2026-05-08 20:37
+
+**What changed:** PLAN arc-2 task 8 done — `ParameterPanel`
+sidebar (collapsible, scrim, 360px) with sliders for OTIF,
+deauth thresholds, margins, triage, chargebacks. Backed by
+`utils/costEngine.js` which scales pre-aggregated JSON by
+parameter ratios and re-filters deauth events on threshold
+change; `AppShell` derives a single `scaled` data bundle that
+all four sections consume. Validation indicator compares JS
+totals to `validation.json`. Commit `c6d0c7f` pushed.
+
+**Why:** Slider tweaks turn the tool from a static report into a
+simulator. The "what if Walmart's threshold were 85%" question is
+the lever a buyer/operator would actually pull, and the panel makes
+that pull immediate.
+
+**State:** Working — `npm run build` clean. Initial JS 218 KB /
+69 KB gz; Recharts still in its 371 KB lazy chunk. `params` and
+`baselineParams` live in `TimeRangeContext`; `paramsModified` is
+exposed for the modified-dot indicator and the print footnote.
+Reset-to-baseline button enabled only when modified. Validation
+runs on first load and any time params equal baseline; on
+mismatch, console.warn fires and panel shows ⚠. Buffer scenarios
+use ratio scaling (approximation flagged in code comment); deauth
+threshold lowering removes events accurately, raising velocity
+thresholds is bounded by the events captured at baseline (limitation
+inherent to shipping aggregates instead of raw orders). Untouched:
+arc-2 tasks 9-11 (print CSS export, polish, Netlify deploy).
+
+**Next:** Task 9 — print CSS export. Hook `window.print()` to a
+stylesheet that hides parameter panel/filter chrome, paginates
+sections cleanly, includes a footer with date and parameter
+modifications snapshot.
+
+---
