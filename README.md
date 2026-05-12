@@ -113,3 +113,7 @@ documented in [`docs/cost-engine-benchmarks.md`](docs/cost-engine-benchmarks.md)
 ---
 
 A [Lailara LLC](https://github.com/MsShawnP) portfolio piece.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
