@@ -489,3 +489,123 @@ edge cases, visual tuning). Then task 11 — Netlify deploy + README
 link.
 
 ---
+
+## 2026-05-09 10:51
+
+**What changed:** PLAN arc-2 task 10 done — polish pass across all
+four sections + global app shell. App.css picked up responsive
+breakpoints and print-mode hardening; loading and empty states
+shipped on every section; cost-engine `costEngine.js` tightened up
+the ratio-scaling math. Commit `385bc80` pushed.
+
+**Why:** Last shape pass before the deploy. The tool needed to feel
+like a product on a 1280-wide screen and degrade gracefully below,
+plus handle the "no data in this range" case the time-range filter
+can produce. 17 files changed, +386 / −103.
+
+**State:** Working — `npm run build` clean. Bundle still 218 KB
+initial / 371 KB Recharts lazy. Every section renders a loading
+placeholder on first paint, an "empty range" message when the time
+filter produces no rows, and survives keyboard navigation through
+the pin callouts. Untouched: arc-2 task 11 (deploy).
+
+**Next:** Task 11 — production deploy + README with live link.
+
+---
+
+## 2026-05-09 11:12 — arc-2 complete
+
+**What changed:** PLAN arc-2 task 11 done — initial deploy live on
+Netlify with the `netlify.toml` build config; root README rewritten
+(115 new lines) with project framing, headline numbers, the
+eight-dimension table, feature list, tech stack, repo structure,
+local-run instructions, and a live-tool link. Commit `810e39b`
+pushed. Arc 2 is now end-to-end: data → cost engine → JSON →
+interactive tool → live URL.
+
+**State:** Working — live on Netlify. All 11 arc-2 tasks complete.
+Eight DoD items met. Project sits between arcs.
+
+**Next:** No active arc. Project is ready to either define arc 3
+or be parked as a portfolio piece.
+
+---
+
+## 2026-05-09 13:12 — Netlify → Cloudflare migration
+
+**What changed:** Migrated the deployment off Netlify and onto
+Cloudflare Workers (static assets) the same day arc-2 closed. Four
+commits, in order:
+
+- `8313719` Switch deployment from Netlify to Cloudflare Pages —
+  deleted `web/netlify.toml`, added `web/.nvmrc`.
+- `74e7af6` Add Cloudflare Workers configuration — autoconfig PR
+  from `cloudflare/workers-autoconfig`. Added `web/wrangler.jsonc`
+  (SPA fallback via `assets.not_found_handling`), `@cloudflare/vite-plugin`
+  + `wrangler` devDeps, vite.config.js wired through the plugin,
+  preview/deploy scripts via wrangler. 1,607 line-changes mostly in
+  package-lock.
+- `d68638c` Merge PR #1 from `MsShawnP/cloudflare/workers-autoconfig`.
+- `918541e` Update URLs and hosting references from Netlify to
+  Cloudflare Pages — README `Live tool` link and one tech-stack
+  line.
+
+**Why:** Cloudflare's autoconfig PR landed with Wrangler + the Vite
+plugin already wired up and the SPA asset-handling already correct.
+Less friction than maintaining the Netlify config separately, and
+keeps everything on Cloudflare's edge.
+
+**State:** Working — live at
+`https://short-ship-cost.msshawnp.workers.dev`. `wrangler.jsonc` is
+the source of truth for the deploy config; SPA fallback handles
+client-side routing if it's ever added. The deployment is
+technically Workers Static Assets, not Cloudflare Pages, despite
+some commit messages and README copy calling it "Pages."
+
+**Next:** No active arc. Doc reconciliation owed: workflow files
+(CLAUDE.md, PLAN.md, DECISIONS.md, chat-project-instructions.md,
+README.md "Cloudflare Pages" line) all still reference Netlify or
+mis-label the host. PLAN.md DoD is still unchecked. DECISIONS.md
+2026-05-08 "Host on Netlify" was reversed but not strikethrough'd
+per the file's own format rule.
+
+---
+
+## 2026-05-14 — audit + doc reconciliation pass
+
+**Started from:** Branch `claude/audit-project-bzPPK`, clean tree.
+Last HANDOFF entry was 2026-05-08 (six days old); three intervening
+commit groups (polish, deploy, Cloudflare migration) had landed
+without HANDOFF entries.
+
+**Did:** Full project audit. Code (React app + Python pipeline)
+verified clean and matching README claims. Found doc drift in five
+workflow files all still referencing Netlify, plus an unmarked
+reversed decision and an unchecked DoD. Landed the reconciliation:
+
+- CLAUDE.md: hosting line updated to Cloudflare Workers; "TBD"
+  packages line resolved to React 19 + Vite + Recharts + custom SVG
+  + CSS Modules.
+- PLAN.md: arc 2 moved into Arc history with DoD checked against
+  the live URL; host references corrected.
+- DECISIONS.md: 2026-05-08 "Host on Netlify" struck through with a
+  pointer to the new 2026-05-09 "Host on Cloudflare Workers (static
+  assets)" entry; "Reversed / Superseded" section now lists the
+  reversal.
+- chat-project-instructions.md: hosting line updated.
+- README.md: "Cloudflare Pages" → "Cloudflare Workers (static
+  assets, SPA fallback)".
+- docs/order-data-schema.md: `original_line_id` column added to
+  `order_lines_shipped`; linkage note updated.
+- HANDOFF.md: backfilled entries for 2026-05-09 tasks 10/11 and
+  the Cloudflare migration (this entry).
+
+**State:** Working — tree clean after commit. No code changed. JSON
+data in `web/public/data/` unchanged (still dated 2026-05-08;
+upstream inputs haven't moved, so still authoritative).
+
+**Next:** No active arc. Project is in a clean parked state. When
+the next arc is defined, PLAN.md "No active arc" placeholder gets
+replaced with the new arc.
+
+---

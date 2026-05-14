@@ -5,32 +5,38 @@ session. For session-by-session state, see HANDOFF.md.
 
 ---
 
-## Goal
+## No active arc
 
-Build the interactive tool — a single-page React app that presents
-the full cost-of-shorts analysis, lets users explore by retailer/
-SKU/time period, adjust parameters, run buffer simulations, and
-export an Economist-style PDF via print CSS. Hosted on Netlify.
+Arc 2 closed on 2026-05-09 (see Arc history). The next arc is not
+yet defined.
 
-## Why this arc, why now
+---
 
-The data and cost engine are complete and validated. The interactive
-tool is the deliverable — the thing a prospective client or portfolio
-visitor opens in a browser. Without it, the analysis lives in SQLite
-files nobody will see.
+## Arc history
 
-## Business question this arc answers
+### Arc 2 — Interactive tool (completed 2026-05-09)
 
-Same as the project: What does it cost a business when it can't
-fulfill retail partner orders as submitted, and why must the original
-order be captured alongside the edited order to make that cost
-visible?
+Built the single-page React app (Vite) that presents the full
+cost-of-shorts analysis: four sections (headline cost stack,
+retailer/SKU drill-down, time series, buffer simulation), parameter
+adjustment panel with browser-side cost engine, time-range filter,
+dimension toggles, click-to-pin callouts, print CSS export, and
+deployed live. Initial deployment targeted Netlify (task 11);
+migrated to Cloudflare Workers (static assets) on 2026-05-09 — see
+DECISIONS.md.
 
-## Tasks
+Goal: a single-page React app that presents the full cost-of-shorts
+analysis, lets users explore by retailer/SKU/time period, adjust
+parameters, run buffer simulations, and export an Economist-style
+PDF via print CSS. Hosted on Cloudflare Workers.
+
+Business question: same as the project.
+
+Tasks:
 
 - [x] Set up React project scaffolding — Vite + React, basic folder
-      structure, Netlify config, deploy an empty shell to confirm the
-      pipeline works end-to-end (local → GitHub → Netlify → live URL).
+      structure, host config, deploy an empty shell to confirm the
+      pipeline works end-to-end (local → GitHub → live URL).
       Include a print compatibility spike: render one SVG chart
       (Recharts), print to PDF, confirm it doesn't break before
       building all sections.
@@ -84,10 +90,12 @@ visible?
       accessibility basics, final visual tuning. Review each section
       as its own vertical slice. Desktop is the primary target;
       responsive but not mobile-first.
-- [x] Deploy to Netlify — final production deploy, confirm everything
-      works at the live URL, update README with the link.
+- [x] Deploy to production — final deploy, confirm everything works
+      at the live URL, update README with the link. Initially shipped
+      to Netlify; migrated to Cloudflare Workers (static assets) the
+      same day.
 
-## Out of scope for this arc
+Out of scope for this arc:
 
 - Backend/API layer — this is a static site with bundled JSON
 - User authentication or saved sessions
@@ -97,25 +105,22 @@ visible?
 - State management libraries (Zustand, Redux) — React Context +
   hooks unless complexity demands otherwise
 
-## Definition of done for this arc
+Definition of done — met:
 
-- [ ] React app is live on Netlify at a public URL
-- [ ] All four sections render correctly with real data from the cost
+- [x] React app is live at a public URL
+      (https://short-ship-cost.msshawnp.workers.dev)
+- [x] All four sections render correctly with real data from the cost
       engine
-- [ ] JS cost math matches Python output (validated against
+- [x] JS cost math matches Python output (validated against
       validation.json)
-- [ ] Parameter adjustments recalculate costs in the browser with a
+- [x] Parameter adjustments recalculate costs in the browser with a
       reset-to-baseline option
-- [ ] Buffer simulation staircase chart shows the deauthorization
+- [x] Buffer simulation staircase chart shows the deauthorization
       cliff at 90%
-- [ ] Print CSS export produces a clean, readable PDF with proper
+- [x] Print CSS export produces a clean, readable PDF with proper
       page breaks and sharp SVG charts
-- [ ] The app looks like a product, not a prototype
-- [ ] README links to the live tool
-
----
-
-## Arc history
+- [x] The app looks like a product, not a prototype
+- [x] README links to the live tool
 
 ### Arc 1 — Synthetic order data + cost engine (completed 2026-05-07)
 

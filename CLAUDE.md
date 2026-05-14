@@ -10,8 +10,9 @@ vs. edited/shipped orders), calculates the revenue gap and cascading
 costs (fines, chargebacks, deauthorization, DTC cancellations, margin
 leakage, returns), and presents findings through a polished interactive
 tool with an exportable Economist-style analysis document. The
-interactive tool is built in React or HTML/JS, hosted on Netlify or
-GitHub Pages, and designed to look like a product — not a prototype.
+interactive tool is built in React (Vite), hosted on Cloudflare
+Workers as a static site, and designed to look like a product — not
+a prototype.
 
 **Business question this project answers:** What does it cost a
 business when it can't fulfill retail partner orders as submitted,
@@ -91,9 +92,13 @@ planning tool. Does not prescribe how to build the buffer.
 
 - Primary language: JavaScript (React) for interactive tool, Python
   for data generation and cost engine
-- Key packages/libraries: TBD — will be decided during build
-- Database: SQLite (Cinderhaven lineage) or JSON for order data
-- Rendering: React app hosted on Netlify or GitHub Pages
+- Key packages/libraries: React 19 + Vite (interactive tool),
+  Recharts (area + bar charts), custom SVG (flow + staircase charts),
+  CSS Modules. SQLite (stdlib) for the Python pipeline.
+- Database: SQLite for the Python pipeline (cinderhaven_extract.db,
+  short_ship_orders.db, short_ship_cost.db); pre-aggregated JSON
+  bundled with the React app
+- Rendering: React app hosted on Cloudflare Workers (static assets)
 - Export: Economist-style PDF generated from the tool
 - Data source: Synthetic order data generated in this repo, drawing
   on Cinderhaven product master, sku_costs, stores, and retailer

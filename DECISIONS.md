@@ -59,10 +59,16 @@ Each entry:
 - **Scope:** `ParameterPanel` recompute path
 - **Do not:** Ship the orders DB to the browser. Do not attempt to re-run the cost engine in JS over raw order lines. When a new parameter is added, decide upfront whether it's ratio-scalable; if not (e.g., a velocity threshold being *raised*), document the limitation rather than bolt on a new data shape.
 
-### 2026-05-08 — Host on Netlify
+### ~~2026-05-08 — Host on Netlify~~ (reversed 2026-05-09)
 - **Why:** Zero-config for React apps, auto-detects build command, instant deploys from GitHub, free tier generous. Less friction than GitHub Pages for a Vite + React project.
 - **Scope:** Deployment
 - **Do not:** Use GitHub Pages unless Netlify proves problematic.
+- **Reversed:** See 2026-05-09 — Host on Cloudflare Workers.
+
+### 2026-05-09 — Host on Cloudflare Workers (static assets)
+- **Why:** The 2026-05-08 Netlify deploy worked, but Cloudflare's autoconfig PR (`#1`) wired up Wrangler + `@cloudflare/vite-plugin` with single-page-application asset handling and an observability hook. Cloudflare's edge network and zero-config Vite integration matched what Netlify gave us; staying on the platform that already had the working PR was the lower-friction path. The deployment is technically Workers Static Assets (`wrangler.jsonc` with `assets.not_found_handling = "single-page-application"`), not Cloudflare Pages — the URL is `*.workers.dev`.
+- **Scope:** Deployment
+- **Do not:** Refer to the deployment as "Cloudflare Pages" — it's Workers serving static assets. Do not revert to Netlify or GitHub Pages without a new decision.
 
 ---
 
@@ -129,4 +135,4 @@ Each entry:
 
 ## Reversed / Superseded
 
-(No reversed decisions yet)
+- **2026-05-08 — Host on Netlify** → reversed 2026-05-09 by "Host on Cloudflare Workers (static assets)" (in the Architecture & Pipeline section above).

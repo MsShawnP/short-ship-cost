@@ -10,8 +10,8 @@ chargebacks, deauthorization, DTC cancellations, margin leakage,
 distributor returns, and the labor cost of manual triage. The core
 insight is that the business can't even see this cost because their
 system overwrites original orders with edited orders — destroying
-the demand signal. Deliverables: a polished React/HTML interactive
-tool (hosted on Netlify/GitHub Pages) with an exportable
+the demand signal. Deliverables: a polished React (Vite) interactive
+tool hosted on Cloudflare Workers (static assets), with an exportable
 Economist-style analysis document generated from the tool.
 
 ## Project files in knowledge

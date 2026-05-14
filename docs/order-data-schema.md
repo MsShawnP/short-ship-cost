@@ -55,6 +55,7 @@ delta vs. `order_lines_original` is the short.
 | `quantity_shipped` | INTEGER | Same UoM as the original line. May be 0 for a total drop. |
 | `unit_of_measure` | TEXT | Must match the original line's UoM. |
 | `unit_price` | REAL | Same value as the original line; carried for join-free revenue math. |
+| `original_line_id` | TEXT, FK → `order_lines_original.order_line_id` | Direct linkage to the original line, populated at triage time. Lets cost-engine code join without recomputing `(order_id, sku)` matches. |
 
 A line with `quantity_shipped = 0` is a complete drop — the SKU was
 on the original order but did not ship at all. There is *not* a row
@@ -130,15 +131,19 @@ DTC orders do not appear here.
 - **Time window.** Orders span the same 18–24 month window as the
   existing Cinderhaven scan and pricing data (per
   `DECISIONS.md`, 2026-05-07).
-- **Linkage between original and shipped lines.** Lines link by
-  `(order_id, sku)`. `order_line_id` is a per-table surrogate;
-  the same SKU on the same order has a row in
+- **Linkage between original and shipped lines.** `order_line_id`
+  is a per-table surrogate. Shipped lines also carry
+  `original_line_id` as a direct FK to the original line, which is
+  the canonical join key for cost-engine code. `(order_id, sku)`
+  works as a fallback under the one-line-per-SKU-per-order
+  assumption. The same SKU on the same order has a row in
   `order_lines_original` and either a matching row in
-  `order_lines_shipped` (any `quantity_shipped >= 0`) or, by convention,
-  a matching row with `quantity_shipped = 0`. We assume one line per
-  SKU per order; if a future requirement forces multiple lines for the
-  same SKU on one order (split allocation across promo and
-  non-promo, e.g.), the join key would need to widen.
+  `order_lines_shipped` (any `quantity_shipped >= 0`) or, by
+  convention, a matching row with `quantity_shipped = 0`. If a
+  future requirement forces multiple lines for the same SKU on one
+  order (split allocation across promo and non-promo, e.g.),
+  `original_line_id` continues to work but the `(order_id, sku)`
+  fallback would need to widen.
 
 ## Things to flag
 

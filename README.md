@@ -69,7 +69,7 @@ ships $52M. The demand it cannot see is $70M+.
   no API
 - **Cost engine (browser)** — JS implementation scaling aggregates
   by parameter ratios, validated against Python output
-- **Hosting** — Cloudflare Pages (static site)
+- **Hosting** — Cloudflare Workers (static assets, SPA fallback)
 - **Typography** — Playfair Display + Source Sans 3
 
 ## Repository structure
