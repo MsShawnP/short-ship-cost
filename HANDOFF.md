@@ -609,3 +609,33 @@ the next arc is defined, PLAN.md "No active arc" placeholder gets
 replaced with the new arc.
 
 ---
+
+## 2026-05-14 13:57 — wrap
+
+**Started from:** Branch `claude/audit-project-bzPPK`, clean tree.
+Last HANDOFF entry was 2026-05-08 (six days old). Three commit
+groups (polish, deploy, Netlify→Cloudflare migration) had landed
+in the interim without HANDOFF entries — exactly the case the
+CLAUDE.md session-start protocol flags.
+
+**Did:** Full project audit (React app, Python pipeline, docs,
+deployment) via three parallel Explore agents. Verified headline
+numbers reconcile ($25.6M cost / $51.86M shipped = 49.3%). Found
+seven drift items, all in workflow docs lagging the Cloudflare
+migration. Landed the doc reconciliation in commit `61e1477`:
+seven files updated (CLAUDE.md, PLAN.md, DECISIONS.md,
+chat-project-instructions.md, README.md, docs/order-data-schema.md,
+HANDOFF.md). No code or data touched. Pushed to origin.
+
+**State:** Tree clean. Branch `claude/audit-project-bzPPK` pushed.
+Arc 2 closed and archived in PLAN.md with DoD checked. DECISIONS.md
+carries the Netlify→Cloudflare reversal per its own format rule.
+HANDOFF.md backfilled. Project is in a clean parked state.
+
+**Next:** No active arc. Either define arc 3 (e.g., written
+companion piece, second portfolio dataset, factoring the cost
+engine into a reusable library) or declare the project complete.
+PLAN.md's "No active arc" placeholder is the bookmark for whichever
+direction the next session takes.
+
+---
