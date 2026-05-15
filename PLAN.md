@@ -457,6 +457,40 @@ Goal: Make the tool feel alive and work on any screen.
 
 ---
 
+### Arc 3 — Dashboard to argument (completed 2026-05-15)
+
+27 tasks across 5 waves: narrative framing, insight lines,
+methodology appendix, JS cost engine tests (34/34 pass), animated
+number transitions, Recharts chart animations, mobile bottom-sheet
+parameter panel, responsive breakpoints at 640px. OG social card
+image added. Palette evaluated and kept (deltaE 8.7-15.5).
+
+---
+
+## Goal (2026-05-15)
+
+Visual polish pass — fix sloppy dimension toggle layout and
+tighten mobile presentation. No narrative/copy changes, no new
+features. Quality pass at own pace (no deadline).
+
+Specific issues:
+- Dimension toggle chips wrap unpredictably across 2-3 ragged
+  lines mixed with label text. Should be one clean row or two
+  even rows.
+- General mobile polish — anything that looks rough at phone width.
+
+Side deliverable: extracted the full short-ship-cost design system
+(colors, fonts, layout, interaction patterns) to
+`~/projects/active/CLAUDE.md` as the official Lailara LLC standard.
+
+## Tasks
+
+- [ ] U1: Fix dimension toggle layout — label row + chip grid
+      (4x2 desktop, 2x4 mobile)
+- [ ] U2: Mobile polish pass at 375px — scan and fix
+
+---
+
 ## Arc history
 
 ### Arc 1 — Synthetic order data + cost engine (completed 2026-05-07)
