@@ -8,35 +8,39 @@ export default function DimensionToggle() {
 
   return (
     <div className={`${styles.bar} no-print`}>
-      <span className={styles.label}>Dimensions</span>
-      <span className={styles.hint}>click to exclude</span>
-      {DIMENSION_ORDER.map((dim) => {
-        const on = activeDims.has(dim)
-        return (
+      <div className={styles.labelRow}>
+        <span className={styles.label}>Dimensions</span>
+        <span className={styles.hint}>click to exclude</span>
+        {!allOn && (
           <button
-            key={dim}
             type="button"
-            className={`${styles.chip} ${on ? styles.chipActive : styles.chipInactive}`}
-            onClick={() => toggleDim(dim)}
-            aria-pressed={on}
+            className={styles.reset}
+            onClick={resetDims}
           >
-            <span
-              className={styles.swatch}
-              style={{ background: DIMENSION_COLOR[dim] }}
-            />
-            {DIMENSION_LABEL[dim]}
+            Show all
           </button>
-        )
-      })}
-      {!allOn && (
-        <button
-          type="button"
-          className={styles.reset}
-          onClick={resetDims}
-        >
-          Show all
-        </button>
-      )}
+        )}
+      </div>
+      <div className={styles.chipGrid}>
+        {DIMENSION_ORDER.map((dim) => {
+          const on = activeDims.has(dim)
+          return (
+            <button
+              key={dim}
+              type="button"
+              className={`${styles.chip} ${on ? styles.chipActive : styles.chipInactive}`}
+              onClick={() => toggleDim(dim)}
+              aria-pressed={on}
+            >
+              <span
+                className={styles.swatch}
+                style={{ background: DIMENSION_COLOR[dim] }}
+              />
+              {DIMENSION_LABEL[dim]}
+            </button>
+          )
+        })}
+      </div>
     </div>
   )
 }
