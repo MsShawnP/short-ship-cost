@@ -96,3 +96,20 @@
   min-width: 44px;
   text-align: right;
 }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .callout {
+    padding: 12px 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .breakdown {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
