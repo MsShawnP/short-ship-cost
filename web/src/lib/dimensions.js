@@ -1,12 +1,13 @@
+// Ordered by magnitude (largest → smallest), matching color assignment.
 export const DIMENSION_ORDER = [
   'lost_revenue',
+  'deauthorization',
   'otif_fines',
   'chargebacks',
-  'deauthorization',
   'dtc_cancellations',
-  'dtc_margin_leakage',
-  'distributor_returns',
   'triage_labor',
+  'distributor_returns',
+  'dtc_margin_leakage',
 ]
 
 export const DIMENSION_LABEL = {

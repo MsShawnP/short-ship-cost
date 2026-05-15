@@ -1,27 +1,16 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
-import { DIMENSION_LABEL } from '../lib/dimensions.js'
+import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_ORDER } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
+import useAnimatedValue from '../lib/useAnimatedValue.js'
 import {
-  ALL_DIMENSIONS,
   filterByMonth,
   useTimeRange,
 } from '../lib/timeRange.jsx'
 import PinnedCallout from './PinnedCallout.jsx'
 import styles from './CostStack.module.css'
 
-const ORDER = ALL_DIMENSIONS
-
-const SEQUENTIAL_TEALS = {
-  lost_revenue: '#0A3D3D',
-  deauthorization: '#14605C',
-  otif_fines: '#1F8078',
-  chargebacks: '#2A9D93',
-  dtc_cancellations: '#45B5AA',
-  triage_labor: '#6BCABD',
-  distributor_returns: '#93DCD2',
-  dtc_margin_leakage: '#BDEEE8',
-}
+const ORDER = DIMENSION_ORDER
 
 const VB_W = 720
 const VB_H = 500
@@ -52,7 +41,7 @@ function buildLayout(costsByDim, dims) {
     key: dim,
     label: DIMENSION_LABEL[dim],
     value: costsByDim[dim] || 0,
-    color: SEQUENTIAL_TEALS[dim],
+    color: DIMENSION_COLOR[dim],
   }))
 
   const totalGap = (segs.length - 1) * RIGHT_GAP
@@ -169,6 +158,17 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   const pctOfShipped = shipped > 0 ? total / shipped : 0
   const pctOfMargin = estMargin > 0 ? total / estMargin : 0
 
+  const topCascading = segs
+    .filter((s) => s.key !== 'lost_revenue' && s.value > 0)
+    .sort((a, b) => b.value - a.value)[0]
+
+  const fmtC = useCallback((v) => fmtCompact(v), [])
+  const fmtP = useCallback((v) => fmtPct(v), [])
+  const animTotal = useAnimatedValue(total, fmtC)
+  const animPctShipped = useAnimatedValue(pctOfShipped, fmtP)
+  const animPctMargin = useAnimatedValue(pctOfMargin, fmtP)
+  const animDemandGap = useAnimatedValue(demandGap, fmtC)
+
   const activeSeg = pinned ? segs.find((s) => s.key === pinned) : null
   const totalCenterY = BAR_Y + BAR_H / 2
 
@@ -201,8 +201,15 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
   return (
     <section className={styles.section}>
+      <p className={styles.framing}>
+        When a business cannot ship an order in full, standard practice is to
+        edit it down and ship what inventory allows. Most systems then overwrite
+        the original&mdash;and with it, any record of what was actually demanded
+        and any visibility into what that shortfall costs.
+      </p>
+
       <div className={styles.callout}>
-        <div className={styles.calloutNumber}>{fmtCompact(total)}</div>
+        <div className={styles.calloutNumber}>{animTotal}</div>
         <p className={styles.calloutPrimary}>
           in {range.isFiltered ? 'short-shipping costs over the selected period' : 'total short-shipping costs'} &mdash;{' '}
           {fmtPct(pctOfShipped)} of shipped revenue.
@@ -215,6 +222,15 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
           original orders are overwritten.
         </p>
       </div>
+
+      {topCascading && (
+        <p className={styles.insightLine}>
+          Lost revenue is {fmtPct(lostRevenue / total)} of the total. The
+          other {fmtPct(cascading / total)}&mdash;led
+          by {topCascading.label.toLowerCase()} at {fmtCompact(topCascading.value)}&mdash;are
+          costs no one can measure when the original order is overwritten.
+        </p>
+      )}
 
       <div className={styles.chart}>
         <h2 className={styles.chartTitle}>
@@ -247,7 +263,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
             y={BAR_Y}
             width={LEFT_W}
             height={BAR_H}
-            fill={SEQUENTIAL_TEALS.lost_revenue}
+            fill={DIMENSION_COLOR.lost_revenue}
           />
           <text
             className={styles.totalLabelLarge}
@@ -355,18 +371,18 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
       <div className={styles.benchmarks}>
         <div className={styles.benchmark}>
-          <div className={styles.benchmarkValue}>{fmtPct(pctOfShipped)}</div>
+          <div className={styles.benchmarkValue}>{animPctShipped}</div>
           <div className={styles.benchmarkLabel}>of shipped revenue</div>
         </div>
         <div className={styles.benchmark}>
-          <div className={styles.benchmarkValue}>{fmtPct(pctOfMargin)}</div>
+          <div className={styles.benchmarkValue}>{animPctMargin}</div>
           <div className={styles.benchmarkLabel}>of estimated gross margin</div>
           <div className={styles.benchmarkNote}>
             assumes {fmtPct(wholesaleMargin)} wholesale margin
           </div>
         </div>
         <div className={styles.benchmark}>
-          <div className={styles.benchmarkValue}>{fmtCompact(demandGap)}</div>
+          <div className={styles.benchmarkValue}>{animDemandGap}</div>
           <div className={styles.benchmarkLabel}>in unshipped demand</div>
         </div>
       </div>

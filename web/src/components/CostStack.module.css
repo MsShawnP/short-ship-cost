@@ -4,6 +4,15 @@
   gap: 40px;
 }
 
+.framing {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  max-width: 660px;
+  margin: 0;
+}
+
 .callout {
   display: flex;
   flex-direction: column;
@@ -35,6 +44,17 @@
   line-height: 1.5;
   color: var(--color-text-secondary);
   max-width: 720px;
+}
+
+.insightLine {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 660px;
+  margin: 0;
+  border-left: 3px solid var(--color-border);
+  padding-left: 14px;
 }
 
 /* ---------- Empty state ---------- */
@@ -149,7 +169,14 @@
 }
 
 .dimmable {
-  transition: opacity 120ms ease-out;
+  transition: opacity 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flowPath,
+  .dimmable {
+    transition: none;
+  }
 }
 
 .chartFootnote {
@@ -281,4 +308,37 @@
   font-size: 11px;
   color: var(--color-text-secondary);
   font-style: italic;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .calloutNumber {
+    font-size: 44px;
+  }
+
+  .calloutPrimary {
+    font-size: 16px;
+  }
+
+  .calloutSecondary {
+    font-size: 14px;
+  }
+
+  .framing {
+    font-size: 15px;
+  }
+
+  .chartTitle {
+    font-size: 18px;
+  }
+
+  .benchmarks {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .benchmarkValue {
+    font-size: 24px;
+  }
 }
