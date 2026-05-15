@@ -485,9 +485,10 @@ Side deliverable: extracted the full short-ship-cost design system
 
 ## Tasks
 
-- [ ] U1: Fix dimension toggle layout — label row + chip grid
+- [x] U1: Fix dimension toggle layout — label row + chip grid
       (4x2 desktop, 2x4 mobile)
-- [ ] U2: Mobile polish pass at 375px — scan and fix
+- [x] U2: Mobile polish pass at 375px — scan and fix
+- [x] U3: Center benchmark/stat grid values (CostStack + TimeSeries)
 
 ---
 
