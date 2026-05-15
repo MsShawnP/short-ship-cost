@@ -2,11 +2,14 @@
   max-width: var(--size-content-max);
   margin: 12px auto 0;
   padding: 0 24px;
+  font-family: var(--font-sans);
+}
+
+.labelRow {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 6px;
-  font-family: var(--font-sans);
+  margin-bottom: 8px;
 }
 
 .label {
@@ -15,21 +18,27 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
-  margin-right: 4px;
 }
 
 .hint {
   font-size: 11px;
   color: var(--color-text-secondary);
   font-style: italic;
-  margin-right: 8px;
+}
+
+.chipGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   padding: 4px 10px;
+  width: 100%;
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 500;
@@ -39,6 +48,7 @@
   cursor: pointer;
   border-radius: 2px;
   line-height: 1.2;
+  box-sizing: border-box;
 }
 
 .chip:hover {
@@ -84,7 +94,7 @@
 }
 
 .reset {
-  margin-left: 6px;
+  margin-left: auto;
   padding: 4px 8px;
   font-family: var(--font-sans);
   font-size: 11px;
@@ -105,16 +115,19 @@
 @media (max-width: 640px) {
   .bar {
     padding: 0 16px;
-    gap: 5px;
   }
 
   .hint {
     display: none;
   }
 
+  .chipGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .chip {
     padding: 6px 8px;
     font-size: 11px;
-    min-height: 32px;
+    min-height: 44px;
   }
 }

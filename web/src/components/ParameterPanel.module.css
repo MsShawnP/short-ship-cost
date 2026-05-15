@@ -234,6 +234,7 @@
   .toggleButton {
     padding: 10px 14px;
     font-size: 12px;
+    min-height: 44px;
   }
 }
 
