@@ -130,6 +130,11 @@ Each entry:
 - **Scope:** All charts and tables using `DIMENSION_COLOR` from `lib/dimensions.js`
 - **Do not:** Redesign the full palette. If a future section needs more contrast, consider using labels or patterns rather than shifting hues.
 
+### 2026-05-15 — Use CSS Grid (not flex-wrap) for dimension toggle chips
+- **Why:** Flex-wrap with label text, hint, and 8 chips in one container wraps unpredictably (6+2, 5+3, etc.) depending on viewport width. CSS Grid with `repeat(4, 1fr)` desktop / `repeat(2, 1fr)` mobile guarantees even rows regardless of chip text length or container width. Follows the same pattern as `.benchmarks` in CostStack.module.css.
+- **Scope:** `DimensionToggle.jsx` and `DimensionToggle.module.css`
+- **Do not:** Put the label/hint text back inline with the chips. They live in a separate `.labelRow` flex container above the grid.
+
 ---
 
 ## Reversed / Superseded
