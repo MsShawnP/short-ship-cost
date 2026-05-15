@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import {
   AreaChart,
   Area,
@@ -11,6 +11,7 @@ import {
 import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
 import { useTimeRange, formatMonthLabel } from '../lib/timeRange.jsx'
+import useAnimatedValue, { REDUCED_MOTION } from '../lib/useAnimatedValue.js'
 import PinnedCallout from './PinnedCallout.jsx'
 import styles from './TimeSeries.module.css'
 
@@ -143,6 +144,11 @@ export default function TimeSeries({ costByMonth }) {
 
   const title = useMemo(() => buildTitle(data, range), [data, range])
 
+  const fmtC = useCallback((v) => fmtCompact(v), [])
+  const animAvg = useAnimatedValue(stats ? stats.avg : 0, fmtC)
+  const animPeak = useAnimatedValue(stats ? stats.peak.total : 0, fmtC)
+  const animLow = useAnimatedValue(stats ? stats.low.total : 0, fmtC)
+
   // Tick interval: keep the X-axis readable with up to ~12 labels.
   const tickInterval =
     data.length <= 12
@@ -250,7 +256,9 @@ export default function TimeSeries({ costByMonth }) {
                     strokeWidth={0}
                     fill={DIMENSION_COLOR[dim]}
                     fillOpacity={1}
-                    isAnimationActive={false}
+                    isAnimationActive={!REDUCED_MOTION}
+                    animationDuration={250}
+                    animationEasing="ease-out"
                   />
                 ))}
               </AreaChart>
@@ -269,21 +277,21 @@ export default function TimeSeries({ costByMonth }) {
       {stats && (
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <div className={styles.statValue}>{fmtCompact(stats.avg)}</div>
+            <div className={styles.statValue}>{animAvg}</div>
             <div className={styles.statLabel}>per month, average</div>
             <div className={styles.statSub}>
               over {stats.count} month{stats.count === 1 ? '' : 's'}
             </div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statValue}>{fmtCompact(stats.peak.total)}</div>
+            <div className={styles.statValue}>{animPeak}</div>
             <div className={styles.statLabel}>peak month</div>
             <div className={styles.statSub}>
               {formatMonthLabel(stats.peak.month)}
             </div>
           </div>
           <div className={styles.stat}>
-            <div className={styles.statValue}>{fmtCompact(stats.low.total)}</div>
+            <div className={styles.statValue}>{animLow}</div>
             <div className={styles.statLabel}>low month</div>
             <div className={styles.statSub}>
               {formatMonthLabel(stats.low.month)}

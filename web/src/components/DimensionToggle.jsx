@@ -1,19 +1,16 @@
-import {
-  ALL_DIMENSIONS,
-  useTimeRange,
-} from '../lib/timeRange.jsx'
-import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
+import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_ORDER } from '../lib/dimensions.js'
+import { useTimeRange } from '../lib/timeRange.jsx'
 import styles from './DimensionToggle.module.css'
 
 export default function DimensionToggle() {
   const { activeDims, toggleDim, resetDims } = useTimeRange()
-  const allOn = activeDims.size === ALL_DIMENSIONS.length
+  const allOn = activeDims.size === DIMENSION_ORDER.length
 
   return (
     <div className={`${styles.bar} no-print`}>
       <span className={styles.label}>Dimensions</span>
       <span className={styles.hint}>click to exclude</span>
-      {ALL_DIMENSIONS.map((dim) => {
+      {DIMENSION_ORDER.map((dim) => {
         const on = activeDims.has(dim)
         return (
           <button

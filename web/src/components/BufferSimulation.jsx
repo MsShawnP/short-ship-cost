@@ -11,23 +11,17 @@ import {
   LabelList,
 } from 'recharts'
 
-import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
-import { fmtCompact, fmtPct } from '../lib/format.js'
-import { ALL_DIMENSIONS, useTimeRange } from '../lib/timeRange.jsx'
+import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_ORDER } from '../lib/dimensions.js'
+import { fmtCompact, fmtPct, hexToRgba } from '../lib/format.js'
+import { REDUCED_MOTION } from '../lib/useAnimatedValue.js'
+import { useTimeRange } from '../lib/timeRange.jsx'
 import PinnedCallout from './PinnedCallout.jsx'
 import styles from './BufferSimulation.module.css'
 
-const ORDER = ALL_DIMENSIONS
+const ORDER = DIMENSION_ORDER
 
 const PRIMARY_TEAL = '#0A3D3D'
 const ACCENT_RED = '#C54B4B'
-
-function hexToRgba(hex, alpha) {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
-}
 
 function buildScenarioBreakdown(scenario, activeDims) {
   return ORDER.filter((d) => activeDims.has(d))
@@ -291,7 +285,9 @@ export default function BufferSimulation({ bufferScenarios }) {
               <Bar
                 dataKey="total_cost"
                 fill={PRIMARY_TEAL}
-                isAnimationActive={false}
+                isAnimationActive={!REDUCED_MOTION}
+                animationDuration={250}
+                animationEasing="ease-out"
               >
                 {barData.map((b) => {
                   const dimmed = pinned !== null && b.target_fill_rate !== pinned

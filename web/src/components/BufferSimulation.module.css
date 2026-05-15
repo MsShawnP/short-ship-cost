@@ -363,3 +363,37 @@
   margin: 8px 0 0;
   font-style: italic;
 }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .section {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+  }
+
+  .chartTitle {
+    font-size: 18px;
+  }
+
+  .chartContainer {
+    height: 320px;
+  }
+
+  .pinnedDims {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 12px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px 6px;
+  }
+}

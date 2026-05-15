@@ -102,6 +102,67 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* ---------- Methodology ---------- */
+
+.methodology {
+  max-width: var(--size-content-max);
+  margin: 0 auto;
+  padding: 48px 24px 0;
+}
+
+.methodology-summary {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.methodology-summary::-webkit-details-marker {
+  display: none;
+}
+
+.methodology-summary::before {
+  content: '▸';
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  transition: transform 120ms ease-out;
+}
+
+details[open] > .methodology-summary::before {
+  transform: rotate(90deg);
+}
+
+.methodology-body {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.methodology-body p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 660px;
+}
+
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-link:hover {
+  color: var(--color-text);
+}
+
 .footer-mod {
   color: #c54b4b;
   font-weight: 600;
@@ -125,6 +186,28 @@
 .footer code {
   font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
   font-size: 11px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .page {
+    padding: 32px 16px var(--size-section-gap);
+  }
+
+  .methodology {
+    padding: 32px 16px 0;
+  }
+
+  .methodology-summary {
+    font-size: 18px;
+  }
+
+  .footer {
+    padding: 24px 16px;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 
 /* Recharts label/tick text needs explicit font — inline style works
@@ -292,6 +375,26 @@
   /* Remove "click to pin" instructional copy in chart subtitles. The
      subtitles still render — just trim the trailing instructions via
      the inline render path. (Handled at the JSX level where applicable.) */
+
+  /* Methodology: always show expanded in print. */
+  .methodology {
+    break-before: page;
+    page-break-before: always;
+    padding-top: 0;
+  }
+
+  .methodology details[open] > .methodology-summary::before,
+  .methodology-summary::before {
+    display: none;
+  }
+
+  .methodology details {
+    display: block;
+  }
+
+  .methodology details > .methodology-body {
+    display: flex !important;
+  }
 
   /* The Section 1 flow chart: cap height so it fits a letter page. */
   div[class*='CostStack_chart'] svg {

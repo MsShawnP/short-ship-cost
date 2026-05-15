@@ -1,12 +1,12 @@
 import { useMemo, useState } from 'react'
 
-import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
-import { fmtCompact, fmtPct } from '../lib/format.js'
-import { ALL_DIMENSIONS, useTimeRange } from '../lib/timeRange.jsx'
+import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_ORDER } from '../lib/dimensions.js'
+import { fmtCompact, fmtPct, hexToRgba } from '../lib/format.js'
+import { useTimeRange } from '../lib/timeRange.jsx'
 import PinnedCallout from './PinnedCallout.jsx'
 import styles from './RetailerDrilldown.module.css'
 
-const ALL_DIMS = ALL_DIMENSIONS
+const ALL_DIMS = DIMENSION_ORDER
 const FILTERED_DIMS = ALL_DIMS.filter((d) => d !== 'deauthorization')
 
 // ---- Helpers ---------------------------------------------------------------
@@ -104,13 +104,6 @@ function sortSkuRows(rows, sortBy) {
     return 0
   })
   return [...non, ...other]
-}
-
-function hexToRgba(hex, alpha) {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }
 
 // ---- Retailer chart (custom SVG) ------------------------------------------
@@ -509,6 +502,18 @@ export default function RetailerDrilldown({ costByRetailer, costBySku }) {
     [skuRowsRaw, sortBy],
   )
 
+  const insight = useMemo(() => {
+    if (retailerRows.length < 2) return null
+    const grandTotal = retailerRows.reduce((s, r) => s + r.total, 0)
+    if (grandTotal === 0) return null
+    const top = retailerRows[0]
+    const topPct = top.total / grandTotal
+    const topDim = dims
+      .map((d) => ({ dim: d, label: DIMENSION_LABEL[d], cost: top[d] || 0 }))
+      .sort((a, b) => b.cost - a.cost)[0]
+    return { retailer: top.retailer, pct: topPct, total: top.total, topDim }
+  }, [retailerRows, dims])
+
   return (
     <section className={styles.section}>
       <div className={styles.sectionHead}>
@@ -517,6 +522,16 @@ export default function RetailerDrilldown({ costByRetailer, costBySku }) {
           Cost of shorts by retail partner and product
         </p>
       </div>
+
+      {insight && (
+        <p className={styles.insightLine}>
+          {insight.retailer} accounts for {fmtPct(insight.pct)} of all
+          retailer costs&mdash;{fmtCompact(insight.total)}&mdash;with{' '}
+          {insight.topDim.label.toLowerCase()} as the primary driver. The
+          triage process that routes every order through manual review cannot
+          see this concentration.
+        </p>
+      )}
 
       <RetailerChart
         rows={retailerRows}
