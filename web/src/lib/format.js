@@ -24,3 +24,10 @@ export const fmtFull = (v) => fullCurrency.format(safe(v))
 export const fmtPct = (v) => percent.format(safe(v))
 
 export const fmtMillions = (v) => `$${(safe(v) / 1e6).toFixed(0)}M`
+
+export function hexToRgba(hex, alpha) {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}

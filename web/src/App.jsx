@@ -233,11 +233,59 @@ function AppShell({ data }) {
           <BufferSimulation bufferScenarios={scaled.buffer_scenarios} />
         </Suspense>
       </main>
+      <section className="methodology" id="methodology">
+        <details>
+          <summary className="methodology-summary">
+            About this analysis
+          </summary>
+          <div className="methodology-body">
+            <p>
+              This analysis uses synthetic order data modeled on a ~$25M annual
+              revenue specialty food brand operating across six retail channels
+              (Walmart, Costco, Whole Foods, UNFI, KeHE, and regional grocers)
+              plus direct-to-consumer. The dataset covers 43,110 orders and
+              125,748 line items over an 18–24 month window.
+            </p>
+            <p>
+              Every order passes through a triage simulation that mirrors
+              real-world prioritization: orders are ranked by retailer
+              importance and fulfillment completeness, then edited down when
+              inventory falls short. The edited (shipped) order replaces the
+              original — exactly as it does in most ERP systems — creating the
+              visibility gap this analysis quantifies.
+            </p>
+            <p>
+              Eight cost dimensions are computed from the gap between original
+              and shipped orders: lost revenue, OTIF fines, chargebacks,
+              deauthorization risk, DTC cancellations, DTC-to-retail margin
+              leakage, distributor returns, and triage labor. Each dimension
+              uses retailer-specific parameters (fine rates, velocity
+              thresholds, margin spreads) that can be adjusted via the
+              parameter panel. Deauthorization models both distributor
+              consecutive-month fill rate failures and retailer velocity-based
+              delisting triggers.
+            </p>
+            <p>
+              The buffer simulation models structural improvements to fill rate
+              by lifting every order line to a target percentage, then
+              recomputing all eight dimensions. It does not prescribe how to
+              build the buffer — only what even a modest improvement would
+              recover in quantifiable costs.
+            </p>
+            <p>
+              All parameters are tunable. The baseline values reflect
+              industry-standard fine structures and thresholds drawn from
+              publicly available retailer compliance programs. Adjusting any
+              parameter recalculates all downstream totals in real time.
+            </p>
+          </div>
+        </details>
+      </section>
       <footer className="footer">
         <span>
           Data window: {data.meta.time_window.start} to{' '}
-          {data.meta.time_window.end}. Synthetic order data &mdash;
-          methodology in <code>docs/cost-engine-docs.md</code>.
+          {data.meta.time_window.end}. Synthetic order data &mdash;{' '}
+          <a href="#methodology" className="footer-link">methodology</a>.
           {paramsModified && (
             <span className="footer-mod">
               {' '}
