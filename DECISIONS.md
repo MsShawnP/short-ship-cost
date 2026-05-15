@@ -125,6 +125,11 @@ Each entry:
 - **Scope:** Global — interactive tool, export, README, all prose
 - **Do not:** Use McKinsey/consulting-deck style, marketing language, or data-science-prototype aesthetics.
 
+### 2026-05-15 — Keep the sequential teal palette unchanged after quantitative evaluation
+- **Why:** CIE76 deltaE analysis of all adjacent pairs shows distances of 8.7–15.5, all above the ~7–8 just-noticeable-difference threshold. The weakest pair is mid-palette (triage_labor ↔ dtc_cancellations at 8.7), not the lightest 3 as initially suspected. Every chart segment has text labels as a secondary identification channel. Adjusting 3 lightest shades to increase contrast would compress the remaining 5 pairs, likely making the mid-palette worse.
+- **Scope:** All charts and tables using `DIMENSION_COLOR` from `lib/dimensions.js`
+- **Do not:** Redesign the full palette. If a future section needs more contrast, consider using labels or patterns rather than shifting hues.
+
 ---
 
 ## Reversed / Superseded

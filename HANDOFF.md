@@ -501,3 +501,15 @@ link.
 **Next:** Merge PR #2 and deploy to Cloudflare Pages. Create the OG card image (`og-card.png`). Then real-device mobile testing on an actual phone.
 
 ---
+
+## Session — 2026-05-15 — wrap
+
+**Phase:** Build it right (Phase 2, steps 7–9)
+**Goal:** Transform the tool from a dashboard to a self-selling argument across 5 waves (27 tasks).
+**Completed:** Wave 4 tests (34/34 pass), Wave 5 animations (useAnimatedValue hook, Recharts animation, prefers-reduced-motion), palette evaluation (keep — deltaE 8.7–15.5), mobile layout (640px breakpoints, bottom-sheet parameter panel, 44px touch targets). PR #2 created and pushed.
+**Tried, didn't work:** Nothing notable. Preview screenshot tool timed out (known limitation), worked around with eval/inspect.
+**State:** All 27/27 tasks complete. PR #2 open at MsShawnP/short-ship-cost#2. OG card image still a placeholder.
+**Next concrete action:** Merge PR #2 and deploy to Cloudflare Pages. Create og-card.png.
+**Blockers:** None
+
+---
