@@ -489,3 +489,15 @@ edge cases, visual tuning). Then task 11 — Netlify deploy + README
 link.
 
 ---
+
+## 2026-05-15 12:45
+
+**What changed:** Completed all 27 tasks across 5 waves — tool transformed from dashboard to self-selling argument. PR #2 created and pushed.
+
+**Why:** Audit found the analytical core is unique but presentation was too dashboard-y for a cold prospect (CEO, MBA, opens on phone). Every wave targets one part of that gap: narrative framing, insight lines, methodology appendix, cost engine tests, animations, and mobile layout.
+
+**State:** Working — build clean, 34/34 tests pass, PR open at MsShawnP/short-ship-cost#2. Self-hosted fonts, animated number transitions (250ms, prefers-reduced-motion), Recharts chart animations, mobile bottom-sheet parameter panel, responsive breakpoints at 640px. Palette evaluated and kept (deltaE 8.7–15.5 between adjacent pairs). OG image placeholder referenced but not yet created.
+
+**Next:** Merge PR #2 and deploy to Cloudflare Pages. Create the OG card image (`og-card.png`). Then real-device mobile testing on an actual phone.
+
+---
