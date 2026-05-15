@@ -99,3 +99,22 @@
   color: var(--color-text);
   border-color: var(--color-text);
 }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 640px) {
+  .bar {
+    padding: 0 16px;
+    gap: 5px;
+  }
+
+  .hint {
+    display: none;
+  }
+
+  .chip {
+    padding: 6px 8px;
+    font-size: 11px;
+    min-height: 32px;
+  }
+}

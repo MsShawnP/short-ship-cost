@@ -1,5 +1,7 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 
+import { DIMENSION_ORDER } from './dimensions.js'
+
 const TimeRangeContext = createContext(null)
 
 export const PRESETS = [
@@ -8,17 +10,6 @@ export const PRESETS = [
   { id: 'last_6', label: 'Last 6 months', monthsBack: 6 },
   { id: 'last_3', label: 'Last 3 months', monthsBack: 3 },
   { id: 'custom', label: 'Custom range', monthsBack: null },
-]
-
-export const ALL_DIMENSIONS = [
-  'lost_revenue',
-  'deauthorization',
-  'otif_fines',
-  'chargebacks',
-  'dtc_cancellations',
-  'triage_labor',
-  'distributor_returns',
-  'dtc_margin_leakage',
 ]
 
 export function TimeRangeProvider({
@@ -32,7 +23,7 @@ export function TimeRangeProvider({
   const [preset, setPreset] = useState('full')
   const [customStart, setCustomStart] = useState(firstMonth)
   const [customEnd, setCustomEnd] = useState(lastMonth)
-  const [activeDims, setActiveDims] = useState(() => new Set(ALL_DIMENSIONS))
+  const [activeDims, setActiveDims] = useState(() => new Set(DIMENSION_ORDER))
   const [params, setParams] = useState(() => ({ ...(baselineParams || {}) }))
 
   const range = useMemo(() => {
@@ -70,7 +61,7 @@ export function TimeRangeProvider({
   }, [])
 
   const resetDims = useCallback(() => {
-    setActiveDims(new Set(ALL_DIMENSIONS))
+    setActiveDims(new Set(DIMENSION_ORDER))
   }, [])
 
   const setParam = useCallback((key, value) => {

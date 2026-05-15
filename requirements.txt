@@ -1,0 +1,7 @@
+# All Python scripts in scripts/ use only the Python standard library.
+# No third-party packages required.
+#
+# Modules used: sqlite3, json, sys, os, math, random, shutil, pathlib,
+# collections, dataclasses, datetime, typing.
+#
+# Tested with Python 3.11+.
