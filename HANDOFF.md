@@ -502,6 +502,18 @@ link.
 
 ---
 
+## Session — 2026-05-15 (visual polish)
+
+**Phase:** Build it right (Phase 2, step 7)
+**Goal:** Fix dimension toggle chip layout and run mobile polish pass.
+**Completed:** Full /clarify → /ce:brainstorm → /ce:plan → /ce:work workflow. Extracted Lailara design system to ~/projects/active/CLAUDE.md. Restructured DimensionToggle into label row + CSS grid (4x2 desktop, 2x4 mobile). Mobile polish: PinnedCallout stacks to 1 column, 44px touch targets on all buttons. Centered benchmark/stat grid values. PR #4 merged and deployed to Cloudflare Workers.
+**Tried, didn't work:** Preview screenshot tool timed out every attempt — used preview_eval and preview_snapshot instead.
+**State:** PR #4 merged. One extra commit (centering) on fix/visual-polish-dimension-toggle branch pushed but not yet merged to master.
+**Next concrete action:** Merge the centering commit to master (open a new PR or merge directly), then redeploy.
+**Blockers:** None
+
+---
+
 ## Session — 2026-05-15 — wrap
 
 **Phase:** Build it right (Phase 2, steps 7–9)

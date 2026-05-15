@@ -55,6 +55,18 @@ quarto" or "scope, scrollytelling, decoration"]
 
 **Tags:** buffer-simulation, baseline-reproduction, fill-rate, cost-engine
 
+### 2026-05-15 — Preview screenshot tool consistently times out on this project
+
+**Attempted:** Used `preview_screenshot` to visually verify layout changes after editing DimensionToggle and other CSS. Tried multiple times across the session — after page load, after reload, at desktop and mobile viewports.
+
+**Why it didn't work:** The screenshot call times out after 30s every time on this project. Likely related to the page's lazy-loaded Recharts chunks or the SVG-heavy flow-split chart. Same issue observed in prior sessions.
+
+**What we tried instead:** Used `preview_eval` to inspect computed styles (grid columns, chip widths, alignment) and `preview_snapshot` for accessibility tree structure. Both work reliably and provide sufficient verification for CSS layout changes.
+
+**Status:** Open (environment limitation, not a code issue)
+
+**Tags:** preview-tool, screenshot, timeout, verification, css-layout
+
 ### 2026-05-07 — Costco demand exceeded total brand supply on some authorized low-velocity SKUs
 
 **Attempted:** The order generator uses velocity-weighted SKU sampling without replacement within each retailer's authorized SKU set. Costco only has 9 authorized SKUs and orders 6-15 lines per PO with case quantities of 30-300, so almost every Costco order touches every authorized SKU with large quantities.
