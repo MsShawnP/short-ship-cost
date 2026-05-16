@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from 'react'
+import { Component, lazy, Suspense, useEffect, useMemo, useState } from 'react'
 
 import Header from './components/Header.jsx'
 import DimensionToggle from './components/DimensionToggle.jsx'
@@ -38,6 +38,26 @@ const SOURCES = [
 
 function SectionFallback() {
   return <div className="section-fallback" aria-hidden="true" />
+}
+
+class SectionErrorBoundary extends Component {
+  state = { error: null }
+
+  static getDerivedStateFromError(error) {
+    return { error }
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <div className="section-error">
+          <p className="section-error-title">This section could not render</p>
+          <p className="section-error-body">{this.state.error.message}</p>
+        </div>
+      )
+    }
+    return this.props.children
+  }
 }
 
 function extractBaselineParams(meta) {
@@ -220,18 +240,24 @@ function AppShell({ data }) {
           costByMonth={scaled.cost_by_month}
           ordersByMonth={data.orders_by_month}
         />
-        <Suspense fallback={<SectionFallback />}>
-          <RetailerDrilldown
-            costByRetailer={scaled.cost_by_retailer}
-            costBySku={scaled.cost_by_sku}
-          />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <TimeSeries costByMonth={scaled.cost_by_month} />
-        </Suspense>
-        <Suspense fallback={<SectionFallback />}>
-          <BufferSimulation bufferScenarios={scaled.buffer_scenarios} />
-        </Suspense>
+        <SectionErrorBoundary>
+          <Suspense fallback={<SectionFallback />}>
+            <RetailerDrilldown
+              costByRetailer={scaled.cost_by_retailer}
+              costBySku={scaled.cost_by_sku}
+            />
+          </Suspense>
+        </SectionErrorBoundary>
+        <SectionErrorBoundary>
+          <Suspense fallback={<SectionFallback />}>
+            <TimeSeries costByMonth={scaled.cost_by_month} />
+          </Suspense>
+        </SectionErrorBoundary>
+        <SectionErrorBoundary>
+          <Suspense fallback={<SectionFallback />}>
+            <BufferSimulation bufferScenarios={scaled.buffer_scenarios} />
+          </Suspense>
+        </SectionErrorBoundary>
       </main>
       <section className="methodology" id="methodology">
         <details>

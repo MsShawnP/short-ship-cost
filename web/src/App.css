@@ -102,6 +102,27 @@
   border-top: 1px solid var(--color-border);
 }
 
+.section-error {
+  margin-top: 60px;
+  padding: 32px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-error-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+.section-error-body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
 /* ---------- Methodology ---------- */
 
 .methodology {
