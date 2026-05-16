@@ -1,127 +1,127 @@
 # Project Audit
 
 ## Phase 1: Baseline Assessment
-**Date:** 2026-05-15
+**Date:** 2026-05-16
 **Project:** short-ship-cost
+**Prior audit:** 2026-05-15 (all 4 phases). This is a fresh reassessment
+after 30+ tasks shipped in the interim.
 
 ### What Was Intended
 
-A portfolio piece that makes the invisible cost of short-shipping
-visible. The instinct at most companies is "it's no big deal, we
-just didn't send them X cases" — but there are real-world cascading
-costs (fines, deauthorization, DTC cancellations, margin leakage,
-triage labor) that nobody measures because the original order gets
-overwritten. The tool quantifies that full cost across eight
-dimensions using synthetic data modeled on a ~$25M specialty food
-brand (Cinderhaven Provisions).
+A portfolio piece for Lailara LLC that makes the invisible cost of
+short-shipping visible. Built around Cinderhaven Provisions (~$25M
+fictional brand, 90 SKUs). Designed for a specific prospect: a CEO
+with an MBA at a company that has this exact problem, arriving cold
+via a friend's recommendation, likely opening on his phone first.
 
-Built for a specific prospect whose company has this exact problem
-— orders come in, they don't store the original order, they only
-see what was shipped, so it looks like 100% fill. But designed to
-be general enough for any prospect with the same pattern.
+The tool should read as a self-selling argument — not a dashboard,
+not a prototype — that within 90 seconds demonstrates rigorous data
+work and deep understanding of the problem.
 
 ### What Exists Today
 
 A working, deployed interactive tool at
-`short-ship-cost.msshawnp.workers.dev`.
+`short-ship-cost.msshawnp.workers.dev`. Feature-complete across
+three build arcs (data pipeline, interactive tool, dashboard-to-
+argument transformation) plus a visual polish pass.
 
-**Data pipeline (Python):**
-- Cinderhaven extract (8 tables, 14,595 rows)
+**Data pipeline (Python, stdlib only):**
+- Cinderhaven extract (9 tables, 14,595 rows)
 - Synthetic order generator (43,110 orders, 125,748 lines, $51.9M
   shipped over 2 years)
-- Modular cost engine calculating 8 dimensions ($25.6M total cost
-  of shorts = 49.4% of shipped revenue)
+- Modular cost engine: 8 independent dimension modules, orchestrated
+  by runner.py
 - Buffer simulation at 80/85/90/95% fill rates
-- 35-check validation suite (all passing)
+- 36-check + 10-check validation suites (all passing)
 - JSON export producing 9 pre-aggregated files (253 KB total)
 
-**Interactive tool (React/Vite):**
+**Interactive tool (React 19 / Vite 8):**
+- Opening framing statement setting up the problem in plain English
+- $25.6M headline number with animated count-up (250ms, a11y)
 - 4 sections: headline cost stack (custom SVG flow-split), retailer/
   SKU drill-down (stacked bars + heatmap table), time series
-  (Recharts stacked area), buffer simulation (staircase + deauth cliff)
-- Global time-range filter, dimension toggles, click-to-pin callouts
-- Parameter adjustment panel with sliders, JS cost engine recalculation
-- Print CSS export producing paginated Economist-style PDF
-- Code-split (Recharts lazy-loaded)
+  (Recharts stacked area with trend detection), buffer simulation
+  (staircase + deauth cliff)
+- Data-driven insight lines in each section
+- Global time-range filter, dimension toggles (CSS Grid, 4x2/2x4)
+- Click-to-pin callouts (dark card, no hover tooltips)
+- Parameter adjustment panel (mobile: full-screen bottom sheet)
+- Animated transitions on number changes and chart reflows
+- Collapsible "About this analysis" methodology section
+- Print CSS export: paginated Economist-style PDF with metadata
+- Code-split: Recharts lazy-loaded (371 KB chunk after first paint)
+- Self-hosted fonts (Playfair Display + Source Sans 3)
+- OG/Twitter meta tags with 53 KB social card image
+- Mobile-responsive at 640px breakpoint, 44px touch targets
+- 34 JS cost engine tests (vitest), all passing
+
+**Hosting and deploy:**
+- Cloudflare Pages (static site)
+- `npm run deploy` via wrangler
+- No CI/CD pipeline (manual deploy)
 
 **Documentation:**
-- 5 docs (schema, cost-engine docs, design spec, triage logic,
+- 5 specification docs (schema, cost-engine, design spec, triage,
   benchmarks)
 - Full workflow files (CLAUDE.md, DECISIONS.md, HANDOFF.md, PLAN.md,
   FAILURES.md)
-- Comprehensive README
+- Comprehensive README with live link, methodology pointers, and
+  repo structure guide
 
 ### Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 19, Vite 8, CSS Modules |
-| Charts | Recharts 2.15 + custom SVG |
-| Data pipeline | Python, SQLite |
-| Data delivery | Pre-aggregated JSON (no backend) |
-| Hosting | Cloudflare Pages |
-| Typography | Playfair Display + Source Sans 3 |
+| Layer | Technology | Version |
+|---|---|---|
+| Frontend | React, Vite, CSS Modules | 19.2, 8.0, — |
+| Charts | Recharts + custom SVG | 2.15 |
+| Data pipeline | Python (stdlib only) | 3.11+ |
+| Data delivery | Pre-aggregated JSON | — |
+| Hosting | Cloudflare Pages (Workers) | — |
+| Typography | Playfair Display + Source Sans 3 | Self-hosted woff2 |
+| Testing | Vitest | 4.1 |
 
 ### Project Health Indicators
 
-- **Activity:** Active — built in 5 days (May 7-12), deployed,
-  last commit May 12. One contributor.
-- **Documentation:** Unusually thorough. 5 design/spec docs,
-  full decision log with rationale, failure log, session handoffs.
-- **Test coverage:** Zero. No test files anywhere — not in
-  Python, not in React. The 35-check validation script
-  (`validate_cost_engine.py`) and order validation
-  (`validate_orders.py`) are the closest thing, but they're
-  one-shot scripts, not a test suite.
-- **Dependencies:** Current. React 19, Vite 8, Recharts 2.15.
-  No known vulnerabilities flagged in scan.
+| Indicator | Status |
+|---|---|
+| Build | Clean, 0 warnings, 0 errors |
+| Tests | 34/34 passing (767ms) |
+| Vulnerabilities | 0 (npm audit) |
+| Bundle size | 212 KB initial / 371 KB lazy (both gzipped: 68 + 99 KB) |
+| Data pipeline validation | 46/46 checks passing |
+| Deploy | Working (Cloudflare Workers) |
+| Last commit | 2026-05-16 (active today) |
+| Contributors | 1 |
+
+### Resolution of Prior Audit Findings (2026-05-15)
+
+| # | Finding | Status | How resolved |
+|---|---------|--------|--------------|
+| 1 | Duplicate SEQUENTIAL_TEALS in CostStack.jsx | **Resolved** | Removed; imports DIMENSION_COLOR from dimensions.js |
+| 2 | No OG/meta tags | **Resolved** | Full OG + Twitter card + 53KB og-card.png |
+| 3 | No methodology on page | **Resolved** | Collapsible "About this analysis" section with 5 paragraphs |
+| 4 | Duplicate hexToRgba | **Resolved** | Centralized in lib/format.js |
+| 5 | Dimension ordering inconsistency | **Resolved** | Single DIMENSION_ORDER in dimensions.js; ALL_DIMENSIONS removed |
+| 6 | Footer references repo path | **Resolved** | Links to #methodology in-page anchor |
+| 7 | Google Fonts CDN | **Resolved** | Self-hosted woff2 in web/public/fonts/ |
+| 8 | No Python dependency manifest | **Resolved** | requirements.txt documents stdlib-only deps |
+| 9 | Zero test coverage | **Resolved** | 34 tests covering all cost engine functions + edge cases |
+| 10 | No narrative between sections | **Resolved** | Framing statement, insight lines in each section |
+| 11 | Teal palette concern | **Resolved** | Evaluated quantitatively (deltaE 8.7–15.5); kept with documented rationale |
+| 12 | TimeRangeContext bundles 3 concerns | **Deferred** | Explicitly out of scope; re-render cost negligible for 4-section page |
+| 13 | No CI/CD | **Open** | Still manual deploy via `npm run deploy` |
 
 ### Gap Analysis
 
-The project is more complete than most portfolio pieces at this
-stage — working tool, deployed, documented. But it was specced
-and built before the user had a structured process. Claude Chat
-drove most design decisions; Gemini reviewed. The decisions are
-well-documented but haven't been stress-tested against:
-
-1. **Prospect credibility.** Would someone who lives this problem
-   daily find the numbers, the UX, and the framing convincing —
-   or would they spot things that feel synthetic, oversimplified,
-   or off?
-
-2. **Zero test coverage.** The validation scripts verify data
-   integrity but nothing guards against regressions. The JS cost
-   engine (ratio-scaling approximation) has no automated tests
-   against the Python output beyond a one-time manual check.
-
-3. **Decision quality under pressure.** Five days of building
-   means decisions were made fast. Some may be solid; some may
-   be "path of least friction" choices that a slower review would
-   have challenged (e.g., the ratio-scaling approximation for
-   parameter changes, the teal-only palette, the flow-split chart
-   form after 5 iterations).
-
-4. **Polish vs. product.** The CLAUDE.md says "should look like
-   a product, not a prototype." Unclear whether the current state
-   meets that bar without actually opening it in a browser.
-
-5. **The narrative.** The data and the tool exist, but does the
-   story land? Does it walk the prospect from "it's no big deal"
-   to "this is a $25M problem" in a way that feels inevitable
-   rather than constructed?
-
-### Audit Motivation
-
-The user discussed the project with their best friend who works
-at the company that has this exact problem. That conversation
-raised the question: is this good enough to put in front of
-someone who would immediately know whether it rings true? The
-audit is about answering that before showing it.
+The project is functionally complete for its stated goal. Every
+critical finding from the May 15 audit has been addressed. What
+remains is polish, resilience, and minor professional touches —
+not structural gaps.
 
 ---
 
 ## Phase 2: Internal Review
-**Date:** 2026-05-15
+**Date:** 2026-05-16
 **Dimensions reviewed:** Code quality, Architecture, Tests,
 Documentation, Performance, Security, UX, DevEx
 
@@ -129,501 +129,297 @@ Documentation, Performance, Security, UX, DevEx
 
 | # | Finding | Dimension | Impact | Effort | Leverage | Severity |
 |---|---------|-----------|--------|--------|----------|----------|
-| 1 | Duplicate color map — `SEQUENTIAL_TEALS` in CostStack.jsx duplicates `DIMENSION_COLOR` from dimensions.js | Code quality | 3 | 1 | 3.0 | Important |
-| 2 | No OG/meta tags for social sharing | Security/UX | 3 | 1 | 3.0 | Important |
-| 3 | No methodology context visible on the page itself | UX | 5 | 2 | 2.5 | Critical |
-| 4 | Duplicate `hexToRgba` in RetailerDrilldown + BufferSimulation | Code quality | 2 | 1 | 2.0 | Minor |
-| 5 | Dimension ordering inconsistency (dimensions.js vs timeRange.jsx) | Code quality | 2 | 1 | 2.0 | Minor |
-| 6 | Footer references `docs/cost-engine-docs.md` — a repo path meaningless to site visitors | UX | 2 | 1 | 2.0 | Minor |
-| 7 | Google Fonts loaded from external CDN | Performance/Security | 2 | 1 | 2.0 | Minor |
-| 8 | No Python dependency manifest (requirements.txt or pyproject.toml) | DevEx | 2 | 1 | 2.0 | Minor |
-| 9 | Zero test coverage — 335 lines of JS financial math completely untested | Tests | 5 | 3 | 1.7 | Critical |
-| 10 | No narrative prose between sections — tool assumes viewer already cares | UX | 4 | 3 | 1.3 | Important |
-| 11 | Teal-only sequential palette — hard to distinguish 8 dimensions at a glance | UX | 3 | 3 | 1.0 | Important |
-| 12 | TimeRangeContext bundles 3 concerns (time, dims, params) — unnecessary re-renders | Architecture | 3 | 3 | 1.0 | Important |
-| 13 | No CI/CD pipeline — regressions unguarded | DevEx | 2 | 2 | 1.0 | Minor |
+| 1 | OG image uses relative path — social previews won't render | UX | 4 | 1 | 4.0 | Important |
+| 2 | No error boundaries around lazy-loaded sections | Reliability | 3 | 1 | 3.0 | Minor |
+| 3 | No CI/CD — regressions unguarded on deploy | DevEx | 2 | 2 | 1.0 | Minor |
+| 4 | TimeRangeContext bundles 3 concerns | Architecture | 2 | 3 | 0.7 | Minor |
+| 5 | Recharts chunk is 371 KB (99 KB gz) | Performance | 1 | 4 | 0.3 | Trivial |
 
 ### Detailed Findings
 
-#### Code Quality
+#### Code Quality — Excellent
 
-**Good:** Consistent formatting, clear naming, good use of
-`useMemo` to guard expensive computations, well-structured
-component files, clean separation of data transforms from
-rendering.
+The codebase is clean and well-organized:
 
-**Issues:**
+- **Single source of truth.** DIMENSION_ORDER, DIMENSION_COLOR,
+  DIMENSION_LABEL all exported from one file (dimensions.js, 46
+  lines). No duplicates anywhere.
+- **Utility centralization.** hexToRgba, fmtCompact, fmtPct,
+  fmtFull, fmtMillions all in lib/format.js (33 lines). Used
+  consistently across 3 components.
+- **Consistent patterns.** All 4 sections follow the same pattern:
+  import from lib/, use useTimeRange(), memoize computed values,
+  render chart + callout + footnote.
+- **Clean component boundaries.** Each section is self-contained
+  (own CSS module, own data transformations). App.jsx handles data
+  loading, scaling, and composition only.
 
-1. **Duplicate color map (Important).** `CostStack.jsx:16-24`
-   defines its own `SEQUENTIAL_TEALS` object with the exact same
-   values as `DIMENSION_COLOR` in `lib/dimensions.js`. This means
-   a color change requires editing two files, and they can drift.
-   CostStack should import from dimensions.js like every other
-   component does.
+No code quality issues found.
 
-2. **Duplicate `hexToRgba` (Minor).** The same utility function
-   appears in `RetailerDrilldown.jsx:109` and
-   `BufferSimulation.jsx:25`. Should live in `lib/format.js`.
+#### Architecture — Sound
 
-3. **Dimension ordering inconsistency (Minor).**
-   `DIMENSION_ORDER` in `dimensions.js` orders dimensions
-   alphabetically-ish (lost_revenue, otif_fines, chargebacks,
-   deauthorization...). `ALL_DIMENSIONS` in `timeRange.jsx`
-   orders by magnitude (lost_revenue, deauthorization, otif_fines,
-   chargebacks...). These are both exported as "the canonical
-   order." One source of truth, used everywhere.
+- **Code splitting.** RetailerDrilldown, TimeSeries, and
+  BufferSimulation are React.lazy loaded. Recharts ships in its
+  own 371 KB chunk after Section 1 paints. First paint is 212 KB.
+- **Data flow.** Python pre-aggregates → JSON → React loads all 9
+  files → JS cost engine scales by parameter ratios → sections
+  consume scaled data via props. Clear, unidirectional.
+- **Context usage.** TimeRangeProvider bundles time-range state,
+  dimension toggles, and parameter state into one context. This
+  means any slider change triggers re-renders in FilterBar and
+  DimensionToggle even though they don't use params. For a
+  4-section page this is negligible; would matter if the page grew
+  significantly. Explicitly deferred as acceptable.
 
-#### Architecture
+**Issue: No error boundaries (Minor).**
+If a lazy-loaded section fails to render (e.g., bad data shape
+after a parameter change), the entire app will crash with an
+unhandled error. Wrapping each `<Suspense>` in an error boundary
+would show a per-section fallback instead of a white screen.
+Effort: 1 (20 lines).
 
-**Good:** Clean component boundaries. Lazy loading strategy is
-sound. The cost engine abstraction (Python computes, JS scales
-by ratios) is an honest tradeoff well-documented in code and
-DECISIONS.md.
+#### Tests — Adequate for a portfolio piece
 
-**Issues:**
+- **34 tests passing** (767ms) in `utils/costEngine.test.js`
+- Covers: baseline validation against Python output, ratio scaling,
+  deauth event filtering, buffer scenario scaling, edge cases
+  (zero baseline, negative inputs, NaN/Infinity guards)
+- **Not covered:** React component rendering, interaction flows
+  (click-to-pin, dimension toggle, filter changes), print CSS
+  output, mobile bottom-sheet behavior.
 
-4. **TimeRangeContext does too much (Important).**
-   `lib/timeRange.jsx` bundles time-range state, dimension
-   toggles, AND parameter state into a single context. When the
-   user moves a parameter slider, every component that reads
-   `useTimeRange()` re-renders — even `FilterBar` and
-   `DimensionToggle` which don't use params. Splitting into
-   `TimeRangeProvider`, `DimensionProvider`, and `ParamsProvider`
-   would isolate re-renders. Not urgent for a 4-section page,
-   but worth noting for production quality.
+For a static-data portfolio piece, the cost engine tests are the
+right investment. Component tests would guard against regressions
+but aren't critical when the data shape is fixed and the page is
+small. If the tool were productionized with live data, component
+tests would become important.
 
-#### Tests
+#### Documentation — Thorough
 
-**Critical: Zero coverage.** No test files exist — not in Python,
-not in React. The two validation scripts (`validate_orders.py`,
-`validate_cost_engine.py`) are one-shot verifiers, not a test
-suite.
+Five specification docs, a comprehensive README, full workflow
+state files. Unusually complete. No gaps.
 
-The highest-risk gap is `utils/costEngine.js` — 335 lines of
-financial math (ratio scaling, deauth event filtering, buffer
-scenario scaling, summary derivation). The JS output is validated
-against `validation.json` at runtime, but only at baseline params.
-If any parameter-adjusted calculation produces wrong numbers, there
-is nothing to catch it before a prospect sees it.
+#### Performance — Good
 
-A focused test file covering `getRatios`, `filterDeauthEvents`,
-`scaleCostByRetailer`, `scaleBufferScenarios`, and
-`validateBaseline` with known inputs would be the highest-leverage
-testing investment.
+| Metric | Value | Assessment |
+|---|---|---|
+| Initial JS bundle | 212 KB (68 KB gz) | Good |
+| Lazy Recharts chunk | 371 KB (99 KB gz) | Acceptable (loads after first paint) |
+| Total CSS | 38 KB (10 KB gz) | Good |
+| JSON data (all 9 files) | 253 KB | Good (loads via Promise.all) |
+| Build time | 724ms | Excellent |
+| Test time | 767ms | Excellent |
 
-#### Documentation
+The 371 KB Recharts chunk is the only notable size. It's
+lazy-loaded correctly so it doesn't affect first paint.
+Alternatives (lightweight charting library, or more custom SVG)
+would reduce this but add development complexity for a portfolio
+piece. Not worth changing.
 
-**Good:** Unusually thorough for a portfolio project. README is
-comprehensive. Design spec, cost-engine docs, and benchmarks are
-well-written and honest about limitations.
+#### Security — Minimal attack surface
 
-**Issues:**
-
-5. **Footer references a repo path (Minor).** The site footer
-   says "methodology in `docs/cost-engine-docs.md`". A site
-   visitor can't navigate to a local file path. Either link to
-   the GitHub file or add a methodology section to the page.
-
-#### Performance
-
-**Good:** First paint is fast (~218 KB / 69 KB gz initial bundle).
-Recharts is lazy-loaded (371 KB chunk loads after Section 1
-paints). JSON data is 253 KB total — small enough that loading
-all 9 files via `Promise.all` on startup is fine.
-
-**Issues:**
-
-6. **Google Fonts loaded from CDN (Minor).** Two font families
-   loaded from `fonts.googleapis.com`. This adds a render-blocking
-   request, a DNS lookup, and sends visitor data to Google. For a
-   portfolio piece shown to a specific prospect, self-hosting the
-   fonts (download woff2 files, serve from `/fonts/`) would be
-   faster and more professional.
-
-#### Security
-
-**Good:** No user input handling beyond slider values. No API
-calls. No authentication. Attack surface is near-zero for a
-static site.
-
-**Issues:**
-
-7. **No OG/meta tags (Important).** The page has no
-   `<meta name="description">`, no Open Graph tags, no Twitter
-   card markup. If the prospect shares the URL in Slack or Teams,
-   it will render as a bare link with no preview. For a portfolio
-   piece designed to impress, the social card is the first
-   impression. Easy to add to `index.html`.
+Static site. No user input beyond slider values (which only affect
+in-memory state). No API calls. No authentication. No cookies. No
+third-party scripts. Self-hosted fonts eliminate the Google Fonts
+data leak. The attack surface is near-zero.
 
 #### UX
 
-This is the dimension that matters most for the audit's stated
-goal: "Is this good enough to show to a real prospect?"
+**Strong:**
+- Opening framing statement earns the first 90 seconds by naming
+  the problem before showing the number
+- Animated headline count-up communicates magnitude
+- Insight lines tell the viewer what the data means (not just what
+  it shows)
+- Click-to-pin is a clean interaction that works on touch
+- Methodology section builds trust without cluttering the narrative
+- Dimension toggles let the viewer ask "what if we exclude X?"
+- Parameter sliders make it a simulator, not just a report
+- Mobile bottom-sheet for parameters is properly touch-friendly
+- Print export produces a shareable document
 
-**Good:** The flow-split chart is distinctive and communicates
-the headline well. Click-to-pin is a clean interaction pattern.
-The parameter panel is well-organized. Print CSS produces a
-usable document. Loading and empty states are handled. Focus-
-visible outlines and reduced-motion are present.
+**Issue: OG image uses relative path (Important).**
+`index.html` line 11: `<meta property="og:image" content="/og-card.png" />`.
+Social media crawlers (Slack, Twitter/X, LinkedIn, iMessage) require
+an absolute URL to render the preview image. A relative path will
+either show no image or fail to resolve. Should be:
+`https://short-ship-cost.msshawnp.workers.dev/og-card.png`.
+Same for `twitter:image` on line 15. This is the primary mechanism
+by which the prospect would first encounter the tool (friend shares
+URL in text/Slack), so the preview card is the literal first
+impression.
 
-**Issues:**
+#### DevEx — Good
 
-8. **No methodology or "about" context on the page (Critical).**
-   The tool opens with a $25.6M number and assumes the visitor
-   trusts it. A prospect who lives this problem will immediately
-   ask: "Where do these numbers come from? Is this real data?" A
-   brief section (above or below the headline, or as a collapsible
-   panel) explaining that this is synthetic data modeled on a
-   ~$25M specialty food brand, with tunable parameters and
-   documented methodology, would build credibility rather than
-   requiring it upfront.
+- `npm install && npm run dev` starts the app
+- `npm test` runs tests
+- `npm run deploy` deploys to Cloudflare
+- `python scripts/export_json.py` regenerates data
+- requirements.txt documents stdlib-only deps
 
-9. **No narrative between sections (Important).** Each section
-   has a title and subtitle, but there's no connective prose that
-   walks the reader from insight to insight. The Economist style
-   the project aspires to isn't just clean charts — it's charts
-   embedded in a narrative. Right now it reads more like a
-   dashboard than an argument. For a prospect: the numbers need
-   to *tell them something they didn't know*, not just display
-   data they could have guessed.
-
-10. **Teal-only palette (Important).** The sequential teal palette
-    was a deliberate decision (DECISIONS.md). The tradeoff: it
-    communicates magnitude hierarchy at a glance, but makes it
-    hard to distinguish the 6 smaller dimensions from each other.
-    In the flow-split chart (Section 1) the blocks have labels so
-    it works. In the stacked area chart (Section 3) and heatmap
-    (Section 2), similar-teal cells blur together. Worth
-    reconsidering or at least A/B testing with a prospect's eye.
-
-#### DevEx
-
-**Good:** Dev setup is simple (`cd web && npm install &&
-npm run dev`). Export script is idempotent. Vite HMR is fast.
-
-**Issues:**
-
-11. **No Python dependency manifest (Minor).** The data pipeline
-    uses only stdlib (sqlite3, json, pathlib, collections,
-    datetime) but this isn't documented. A `requirements.txt`
-    (even if empty with a comment) or `pyproject.toml` tells the
-    next developer they don't need to install anything.
-
-12. **No CI/CD pipeline (Minor).** Deploy is manual via
-    `npm run deploy`. No GitHub Actions for lint, build, or
-    deploy. For a solo portfolio project this is fine, but means
-    a typo can go live unguarded.
+**Issue: No CI/CD (Minor).**
+No GitHub Actions workflow. A typo or build failure can go live
+unguarded. For a solo portfolio project this is acceptable but
+means the developer must remember to run tests before deploying.
 
 ### Summary
 
-The codebase is cleaner than expected for a 5-day build — good
-component structure, honest documentation, working financial
-math. The critical gaps are prospect-facing: the tool is a
-dashboard when it needs to be an argument. It shows numbers
-without establishing why the viewer should trust them or care.
-The highest-leverage improvements are adding methodology context
-to the page, testing the JS cost engine, and strengthening the
-narrative flow between sections. The code-level fixes (duplicate
-color map, utility dedup, OG tags) are quick wins that should
-be done regardless.
+The codebase is remarkably clean for a project built in 5 days
+across 3 arcs. The May 15 audit found 13 issues; 12 are resolved,
+1 is explicitly deferred. The only actionable finding today is the
+OG image relative path — a 2-line fix that determines whether
+social previews render correctly.
 
 ---
 
 ## Phase 3: Landscape Scan
-**Date:** 2026-05-15
-**Category:** Supply chain short-ship cost analysis (commercial
-tools) × interactive data storytelling (presentation quality)
+**Date:** 2026-05-16
+**Note:** The competitive landscape has not materially changed since
+the May 15 scan (1 day ago). This section focuses on where the
+project's position has shifted relative to competitors after the
+30-task "dashboard to argument" transformation.
 
-### Competitors / Similar Projects
+### Updated Position vs. May 15 Audit
 
-**Supply chain tools:**
+The May 15 landscape scan identified four weaknesses relative to
+the data storytelling benchmarks (NYT Calculator, Pudding, Nicky
+Case, FT Climate Game):
 
-| # | Name | URL | Description | Traction |
-|---|------|-----|-------------|----------|
-| 1 | SupplyPike | supplypike.com | OTIF compliance analytics + deduction dispute automation for Walmart suppliers | Acquired by SPS Commerce (2024) |
-| 2 | Crisp | gocrisp.com | POS/inventory data aggregation across 40+ retailers for CPG brands; AI replenishment | $127M raised, 7K+ brands, 80+ of top 100 CPG |
-| 3 | Alloy.ai | alloy.ai | Demand + inventory visibility with ML forecasting; OTIF fine dollar-cost framing | SAP partner, $1.5-4.5K/mo pricing |
-| 4 | Vividly | govividly.com | Trade promo management + deduction recovery for CPG | $30M Series B (Jan 2025) |
-| 5 | iNymbus | inymbus.com | RPA deduction management automation across 40+ retailers | Claims 30x processing speed |
-| 6 | RetailPath | retailpath.xyz | Order visibility + autonomous dispute processing | Recent entrant (2025-26) |
+| Weakness (May 15) | Status (May 16) | Detail |
+|---|---|---|
+| No narrative flow | **Closed** | Framing statement, 4 insight lines, methodology section |
+| No methodology visible | **Closed** | 5-paragraph collapsible "About this analysis" |
+| No animated transitions | **Closed** | useAnimatedValue hook (250ms), Recharts chart animations |
+| No engagement hook | **Replaced** | "Place Your Bets" was proposed; user chose direct framing instead — sober, Economist-style opening rather than gamification |
 
-**Data storytelling benchmarks:**
+### Current Feature Matrix (updated)
 
-| # | Name | URL | Description | Why it matters |
-|---|------|-----|-------------|----------------|
-| 7 | NYT Rent vs Buy Calculator | nytimes.com/interactive/2014/upshot | Every assumption is a slider; break-even chart updates live | Gold standard for parameter-driven editorial tools |
-| 8 | Nicky Case Explorable Explanations | ncase.me | "Place Your Bets" + "Sandbox Mode" interaction patterns | Framework for making data exploration feel like thinking |
-| 9 | The Pudding | pudding.cool | Scrollytelling essays with animated transitions, full methodology | Benchmark for narrative + data fusion |
-| 10 | FT Climate Game | ft.com/climate-game | 400-decision scenario simulator; 650K+ playthroughs; grounded in IEA data | Shows how scenario tools earn trust via sourcing |
+| Feature | This Project | SupplyPike | Crisp | Alloy.ai | NYT Calculator |
+|---------|:-----------:|:---------:|:-----:|:--------:|:--------------:|
+| Cost quantification of shorts | **✅** | ❌ | ❌ | 🟡 | ➖ |
+| Original vs shipped comparison | **✅** | ❌ | ❌ | ❌ | ➖ |
+| Cascading cost model (8 dims) | **✅** | ❌ | ❌ | ❌ | ➖ |
+| Buffer/scenario simulation | **✅** | ❌ | ❌ | 🟡 | ➖ |
+| Parameter adjustment (live) | **✅** | ❌ | ❌ | ❌ | ✅ |
+| Narrative storytelling flow | **✅** | ❌ | ❌ | ❌ | ❌ |
+| Methodology visible on page | **✅** | ❌ | ❌ | ❌ | ✅ |
+| Animated state transitions | **✅** | ❌ | ❌ | ❌ | ✅ |
+| Connected to real data | ❌ synthetic | ✅ | ✅ | ✅ | ➖ |
+| Engagement hook (predict/reveal) | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Mobile-first responsive | **✅** | 🟡 | ✅ | ✅ | ✅ |
+| Print/PDF export | **✅** | 🟡 CSV | ✅ | ✅ | ❌ |
 
-### Feature Matrix
+### Landscape Position Update
 
-| Feature | This Project | SupplyPike | Crisp | Alloy.ai | NYT Calculator | Nicky Case |
-|---------|:-----------:|:---------:|:-----:|:--------:|:--------------:|:----------:|
-| Cost quantification of shorts | ✅ | ❌ | ❌ | 🟡 | ➖ | ➖ |
-| Original vs shipped order comparison | ✅ | ❌ | ❌ | ❌ | ➖ | ➖ |
-| Retailer-level drill-down | ✅ | ✅ | ✅ | ✅ | ➖ | ➖ |
-| SKU-level analysis | ✅ | ✅ | ✅ | ✅ | ➖ | ➖ |
-| OTIF fine calculation | ✅ | ✅ | ❌ | 🟡 | ➖ | ➖ |
-| Deauthorization risk modeling | ✅ | ❌ | ❌ | ❌ | ➖ | ➖ |
-| Cascading cost model (8 dimensions) | ✅ | ❌ | ❌ | ❌ | ➖ | ➖ |
-| Buffer/scenario simulation | ✅ | ❌ | ❌ | 🟡 | ➖ | ➖ |
-| Parameter adjustment (live sliders) | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| Time-range filtering | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
-| Export / PDF | ✅ | 🟡 CSV | ✅ | ✅ | ❌ | ❌ |
-| Connected to real data | ❌ synthetic | ✅ | ✅ | ✅ | ➖ | ➖ |
-| Multi-retailer live feeds | ❌ | 🟡 Walmart-only | ✅ 40+ | ✅ 350+ | ➖ | ➖ |
-| Narrative storytelling flow | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Methodology visible on page | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| Engagement hook (bet/predict/reveal) | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
-| Animated state transitions | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ |
-| Scrollytelling | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ |
+The project has moved from "strong analysis, weak presentation" to
+"strong analysis, professional presentation." The gap between this
+and the data storytelling gold standards (Pudding, NYT) has narrowed
+significantly:
 
-### Landscape Position
+**Still unique differentiators:**
+1. Eight-dimension cost model (no competitor has more than 2)
+2. Deauthorization risk modeling (no competitor does this)
+3. Original vs shipped order comparison as a first-class concept
+4. Buffer simulation cliff visualization
+5. Full parameter adjustability on every cost dimension
 
-#### Table Stakes (standard in category)
+**Gaps remaining vs. data storytelling benchmarks:**
+1. No engagement hook (deliberate choice — Economist voice over
+   gamification)
+2. Not connected to real data (deliberate constraint — portfolio
+   piece)
+3. No scrollytelling (explicitly out of scope)
 
-Every supply chain tool has retailer and SKU drill-down, time
-filtering, and export. This project has all of these.
-
-**Missing table-stakes item:** Connected to real data. Every
-commercial tool pulls from live retailer feeds. This project uses
-synthetic data — which is fine for a portfolio piece, but the
-page doesn't explain this to the viewer. A prospect might assume
-it's real data they don't recognize, or worse, dismiss it as
-made-up. The Phase 2 finding ("no methodology context on page")
-is reinforced here.
-
-#### Where This Project Is Stronger
-
-1. **Cost quantification of the short itself.** No incumbent does
-   this. SupplyPike, iNymbus, Vividly, and RetailPath all focus
-   on recovering money *after* the short happened — disputing
-   fines, automating chargebacks. They never ask "what did this
-   short actually cost us across all dimensions?" This project
-   answers that question.
-
-2. **Original vs shipped order comparison.** No tool in the scan
-   preserves and analyzes the gap between what was ordered and
-   what was shipped as a first-class concept. This is the project's
-   thesis and its sharpest differentiator.
-
-3. **Deauthorization risk modeling.** No competitor models
-   deauthorization as a cost dimension. This project quantifies
-   the forward revenue lost when shelf placement disappears due
-   to chronic underfill — $5.86M in the model. This is the number
-   most likely to surprise a prospect.
-
-4. **Buffer simulation.** "What would a 90% fill rate have saved?"
-   is a question no incumbent answers. Alloy.ai does forward-
-   looking demand planning but doesn't model retroactive cost
-   recovery from improved fill.
-
-5. **Live parameter adjustment.** Only the NYT Calculator and
-   explorable explanations offer this level of "touch every
-   assumption." The supply chain tools are dashboards that display
-   data; this tool lets you stress-test the model.
-
-#### Where This Project Is Weaker
-
-1. **Not connected to real data.** Every supply chain tool's value
-   prop starts with "connect your Walmart/Costco/UNFI data." This
-   project can't do that — it's a portfolio piece with synthetic
-   data. The weakness isn't the synthetic data itself; it's that
-   the page doesn't make the viewer understand what they're
-   looking at and why it's relevant to them.
-
-2. **No narrative flow.** The best data storytelling (Pudding,
-   Nicky Case, FT Climate Game) builds an argument section by
-   section. This project displays four chart sections with titles
-   but no connective prose. It reads as "here are four views of
-   the data" instead of "here's why this costs you $25M and
-   here's the one lever that matters most."
-
-3. **No engagement hooks.** Nicky Case's "Place Your Bets"
-   pattern — ask the viewer to predict the answer before revealing
-   it — is exactly right for this project's opening. "What do you
-   think short-shipping costs a $25M brand per year? $500K? $2M?
-   $5M?" Then reveal: $25.6M. The surprise is the hook; the tool
-   earns the right to the viewer's next 10 minutes.
-
-4. **No animated transitions.** When the time range changes or a
-   dimension is toggled, numbers snap to new values. The Pudding
-   and NYT Calculator animate state transitions — the motion
-   communicates magnitude of change. This is polish, not
-   substance, but it's the kind of polish that separates "product"
-   from "prototype" in a prospect's gut.
-
-#### Unique Differentiators
-
-1. **The thesis itself.** "The original order is destroyed, so
-   the cost is invisible" is a framing no tool in the market
-   uses. The commercial tools assume you know what your shorts
-   cost; this tool proves you don't.
-
-2. **Eight-dimension cost model.** No tool breaks short-ship cost
-   into lost revenue + OTIF fines + chargebacks + deauthorization
-   + DTC cancellations + DTC margin leakage + distributor returns
-   + triage labor. The supply chain tools track 1-2 of these
-   (usually OTIF fines and chargebacks).
-
-3. **The deauthorization cliff.** The buffer simulation's
-   staircase showing cost dropping sharply at 90% fill (where
-   distributor deauth thresholds clear) is a visual nobody else
-   has. It turns an abstract concept into a "there's a cliff,
-   and you're on the wrong side of it" moment.
-
-#### Category Trends
-
-The supply chain analytics market is consolidating fast:
-SupplyPike acquired by SPS Commerce, Crisp acquiring Atheon +
-ClearBox, Alloy.ai partnering with SAP. The trend is toward
-unified platforms that pull data from all retailers into one
-view. AI agents (Crisp's Agent Studio, RetailPath's autonomous
-disputes) are the 2025-26 story.
-
-In data storytelling, the trend is toward explorable explanations
-with full methodology transparency. The FT Climate Game proved
-that scenario simulators can be both rigorous journalism and
-viral engagement tools (650K+ plays). The Pudding consistently
-ships the highest-quality interactive data essays in the field.
-
-The gap both trends leave open: **nobody is building the
-analytical argument for why the original order matters.** The
-supply chain tools automate recovery from shorts; the data
-storytelling tools don't touch supply chain. This project sits
-in the unclaimed intersection.
+All three are deliberate decisions, not oversights.
 
 ### Summary
 
-This project occupies a genuinely empty niche: no commercial
-supply chain tool quantifies the full upstream cost of a short
-across eight dimensions, and no data storytelling piece has tried
-this domain. The analytical model (especially deauthorization
-risk and the buffer cliff) is stronger than anything in the
-market. The weakness is presentation, not substance — the
-commercial tools are weaker analytically but feel more polished
-because they connect to real data and follow dashboard
-conventions the prospect already trusts. The data storytelling
-benchmarks show what "product quality" means in practice:
-narrative flow, methodology transparency, engagement hooks, and
-animated transitions. Adding those qualities to this project's
-unique analytical core would create something that doesn't exist
-anywhere.
+The project now occupies a stronger version of the same empty niche:
+no supply chain tool quantifies the full upstream cost of a short
+across eight dimensions with live parameter adjustment AND presents
+it as a narrative argument with methodology transparency. The
+presentation gap identified in the May 15 audit is closed.
 
 ---
 
 ## Phase 4: Differentiation & Next Moves
-**Date:** 2026-05-15
+**Date:** 2026-05-16
 
-### Cross-Reference Summary
+### Cross-Reference
 
-The audit's central finding is that this project's analytical
-core is genuinely unique — no supply chain tool quantifies the
-upstream cost of a short across eight dimensions, models
-deauthorization risk, or lets you simulate buffer scenarios.
-But the presentation doesn't match the substance. The internal
-review (Phase 2) found the same gaps the landscape scan (Phase 3)
-confirmed: no methodology transparency, no narrative flow, no
-engagement hooks. These aren't just internal quality issues —
-they're the exact qualities that separate the best data
-storytelling (NYT, Pudding, FT, Nicky Case) from dashboards.
+Phase 2 found 5 items. Only 1 is actionable with meaningful impact:
+the OG image relative path. The rest are minor (error boundaries,
+CI/CD) or explicitly deferred (context splitting, Recharts size).
 
-The prospect is a tinkerer who likes playing with data and
-scenarios. The tool already supports that (sliders, toggles,
-click-to-pin). What's missing is the setup: the tool drops him
-into $25.6M without context, without earning trust, and without
-a hook that makes him want to explore. The commercial supply
-chain tools (SupplyPike, Crisp, Alloy) are weaker analytically
-but feel more authoritative because they connect to real data and
-follow conventions the prospect already trusts. This project
-can't connect to real data — it's a portfolio piece. But it can
-match or exceed the data storytelling standard for transparency,
-narrative, and engagement. That's the strategic path.
+Phase 3 confirms the project's position has improved from "strong
+core, weak shell" to "strong core, professional shell." The
+strategic weaknesses (no real data, no engagement hook) are
+deliberate decisions, not gaps to fill.
 
-The code-level fixes from Phase 2 (duplicate color map, utility
-dedup, OG tags, footer fix) are quick wins that should be done
-first — they prevent bugs and polish the surface before any
-larger changes land.
+### Project Readiness Assessment
+
+| Criterion | Met? |
+|---|---|
+| URL shared renders a rich preview card | **Almost** — tags present but og:image path is relative |
+| No duplicate code between components | **Yes** |
+| Fonts load from app's own domain | **Yes** |
+| Opening framing sets up the problem | **Yes** |
+| Each section has a declarative insight line | **Yes** |
+| Methodology available as collapsible appendix | **Yes** |
+| JS cost engine has automated tests, all passing | **Yes** (34/34) |
+| Animations on number changes, respects reduced-motion | **Yes** |
+| Tool works well on mobile | **Yes** (640px breakpoint, bottom sheet, 44px targets) |
+| Parameter panel usable on mobile | **Yes** (full-screen bottom sheet) |
+| Reads as a self-selling argument, not a dashboard | **Yes** |
+
+**Definition of done: 10/11 criteria met.** The single gap is the
+OG image URL.
 
 ### Ranked Next Moves
 
-| # | Move | Category | Strategic | Internal | Effort | Score | Description |
-|---|------|----------|-----------|----------|--------|-------|-------------|
-| 1 | OG/meta tags + social card | Close gap | 4 | 3 | 1 | 7.0 | If the prospect shares the URL in Slack/Teams, the preview is the first impression. Add `<meta>` description, OG title/description/image, Twitter card. |
-| 2 | Code cleanup bundle | Foundational | 1 | 3 | 1 | 4.0 | Fix duplicate `SEQUENTIAL_TEALS` in CostStack.jsx, extract `hexToRgba` to lib/format.js, consolidate dimension ordering to one source of truth, fix footer repo-path reference. |
-| 3 | "Place Your Bets" engagement hook | Leapfrog | 5 | 3 | 2 | 4.0 | Before revealing $25.6M, ask the visitor to estimate: "What do you think short-shipping costs a $25M brand per year?" Show a range. Let them commit. Then reveal the model's answer. The surprise is the hook. Nobody in the supply chain or data storytelling space does this. Perfect for a tinkerer prospect. |
-| 4 | Self-host fonts | Foundational | 1 | 2 | 1 | 3.0 | Download Playfair Display + Source Sans 3 woff2 files, serve from /fonts/. Eliminates Google Fonts render-blocking request, DNS lookup, and third-party data leak. |
-| 5 | Narrative + methodology on the page | Leapfrog | 5 | 5 | 4 | 2.5 | Add connective prose between sections that walks the reader from "it's no big deal" → "this is a $25M problem" → "here's where it hits hardest" → "here's the one lever." Add methodology panel or section: synthetic data, ~$25M brand model, tunable parameters, documented assumptions. This is the single move that addresses the biggest Phase 2 finding AND the biggest Phase 3 gap. No supply chain tool does this; the best data storytelling always does. |
-| 6 | JS cost engine tests | Foundational | 3 | 5 | 3 | 2.7 | Test `getRatios`, `filterDeauthEvents`, `scaleCostByRetailer`, `scaleBufferScenarios`, and `validateBaseline` with known inputs. The prospect will drag sliders — if the math is wrong at non-baseline params, credibility is gone. |
-| 7 | Python dependency manifest | Foundational | 0 | 2 | 1 | 2.0 | Add `requirements.txt` (even empty with a comment) or `pyproject.toml` documenting stdlib-only deps. Prospect won't see this, but it closes a DevEx gap. |
-| 8 | Animated state transitions | Close gap | 3 | 2 | 3 | 1.7 | Animate number changes, chart reflows, and filter transitions. The Pudding and NYT Calculator use motion to communicate magnitude. This is the polish that separates "product" from "prototype" in a prospect's gut. |
-| 9 | Palette evaluation | Close gap | 2 | 3 | 3 | 1.7 | Test the teal-only palette with a fresh pair of eyes. If dimensions blur together in Sections 2-3, consider a divergent palette for the 6 smaller dims while keeping teal for lost_revenue and deauthorization. Don't change unless it's clearly better — the current palette was a deliberate decision. |
-
-### Recommended Sequence
-
-**Wave 1 — Quick wins (do first, < 1 hour total):**
-Moves 1, 2, 4, 7. These are all effort-1 fixes that polish the
-surface before any bigger changes. OG tags mean the URL looks
-sharp if shared. Code cleanup prevents bugs during subsequent
-work. Self-hosted fonts load faster. Dependency manifest closes
-a gap.
-
-**Wave 2 — The engagement layer (the differentiator):**
-Move 3 ("Place Your Bets" hook). This is the single most
-impactful change for the specific prospect: a tinkerer who likes
-to play with data. The hook gives him something to react to
-before he starts exploring. It also creates the emotional setup
-that makes the narrative (Wave 3) land harder.
-
-**Wave 3 — The narrative layer (the argument):**
-Move 5 (narrative + methodology). This is the heaviest lift but
-the most transformative. The tool goes from "dashboard with four
-chart sections" to "argument that walks you to a conclusion."
-Methodology transparency earns the trust that synthetic data
-can't earn on its own. This should be done after the hook is in
-place, because the hook creates the emotional context the
-narrative builds on.
-
-**Wave 4 — Safety net:**
-Move 6 (JS cost engine tests). Write tests before the prospect
-session, so slider interactions are verified at non-baseline
-params. This can run in parallel with Waves 2-3 if time allows.
-
-**Wave 5 — Polish (if time):**
-Moves 8, 9 (animations, palette). Only if the prospect meeting
-isn't imminent. These improve perceived quality but don't change
-the argument.
+| # | Move | Effort | Impact | Notes |
+|---|------|--------|--------|-------|
+| 1 | Fix OG image to absolute URL | 1 min | High | 2-line change in index.html. Determines whether social preview renders. |
+| 2 | Add React error boundaries | 15 min | Low | Prevents white screen if a lazy section fails. Nice-to-have. |
+| 3 | Add GitHub Actions CI | 30 min | Low | Run `npm test` and `vite build` on push. Guards against regressions. |
 
 ### What NOT to Do
 
-1. **Don't try to connect to real data.** The commercial tools'
-   strength is live retailer feeds. Chasing that would require a
-   backend, auth, EDI integration — months of work that turns a
-   portfolio piece into a product. The better move is leaning into
-   what synthetic data *can* do (tunable, explorable, transparent)
-   and making that a feature, not an apology.
+1. **Don't add "Place Your Bets."** The user explicitly chose
+   direct framing over gamification. The Economist voice is the
+   right call for this prospect (CEO, MBA, no patience for gimmicks).
 
-2. **Don't add scrollytelling.** The Pudding does it beautifully,
-   but retrofitting scroll-driven reveals into a 4-section React
-   app is a major architectural change. The "Place Your Bets"
-   hook + narrative prose gets 80% of the engagement benefit at
-   20% of the effort.
+2. **Don't split TimeRangeContext.** The re-render cost is
+   negligible for a 4-section page. Splitting adds complexity
+   without visible benefit.
 
-3. **Don't split TimeRangeContext yet.** Phase 2 flagged it as
-   an architecture concern, but for a 4-section page the re-
-   render cost is negligible. Splitting it now adds complexity
-   without visible benefit. Revisit only if the page grows.
+3. **Don't replace Recharts.** The 371 KB lazy chunk is acceptable
+   for a chart-heavy tool. The trade-off (stable library, good
+   SVG output for print) is worth the size.
 
-4. **Don't chase the supply chain tools' feature set.** Adding
-   multi-retailer data feeds, EDI connectors, or AI agents would
-   be playing their game on their field. This project's advantage
-   is analytical depth and storytelling — invest there.
+4. **Don't add component tests.** The data shape is fixed. The
+   cost engine is tested. The page is small. Component tests would
+   add maintenance cost without catching real bugs in this context.
 
-5. **Don't rebuild the palette without testing.** The teal palette
-   was a deliberate decision with documented rationale. Evaluate
-   it with the prospect in mind, but don't change it preemptively.
-   If it works well enough in the flow-split chart (where the
-   labels compensate), the risk is only in Sections 2-3 where
-   small dimensions blur. A targeted fix (higher contrast on the
-   lightest 3 shades) is better than a full redesign.
+5. **Don't add scrollytelling.** Explicitly out of scope. The
+   framing + insight lines achieve 80% of the narrative benefit at
+   a fraction of the complexity.
+
+### Conclusion
+
+This project is ready to show to the prospect. The analytical core
+is genuinely differentiated, the presentation matches the substance,
+and the tool reads as a product — not a prototype. The one thing
+to fix before sharing: make the OG image URL absolute so the social
+preview card renders when the friend texts the link.
+
+---
+
+## Audit History
+
+- **2026-05-15:** First full audit (4 phases). Found 13 internal
+  issues, strong analytical core, weak presentation. Led to the
+  27-task "dashboard to argument" arc.
+- **2026-05-16:** Second full audit. 12 of 13 prior findings
+  resolved. 1 new actionable finding (OG image path). Project
+  assessed as ready to ship.
