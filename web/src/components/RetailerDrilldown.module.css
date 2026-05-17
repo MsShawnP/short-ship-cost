@@ -412,6 +412,11 @@
     font-size: 17px;
   }
 
+  .tableBlock {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .table {
     table-layout: auto;
     font-size: 12px;
