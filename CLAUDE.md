@@ -4,7 +4,7 @@
 
 A portfolio piece for Lailara LLC that quantifies the full cost of
 short-shipping orders in a specialty food business. Built around
-Cinderhaven Provisions (~$25M fictional brand, 90 SKUs). The project
+Cinderhaven Provisions (~$25M fictional brand, 50 SKUs). The project
 generates synthetic order data (original orders from retail partners
 vs. edited/shipped orders), calculates the revenue gap and cascading
 costs (fines, chargebacks, deauthorization, DTC cancellations, margin
