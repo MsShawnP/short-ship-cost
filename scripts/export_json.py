@@ -114,8 +114,7 @@ def build_meta(db: sqlite3.Connection) -> dict:
     demand = float(row["demand"] or 0)
     overall_fill = (shipped_revenue / demand) if demand else 0.0
 
-    # /2 to match the arc-1 docs ($25.9M/yr); honest given the ~720-day window.
-    shipped_revenue_annual = shipped_revenue / 2.0
+    shipped_revenue_annual = shipped_revenue / 3.0
 
     cur.execute(
         "SELECT name, value, unit, basis, level, description, source "

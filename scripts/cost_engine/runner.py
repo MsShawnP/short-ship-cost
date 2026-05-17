@@ -161,8 +161,8 @@ def write_cost_db(results: list[dict], shipped_revenue: float) -> None:
 
 
 def print_summary(results: list[dict], shipped_revenue: float) -> None:
-    print(f"\n  Shipped revenue (2yr): ${shipped_revenue:,.0f}  "
-          f"(${shipped_revenue/2:,.0f}/yr)\n")
+    print(f"\n  Shipped revenue (3yr): ${shipped_revenue:,.0f}  "
+          f"(${shipped_revenue/3:,.0f}/yr)\n")
     print(f"  {'#':<3}{'DIMENSION':<24}{'TOTAL COST':>16}{'% OF SHIPPED':>16}")
     print("  " + "-" * 60)
     grand_total = 0.0

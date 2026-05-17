@@ -1,6 +1,6 @@
 """
 Generate synthetic original orders (orders + order_lines_original) for
-the 18-24 month Cinderhaven window. Output goes into a new SQLite file
+the 3-year (157-week) Cinderhaven window. Output goes into a new SQLite file
 at data/short_ship_orders.db, separate from the Cinderhaven extract.
 
 Per docs/order-data-schema.md:
@@ -14,14 +14,14 @@ Per docs/order-data-schema.md:
 Volume targets (so that triage at channel-specific fill rates lands
 shipped revenue at ~$25M/yr). UNFI/KeHE share the 18% distributor
 mix at 11/7 (i.e. 60/40 of distributor demand):
-    Walmart      $16.0M/yr  ($32.0M over 2yr)
-    UNFI         $ 3.93M/yr ($ 7.86M)   = 60% of distributor
-    KeHE         $ 2.50M/yr ($ 5.00M)   = 40% of distributor
-    Whole Foods  $ 3.3M/yr  ($ 6.7M)
-    Costco       $ 2.8M/yr  ($ 5.6M)
-    Regional     $ 3.5M/yr  ($ 6.9M)
-    DTC          $ 0.88M/yr ($ 1.8M)
-    TOTAL       ~$32.9M/yr  ($65.86M)
+    Walmart      $16.0M/yr  ($48.0M over 3yr)
+    UNFI         $ 3.93M/yr ($11.8M)    = 60% of distributor
+    KeHE         $ 2.50M/yr ($ 7.5M)    = 40% of distributor
+    Whole Foods  $ 3.3M/yr  ($10.0M)
+    Costco       $ 2.8M/yr  ($ 8.4M)
+    Regional     $ 3.5M/yr  ($10.5M)
+    DTC          $ 0.88M/yr ($ 2.6M)
+    TOTAL       ~$32.9M/yr  ($98.8M)
 """
 from __future__ import annotations
 
@@ -37,9 +37,9 @@ REPO = Path(__file__).resolve().parent.parent
 EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
-# 104-week Cinderhaven window aligned with scan_data
-WINDOW_START = date(2024, 5, 11)
-WINDOW_END = date(2026, 5, 2)
+# 157-week Cinderhaven window aligned with scan_data
+WINDOW_START = date(2024, 1, 6)
+WINDOW_END = date(2027, 1, 2)
 
 REGIONAL_CHAINS = {
     "Southside Grocers",
@@ -49,15 +49,12 @@ REGIONAL_CHAINS = {
     "Harbor Fresh",
 }
 
-# Per-retailer column lookup in sku_costs. KeHE reuses wholesale_unfi
-# since the upstream sku_costs has no separate KeHE column; real KeHE
-# wholesale is typically within a few percent of UNFI.
 WHOLESALE_COL = {
     "Walmart": "wholesale_walmart",
     "Costco": "wholesale_costco",
     "Whole Foods": "wholesale_whole_foods",
     "UNFI": "wholesale_unfi",
-    "KeHE": "wholesale_unfi",
+    "KeHE": "wholesale_kehe",
     "DTC": "wholesale_dtc",
 }
 for chain in REGIONAL_CHAINS:
@@ -427,7 +424,7 @@ def _generate_distributor(
     orders, lines = [], []
     seq = 0
     line_seq = 0
-    price_col = "wholesale_unfi"  # KeHE shares UNFI's wholesale column
+    price_col = WHOLESALE_COL[retailer]
 
     # Replenishment: Mon + Thu per week
     for week in all_weeks():
@@ -697,14 +694,14 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
         by_channel[ch] += rev
         line_count_by_channel[ch] += 1
 
-    target_2yr = {
-        "Walmart": 32_000_000,
-        "UNFI": 7_860_000,
-        "KeHE": 5_000_000,
-        "Whole Foods": 6_700_000,
-        "Costco": 5_600_000,
-        "Regional": 6_900_000,
-        "DTC": 1_800_000,
+    target_3yr = {
+        "Walmart": 48_000_000,
+        "UNFI": 11_790_000,
+        "KeHE": 7_500_000,
+        "Whole Foods": 9_900_000,
+        "Costco": 8_400_000,
+        "Regional": 10_500_000,
+        "DTC": 2_640_000,
     }
     print()
     print(f"{'Channel':<14} {'Orders':>8} {'Lines':>10} {'Revenue ($)':>16} {'Target':>14} {'Diff':>10}")
@@ -717,11 +714,11 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
     for ch in ["Walmart", "UNFI", "KeHE", "Whole Foods", "Costco", "Regional", "DTC"]:
         rev = by_channel.get(ch, 0)
         total_rev += rev
-        target = target_2yr[ch]
+        target = target_3yr[ch]
         diff_pct = (rev - target) / target * 100 if target else 0
         print(f"{ch:<14} {order_count_by_ch.get(ch, 0):>8,} {line_count_by_channel.get(ch, 0):>10,} "
               f"${rev:>15,.0f} ${target:>13,} {diff_pct:>+9.1f}%")
-    target_total = sum(target_2yr.values())
+    target_total = sum(target_3yr.values())
     diff_pct = (total_rev - target_total) / target_total * 100
     print("-" * 76)
     print(f"{'TOTAL':<14} {len(orders):>8,} {len(lines):>10,} ${total_rev:>15,.0f} ${target_total:>13,} {diff_pct:>+9.1f}%")
