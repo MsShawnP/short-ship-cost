@@ -415,6 +415,429 @@ preview card renders when the friend texts the link.
 
 ---
 
+---
+
+# Audit 3 — 2026-05-17
+
+## Phase 1: Baseline Assessment
+**Date:** 2026-05-17
+**Prior audit:** 2026-05-16 (all 4 phases, assessed ready to ship).
+**Trigger:** Full pipeline rebuild from upstream cinderhaven-data
+(50 SKUs, 157-week window, native KeHE column). Web app not yet
+updated to match.
+
+### What Was Intended
+
+Same as prior audit: a portfolio piece that quantifies the full cost
+of short-shipping for Cinderhaven Provisions (~$25M brand, 50 SKUs).
+The tool should read as a self-selling argument for a CEO arriving
+cold via a friend's text.
+
+### What Exists Today
+
+The same deployed interactive tool at
+`short-ship-cost.msshawnp.workers.dev`, feature-complete after
+3 build arcs + visual polish + 2 prior audits. All structural
+issues from the May 15/16 audits were resolved (error boundaries,
+CI, OG image URL, fonts, tests, narrative, mobile).
+
+**What changed since the last audit (commit 6ee429b):**
+- Full Python pipeline rebuilt against new cinderhaven-data:
+  - 50 SKUs (was 90)
+  - 157-week window Jan 2024–Jan 2027 (was 104-week, May 2024–May 2026)
+  - KeHE pricing via native `wholesale_kehe` column (was synthesized)
+  - Annualization divisor: /3.0 (was /2.0)
+- New pipeline output:
+  - 66,101 orders (was 43,110)
+  - 191,371 lines (was 125,748)
+  - Total cost of shorts: **$33.16M** (was $25.60M)
+  - Cost engine validation: 35/35 pass
+  - Order validation: 24/25 pass (1 statistical edge case)
+
+### Critical Gap: Pipeline/Frontend Desync
+
+The Python pipeline and databases are rebuilt and validated. The
+**web app JSON data was never re-exported**. The React app is
+serving stale data from the old pipeline run:
+
+| Metric | Database (current) | JSON / frontend (stale) |
+|--------|-------------------|------------------------|
+| Total cost | $33,159,817 | $25,597,978 |
+| SKU count | 50 | 90 |
+| Order count | 66,101 | 43,110 |
+| Line items | 191,371 | 125,748 |
+| Time window | Jan 2024 – Jan 2027 (3 yr) | May 2024 – May 2026 (2 yr) |
+| Lost revenue | $26.5M | $18.7M |
+| Deauthorization | $5.2M | $5.9M |
+| OTIF fines | $1.17M | $826K |
+
+**Hardcoded stale references:**
+- `web/index.html` lines 9, 14: "$25.6M" in OG/Twitter descriptions
+- `web/src/App.jsx` line 272–273: "43,110 orders and 125,748 line
+  items over an 18–24 month window"
+- `README.md` lines 24, 39–40: "43,110 orders, $51.9M shipped",
+  "$25.6M in total short-shipping costs on $51.9M"
+- `data/README.md` lines 8, 46–71: "~14,600 rows" (now ~13,980),
+  "What this project will add (not yet built)" section describes
+  tables that all exist
+
+### Tech Stack (unchanged)
+
+| Layer | Technology | Version |
+|---|---|---|
+| Frontend | React, Vite, CSS Modules | 19.2, 8.0, — |
+| Charts | Recharts + custom SVG | 2.15 |
+| Data pipeline | Python (stdlib only) | 3.11+ |
+| Data delivery | Pre-aggregated JSON | — |
+| Hosting | Cloudflare Pages (Workers) | — |
+| Typography | Playfair Display + Source Sans 3 | Self-hosted woff2 |
+| Testing | Vitest | 4.1 |
+
+### Project Health Indicators
+
+| Indicator | Status |
+|---|---|
+| Build | Clean, 0 warnings, 0 errors (583ms) |
+| Tests | 34/34 passing (364ms) — but validates against stale JSON |
+| Vulnerabilities | 0 (npm audit) |
+| Bundle size | 212 KB initial / 371 KB lazy (gzipped: 68 + 99 KB) |
+| Data pipeline validation | 35/35 cost engine + 24/25 order checks |
+| Deploy | Working (Cloudflare Workers) |
+| CI | GitHub Actions: npm test + vite build on push/PR |
+| Last commit | 2026-05-17 (data rebuild) |
+| **Data freshness** | **STALE — JSON not re-exported after pipeline rebuild** |
+
+### Other Findings
+
+1. **`scripts/add_kehe.py` possibly obsolete.** KeHE is now native
+   in upstream cinderhaven-data. The script still exists and
+   `data/README.md` still references it. Needs verification: does
+   the extract already include KeHE rows without running this script?
+
+2. **`data/README.md` "not yet built" section is stale.** All 7
+   described tables/parameters already exist in the databases.
+
+3. **PLAN.md references $25.6M** in the design principles and
+   decomposition — will need updating after re-export to reflect
+   the new headline number.
+
+### Gap Analysis
+
+The project is structurally complete and feature-complete. The only
+blocking issue is the **pipeline/frontend data desync**: the
+databases say $33.2M, the web app says $25.6M. Until `export_json.py`
+is re-run and all hardcoded references updated, the tool is
+internally inconsistent.
+
+## Phase 2: Internal Review
+**Date:** 2026-05-17
+**Dimensions reviewed:** Code quality, Architecture, Tests,
+Documentation, Performance, Security, UX, DevEx
+
+### Top Opportunities (by leverage)
+
+| # | Finding | Dimension | Impact | Effort | Leverage | Severity |
+|---|---------|-----------|--------|--------|----------|----------|
+| 1 | JSON data not re-exported after pipeline rebuild | Data integrity | 5 | 1 | 5.0 | Critical |
+| 2 | Hardcoded stale numbers in OG tags, methodology, README | Documentation | 4 | 1 | 4.0 | Important |
+| 3 | `data/README.md` "not yet built" section describes existing tables | Documentation | 1 | 1 | 1.0 | Trivial |
+| 4 | `scripts/add_kehe.py` is obsolete (KeHE now native upstream) | Code quality | 1 | 1 | 1.0 | Trivial |
+
+### Detailed Findings
+
+#### Data Integrity — Critical desync
+
+The cost engine databases were rebuilt (commit `6ee429b`) but
+`scripts/export_json.py` was never re-run. The web app's 9 JSON
+files reflect the old pipeline output. The re-export is a single
+command (`python scripts/export_json.py`) and will produce new
+numbers without changing data shapes — all 8 dimensions, same JSON
+structure, same keys.
+
+**Confirmed safe for re-export:**
+- Tests (34/34) validate structure and ratios, not absolute values.
+  They load from the JSON files and check internal consistency. After
+  re-export they will still pass.
+- DIMENSION_ORDER matches the new magnitude ranking (verified: same
+  descending order with new numbers).
+- "Other" SKU row will dynamically adjust from "Other (62 SKUs)" to
+  "Other (30 SKUs)" — handled by export_json.py's `TOP_N_SKUS = 20`.
+- Buffer scenario structure unchanged (same 4 fill rate targets).
+
+#### Code Quality — Excellent (unchanged)
+
+Same assessment as the May 16 audit:
+- Single source of truth for dimensions, colors, formatting
+- Utility centralization in `lib/format.js`
+- Consistent component patterns across all 4 sections
+- Clean component boundaries with own CSS modules
+- No duplicated code, no dead exports
+- No security vulnerabilities (no innerHTML, eval, or user-provided
+  content injected into DOM)
+
+#### Architecture — Sound (unchanged)
+
+- Code splitting working correctly (Recharts lazy-loaded)
+- Unidirectional data flow: JSON → cost engine scaling → props
+- Error boundaries around lazy sections
+- TimeRangeContext bundles 3 concerns (still acceptable for a
+  4-section page — deferred per prior audit decision)
+
+#### Tests — Adequate (will pass after re-export)
+
+- 34 tests in `costEngine.test.js`, all passing (364ms)
+- Tests validate: baseline round-trip, ratio scaling, deauth event
+  filtering, buffer scenario scaling, edge cases (zero/NaN/negative)
+- No hardcoded expected values — all derived from the JSON files
+- After re-export: tests will load new JSON and validate new numbers
+  with the same structural assertions
+
+#### Documentation — Stale in spots
+
+**Hardcoded numbers to update after re-export:**
+- `web/src/App.jsx:272-273` — "43,110 orders and 125,748 line items
+  over an 18–24 month window" → should be "66,101 orders and 191,371
+  line items over a 3-year window"
+- `web/index.html:9,14` — "$25.6M" in OG/Twitter descriptions →
+  will be ~$33.2M
+- `README.md:24,39-40` — "43,110 orders, $51.9M", "$25.6M" → new
+  numbers
+
+**Stale documentation:**
+- `data/README.md:46-71` — "What this project will add (not yet
+  built)" lists 7 items that all exist as implemented tables or
+  parameter files. Should be removed or rewritten as "what exists."
+- `data/README.md:8` — "~14,600 rows" is approximately correct
+  (stores + dist_log + promotions + price_history + chargebacks +
+  retailer_rules + sku_velocity + product_master + sku_costs ≈
+  stores:902 + others) but worth re-verifying.
+
+#### Performance — Good (unchanged)
+
+| Metric | Value | Assessment |
+|---|---|---|
+| Initial JS bundle | 212 KB (68 KB gz) | Good |
+| Lazy Recharts chunk | 371 KB (99 KB gz) | Acceptable |
+| Build time | 583ms | Excellent |
+| Test time | 364ms | Excellent |
+
+#### Security — Zero attack surface (unchanged)
+
+Static site, no user input beyond in-memory slider values, no API
+calls, no auth, no cookies, no third-party scripts, self-hosted fonts.
+
+#### UX — Sound (data-dependent text is all dynamic)
+
+The framing statement, insight lines, benchmarks, and chart labels
+are all computed from the data — they will automatically update when
+the JSON is refreshed. Only the methodology paragraph and OG tags
+have hardcoded numbers.
+
+#### DevEx — Good
+
+- `npm ci && npm test && npm run build` — working (verified)
+- CI on GitHub Actions — working
+- `python scripts/export_json.py` — ready to re-run
+- Deploy: `cd web && npm run deploy`
+
+**Gap: no automation between pipeline rebuild and JSON export.**
+If the Python pipeline is rebuilt, the developer must remember to
+re-run `export_json.py` manually. This is how the current desync
+happened. A future improvement could add a Makefile or script that
+chains the full pipeline: extract → orders → cost engine → export →
+build. Low priority for a portfolio piece but noted.
+
+#### Dead Code
+
+- `scripts/add_kehe.py` — KeHE is now native in upstream
+  cinderhaven-data. The extract already has `KEHE-AGG` in stores
+  (1 row), 22 distribution_log entries, and a `wholesale_kehe`
+  column in sku_costs. The script's premise ("KeHE is not present in
+  the upstream Cinderhaven dataset") is now false. Safe to delete.
+
+### Summary
+
+The codebase is clean and architecturally sound. The only real issue
+is the data desync — a single `python scripts/export_json.py` plus
+updating 5 hardcoded strings in 3 files. Everything else is cosmetic
+cleanup (stale docs, dead script).
+
+## Phase 3: Landscape Scan
+**Date:** 2026-05-17
+**Note:** Competitive landscape verified via web research. No
+material change from the May 16 scan (2 days ago). This section
+focuses on how the data rebuild affects positioning.
+
+### Competitive Landscape (confirmed stable)
+
+The market remains bifurcated:
+- **Upstream planning** (Alloy.ai, Crisp, Kinaxis): prevent shorts
+  via demand forecasting and inventory visibility. None quantify the
+  post-event cost.
+- **Downstream recovery** (SupplyPike/SPS Commerce, Inymbus):
+  dispute deductions after they're issued. Narrow — chargebacks and
+  fines only, no deauthorization or DTC cascade.
+
+**No tool found (as of May 2026) that occupies the middle:**
+quantifying the full cost of a short across multiple dimensions
+after it happens, using the original-vs-shipped order gap.
+
+Key confirmations from web research:
+- **SupplyPike** absorbed into SPS Commerce "Revenue Recovery."
+  Jan 2026 features: UNFI launch, Walmart overage invoicing, POD
+  automation. Still dispute-only; no cost modeling.
+- **Alloy.ai** launched Predictive AI (Jan 2025): stockout risk,
+  constrained allocation, POS forecasting. Blog advises "associate
+  a dollar cost to each problem area" — editorial guidance, not a
+  product feature. No multi-dimension calculator.
+- **Crisp** raised $26M (Dec 2025) for AI Blueprints and data
+  infrastructure. Supply chain page: visibility and forecasting
+  only. Short-ship avoidance is framed as a byproduct of signals,
+  not a cost problem.
+- **No new entrants** found in the "cost of shorts" quantification
+  space since the May 15 scan.
+
+### Updated Feature Matrix
+
+| Feature | This Project | SupplyPike/SPS | Crisp | Alloy.ai |
+|---------|:-----------:|:--------------:|:-----:|:--------:|
+| Multi-dimension cost quantification | **Yes (8)** | No | No | No |
+| Original vs shipped comparison | **Yes** | No | No | No |
+| Cascading cost model | **Yes** | No | No | No |
+| Deauthorization risk modeling | **Yes** | No | No | No |
+| Buffer/scenario simulation | **Yes** | No | No | Partial |
+| Live parameter adjustment | **Yes** | No | No | No |
+| Narrative storytelling | **Yes** | No | No | No |
+| Connected to real data | No (synthetic) | Yes | Yes | Yes |
+| Engagement hook (predict/reveal) | No | No | No | No |
+| Mobile-responsive | **Yes** | Partial | Yes | Yes |
+| Print/PDF export | **Yes** | CSV only | Yes | Yes |
+
+### Impact of Data Rebuild on Positioning
+
+The rebuild makes the tool's argument **stronger**, not weaker:
+
+| Aspect | Before | After | Effect on positioning |
+|--------|--------|-------|---------------------|
+| Time window | 2 years | 3 years | More statistical weight, stronger trend signals |
+| SKU count | 90 | 50 | More realistic for a ~$25M brand (90 was too many) |
+| Order volume | 43K | 66K | Larger dataset = more credible |
+| Total cost | $25.6M | $33.2M | Higher absolute — more dramatic finding |
+| Cost as % of shipped | 49.4% | ~45% | Slightly lower percentage but still devastating |
+
+The core differentiator is unchanged: no one else models what
+happens between "order received" and "order shipped" across all
+eight cost channels. The data rebuild brings the model closer to
+reality (realistic SKU count, proper time window, native KeHE
+pricing instead of synthesized) — it doesn't change the competitive
+gap.
+
+### Gaps Remaining vs. Benchmarks
+
+Same as May 16:
+1. **Not connected to real data** — deliberate (portfolio piece)
+2. **No engagement hook** — deliberate (Economist voice)
+3. **No scrollytelling** — explicitly out of scope
+
+All three are firm decisions, not gaps to close.
+
+### Summary
+
+The project's niche remains empty. No competitor has moved toward
+multi-dimension cost quantification of shorts. The data rebuild
+strengthens the argument (more realistic parameters, longer window,
+larger dataset) without changing the competitive position.
+
+## Phase 4: Differentiation & Next Moves
+**Date:** 2026-05-17
+
+### Cross-Reference
+
+Phase 2 found 4 items. Items 1–2 are blocking (the deployed tool
+displays wrong data); items 3–4 are cosmetic cleanup.
+
+Phase 3 confirms the project's competitive position is stronger
+after the rebuild — more realistic SKU count, longer window, larger
+dataset, higher headline number. The niche remains empty.
+
+### Project Readiness Assessment
+
+| Criterion | Met? |
+|---|---|
+| URL shared renders a rich preview card | **No** — OG tags say $25.6M, data says $33.2M |
+| No duplicate code between components | **Yes** |
+| Fonts load from app's own domain | **Yes** |
+| Opening framing sets up the problem | **Yes** |
+| Each section has a declarative insight line | **Yes** |
+| Methodology available as collapsible appendix | **Yes** (but cites wrong order count) |
+| JS cost engine has automated tests, all passing | **Yes** (34/34) |
+| Animations on number changes, respects reduced-motion | **Yes** |
+| Tool works well on mobile | **Yes** |
+| Parameter panel usable on mobile | **Yes** |
+| Reads as a self-selling argument, not a dashboard | **Yes** |
+| **Data shown matches data pipeline** | **No** — $25.6M displayed vs $33.2M in DB |
+
+**Definition of done: 9/11 criteria met.** Two gaps, both caused by
+the same root issue (JSON not re-exported).
+
+### Ranked Next Moves
+
+| # | Move | Effort | Impact | Notes |
+|---|------|--------|--------|-------|
+| 1 | Re-run `python scripts/export_json.py` | 30 sec | Critical | Regenerates all 9 JSON files from the rebuilt databases. Everything downstream auto-updates. |
+| 2 | Update hardcoded numbers (3 files, 5 edits) | 5 min | High | App.jsx methodology (order count, time window), index.html OG descriptions ($33.2M), README.md (order count, revenue, headline). |
+| 3 | Run tests + build after re-export | 1 min | High | Verify 34/34 still pass, build clean. |
+| 4 | Deploy (`cd web && npm run deploy`) | 1 min | High | Push updated tool live. |
+| 5 | Delete `scripts/add_kehe.py` | 30 sec | Low | Dead code — KeHE is native upstream now. |
+| 6 | Rewrite `data/README.md` "not yet built" section | 5 min | Low | Describe what exists, not what was planned. |
+
+**Total effort to ship-ready: ~15 minutes.**
+
+### Sequencing
+
+Steps 1–4 are a single uninterruptible chain:
+```
+python scripts/export_json.py
+→ update hardcoded strings with new numbers
+→ npm test && npm run build (verify)
+→ npm run deploy
+```
+
+Steps 5–6 are independent cleanup, can happen anytime.
+
+### What NOT to Do
+
+1. **Don't re-run the full pipeline.** The databases are already
+   rebuilt and validated (35/35 cost engine, 24/25 orders). Only the
+   JSON export step was missed.
+
+2. **Don't change DIMENSION_ORDER.** The magnitude ranking is the
+   same with new numbers (lost_revenue > deauthorization > otif_fines
+   > chargebacks > dtc_cancellations > triage_labor >
+   distributor_returns > dtc_margin_leakage). Verified.
+
+3. **Don't update PLAN.md's "$25.6M" references.** Those are
+   historical documentation of the prior arc's design context. The
+   arc is complete. Leave them as-is for the historical record.
+
+4. **Don't add pipeline automation (Makefile).** Nice-to-have but
+   out of scope for a fix pass. This is a solo portfolio project
+   where the developer runs the pipeline manually.
+
+### Conclusion
+
+The project is 15 minutes from ship-ready. The analytical core is
+genuinely differentiated (confirmed: no competitor in the space),
+the presentation matches the substance, and the data rebuild
+actually strengthens the argument. The single blocking issue is
+mechanical: run one Python script, update five strings, deploy.
+
+After that, the tool is ready to share with the prospect — same
+scenario as before (friend texts the URL, CEO opens on phone), now
+with a more realistic dataset and a more dramatic headline number.
+
+---
+
 ## Audit History
 
 - **2026-05-15:** First full audit (4 phases). Found 13 internal
@@ -423,3 +846,8 @@ preview card renders when the friend texts the link.
 - **2026-05-16:** Second full audit. 12 of 13 prior findings
   resolved. 1 new actionable finding (OG image path). Project
   assessed as ready to ship.
+- **2026-05-17:** Third full audit (4 phases). Pipeline rebuilt
+  with new upstream data; web app JSON not re-exported. Single
+  blocking issue: re-export + update 5 strings + deploy (~15 min).
+  Competitive niche still empty. Data rebuild strengthens the
+  argument.
