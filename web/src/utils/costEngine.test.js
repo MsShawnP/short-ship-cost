@@ -284,3 +284,24 @@ describe('edge cases', () => {
     }
   })
 })
+
+describe('data consistency', () => {
+  const validation = load('validation')
+  const meta = load('meta')
+  const indexHtml = readFileSync(
+    join(__dirname, '../../index.html'),
+    'utf-8',
+  )
+
+  it('meta.json total_orders and total_lines are positive integers', () => {
+    expect(Number.isInteger(meta.total_orders)).toBe(true)
+    expect(meta.total_orders).toBeGreaterThan(0)
+    expect(Number.isInteger(meta.total_lines)).toBe(true)
+    expect(meta.total_lines).toBeGreaterThan(0)
+  })
+
+  it('OG meta description matches validation.json total', () => {
+    const totalM = `$${(validation.baseline_totals.total / 1e6).toFixed(1)}M`
+    expect(indexHtml).toContain(totalM)
+  })
+})
