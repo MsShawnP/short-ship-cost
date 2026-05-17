@@ -533,7 +533,7 @@ Steps:
       shipped revenue, headline cost, and percentage
     - Done when: README numbers match the new pipeline output
 
-- [ ] D6: Build and deploy
+- [x] D6: Build and deploy
     - Depends on: D2, D3, D4, D5
     - Run `cd web && npm run build && npm run deploy`
     - Done when: build succeeds with 0 errors/warnings, deploy

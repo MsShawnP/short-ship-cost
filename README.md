@@ -38,7 +38,7 @@ dimensions:
 
 The headline: **$33.2M in total short-shipping costs on $74.2M
 shipped revenue** — 44.7% of the topline. The business thinks it
-ships $25M a year. The demand it cannot see is $34M+ annually.
+ships $25M a year. The demand it cannot see is nearly $34M annually.
 
 ## What the tool does
 

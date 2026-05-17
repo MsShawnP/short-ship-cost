@@ -9,6 +9,19 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-05-17 16:15 — Full audit + data resync + deploy
+
+**Started from:** Pipeline rebuilt (commit 6ee429b) with new cinderhaven-data but web app JSON never re-exported. Tool displayed $25.6M while databases held $33.2M.
+
+**Did:** Ran 4-phase audit (AUDIT.md updated). Identified single root cause: missed `export_json.py` step. Re-exported JSON, updated hardcoded numbers in OG tags/methodology/README, deleted obsolete `add_kehe.py`, rewrote stale data/README.md. Tests 34/34, build clean. PR #7 merged and deployed to Cloudflare Workers.
+
+**State:** Fully deployed at https://short-ship-cost.msshawnp.workers.dev with correct data ($33.2M, 50 SKUs, 66K orders, 3-year window). All definition-of-done criteria met. No known issues.
+
+**Next:** Project is ship-ready — share with the prospect. Optional: regenerate OG card image to show $33.2M instead of $25.6M; real-device mobile testing on an actual phone.
+
+---
+
+
 ## 2026-05-17 — Dataset realism alignment (from dataset-realism-improvement session)
 
 **Started from:** DOWNSTREAM_AUDIT.md flagged short-ship-cost as

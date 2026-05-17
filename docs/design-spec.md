@@ -68,7 +68,7 @@ The palette is sequential by magnitude rank, not categorical. The same dimension
 - Labels directly on the data — minimize legends
 - Left-aligned titles above each chart — bold, declarative,
   tells you what the chart says, not what it shows
-  (e.g., "Short-shipping costs Cinderhaven $25.6M" not
+  (e.g., "Short-shipping costs Cinderhaven $33.2M" not
   "Cost Summary by Dimension")
 - Axis labels minimal — no redundant axis titles if the
   chart title already explains the metric. Y-axis gets a
@@ -76,21 +76,21 @@ The palette is sequential by magnitude rank, not categorical. The same dimension
 - No 3D, no gradients, no shadows, no rounded corners on bars
 - Source/footnote line below each chart — small text,
   left-aligned
-- Use Intl.NumberFormat for all currency display ($25.6M
-  not $25,597,978)
+- Use Intl.NumberFormat for all currency display ($33.2M
+  not $33,159,817)
 
 ---
 
 ## Section 1: The Cost Stack
 
-- **Callout:** $25.6M as a large number (48px Playfair Display),
-  with "49.4% of shipped revenue" beneath it in secondary text
+- **Callout:** $33.2M as a large number (48px Playfair Display),
+  with "44.7% of shipped revenue" beneath it in secondary text
 - **Chart:** Waterfall chart — starts at $0, builds through each
-  cost dimension to $25.6M total. Lost revenue is the large
+  cost dimension to $33.2M total. Lost revenue is the large
   first block, then cascading costs stack on top. Final bar
   is the total. Color-coded by dimension mapping above.
 - **Chart title:** Declarative — e.g., "Beyond the revenue gap:
-  $6.9M in cascading costs the business cannot see"
+  $6.7M in cascading costs the business cannot see"
 - **Contextual benchmarks below chart:** total cost as % of
   shipped revenue, as % of estimated gross margin
 
@@ -103,8 +103,8 @@ The palette is sequential by magnitude rank, not categorical. The same dimension
   Shows which retailers bear the most cost and what kind.
 - **Chart 2 / Table:** Sortable table of top 20 SKUs by total
   cost, with dimension breakdown per row. Include "Other
-  (62 SKUs)" row. Footnote explaining triage labor is excluded
-  from SKU attribution ($39K difference from headline total).
+  (30 SKUs)" row. Footnote explaining triage labor is excluded
+  from SKU attribution ($58K difference from headline total).
 - **Interaction:** Click a retailer bar to filter the SKU table
   to that retailer's SKUs only.
 
@@ -125,7 +125,7 @@ The palette is sequential by magnitude rank, not categorical. The same dimension
 
 - **Chart 1:** Stepped bar chart — four scenarios (80/85/90/95%)
   on X-axis, total cost on Y-axis. Horizontal dashed line at
-  baseline ($25.6M). Each bar shows the reduced total cost at
+  baseline ($33.2M). Each bar shows the reduced total cost at
   that fill rate. The 90% bar gets a visual annotation
   highlighting the deauthorization cliff (vertical marker or
   background shading with label).
@@ -133,7 +133,7 @@ The palette is sequential by magnitude rank, not categorical. The same dimension
   recovery at each scenario. Emphasize that OTIF stays sticky
   (Walmart's 98% threshold) while deauth drops off a cliff
   at 90%.
-- **Chart title:** e.g., "At 90% fill rate, $15.8M in costs
+- **Chart title:** e.g., "At 90% fill rate, $18.7M in costs
   disappear — most of it from distributor deauthorization"
 
 ---
