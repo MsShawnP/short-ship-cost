@@ -38,12 +38,12 @@ the cost engine reads.
 
 | Table | Rows | What it is |
 |---|---:|---|
-| `orders` | 43,110 | One row per order (retail/distributor/DTC). Carries `retailer`, `channel_type`, `order_date`, `due_date`, `ship_date`, `delivery_location`, `order_type` |
-| `order_lines_original` | 125,748 | Original order lines as the customer submitted them — `quantity_ordered`, `unit_of_measure` (case/unit), `unit_price` |
-| `order_lines_shipped` | 125,748 | What actually shipped after triage. Same line count as original (one-to-one); `quantity_shipped <= quantity_ordered`. Carries `original_line_id` for trace |
-| `order_shorts` | 30,915 | One row per shorted retail/distributor line, with reason. DTC drops are not represented here |
-| `dtc_outcomes` | 38,792 | One row per DTC order. `hold_start_date`, `resolution`, `resolution_date`, `days_held` |
-| `distributor_returns` | 32 | Returned and claimed product on UNFI/KeHE promo orders |
+| `orders` | 66,101 | One row per order (retail/distributor/DTC). Carries `retailer`, `channel_type`, `order_date`, `due_date`, `ship_date`, `delivery_location`, `order_type` |
+| `order_lines_original` | 191,371 | Original order lines as the customer submitted them — `quantity_ordered`, `unit_of_measure` (case/unit), `unit_price` |
+| `order_lines_shipped` | 191,371 | What actually shipped after triage. Same line count as original (one-to-one); `quantity_shipped <= quantity_ordered`. Carries `original_line_id` for trace |
+| `order_shorts` | 45,902 | One row per shorted retail/distributor line, with reason. DTC drops are not represented here |
+| `dtc_outcomes` | 59,624 | One row per DTC order. `hold_start_date`, `resolution`, `resolution_date`, `days_held` |
+| `distributor_returns` | 48 | Returned and claimed product on UNFI/KeHE promo orders |
 
 ### `data/short_ship_cost.db` — cost engine output
 
@@ -441,13 +441,10 @@ therefore zero contribution to any cost dimension. Realistic, not a
 defect — recently-launched slow-movers wouldn't show up much in 5
 weeks of demand history.
 
-### KeHE pricing reuses UNFI
+### KeHE pricing
 
-`sku_costs` has no `wholesale_kehe` column upstream, so KeHE orders
-are priced at `wholesale_unfi`. Real KeHE wholesale is typically
-within a few percent of UNFI; this is a tractability simplification
-documented in `scripts/add_kehe.py`. If the tool needs distinct KeHE
-pricing, add a column upstream.
+`sku_costs` has a native `wholesale_kehe` column from upstream. KeHE
+orders are priced using this column directly.
 
 ### Walmart "DCs" synthesized
 

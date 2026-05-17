@@ -340,12 +340,12 @@ export default function BufferSimulation({ bufferScenarios }) {
           <p className={styles.cliffTitle}>The deauthorization cliff</p>
           <p className={styles.cliffBody}>
             Between 85% and 95% fill, deauthorization costs drop from{' '}
-            <strong>$6M</strong> to near zero &mdash; in two steps. At 90%,
+            <strong>$6.2M</strong> to near zero &mdash; in two steps. At 90%,
             distributor catalog risk clears as UNFI and KeHE fill rates
-            cross their 90% threshold (<strong>$3.1M</strong> recovered).
+            cross their 90% threshold (<strong>$1.8M</strong> recovered).
             At 95%, retailer shelf risk clears as velocity recovers above
-            delisting thresholds (<strong>$2.7M</strong> more). The total:{' '}
-            <strong>$5.8M</strong> in forward revenue no longer at risk.
+            delisting thresholds (<strong>$4.4M</strong> more). The total:{' '}
+            <strong>$6.2M</strong> in forward revenue no longer at risk.
           </p>
         </div>
       )}
