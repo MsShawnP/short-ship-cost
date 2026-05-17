@@ -10,7 +10,7 @@ after 30+ tasks shipped in the interim.
 
 A portfolio piece for Lailara LLC that makes the invisible cost of
 short-shipping visible. Built around Cinderhaven Provisions (~$25M
-fictional brand, 90 SKUs). Designed for a specific prospect: a CEO
+fictional brand, 50 SKUs). Designed for a specific prospect: a CEO
 with an MBA at a company that has this exact problem, arriving cold
 via a friend's recommendation, likely opening on his phone first.
 

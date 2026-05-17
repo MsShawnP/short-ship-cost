@@ -6,13 +6,13 @@ and write it as a derived `sku_velocity` table in this repo's
 Purpose: the order generator (PLAN task 4) needs per-SKU weekly
 demand and a velocity rank to size production output proportionally.
 scan_data itself is excluded from the extract for size reasons; this
-small rollup (90 rows) carries the signal we need.
+small rollup (50 rows) carries the signal we need.
 
 Definitions:
 - avg_weekly_units: total units sold across all stores in the
-  104-week window, divided by 104. A blended rate.
+  157-week window, divided by 157. A blended rate.
 - total_annual_units: avg_weekly_units * 52. Annualized projection.
-- velocity_rank: 1 = highest weekly volume, 90 = lowest.
+- velocity_rank: 1 = highest weekly volume, 50 = lowest.
 """
 from __future__ import annotations
 
@@ -20,10 +20,10 @@ import sqlite3
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SRC = Path(r"C:/Users/mssha/projects/published/cinderhaven-data/data/cinderhaven_product_master.db")
+SRC = Path(r"C:/Users/mssha/projects/active/cinderhaven-data/data/cinderhaven_product_master.db")
 DEST = REPO / "data" / "cinderhaven_extract.db"
 
-WEEKS_IN_WINDOW = 104  # Cinderhaven scan_data spans 2024-05-11 .. 2026-05-02
+WEEKS_IN_WINDOW = 157  # Cinderhaven scan_data spans 2024-01-06 .. 2027-01-02
 
 
 def main() -> int:
