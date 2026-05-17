@@ -4,8 +4,8 @@ Two mechanisms (per PLAN task 5):
 
 1. Retailer velocity-based (Walmart, Costco, Whole Foods, regionals)
    For each (sku, retailer) pair:
-     velocity_without_shorts = qty_ordered / store_count / 104 weeks
-     velocity_with_shorts    = qty_shipped / store_count / 104 weeks
+     velocity_without_shorts = qty_ordered / store_count / 157 weeks
+     velocity_with_shorts    = qty_shipped / store_count / 157 weeks
    If velocity_without_shorts > threshold AND velocity_with_shorts <
    threshold, the short pushed the SKU below the delisting threshold
    for that retailer — a short-caused deauth event.
@@ -18,7 +18,7 @@ Two mechanisms (per PLAN task 5):
    consecutive months fall below 90%, the SKU is delisted.
    Cost: 12 months of annualized revenue for that (sku, distributor).
 
-Annualized = total 2-year revenue / 2.
+Annualized = total 3-year revenue / 3.
 """
 from __future__ import annotations
 
@@ -37,7 +37,7 @@ VELOCITY_THRESHOLD = {
 for _chain in REGIONAL_CHAINS:
     VELOCITY_THRESHOLD[_chain] = get("deauth_velocity_regional")
 
-WEEKS_IN_WINDOW = 104
+WEEKS_IN_WINDOW = 157
 
 
 def _velocity_events(db) -> list[dict]:
@@ -82,7 +82,7 @@ def _velocity_events(db) -> list[dict]:
         v_without = demand_units / store_n / WEEKS_IN_WINDOW
         v_with = shipped_units / store_n / WEEKS_IN_WINDOW
         if v_without > threshold and v_with < threshold:
-            annualized_rev = (r["shipped_value"] or 0) / 2.0
+            annualized_rev = (r["shipped_value"] or 0) / 3.0
             events.append({
                 "sku": r["sku"],
                 "retailer": retailer,
@@ -149,7 +149,7 @@ def _distributor_events(db) -> list[dict]:
     for (retailer, sku), monthly in monthly_by_pair.items():
         if _consecutive_months_below(monthly, threshold, n_required):
             shipped_total = revenue_by_pair[(retailer, sku)]
-            annualized_rev = shipped_total / 2.0
+            annualized_rev = shipped_total / 3.0
             min_fill = min(f for _, f in monthly)
             events.append({
                 "sku": sku,

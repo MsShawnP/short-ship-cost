@@ -21,7 +21,7 @@ gone. And with it, any ability to measure the cost of not fulfilling
 it.
 
 This tool reconstructs that cost. It generates synthetic order data
-(43,110 orders, $51.9M shipped over two years), models the triage
+(66,101 orders, $74.2M shipped over three years), models the triage
 process, and calculates the full cost of every short across eight
 dimensions:
 
@@ -36,9 +36,9 @@ dimensions:
 | Distributor returns | Unsold promo product returned or written off |
 | Triage labour | Human time spent editing every order |
 
-The headline: **$25.6M in total short-shipping costs on $51.9M
-shipped revenue** — 49.4% of the topline. The business thinks it
-ships $52M. The demand it cannot see is $70M+.
+The headline: **$33.2M in total short-shipping costs on $74.2M
+shipped revenue** — 44.7% of the topline. The business thinks it
+ships $25M a year. The demand it cannot see is $34M+ annually.
 
 ## What the tool does
 

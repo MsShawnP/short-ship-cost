@@ -21,15 +21,15 @@ built database. Nine tables.
 
 | Table | Rows | What it is |
 |---|---:|---|
-| `product_master` | 90 | SKU master: identifiers, product line, case pack, MSRP, nutrition. Some rows carry deliberate data-quality defects (missing case dimensions, etc.) |
-| `sku_costs` | 90 | Per-unit COGS, landed cost, retailer-specific wholesale prices, channel trade-spend rates |
+| `product_master` | 50 | SKU master: identifiers, product line, case pack, MSRP, nutrition. Some rows carry deliberate data-quality defects (missing case dimensions, etc.) |
+| `sku_costs` | 50 | Per-unit COGS, landed cost, retailer-specific wholesale prices (incl. KeHE), channel trade-spend rates |
 | `stores` | 903 | Retail door list (Walmart, Costco, WF, regional chains) plus aggregated rows for UNFI, KeHE, DTC |
 | `distribution_log` | 12,565 | SKU × store authorization history with auth and deauth dates |
 | `promotions` | 198 | Retailer-specific promo events |
 | `price_history` | 398 | Time-keyed wholesale price changes by SKU × retailer |
 | `chargebacks` | 381 | Historical compliance chargebacks (data-quality and shipment) — **not the rate schedule the cost engine uses** |
-| `retailer_requirements` | 29 | Field-level compliance requirements that drive the historical chargebacks |
-| `sku_velocity` | 90 | Derived rollup from upstream `scan_data`: `avg_weekly_units`, `total_annual_units`, `velocity_rank` |
+| `retailer_rules` | 90 | Per-(retailer, deduction_type) rules: dispute windows, auto-deduction, evidence requirements, typical recovery rates |
+| `sku_velocity` | 50 | Derived rollup from upstream `scan_data`: `avg_weekly_units`, `total_annual_units`, `velocity_rank` |
 
 ### `data/short_ship_orders.db` — generated order data
 
@@ -74,7 +74,7 @@ All cost columns are USD. All `_pct` columns are percentages on a
 | Column | Type | Notes |
 |---|---|---|
 | `dimension` | TEXT, PK | One of the 8 cost dimensions (see §4) |
-| `total_cost` | REAL | Total dollar cost across the 2-year window |
+| `total_cost` | REAL | Total dollar cost across the 3-year window |
 | `pct_of_shipped_revenue` | REAL | `total_cost / shipped_revenue × 100` |
 | `description` | TEXT | One-paragraph human explanation of what the row measures |
 
@@ -293,7 +293,7 @@ Two trigger mechanisms:
 
 Cost per event = 12 months annualized revenue
 (`deauth_revenue_horizon_months`) for the (sku, retailer) pair = total
-2-year revenue / 2.
+3-year revenue / 3.
 
 ### `dtc_cancellations` — $50 K (0.1%)
 

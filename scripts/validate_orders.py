@@ -109,7 +109,7 @@ def main() -> int:
         """
     )
     total_shipped = cur.fetchone()["shipped"] or 0
-    annual_shipped = total_shipped / 2.0
+    annual_shipped = total_shipped / 3.0
     checks.append(Check(
         "Annual shipped revenue",
         23_000_000 <= annual_shipped <= 27_000_000,

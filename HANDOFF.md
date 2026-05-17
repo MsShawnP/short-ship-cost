@@ -9,6 +9,51 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-05-17 — Dataset realism alignment (from dataset-realism-improvement session)
+
+**Started from:** DOWNSTREAM_AUDIT.md flagged short-ship-cost as
+HIGH priority — hardcoded dates, SKU counts, and annualization
+divisors all stale after the cinderhaven-data rebuild (50 SKUs,
+157-week window, KeHE wholesale column added).
+
+**Did:**
+- Updated SRC paths from `published/` to `active/` cinderhaven-data
+  (extract_cinderhaven.py, extract_velocity.py)
+- WEEKS_IN_WINDOW: 104 → 157 (extract_velocity.py, deauthorization.py)
+- WINDOW_START/END: 2024-05-11..2026-05-02 → 2024-01-06..2027-01-02
+  (generate_orders.py, validate_cost_engine.py)
+- Annualization divisor: /2.0 → /3.0 across 4 files (deauthorization.py,
+  runner.py, export_json.py, validate_orders.py)
+- KeHE wholesale: wholesale_unfi → wholesale_kehe via WHOLESALE_COL
+  lookup (generate_orders.py)
+- Table rename: retailer_requirements → retailer_rules (extract + docs)
+- SKU count 90 → 50 in CLAUDE.md, AUDIT.md, data/README.md,
+  docs/cost-engine-docs.md, extract_velocity.py docstring
+- Rebuilt full pipeline: extract → velocity → orders → triage →
+  DTC outcomes → returns → cost engine → buffer simulation
+- Cost engine validation: 35/35 passed
+- Order validation: 24/25 passed (1 statistical n=1 edge case)
+
+**Key numbers post-rebuild:**
+- 50 SKUs, 157-week window (Jan 2024–Jan 2027)
+- 66K orders, 191K lines, $100.8M demand ($33.6M/yr)
+- Shipped revenue: $24.7M/yr (matches ~$25M target)
+- Total cost of shorts: $33.2M (44.7% of shipped)
+
+**State:** short-ship-cost fully aligned with rebuilt cinderhaven-data.
+Not yet committed.
+
+**Flag:** `scripts/add_kehe.py` may be obsolete now that KeHE is
+native in upstream data. Review separately.
+
+**Next:** Commit these changes. Then continue downstream fixes per
+DOWNSTREAM_AUDIT.md priority order: product-data-health-audit (HIGH),
+contract-to-cash (MEDIUM), retailer-deduction-recovery (LOW-MED),
+channel-profitability-analysis (LOW), trade-spend-data-diagnostic
+(LOW), retail-velocity-decision-tool (LOW).
+
+---
+
 ## 2026-05-07 — Project initialized
 
 **Started from:** New project setup. 95% confidence interview

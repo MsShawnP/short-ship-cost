@@ -1,49 +1,49 @@
 [
   {
     "dimension": "lost_revenue",
-    "total_cost": 18714612.3,
-    "pct_of_shipped": 0.3609,
+    "total_cost": 26492097.42,
+    "pct_of_shipped": 0.357,
     "description": "Lost revenue from short-shipped retail and distributor lines (qty_ordered - qty_shipped) × pack × unit_price"
   },
   {
     "dimension": "deauthorization",
-    "total_cost": 5864280.0,
-    "pct_of_shipped": 0.1131,
+    "total_cost": 5211112.06,
+    "pct_of_shipped": 0.0702,
     "description": "Forward-looking revenue at risk from short-caused deauthorizations: 12 months of annualized revenue for each SKU x retailer pair where shorts pushed velocity below the delist threshold (or where fill stayed below 90% for 3+ consecutive months at UNFI/KeHE)."
   },
   {
     "dimension": "otif_fines",
-    "total_cost": 826162.25,
-    "pct_of_shipped": 0.0159,
+    "total_cost": 1171910.1,
+    "pct_of_shipped": 0.0158,
     "description": "Retailer-specific OTIF fines per the schedule in docs/cost-engine-benchmarks.md (with UNFI updated to 3% of shorted goods value per PLAN task 5)"
   },
   {
     "dimension": "chargebacks",
-    "total_cost": 75308.25,
-    "pct_of_shipped": 0.0015,
+    "total_cost": 107179.28,
+    "pct_of_shipped": 0.0014,
     "description": "Estimated retailer chargebacks beyond OTIF — fallback rates of 0.5% (Walmart/Costco) and 0.3% (other) applied to shorted goods value. Cinderhaven's historical chargebacks table was not used because those rows reflect data-quality and shipment issues unrelated to our synthetic shorts."
   },
   {
     "dimension": "dtc_cancellations",
-    "total_cost": 49610.3,
+    "total_cost": 75691.2,
     "pct_of_shipped": 0.001,
     "description": "Lost revenue from DTC orders the customer cancelled while held for complete fulfillment — full order value, since nothing shipped."
   },
   {
     "dimension": "triage_labor",
-    "total_cost": 38862.0,
-    "pct_of_shipped": 0.0007,
+    "total_cost": 58293.0,
+    "pct_of_shipped": 0.0008,
     "description": "Manual order-edit labor at 20 min/order × $30.0/hr × 90% of retail/distributor orders. DTC orders are excluded — they go through automated fulfillment with no manual edit."
   },
   {
     "dimension": "distributor_returns",
-    "total_cost": 23892.48,
+    "total_cost": 35605.8,
     "pct_of_shipped": 0.0005,
     "description": "Distributor return and claim credits issued to UNFI/KeHE for unsold promo and written-off product, summed from the distributor_returns table."
   },
   {
     "dimension": "dtc_margin_leakage",
-    "total_cost": 5250.61,
+    "total_cost": 7928.29,
     "pct_of_shipped": 0.0001,
     "description": "Margin lost when DTC customers gave up on a held order and bought in-store instead — order_value × (dtc_margin - wholesale_margin) = order_value × 20%."
   }
