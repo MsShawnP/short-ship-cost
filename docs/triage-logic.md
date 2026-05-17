@@ -161,7 +161,7 @@ in PLAN task 4 can resolve them once.
   all parameters. Each must be set to produce overall fill rates
   consistent with the channel-level targets in
   `cost-engine-benchmarks.md` (Walmart ~78%, Costco ~80%, etc.) when
-  averaged across the 18–24 month window.
+  averaged across the 3-year window.
 - **Production output stochasticity.** Distribution and parameters
   for the per-week, per-SKU production noise term are not specified.
   A small Gaussian or beta noise around the planned weekly output
