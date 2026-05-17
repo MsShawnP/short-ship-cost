@@ -127,9 +127,8 @@ DTC orders do not appear here.
   with `authorized_date <= order_date` and either
   `deauthorized_date IS NULL` or `deauthorized_date > order_date`.
   Generation must enforce this.
-- **Time window.** Orders span the same 18–24 month window as the
-  existing Cinderhaven scan and pricing data (per
-  `DECISIONS.md`, 2026-05-07).
+- **Time window.** Orders span the same 3-year window (2024-01-08
+  to 2027-01-02) as the Cinderhaven scan and pricing data.
 - **Linkage between original and shipped lines.** Lines link by
   `(order_id, sku)`. `order_line_id` is a per-table surrogate;
   the same SKU on the same order has a row in
