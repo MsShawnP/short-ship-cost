@@ -34,9 +34,9 @@ EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 COST_DB = REPO / "data" / "short_ship_cost.db"
 
-WINDOW_START = "2024-05-11"
-WINDOW_END = "2026-05-15"  # ship/due dates can spill ~9 days past scan window
-WINDOW_END_HARD = "2026-06-30"  # strict outer bound for any date
+WINDOW_START = "2024-01-01"
+WINDOW_END = "2027-01-13"  # ship/due dates can spill ~13 days past scan window
+WINDOW_END_HARD = "2027-02-28"  # strict outer bound for any date
 
 REGIONAL_CHAINS = (
     "Southside Grocers", "Green Basket Market", "Prairie Provisions",

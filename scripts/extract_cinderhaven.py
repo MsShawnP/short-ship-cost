@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-SRC = Path(r"C:/Users/mssha/projects/published/cinderhaven-data/data/cinderhaven_product_master.db")
+SRC = Path(r"C:/Users/mssha/projects/active/cinderhaven-data/data/cinderhaven_product_master.db")
 DEST = REPO / "data" / "cinderhaven_extract.db"
 
 TABLES = [
@@ -28,7 +28,6 @@ TABLES = [
     "promotions",
     "price_history",
     "chargebacks",
-    "retailer_requirements",
 ]
 
 

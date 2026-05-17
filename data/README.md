@@ -19,22 +19,21 @@ the derived `sku_velocity` rollup.
 
 | Table | Rows | What it is |
 |---|---|---|
-| `product_master` | 90 | SKU master: identifiers (sku, gtin14, upc), product line, subcategory, case pack, MSRP, nutrition. Includes deliberate data-quality defects on some rows (missing case dimensions, etc.) |
-| `sku_costs` | 90 | COGS, landed cost, retailer-specific wholesale prices (Walmart / Costco / Whole Foods / Regional / UNFI / DTC), and trade-spend rates per channel |
+| `product_master` | 50 | SKU master: identifiers (sku, gtin14, upc), product line, subcategory, case pack, MSRP, nutrition. Includes deliberate data-quality defects on some rows (missing case dimensions, etc.) |
+| `sku_costs` | 50 | COGS, landed cost, retailer-specific wholesale prices (Walmart / Costco / Whole Foods / Regional / UNFI / KeHE / DTC), and trade-spend rates per channel |
 | `stores` | 902 | Retail door list with retailer, chain, region, state, volume tier. UNFI and DTC are represented as single aggregated rows |
 | `distribution_log` | 12,507 | SKU × store authorization history (auth and deauth dates). Underpins which SKUs are on shelf where, and over what window |
 | `promotions` | 198 | Retailer-specific promotional events: timing, depth, store scope |
 | `price_history` | 398 | Time-keyed wholesale prices by SKU × retailer over the 18–24-month window |
 | `chargebacks` | 381 | Historical compliance chargebacks by month / retailer / reason / SKU. Includes "Short shipment" and "Late delivery" reasons alongside the data-quality reasons that drive most of them |
 | `retailer_requirements` | 29 | Field-level compliance requirements by retailer (e.g., Walmart requires `gtin14` with valid check digit). Drives the `chargebacks` table |
-| `sku_velocity` | 90 | **Derived** rollup from upstream `scan_data`. Per-SKU `avg_weekly_units` (total scan-data units ÷ 104 weeks), `total_annual_units` (annualized = avg_weekly × 52), and `velocity_rank` (1 = highest). Used by the order generator to size weekly production proportionally and to weight order frequency / volume toward higher-velocity SKUs |
+| `sku_velocity` | 50 | **Derived** rollup from upstream `scan_data`. Per-SKU `avg_weekly_units` (total scan-data units ÷ 157 weeks), `total_annual_units` (annualized = avg_weekly × 52), and `velocity_rank` (1 = highest). Used by the order generator to size weekly production proportionally and to weight order frequency / volume toward higher-velocity SKUs |
 
 `stores` and `distribution_log` also carry a synthetic **KeHE** entry not
 present in upstream Cinderhaven: a single `KEHE-AGG` aggregated row in
-`stores`, plus 58 `distribution_log` rows mirroring the SKU set
-authorized through UNFI. KeHE pricing reuses `sku_costs.wholesale_unfi`
-(no separate KeHE column upstream). See `scripts/add_kehe.py` for
-the rationale.
+`stores`, plus `distribution_log` rows mirroring the SKU set
+authorized through UNFI. KeHE pricing uses `sku_costs.wholesale_kehe`.
+See `scripts/add_kehe.py` for the rationale.
 
 ### What is NOT included and why
 

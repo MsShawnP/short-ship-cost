@@ -15,10 +15,7 @@ This script:
 
 Idempotent — running twice does not duplicate rows.
 
-KeHE pricing reuses sku_costs.wholesale_unfi since the upstream
-sku_costs table has no separate KeHE column. Real KeHE wholesale is
-typically within a few percent of UNFI; a separate column can be
-added later if the model needs it.
+KeHE pricing uses sku_costs.wholesale_kehe.
 """
 from __future__ import annotations
 

@@ -3,55 +3,55 @@
     {
       "target_fill_rate": 0.8,
       "achieved_fill_rate": 0.8388,
-      "total_cost": 18001264.36,
-      "total_recovery": 7596713.83,
-      "recovery_pct": 0.2968,
+      "total_cost": 26581824.83,
+      "total_recovery": 9145944.05,
+      "recovery_pct": 0.256,
       "by_dimension": {
         "lost_revenue": {
-          "original": 18714612.3,
-          "simulated": 11334442.2,
-          "recovery": 7380170.1,
-          "recovery_pct": 0.3944
+          "original": 26394811.62,
+          "simulated": 16201544.58,
+          "recovery": 10193267.04,
+          "recovery_pct": 0.3862
         },
         "otif_fines": {
-          "original": 826162.25,
-          "simulated": 789094.81,
-          "recovery": 37067.43,
-          "recovery_pct": 0.0449
+          "original": 1171729.35,
+          "simulated": 1117237.67,
+          "recovery": 54491.68,
+          "recovery_pct": 0.0465
         },
         "chargebacks": {
-          "original": 75308.25,
-          "simulated": 46446.1,
-          "recovery": 28862.15,
-          "recovery_pct": 0.3833
+          "original": 106777.86,
+          "simulated": 66700.37,
+          "recovery": 40077.48,
+          "recovery_pct": 0.3753
         },
         "deauthorization": {
-          "original": 5864280.0,
-          "simulated": 5727841.59,
-          "recovery": 136438.41,
-          "recovery_pct": 0.0233
+          "original": 7862926.65,
+          "simulated": 9023392.59,
+          "recovery": -1160465.94,
+          "recovery_pct": -0.1476
         },
         "dtc_cancellations": {
-          "original": 49610.3,
-          "simulated": 36748.04,
-          "recovery": 12862.26,
-          "recovery_pct": 0.2593
+          "original": 72298.15,
+          "simulated": 55671.59,
+          "recovery": 16626.56,
+          "recovery_pct": 0.23
         },
         "dtc_margin_leakage": {
-          "original": 5250.61,
-          "simulated": 3937.14,
-          "recovery": 1313.47,
-          "recovery_pct": 0.2502
+          "original": 7809.58,
+          "simulated": 5862.35,
+          "recovery": 1947.23,
+          "recovery_pct": 0.2493
         },
         "distributor_returns": {
-          "original": 23892.48,
-          "simulated": 23892.48,
+          "original": 52699.68,
+          "simulated": 52699.68,
           "recovery": 0.0,
           "recovery_pct": 0.0
         },
         "triage_labor": {
-          "original": 38862.0,
-          "simulated": 38862.0,
+          "original": 58716.0,
+          "simulated": 58716.0,
           "recovery": 0.0,
           "recovery_pct": 0.0
         }
@@ -59,56 +59,56 @@
     },
     {
       "target_fill_rate": 0.85,
-      "achieved_fill_rate": 0.8722,
-      "total_cost": 15855513.34,
-      "total_recovery": 9742464.85,
-      "recovery_pct": 0.3806,
+      "achieved_fill_rate": 0.8721,
+      "total_cost": 23615750.72,
+      "total_recovery": 12112018.16,
+      "recovery_pct": 0.339,
       "by_dimension": {
         "lost_revenue": {
-          "original": 18714612.3,
-          "simulated": 8990043.06,
-          "recovery": 9724569.24,
-          "recovery_pct": 0.5196
+          "original": 26394811.62,
+          "simulated": 12857163.78,
+          "recovery": 13537647.84,
+          "recovery_pct": 0.5129
         },
         "otif_fines": {
-          "original": 826162.25,
-          "simulated": 773377.23,
-          "recovery": 52785.02,
-          "recovery_pct": 0.0639
+          "original": 1171729.35,
+          "simulated": 1094775.63,
+          "recovery": 76953.72,
+          "recovery_pct": 0.0657
         },
         "chargebacks": {
-          "original": 75308.25,
-          "simulated": 36959.0,
-          "recovery": 38349.25,
-          "recovery_pct": 0.5092
+          "original": 106777.86,
+          "simulated": 53093.53,
+          "recovery": 53684.33,
+          "recovery_pct": 0.5028
         },
         "deauthorization": {
-          "original": 5864280.0,
-          "simulated": 5962996.08,
-          "recovery": -98716.08,
-          "recovery_pct": -0.0168
+          "original": 7862926.65,
+          "simulated": 9453072.57,
+          "recovery": -1590145.92,
+          "recovery_pct": -0.2022
         },
         "dtc_cancellations": {
-          "original": 49610.3,
-          "simulated": 26296.72,
-          "recovery": 23313.58,
-          "recovery_pct": 0.4699
+          "original": 72298.15,
+          "simulated": 41698.52,
+          "recovery": 30599.63,
+          "recovery_pct": 0.4232
         },
         "dtc_margin_leakage": {
-          "original": 5250.61,
-          "simulated": 3086.78,
-          "recovery": 2163.84,
-          "recovery_pct": 0.4121
+          "original": 7809.58,
+          "simulated": 4531.01,
+          "recovery": 3278.57,
+          "recovery_pct": 0.4198
         },
         "distributor_returns": {
-          "original": 23892.48,
-          "simulated": 23892.48,
+          "original": 52699.68,
+          "simulated": 52699.68,
           "recovery": 0.0,
           "recovery_pct": 0.0
         },
         "triage_labor": {
-          "original": 38862.0,
-          "simulated": 38862.0,
+          "original": 58716.0,
+          "simulated": 58716.0,
           "recovery": 0.0,
           "recovery_pct": 0.0
         }
@@ -116,56 +116,56 @@
     },
     {
       "target_fill_rate": 0.9,
-      "achieved_fill_rate": 0.9114,
-      "total_cost": 9831556.39,
-      "total_recovery": 15766421.8,
-      "recovery_pct": 0.6159,
+      "achieved_fill_rate": 0.9113,
+      "total_cost": 16634641.11,
+      "total_recovery": 19093127.78,
+      "recovery_pct": 0.5344,
       "by_dimension": {
         "lost_revenue": {
-          "original": 18714612.3,
-          "simulated": 6229724.88,
-          "recovery": 12484887.42,
-          "recovery_pct": 0.6671
+          "original": 26394811.62,
+          "simulated": 8916553.08,
+          "recovery": 17478258.54,
+          "recovery_pct": 0.6622
         },
         "otif_fines": {
-          "original": 826162.25,
-          "simulated": 729224.24,
-          "recovery": 96938.0,
-          "recovery_pct": 0.1173
+          "original": 1171729.35,
+          "simulated": 1035927.5,
+          "recovery": 135801.85,
+          "recovery_pct": 0.1159
         },
         "chargebacks": {
-          "original": 75308.25,
-          "simulated": 25657.55,
-          "recovery": 49650.7,
-          "recovery_pct": 0.6593
+          "original": 106777.86,
+          "simulated": 36896.01,
+          "recovery": 69881.84,
+          "recovery_pct": 0.6545
         },
         "deauthorization": {
-          "original": 5864280.0,
-          "simulated": 2763954.54,
-          "recovery": 3100325.46,
-          "recovery_pct": 0.5287
+          "original": 7862926.65,
+          "simulated": 6502547.37,
+          "recovery": 1360379.28,
+          "recovery_pct": 0.173
         },
         "dtc_cancellations": {
-          "original": 49610.3,
-          "simulated": 18183.17,
-          "recovery": 31427.13,
-          "recovery_pct": 0.6335
+          "original": 72298.15,
+          "simulated": 28513.03,
+          "recovery": 43785.12,
+          "recovery_pct": 0.6056
         },
         "dtc_margin_leakage": {
-          "original": 5250.61,
-          "simulated": 2057.53,
-          "recovery": 3193.08,
-          "recovery_pct": 0.6081
+          "original": 7809.58,
+          "simulated": 2788.43,
+          "recovery": 5021.14,
+          "recovery_pct": 0.6429
         },
         "distributor_returns": {
-          "original": 23892.48,
-          "simulated": 23892.48,
+          "original": 52699.68,
+          "simulated": 52699.68,
           "recovery": 0.0,
           "recovery_pct": 0.0
         },
         "triage_labor": {
-          "original": 38862.0,
-          "simulated": 38862.0,
+          "original": 58716.0,
+          "simulated": 58716.0,
           "recovery": 0.0,
           "recovery_pct": 0.0
         }
@@ -174,55 +174,55 @@
     {
       "target_fill_rate": 0.95,
       "achieved_fill_rate": 0.9577,
-      "total_cost": 3596143.65,
-      "total_recovery": 22001834.54,
-      "recovery_pct": 0.8595,
+      "total_cost": 5158756.88,
+      "total_recovery": 30569012.0,
+      "recovery_pct": 0.8556,
       "by_dimension": {
         "lost_revenue": {
-          "original": 18714612.3,
-          "simulated": 2974410.48,
-          "recovery": 15740201.82,
-          "recovery_pct": 0.8411
+          "original": 26394811.62,
+          "simulated": 4249282.92,
+          "recovery": 22145528.7,
+          "recovery_pct": 0.839
         },
         "otif_fines": {
-          "original": 826162.25,
-          "simulated": 513146.52,
-          "recovery": 313015.73,
-          "recovery_pct": 0.3789
+          "original": 1171729.35,
+          "simulated": 739805.9,
+          "recovery": 431923.45,
+          "recovery_pct": 0.3686
         },
         "chargebacks": {
-          "original": 75308.25,
-          "simulated": 12228.06,
-          "recovery": 63080.19,
-          "recovery_pct": 0.8376
+          "original": 106777.86,
+          "simulated": 17535.01,
+          "recovery": 89242.85,
+          "recovery_pct": 0.8358
         },
         "deauthorization": {
-          "original": 5864280.0,
-          "simulated": 23011.32,
-          "recovery": 5841268.68,
-          "recovery_pct": 0.9961
+          "original": 7862926.65,
+          "simulated": 25677.84,
+          "recovery": 7837248.81,
+          "recovery_pct": 0.9967
         },
         "dtc_cancellations": {
-          "original": 49610.3,
-          "simulated": 9659.48,
-          "recovery": 39950.82,
-          "recovery_pct": 0.8053
+          "original": 72298.15,
+          "simulated": 13537.94,
+          "recovery": 58760.21,
+          "recovery_pct": 0.8127
         },
         "dtc_margin_leakage": {
-          "original": 5250.61,
-          "simulated": 933.3,
-          "recovery": 4317.31,
-          "recovery_pct": 0.8222
+          "original": 7809.58,
+          "simulated": 1501.59,
+          "recovery": 6307.98,
+          "recovery_pct": 0.8077
         },
         "distributor_returns": {
-          "original": 23892.48,
-          "simulated": 23892.48,
+          "original": 52699.68,
+          "simulated": 52699.68,
           "recovery": 0.0,
           "recovery_pct": 0.0
         },
         "triage_labor": {
-          "original": 38862.0,
-          "simulated": 38862.0,
+          "original": 58716.0,
+          "simulated": 58716.0,
           "recovery": 0.0,
           "recovery_pct": 0.0
         }

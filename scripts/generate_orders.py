@@ -14,14 +14,14 @@ Per docs/order-data-schema.md:
 Volume targets (so that triage at channel-specific fill rates lands
 shipped revenue at ~$25M/yr). UNFI/KeHE share the 18% distributor
 mix at 11/7 (i.e. 60/40 of distributor demand):
-    Walmart      $16.0M/yr  ($32.0M over 2yr)
-    UNFI         $ 3.93M/yr ($ 7.86M)   = 60% of distributor
-    KeHE         $ 2.50M/yr ($ 5.00M)   = 40% of distributor
-    Whole Foods  $ 3.3M/yr  ($ 6.7M)
-    Costco       $ 2.8M/yr  ($ 5.6M)
-    Regional     $ 3.5M/yr  ($ 6.9M)
-    DTC          $ 0.88M/yr ($ 1.8M)
-    TOTAL       ~$32.9M/yr  ($65.86M)
+    Walmart      $16.0M/yr  ($48.0M over 3yr)
+    UNFI         $ 3.93M/yr ($11.79M)   = 60% of distributor
+    KeHE         $ 2.50M/yr ($ 7.50M)   = 40% of distributor
+    Whole Foods  $ 3.3M/yr  ($9.9M)
+    Costco       $ 2.8M/yr  ($ 8.4M)
+    Regional     $ 3.5M/yr  ($10.5M)
+    DTC          $ 0.88M/yr ($ 2.64M)
+    TOTAL       ~$32.9M/yr  ($98.7M over 3yr)
 """
 from __future__ import annotations
 
@@ -37,9 +37,9 @@ REPO = Path(__file__).resolve().parent.parent
 EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
-# 104-week Cinderhaven window aligned with scan_data
-WINDOW_START = date(2024, 5, 11)
-WINDOW_END = date(2026, 5, 2)
+# 157-week Cinderhaven window aligned with scan_data
+WINDOW_START = date(2024, 1, 1)
+WINDOW_END = date(2026, 12, 31)
 
 REGIONAL_CHAINS = {
     "Southside Grocers",
@@ -49,15 +49,12 @@ REGIONAL_CHAINS = {
     "Harbor Fresh",
 }
 
-# Per-retailer column lookup in sku_costs. KeHE reuses wholesale_unfi
-# since the upstream sku_costs has no separate KeHE column; real KeHE
-# wholesale is typically within a few percent of UNFI.
 WHOLESALE_COL = {
     "Walmart": "wholesale_walmart",
     "Costco": "wholesale_costco",
     "Whole Foods": "wholesale_whole_foods",
     "UNFI": "wholesale_unfi",
-    "KeHE": "wholesale_unfi",
+    "KeHE": "wholesale_kehe",
     "DTC": "wholesale_dtc",
 }
 for chain in REGIONAL_CHAINS:
@@ -417,6 +414,7 @@ def _generate_distributor(
     qty_hi: int,
     promo_qty_lo: int,
     promo_qty_hi: int,
+    price_col: str,
 ) -> tuple[list[dict], list[dict]]:
     """Twice-weekly replenishment + promo over-orders. Used by both UNFI
     and KeHE; KeHE shares the UNFI promo schedule because the upstream
@@ -427,7 +425,6 @@ def _generate_distributor(
     orders, lines = [], []
     seq = 0
     line_seq = 0
-    price_col = "wholesale_unfi"  # KeHE shares UNFI's wholesale column
 
     # Replenishment: Mon + Thu per week
     for week in all_weeks():
@@ -507,7 +504,7 @@ def _generate_distributor(
 
 def generate_unfi(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
     """UNFI: twice-weekly replenishment + promo over-orders. Sized for
-    ~60% of distributor demand (~$7.9M over 2 yr)."""
+    ~60% of distributor demand (~$11.8M over 3 yr)."""
     return _generate_distributor(
         refs, auth, rng,
         retailer="UNFI", delivery_location="UNFI-AGG",
@@ -515,12 +512,13 @@ def generate_unfi(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tu
         line_lo=12, line_hi=22,
         qty_lo=8, qty_hi=70,
         promo_qty_lo=80, promo_qty_hi=400,
+        price_col="wholesale_unfi",
     )
 
 
 def generate_kehe(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
     """KeHE: twice-weekly replenishment + promo over-orders. Sized for
-    ~40% of distributor demand (~$5.0M over 2 yr). Smaller per-order
+    ~40% of distributor demand (~$7.5M over 3 yr). Smaller per-order
     line counts than UNFI."""
     return _generate_distributor(
         refs, auth, rng,
@@ -529,6 +527,7 @@ def generate_kehe(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tu
         line_lo=8, line_hi=15,
         qty_lo=5, qty_hi=55,
         promo_qty_lo=60, promo_qty_hi=300,
+        price_col="wholesale_kehe",
     )
 
 
@@ -697,14 +696,14 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
         by_channel[ch] += rev
         line_count_by_channel[ch] += 1
 
-    target_2yr = {
-        "Walmart": 32_000_000,
-        "UNFI": 7_860_000,
-        "KeHE": 5_000_000,
-        "Whole Foods": 6_700_000,
-        "Costco": 5_600_000,
-        "Regional": 6_900_000,
-        "DTC": 1_800_000,
+    target_3yr = {
+        "Walmart": 48_000_000,
+        "UNFI": 11_790_000,
+        "KeHE": 7_500_000,
+        "Whole Foods": 9_900_000,
+        "Costco": 8_400_000,
+        "Regional": 10_500_000,
+        "DTC": 2_640_000,
     }
     print()
     print(f"{'Channel':<14} {'Orders':>8} {'Lines':>10} {'Revenue ($)':>16} {'Target':>14} {'Diff':>10}")
@@ -717,11 +716,11 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
     for ch in ["Walmart", "UNFI", "KeHE", "Whole Foods", "Costco", "Regional", "DTC"]:
         rev = by_channel.get(ch, 0)
         total_rev += rev
-        target = target_2yr[ch]
+        target = target_3yr[ch]
         diff_pct = (rev - target) / target * 100 if target else 0
         print(f"{ch:<14} {order_count_by_ch.get(ch, 0):>8,} {line_count_by_channel.get(ch, 0):>10,} "
               f"${rev:>15,.0f} ${target:>13,} {diff_pct:>+9.1f}%")
-    target_total = sum(target_2yr.values())
+    target_total = sum(target_3yr.values())
     diff_pct = (total_rev - target_total) / target_total * 100
     print("-" * 76)
     print(f"{'TOTAL':<14} {len(orders):>8,} {len(lines):>10,} ${total_rev:>15,.0f} ${target_total:>13,} {diff_pct:>+9.1f}%")

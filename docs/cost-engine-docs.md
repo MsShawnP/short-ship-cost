@@ -441,13 +441,11 @@ therefore zero contribution to any cost dimension. Realistic, not a
 defect — recently-launched slow-movers wouldn't show up much in 5
 weeks of demand history.
 
-### KeHE pricing reuses UNFI
+### KeHE pricing
 
-`sku_costs` has no `wholesale_kehe` column upstream, so KeHE orders
-are priced at `wholesale_unfi`. Real KeHE wholesale is typically
-within a few percent of UNFI; this is a tractability simplification
-documented in `scripts/add_kehe.py`. If the tool needs distinct KeHE
-pricing, add a column upstream.
+`sku_costs` has a dedicated `wholesale_kehe` column. KeHE orders are
+priced using this column via the `WHOLESALE_COL` mapping in
+`scripts/generate_orders.py`.
 
 ### Walmart "DCs" synthesized
 

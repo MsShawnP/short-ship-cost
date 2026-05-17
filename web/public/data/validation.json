@@ -1,15 +1,15 @@
 {
   "baseline_totals": {
-    "lost_revenue": 18714612.3,
-    "otif_fines": 826162.25,
-    "chargebacks": 75308.25,
-    "deauthorization": 5864280.0,
-    "dtc_cancellations": 49610.3,
-    "dtc_margin_leakage": 5250.61,
-    "distributor_returns": 23892.48,
-    "triage_labor": 38862.0,
-    "total": 25597978.19
+    "lost_revenue": 26394811.62,
+    "otif_fines": 1171729.35,
+    "chargebacks": 106777.86,
+    "deauthorization": 7862926.65,
+    "dtc_cancellations": 72298.15,
+    "dtc_margin_leakage": 7809.58,
+    "distributor_returns": 52699.68,
+    "triage_labor": 58716.0,
+    "total": 35727768.89
   },
-  "shipped_revenue": 51856660.02,
-  "overall_fill_rate": 0.734
+  "shipped_revenue": 74496099.73,
+  "overall_fill_rate": 0.7376
 }

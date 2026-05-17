@@ -1,152 +1,224 @@
 [
   {
+    "month": "2024-01",
+    "shipped_revenue": 978275.84,
+    "demand": 1295132.48,
+    "order_count": 1865
+  },
+  {
+    "month": "2024-02",
+    "shipped_revenue": 1805880.44,
+    "demand": 2434775.3,
+    "order_count": 1772
+  },
+  {
+    "month": "2024-03",
+    "shipped_revenue": 1868842.15,
+    "demand": 2544077.42,
+    "order_count": 1903
+  },
+  {
+    "month": "2024-04",
+    "shipped_revenue": 2230511.86,
+    "demand": 2964229.43,
+    "order_count": 1953
+  },
+  {
     "month": "2024-05",
-    "shipped_revenue": 1013397.85,
-    "demand": 1352657.06,
-    "order_count": 1046
+    "shipped_revenue": 2404592.93,
+    "demand": 3226660.96,
+    "order_count": 1979
   },
   {
     "month": "2024-06",
-    "shipped_revenue": 1771892.89,
-    "demand": 2436574.82,
-    "order_count": 1588
+    "shipped_revenue": 2110440.59,
+    "demand": 2811543.24,
+    "order_count": 1708
   },
   {
     "month": "2024-07",
-    "shipped_revenue": 2044236.49,
-    "demand": 2778108.74,
-    "order_count": 1806
+    "shipped_revenue": 2047751.72,
+    "demand": 2832760.8,
+    "order_count": 1747
   },
   {
     "month": "2024-08",
-    "shipped_revenue": 2445721.92,
-    "demand": 3268719.41,
-    "order_count": 1887
+    "shipped_revenue": 2208220.43,
+    "demand": 2975043.37,
+    "order_count": 1904
   },
   {
     "month": "2024-09",
-    "shipped_revenue": 2243190.1,
-    "demand": 3043564.25,
-    "order_count": 1853
+    "shipped_revenue": 2075679.56,
+    "demand": 2766501.82,
+    "order_count": 1870
   },
   {
     "month": "2024-10",
-    "shipped_revenue": 2429612.71,
-    "demand": 3276725.34,
-    "order_count": 1812
+    "shipped_revenue": 2066582.0,
+    "demand": 2792273.34,
+    "order_count": 1902
   },
   {
     "month": "2024-11",
-    "shipped_revenue": 2086264.46,
-    "demand": 2894325.41,
-    "order_count": 1824
+    "shipped_revenue": 2180864.74,
+    "demand": 2939818.78,
+    "order_count": 1787
   },
   {
     "month": "2024-12",
-    "shipped_revenue": 2278128.31,
-    "demand": 3056706.76,
-    "order_count": 1841
+    "shipped_revenue": 2277306.86,
+    "demand": 3147738.13,
+    "order_count": 1814
   },
   {
     "month": "2025-01",
-    "shipped_revenue": 2365625.92,
-    "demand": 3202933.93,
-    "order_count": 1834
+    "shipped_revenue": 2057153.91,
+    "demand": 2829935.74,
+    "order_count": 1965
   },
   {
     "month": "2025-02",
-    "shipped_revenue": 2143576.88,
-    "demand": 2898724.41,
-    "order_count": 1746
+    "shipped_revenue": 2098503.53,
+    "demand": 2872070.37,
+    "order_count": 1629
   },
   {
     "month": "2025-03",
-    "shipped_revenue": 2148032.73,
-    "demand": 2948698.28,
-    "order_count": 1906
+    "shipped_revenue": 1891706.67,
+    "demand": 2563398.13,
+    "order_count": 1815
   },
   {
     "month": "2025-04",
-    "shipped_revenue": 2346520.85,
-    "demand": 3165736.72,
-    "order_count": 1745
+    "shipped_revenue": 2192896.18,
+    "demand": 2961730.28,
+    "order_count": 1800
   },
   {
     "month": "2025-05",
-    "shipped_revenue": 2244089.17,
-    "demand": 3123499.76,
-    "order_count": 2016
-  },
-  {
-    "month": "2025-06",
-    "shipped_revenue": 2319733.37,
-    "demand": 3112141.46,
-    "order_count": 1807
-  },
-  {
-    "month": "2025-07",
-    "shipped_revenue": 2204111.24,
-    "demand": 3083223.87,
-    "order_count": 1885
-  },
-  {
-    "month": "2025-08",
-    "shipped_revenue": 2168891.56,
-    "demand": 2928177.36,
-    "order_count": 1839
-  },
-  {
-    "month": "2025-09",
-    "shipped_revenue": 2216376.14,
-    "demand": 2968265.68,
+    "shipped_revenue": 1954123.24,
+    "demand": 2609039.62,
     "order_count": 1857
   },
   {
+    "month": "2025-06",
+    "shipped_revenue": 2165615.09,
+    "demand": 2952338.33,
+    "order_count": 1820
+  },
+  {
+    "month": "2025-07",
+    "shipped_revenue": 2130248.34,
+    "demand": 2849251.13,
+    "order_count": 1911
+  },
+  {
+    "month": "2025-08",
+    "shipped_revenue": 1993739.89,
+    "demand": 2720124.9,
+    "order_count": 1905
+  },
+  {
+    "month": "2025-09",
+    "shipped_revenue": 2315144.06,
+    "demand": 3108329.5,
+    "order_count": 1748
+  },
+  {
     "month": "2025-10",
-    "shipped_revenue": 2330606.47,
-    "demand": 3194224.76,
-    "order_count": 1929
+    "shipped_revenue": 2255915.37,
+    "demand": 3056309.08,
+    "order_count": 1899
   },
   {
     "month": "2025-11",
-    "shipped_revenue": 2102779.98,
-    "demand": 2830890.72,
-    "order_count": 1790
+    "shipped_revenue": 1880845.54,
+    "demand": 2509496.28,
+    "order_count": 1816
   },
   {
     "month": "2025-12",
-    "shipped_revenue": 2247583.7,
-    "demand": 3102489.78,
-    "order_count": 1834
+    "shipped_revenue": 2010533.36,
+    "demand": 2859221.73,
+    "order_count": 1861
   },
   {
     "month": "2026-01",
-    "shipped_revenue": 2316495.15,
-    "demand": 3226392.68,
-    "order_count": 1890
+    "shipped_revenue": 2025265.77,
+    "demand": 2723273.35,
+    "order_count": 1944
   },
   {
     "month": "2026-02",
-    "shipped_revenue": 2100188.1,
-    "demand": 2883276.88,
-    "order_count": 1624
+    "shipped_revenue": 2025791.73,
+    "demand": 2784590.25,
+    "order_count": 1730
   },
   {
     "month": "2026-03",
-    "shipped_revenue": 2150460.72,
-    "demand": 2900511.12,
-    "order_count": 1863
+    "shipped_revenue": 2019230.19,
+    "demand": 2671908.26,
+    "order_count": 1869
   },
   {
     "month": "2026-04",
-    "shipped_revenue": 2051382.47,
-    "demand": 2851018.62,
-    "order_count": 1773
+    "shipped_revenue": 2087261.09,
+    "demand": 2816169.75,
+    "order_count": 1807
   },
   {
     "month": "2026-05",
-    "shipped_revenue": 87760.84,
-    "demand": 119547.87,
-    "order_count": 115
+    "shipped_revenue": 1993924.19,
+    "demand": 2659590.9,
+    "order_count": 1896
+  },
+  {
+    "month": "2026-06",
+    "shipped_revenue": 2251397.51,
+    "demand": 3199147.59,
+    "order_count": 1809
+  },
+  {
+    "month": "2026-07",
+    "shipped_revenue": 2236269.87,
+    "demand": 3053737.61,
+    "order_count": 1922
+  },
+  {
+    "month": "2026-08",
+    "shipped_revenue": 2093501.15,
+    "demand": 2859670.18,
+    "order_count": 1901
+  },
+  {
+    "month": "2026-09",
+    "shipped_revenue": 2281765.55,
+    "demand": 3082680.59,
+    "order_count": 1830
+  },
+  {
+    "month": "2026-10",
+    "shipped_revenue": 1872673.46,
+    "demand": 2565057.9,
+    "order_count": 1792
+  },
+  {
+    "month": "2026-11",
+    "shipped_revenue": 2225090.52,
+    "demand": 3012247.84,
+    "order_count": 1907
+  },
+  {
+    "month": "2026-12",
+    "shipped_revenue": 2135903.8,
+    "demand": 2890614.81,
+    "order_count": 1869
+  },
+  {
+    "month": "2027-01",
+    "shipped_revenue": 46650.6,
+    "demand": 61768.2,
+    "order_count": 7
   }
 ]

@@ -4,8 +4,8 @@ Two mechanisms (per PLAN task 5):
 
 1. Retailer velocity-based (Walmart, Costco, Whole Foods, regionals)
    For each (sku, retailer) pair:
-     velocity_without_shorts = qty_ordered / store_count / 104 weeks
-     velocity_with_shorts    = qty_shipped / store_count / 104 weeks
+     velocity_without_shorts = qty_ordered / store_count / 157 weeks
+     velocity_with_shorts    = qty_shipped / store_count / 157 weeks
    If velocity_without_shorts > threshold AND velocity_with_shorts <
    threshold, the short pushed the SKU below the delisting threshold
    for that retailer — a short-caused deauth event.
@@ -37,7 +37,7 @@ VELOCITY_THRESHOLD = {
 for _chain in REGIONAL_CHAINS:
     VELOCITY_THRESHOLD[_chain] = get("deauth_velocity_regional")
 
-WEEKS_IN_WINDOW = 104
+WEEKS_IN_WINDOW = 157
 
 
 def _velocity_events(db) -> list[dict]:
