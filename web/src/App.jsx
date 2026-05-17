@@ -269,8 +269,8 @@ function AppShell({ data }) {
               This analysis uses synthetic order data modeled on a ~$25M annual
               revenue specialty food brand operating across six retail channels
               (Walmart, Costco, Whole Foods, UNFI, KeHE, and regional grocers)
-              plus direct-to-consumer. The dataset covers 43,110 orders and
-              125,748 line items over an 18–24 month window.
+              plus direct-to-consumer. The dataset covers 66,101 orders and
+              191,371 line items over a 3-year window.
             </p>
             <p>
               Every order passes through a triage simulation that mirrors

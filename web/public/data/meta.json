@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-05-08T01:27:19.128369+00:00",
+  "last_updated": "2026-05-17T19:48:44.703470+00:00",
   "time_window": {
-    "start": "2024-05-13",
-    "end": "2026-05-02"
+    "start": "2024-01-08",
+    "end": "2027-01-02"
   },
-  "shipped_revenue": 51856660.02,
-  "shipped_revenue_annual": 25928330.01,
-  "total_orders": 43110,
-  "total_skus": 90,
-  "overall_fill_rate": 0.734,
+  "shipped_revenue": 74215849.85,
+  "shipped_revenue_annual": 24738616.62,
+  "total_orders": 66101,
+  "total_skus": 50,
+  "overall_fill_rate": 0.7361,
   "cost_parameters": {
     "chargeback_rate_other": {
       "value": 0.003,

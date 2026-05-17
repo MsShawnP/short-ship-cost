@@ -492,6 +492,62 @@ Side deliverable: extracted the full short-ship-cost design system
 
 ---
 
+## Decomposition: Data resync and deploy
+
+Goal: Bring the deployed web app into alignment with the rebuilt
+pipeline (50 SKUs, 157 weeks, $33.2M total cost) and clean up
+dead artifacts.
+
+Steps:
+
+- [x] D1: Re-export JSON from rebuilt databases
+    - Depends on: none
+    - Run `python scripts/export_json.py` from repo root.
+    - Done when: script prints "PASS" sanity check and all 9 JSON
+      files in `web/public/data/` have `last_updated` timestamps
+      from today, `meta.json` shows 50 SKUs and ~66K orders
+
+- [x] D2: Verify tests pass with new data
+    - Depends on: D1
+    - Run `cd web && npm test`
+    - Done when: 34/34 tests pass (validates JS cost engine still
+      reconciles against the new validation.json)
+
+- [x] D3: Update hardcoded numbers in methodology section
+    - Depends on: D1 (need actual numbers from new meta.json)
+    - Edit `web/src/App.jsx` lines 269–273: update order count,
+      line count, and time window description to match new data
+    - Done when: methodology text says "66,101 orders and 191,371
+      line items over a 3-year window" (or whatever meta.json shows)
+
+- [x] D4: Update OG/Twitter meta descriptions
+    - Depends on: D1 (need new headline total)
+    - Edit `web/index.html` lines 9 and 14: replace "$25.6M" with
+      the new rounded total from validation.json
+    - Done when: `grep "og:description" web/index.html` shows the
+      new dollar amount
+
+- [x] D5: Update README.md headline numbers
+    - Depends on: D1
+    - Edit `README.md` lines 24 and 39–41: update order count,
+      shipped revenue, headline cost, and percentage
+    - Done when: README numbers match the new pipeline output
+
+- [ ] D6: Build and deploy
+    - Depends on: D2, D3, D4, D5
+    - Run `cd web && npm run build && npm run deploy`
+    - Done when: build succeeds with 0 errors/warnings, deploy
+      completes, live URL shows new headline number
+
+- [x] D7: Clean up dead code and stale docs
+    - Depends on: none (independent)
+    - Delete `scripts/add_kehe.py`. Rewrite `data/README.md`
+      "What this project will add" section to describe what exists.
+    - Done when: `add_kehe.py` is gone, `data/README.md` has no
+      references to tables that "will be" built
+
+---
+
 ## Arc history
 
 ### Arc 1 — Synthetic order data + cost engine (completed 2026-05-07)
