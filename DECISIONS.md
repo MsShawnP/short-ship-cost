@@ -135,6 +135,12 @@ Each entry:
 - **Scope:** `DimensionToggle.jsx` and `DimensionToggle.module.css`
 - **Do not:** Put the label/hint text back inline with the chips. They live in a separate `.labelRow` flex container above the grid.
 
+### 2026-05-17 — Data-derived prose reads from JSON; CI validates static references
+
+- **Why:** Hardcoded numbers in App.jsx and index.html drifted silently when the pipeline was rebuilt. The class of bug (stale prose) was invisible to existing tests.
+- **Scope:** Any user-facing number that can be derived from the exported JSON files (meta.json, validation.json). Static HTML (OG tags) is an exception — validated by CI test instead.
+- **Do not:** Hardcode order counts, line counts, time windows, or headline cost figures in JSX when the value exists in meta.json or validation.json.
+
 ---
 
 ## Reversed / Superseded

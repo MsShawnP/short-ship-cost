@@ -61,9 +61,9 @@ quarto" or "scope, scrollytelling, decoration"]
 
 **Why it didn't work:** The screenshot call times out after 30s every time on this project. Likely related to the page's lazy-loaded Recharts chunks or the SVG-heavy flow-split chart. Same issue observed in prior sessions.
 
-**What we tried instead:** Used `preview_eval` to inspect computed styles (grid columns, chip widths, alignment) and `preview_snapshot` for accessibility tree structure. Both work reliably and provide sufficient verification for CSS layout changes.
+**What we tried instead:** Used `preview_eval` to inspect computed styles (grid columns, chip widths, alignment) and `preview_snapshot` for accessibility tree structure. Both work reliably and provide sufficient verification for CSS layout changes. For OG card image generation (2026-05-17), used `npx playwright screenshot --viewport-size "1200, 630"` to render a standalone HTML file to PNG — worked perfectly on the first attempt.
 
-**Status:** Open (environment limitation, not a code issue)
+**Status:** Open (environment limitation, not a code issue). Workaround: use Playwright CLI for screenshots, preview_eval/preview_snapshot for layout verification.
 
 **Tags:** preview-tool, screenshot, timeout, verification, css-layout
 
@@ -102,6 +102,18 @@ quarto" or "scope, scrollytelling, decoration"]
 **Status:** Resolved
 
 **Tags:** print-css, css-modules, vite, page-break
+
+### 2026-05-17 — PowerShell interpolates dollar signs in git commit messages
+
+**Attempted:** Used PowerShell `git commit -m @'...'@` heredoc syntax for commit messages containing dollar amounts like `$34M`, `$33.2M`.
+
+**Why it didn't work:** PowerShell's `@'...'@` single-quoted heredoc requires the closing `'@` at column 0 with no leading whitespace, which is fragile in automated tooling. Double-quoted `@"..."@` interpolates `$` as variable references, mangling dollar amounts into empty strings. Some commit attempts failed with `pathspec` errors when `$34M` was parsed as a variable.
+
+**What we tried instead:** Used Bash with `cat <<'EOF'...EOF` heredocs for all git commits containing dollar signs. Bash single-quoted heredocs don't interpolate, and the syntax is more forgiving about indentation.
+
+**Status:** Resolved (use Bash for commits with dollar signs)
+
+**Tags:** powershell, git, string-escaping, windows
 
 ### 2026-05-08 — Buffer scenario deauth recalc on threshold change is approximate
 

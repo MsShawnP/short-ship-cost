@@ -9,6 +9,18 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-05-17 17:50 — Review fixes, OG card, mobile overflow, CI tests
+
+**Started from:** OG card still showed stale $25.6M. Data resync and deploy done in previous session (PR #7).
+
+**Did:** Regenerated OG card image ($33.2M, Playwright CLI). Ran 4-agent parallel review — found BufferSimulation narrative with wrong dollar amounts, stale docs numbers, mobile horizontal overflow. Fixed all findings (PRs #8, #9, #10 merged). Made methodology text dynamic from meta.json. Added 2 CI consistency tests. Fixed mobile overflow (SKU table forcing 900px page on 375px viewport). Updated last stale time window references in docs.
+
+**State:** Fully deployed. All numbers consistent across data/app/docs/OG card. 36/36 tests pass. No stale references remain outside historical logs. Mobile overflow fixed. Three PRs merged to master.
+
+**Next:** "Argument, not dashboard" transformation (PLAN.md current arc). Real-device mobile testing for touch interactions.
+
+---
+
 ## 2026-05-17 16:15 — Full audit + data resync + deploy
 
 **Started from:** Pipeline rebuilt (commit 6ee429b) with new cinderhaven-data but web app JSON never re-exported. Tool displayed $25.6M while databases held $33.2M.
