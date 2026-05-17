@@ -21,11 +21,11 @@ the derived `sku_velocity` rollup.
 |---|---|---|
 | `product_master` | 50 | SKU master: identifiers (sku, gtin14, upc), product line, subcategory, case pack, MSRP, nutrition. Includes deliberate data-quality defects on some rows (missing case dimensions, etc.) |
 | `sku_costs` | 50 | COGS, landed cost, retailer-specific wholesale prices (Walmart / Costco / Whole Foods / Regional / UNFI / KeHE / DTC), and trade-spend rates per channel |
-| `stores` | 902 | Retail door list with retailer, chain, region, state, volume tier. UNFI and DTC are represented as single aggregated rows |
-| `distribution_log` | 12,507 | SKU × store authorization history (auth and deauth dates). Underpins which SKUs are on shelf where, and over what window |
-| `promotions` | 198 | Retailer-specific promotional events: timing, depth, store scope |
-| `price_history` | 398 | Time-keyed wholesale prices by SKU × retailer over the 3-year window |
-| `chargebacks` | 381 | Historical compliance chargebacks by month / retailer / reason / SKU. Includes "Short shipment" and "Late delivery" reasons alongside the data-quality reasons that drive most of them |
+| `stores` | 903 | Retail door list with retailer, chain, region, state, volume tier. UNFI and DTC are represented as single aggregated rows |
+| `distribution_log` | 7,210 | SKU × store authorization history (auth and deauth dates). Underpins which SKUs are on shelf where, and over what window |
+| `promotions` | 185 | Retailer-specific promotional events: timing, depth, store scope |
+| `price_history` | 234 | Time-keyed wholesale prices by SKU × retailer over the 3-year window |
+| `chargebacks` | 761 | Historical compliance chargebacks by month / retailer / reason / SKU. Includes "Short shipment" and "Late delivery" reasons alongside the data-quality reasons that drive most of them |
 | `retailer_rules` | 90 | Per-(retailer, deduction_type) rules: dispute windows, auto-deduction flags, evidence requirements, typical recovery rates |
 | `sku_velocity` | 50 | **Derived** rollup from upstream `scan_data`. Per-SKU `avg_weekly_units` (total scan-data units ÷ 157 weeks), `total_annual_units` (annualized = avg_weekly × 52), and `velocity_rank` (1 = highest). Used by the order generator to size weekly production proportionally and to weight order frequency / volume toward higher-velocity SKUs |
 
