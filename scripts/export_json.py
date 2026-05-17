@@ -92,6 +92,9 @@ def build_meta(db: sqlite3.Connection) -> dict:
     cur.execute("SELECT COUNT(*) FROM ord.orders")
     total_orders = cur.fetchone()[0]
 
+    cur.execute("SELECT COUNT(*) FROM ord.order_lines_original")
+    total_lines = cur.fetchone()[0]
+
     cur.execute("SELECT COUNT(*) FROM ext.product_master")
     total_skus = cur.fetchone()[0]
 
@@ -139,6 +142,7 @@ def build_meta(db: sqlite3.Connection) -> dict:
         "shipped_revenue": round_dollar(shipped_revenue),
         "shipped_revenue_annual": round_dollar(shipped_revenue_annual),
         "total_orders": total_orders,
+        "total_lines": total_lines,
         "total_skus": total_skus,
         "overall_fill_rate": round_pct(overall_fill),
         "cost_parameters": params,

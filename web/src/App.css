@@ -214,6 +214,8 @@ details[open] > .methodology-summary::before {
 @media (max-width: 640px) {
   .page {
     padding: 32px 16px var(--size-section-gap);
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .methodology {

@@ -269,8 +269,10 @@ function AppShell({ data }) {
               This analysis uses synthetic order data modeled on a ~$25M annual
               revenue specialty food brand operating across six retail channels
               (Walmart, Costco, Whole Foods, UNFI, KeHE, and regional grocers)
-              plus direct-to-consumer. The dataset covers 66,101 orders and
-              191,371 line items over a 3-year window.
+              plus direct-to-consumer. The dataset covers{' '}
+              {data.meta.total_orders.toLocaleString()} orders and{' '}
+              {data.meta.total_lines.toLocaleString()} line items over a{' '}
+              {Math.round((new Date(data.meta.time_window.end) - new Date(data.meta.time_window.start)) / (365.25 * 86400000))}-year window.
             </p>
             <p>
               Every order passes through a triage simulation that mirrors
