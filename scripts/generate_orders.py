@@ -25,6 +25,7 @@ mix at 11/7 (i.e. 60/40 of distributor demand):
 """
 from __future__ import annotations
 
+import json
 import math
 import random
 import sqlite3
@@ -35,6 +36,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
+CALIBRATION_FILE = REPO / "data" / "calibration.json"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
 # 157-week Cinderhaven window aligned with scan_data
@@ -675,6 +677,30 @@ def write_to_db(path: Path, orders: list[dict], lines: list[dict]) -> None:
     db.close()
 
 
+def _load_calibration_targets() -> tuple[dict[str, float], str]:
+    """Load 3-year revenue targets from calibration.json if present,
+    otherwise fall back to hardcoded defaults."""
+    fallback = {
+        "Walmart": 48_000_000,
+        "UNFI": 11_790_000,
+        "KeHE": 7_500_000,
+        "Whole Foods": 9_900_000,
+        "Costco": 8_400_000,
+        "Regional": 10_500_000,
+        "DTC": 2_640_000,
+    }
+    if not CALIBRATION_FILE.exists():
+        return fallback, "hardcoded (run extract_calibration.py to sync)"
+    try:
+        cal = json.loads(CALIBRATION_FILE.read_text())
+        targets = cal.get("revenue_targets_3yr", {})
+        if not targets:
+            return fallback, "hardcoded (calibration.json missing revenue_targets_3yr)"
+        return targets, f"calibration.json ({cal.get('extracted', 'unknown date')})"
+    except (json.JSONDecodeError, KeyError):
+        return fallback, "hardcoded (calibration.json unreadable)"
+
+
 def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
     """Compute per-channel original-demand revenue and report against
     target. Revenue = qty * pack * unit_price for retail/distributor;
@@ -689,21 +715,13 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
             rev = L["quantity_ordered"] * pack[L["sku"]] * L["unit_price"]
         else:
             rev = L["quantity_ordered"] * L["unit_price"]
-        # Group regionals together for reporting
         ch = "Regional" if o["retailer"] in REGIONAL_CHAINS else o["retailer"]
         by_channel[ch] += rev
         line_count_by_channel[ch] += 1
 
-    target_3yr = {
-        "Walmart": 48_000_000,
-        "UNFI": 11_790_000,
-        "KeHE": 7_500_000,
-        "Whole Foods": 9_900_000,
-        "Costco": 8_400_000,
-        "Regional": 10_500_000,
-        "DTC": 2_640_000,
-    }
+    target_3yr, target_source = _load_calibration_targets()
     print()
+    print(f"Targets: {target_source}")
     print(f"{'Channel':<14} {'Orders':>8} {'Lines':>10} {'Revenue ($)':>16} {'Target':>14} {'Diff':>10}")
     print("-" * 76)
     order_count_by_ch: dict[str, int] = defaultdict(int)
@@ -714,7 +732,7 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
     for ch in ["Walmart", "UNFI", "KeHE", "Whole Foods", "Costco", "Regional", "DTC"]:
         rev = by_channel.get(ch, 0)
         total_rev += rev
-        target = target_3yr[ch]
+        target = target_3yr.get(ch, 0)
         diff_pct = (rev - target) / target * 100 if target else 0
         print(f"{ch:<14} {order_count_by_ch.get(ch, 0):>8,} {line_count_by_channel.get(ch, 0):>10,} "
               f"${rev:>15,.0f} ${target:>13,} {diff_pct:>+9.1f}%")
