@@ -54,8 +54,23 @@ def main() -> int:
     cur = conn.cursor()
 
     cur.execute("""
-        SELECT channel_name, gross_revenue
-        FROM public_marts.mart_channel_contribution
+        SELECT retailer, revenue FROM (
+            SELECT dr.retailer_name AS retailer,
+                   SUM(fo.total_value)::float AS revenue
+            FROM public_marts.fct_retailer_orders fo
+            JOIN public_marts.dim_retailers dr ON dr.retailer_id = fo.retailer_id
+            GROUP BY dr.retailer_name
+            UNION ALL
+            SELECT dd.distributor_name AS retailer,
+                   SUM(fo.total_value)::float AS revenue
+            FROM public_marts.fct_distributor_orders fo
+            JOIN public_marts.dim_distributors dd ON dd.distributor_id = fo.distributor_id
+            GROUP BY dd.distributor_name
+            UNION ALL
+            SELECT 'DTC' AS retailer,
+                   SUM(fo.gross_revenue)::float AS revenue
+            FROM public_marts.fct_dtc_orders fo
+        ) combined ORDER BY revenue DESC
     """)
     rows = cur.fetchall()
     conn.close()
@@ -63,8 +78,8 @@ def main() -> int:
     targets: dict[str, float] = {}
     regional_total = 0.0
     for r in rows:
-        name = r["channel_name"]
-        rev = round(float(r["gross_revenue"]), 2)
+        name = r["retailer"]
+        rev = round(float(r["revenue"]), 2)
         if name in REGIONAL_CHAINS:
             regional_total += rev
         else:
@@ -74,7 +89,7 @@ def main() -> int:
 
     calibration = {
         "extracted": date.today().isoformat(),
-        "source": "public_marts.mart_channel_contribution",
+        "source": "fct_retailer_orders + fct_distributor_orders + fct_dtc_orders",
         "revenue_targets_3yr": targets,
     }
 

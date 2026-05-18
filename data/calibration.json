@@ -1,0 +1,16 @@
+{
+  "extracted": "2026-05-18",
+  "source": "fct_retailer_orders + fct_distributor_orders + fct_dtc_orders",
+  "revenue_targets_3yr": {
+    "UNFI": 563417.88,
+    "DPI Northwest": 553833.12,
+    "KeHE": 483792.12,
+    "DTC": 367185.13,
+    "Sprouts": 349267.68,
+    "Whole Foods": 339027.72,
+    "Regional Group": 328431.12,
+    "Kroger": 327646.68,
+    "Walmart": 321690.0,
+    "Costco": 310973.76
+  }
+}
