@@ -1,0 +1,6740 @@
+[
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 172.01
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 153.75
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 170.4
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 186.31
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 214.1
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 168.93
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 181.77
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 187.86
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 202.02
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 261.37
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 261.69
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 275.01
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 180.72
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 148.58
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 196.03
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 176.67
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 235.73
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 175.36
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 221.67
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 167.36
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 186.26
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 249.88
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 246.5
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 250.73
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 180.82
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 132.83
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 160.55
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 169.19
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 209.55
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 165.34
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 183.36
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 159.38
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 164.55
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 234.99
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 286.89
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 269.14
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 23.34
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "deauthorization",
+    "month": null,
+    "cost": 876570.24
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 34401.6
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 30749.76
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 34079.04
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 37261.44
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 42819.84
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 33785.28
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 36354.24
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 37572.48
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 40403.52
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 52274.88
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 52338.24
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 55002.24
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 36144.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 29715.84
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 39205.44
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 35334.72
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 47145.6
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 35072.64
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 44334.72
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 33471.36
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 37252.8
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 49976.64
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 49299.84
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 50146.56
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 36164.16
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 26565.12
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 32109.12
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 33837.12
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 41909.76
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 33068.16
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 36671.04
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 31875.84
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 32909.76
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 46998.72
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 57378.24
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 53827.2
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 4668.48
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 32000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 34750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 38750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 40250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 48250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 38500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 39000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 41000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 46500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 49750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 58000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 61750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 39500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 32750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 40500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 42750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 53500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 35000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 44750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 34750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 39000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 51750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 51750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 53000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 35000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 30000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 32500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 36250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 46500.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 39000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 39250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 33750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 36250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 51750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 60000.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 58250.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 5750.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 1188.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 1269.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 1413.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 1476.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 1782.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 1431.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 1422.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 1521.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 1701.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 1818.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 2115.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 2286.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 1458.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 1188.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 1476.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 1557.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 1980.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 1296.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 1638.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 1269.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 1422.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 1881.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 1863.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 1998.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 1278.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 1161.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 1197.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 1323.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 1710.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 1431.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 1440.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 1251.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 1323.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 1899.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 2214.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 2160.0
+  },
+  {
+    "retailer": "Costco",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 207.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 94.8
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 83.08
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 160.86
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 147.68
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 151.98
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 152.55
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 137.29
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 138.85
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 137.94
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 186.24
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 196.69
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 207.28
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 117.94
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 72.33
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 152.82
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 130.81
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 170.38
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 135.07
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 163.61
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 155.75
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 155.79
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 143.15
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 222.58
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 241.21
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 110.27
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 86.59
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 118.53
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 150.22
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 134.98
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 109.68
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 155.53
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 152.82
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 164.28
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 169.12
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 177.85
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 192.21
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 13.09
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "deauthorization",
+    "month": null,
+    "cost": 1268424.96
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 31600.8
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 27693.6
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 53621.04
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 49228.08
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 50661.6
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 50849.04
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 45761.76
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 46281.84
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 45980.88
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 62079.6
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 65561.76
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 69094.08
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 39312.24
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 24111.12
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 50941.44
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 43604.88
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 56791.68
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 45022.56
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 54537.12
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 51918.24
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 51931.44
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 47718.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 74191.92
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 80403.84
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 36756.72
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 28863.12
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 39510.24
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 50072.88
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 44993.52
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 36558.72
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 51841.68
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 50938.8
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 54761.52
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 56371.92
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 59283.84
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 64070.16
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 4363.92
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 351.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 351.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 567.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 522.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 558.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 567.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 459.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 522.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 468.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 540.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 648.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 774.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 414.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 279.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 522.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 468.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 576.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 549.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 549.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 504.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 504.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 531.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 720.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 918.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 486.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 423.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 387.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 585.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 522.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 459.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 495.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 504.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 612.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 594.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 666.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 711.0
+  },
+  {
+    "retailer": "DPI Northwest",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 54.0
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-01",
+    "cost": 86.87
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-02",
+    "cost": 257.21
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-03",
+    "cost": 149.81
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-04",
+    "cost": 100.36
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-05",
+    "cost": 294.57
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-06",
+    "cost": 285.15
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-07",
+    "cost": 458.92
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-08",
+    "cost": 103.36
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-09",
+    "cost": 350.05
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-10",
+    "cost": 297.13
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-11",
+    "cost": 345.56
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2024-12",
+    "cost": 311.08
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-01",
+    "cost": 106.86
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-02",
+    "cost": 354.03
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-03",
+    "cost": 187.27
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-04",
+    "cost": 196.25
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-05",
+    "cost": 310.59
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-06",
+    "cost": 248.17
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-07",
+    "cost": 478.88
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-08",
+    "cost": 140.82
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-09",
+    "cost": 306.6
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-10",
+    "cost": 115.35
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-11",
+    "cost": 576.77
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2025-12",
+    "cost": 301.12
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-01",
+    "cost": 104.85
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-02",
+    "cost": 79.88
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-03",
+    "cost": 112.85
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-04",
+    "cost": 246.69
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-05",
+    "cost": 123.35
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-06",
+    "cost": 111.35
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-07",
+    "cost": 204.23
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-08",
+    "cost": 334.59
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-09",
+    "cost": 273.64
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-10",
+    "cost": 205.77
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-11",
+    "cost": 496.85
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_cancellations",
+    "month": "2026-12",
+    "cost": 402.5
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-01",
+    "cost": 5.39
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-02",
+    "cost": 33.96
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-03",
+    "cost": 21.67
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-04",
+    "cost": 27.76
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-05",
+    "cost": 24.56
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-06",
+    "cost": 43.14
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-07",
+    "cost": 24.07
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-08",
+    "cost": 12.19
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-09",
+    "cost": 21.87
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-10",
+    "cost": 13.18
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-11",
+    "cost": 34.26
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2024-12",
+    "cost": 45.14
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-01",
+    "cost": 37.95
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-03",
+    "cost": 13.48
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-04",
+    "cost": 60.32
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-05",
+    "cost": 27.36
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-06",
+    "cost": 55.83
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-07",
+    "cost": 6.49
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-08",
+    "cost": 25.37
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-09",
+    "cost": 7.79
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-10",
+    "cost": 25.86
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-11",
+    "cost": 23.37
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2025-12",
+    "cost": 34.75
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-01",
+    "cost": 21.27
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-02",
+    "cost": 14.48
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-03",
+    "cost": 18.18
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-04",
+    "cost": 10.88
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-05",
+    "cost": 27.36
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-06",
+    "cost": 3.79
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-07",
+    "cost": 23.07
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-08",
+    "cost": 9.59
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-09",
+    "cost": 19.77
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-10",
+    "cost": 19.28
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-11",
+    "cost": 54.34
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2026-12",
+    "cost": 64.82
+  },
+  {
+    "retailer": "DTC",
+    "dimension": "dtc_margin_leakage",
+    "month": "2027-01",
+    "cost": 8.39
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 161.62
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 185.78
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 250.56
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 150.24
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 186.95
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 233.12
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 183.27
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 172.23
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 212.79
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 239.96
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 326.47
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 286.39
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 246.28
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 166.57
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 199.57
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 151.29
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 231.38
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 183.25
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 203.33
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 274.77
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 199.84
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 265.83
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 284.48
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 333.75
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 178.85
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 109.51
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 192.58
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 184.36
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 248.83
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 213.86
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 203.55
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 187.65
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 282.38
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 272.4
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 322.8
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 343.3
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 20.4
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "deauthorization",
+    "month": null,
+    "cost": 1903066.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-02",
+    "cost": 822.48
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-03",
+    "cost": 2748.96
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-04",
+    "cost": 7038.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-05",
+    "cost": 8401.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-06",
+    "cost": 9753.84
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-07",
+    "cost": 10220.28
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-08",
+    "cost": 7107.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-09",
+    "cost": 7247.76
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-10",
+    "cost": 6044.4
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-11",
+    "cost": 8625.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2024-12",
+    "cost": 11459.52
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-01",
+    "cost": 10937.88
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-02",
+    "cost": 12825.72
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-03",
+    "cost": 11680.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-04",
+    "cost": 8346.24
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-05",
+    "cost": 9160.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-06",
+    "cost": 12646.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-07",
+    "cost": 10441.08
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-08",
+    "cost": 8268.96
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-09",
+    "cost": 6267.96
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-10",
+    "cost": 8445.6
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-11",
+    "cost": 8437.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2025-12",
+    "cost": 7935.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "distributor_returns",
+    "month": "2026-01",
+    "cost": 2467.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 53872.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 61926.12
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 83520.36
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 50080.2
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 62315.28
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 77705.04
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 61089.84
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 57410.76
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 70929.24
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 79987.56
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 108824.04
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 95462.88
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 82093.44
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 55522.92
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 66524.28
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 50430.72
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 77128.2
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 61084.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 67777.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 91590.6
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 66612.6
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 88609.8
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 94825.32
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 111250.08
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 59616.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 36503.76
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 64192.08
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 61454.16
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 82943.52
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 71288.04
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 67849.08
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 62549.88
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 94127.04
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 90798.48
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 107601.36
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 114432.36
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 6800.64
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 1770.43
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 1960.9
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 2624.64
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 1733.23
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 2068.99
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 2513.02
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 2037.98
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 1863.05
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 2375.06
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 2508.36
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 3383.88
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 3162.91
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 2555.47
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 1797.53
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 2141.09
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 1664.38
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 2480.59
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 2101.34
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 2178.65
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 3042.19
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 2083.49
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 2962.51
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 2969.66
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 3790.99
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 1922.54
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 1245.02
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 2072.38
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 2079.31
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 2814.55
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 2468.4
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 2139.1
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 2044.58
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 3167.9
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 2953.58
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 3413.35
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 3687.62
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 225.94
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 558.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 594.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 810.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 585.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 747.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 765.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 666.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 612.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 828.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 684.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 981.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 1071.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 783.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 549.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 702.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 576.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 783.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 675.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 702.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 882.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 693.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 972.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 945.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 1233.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 576.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 378.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 594.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 738.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 846.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 783.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 693.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 675.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 963.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 918.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 1035.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 1188.0
+  },
+  {
+    "retailer": "KeHE",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 54.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 563.18
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 586.67
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 656.37
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 662.93
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 693.33
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 715.65
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 688.23
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 633.73
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 737.48
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 887.68
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 875.55
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 1089.44
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 698.93
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 568.38
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 694.18
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 694.5
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 805.3
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 760.15
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 837.25
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 652.92
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 776.67
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 910.52
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 1043.61
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 1061.45
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 629.5
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 545.04
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 696.86
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 621.8
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 753.73
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 572.33
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 827.66
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 729.71
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 735.19
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 768.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 1058.76
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 1046.55
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 67.11
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 187725.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 195556.8
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 218788.5
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 220977.72
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 231109.38
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 238548.96
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 229411.14
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 211243.98
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 245826.72
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 295894.44
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 291848.76
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 363147.66
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 232976.1
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 189459.36
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 231392.28
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 231499.62
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 268433.4
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 253382.28
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 279084.78
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 217639.32
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 258890.52
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 303506.76
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 347870.7
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 353818.32
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 209834.94
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 181678.92
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 232285.8
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 207267.84
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 251244.72
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 190777.86
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 275887.98
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 243236.04
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 245063.7
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 255999.12
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 352920.72
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 348848.52
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 22371.6
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 2319.23
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 2394.14
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 2711.14
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 2731.81
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 2805.42
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 3101.74
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 2894.84
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 2640.52
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 3053.06
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 3582.08
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 3581.35
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 4539.28
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 2873.74
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 2306.34
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 2835.29
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 2925.66
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 3385.98
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 3082.1
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 3284.06
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 2685.92
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 3219.19
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 3715.36
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 4142.68
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 4375.8
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 2528.4
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 2213.92
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 2864.11
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 2572.26
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 3153.79
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 2410.09
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 3407.87
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 2903.34
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 2998.25
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 3103.08
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 4278.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 4498.07
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 290.15
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 4194.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 4221.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 4860.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 4860.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 5040.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 5229.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 5139.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 4635.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 5265.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 6210.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 6471.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 7884.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 4914.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 4005.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 5040.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 5202.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 5904.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 5436.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 5742.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 4662.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 5814.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 6606.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 7173.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 7758.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 4446.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 3933.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 5085.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 4563.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 5373.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 4383.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 5976.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 5202.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 5229.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 5562.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 7677.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 7929.0
+  },
+  {
+    "retailer": "Regional",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 549.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 204.28
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 234.61
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 266.19
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 266.38
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 244.86
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 234.41
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 281.75
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 257.66
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 251.17
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 377.97
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 398.22
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 329.03
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 304.82
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 222.19
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 258.82
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 277.89
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 234.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 211.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 292.17
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 251.4
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 270.07
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 330.21
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 433.19
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 487.08
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 180.59
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 213.54
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 263.21
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 228.42
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 267.36
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 255.44
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 238.39
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 212.29
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 217.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 314.64
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 339.8
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 309.15
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 20.58
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "deauthorization",
+    "month": null,
+    "cost": 2374557.34
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-02",
+    "cost": 410.04
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-03",
+    "cost": 2495.58
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-04",
+    "cost": 5165.94
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-05",
+    "cost": 10097.34
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-06",
+    "cost": 12113.04
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-07",
+    "cost": 12192.72
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-08",
+    "cost": 9774.36
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-09",
+    "cost": 10708.44
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-10",
+    "cost": 12901.5
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-11",
+    "cost": 10532.4
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2024-12",
+    "cost": 13345.26
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-01",
+    "cost": 16406.28
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-02",
+    "cost": 16832.46
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-03",
+    "cost": 15190.98
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-04",
+    "cost": 8210.16
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-05",
+    "cost": 11417.46
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-06",
+    "cost": 14018.16
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-07",
+    "cost": 14137.08
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-08",
+    "cost": 11949.84
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-09",
+    "cost": 11071.02
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-10",
+    "cost": 9916.62
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-11",
+    "cost": 12708.12
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2025-12",
+    "cost": 10029.6
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "distributor_returns",
+    "month": "2026-01",
+    "cost": 3882.48
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 68093.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 78203.7
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 88730.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 88792.26
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 81621.24
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 78136.68
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 93916.68
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 85885.44
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 83721.72
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 125991.6
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 132740.04
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 109675.56
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 101606.64
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 74064.3
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 86273.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 92630.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 78033.48
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 70334.46
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 97389.42
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 83799.96
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 90022.68
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 110069.7
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 144397.02
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 162358.56
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 60197.76
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 71180.28
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 87736.56
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 76140.18
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 89118.84
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 85145.82
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 79464.9
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 70762.62
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 72368.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 104881.26
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 113267.34
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 103051.5
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 6861.6
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 2042.79
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 2346.11
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 2661.9
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 2663.77
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 2448.64
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 2344.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 2817.5
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 2576.56
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 2511.65
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 3779.75
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 3982.2
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 3290.27
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 3048.2
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 2221.93
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 2588.19
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 2778.9
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 2341.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 2110.03
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 2921.68
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 2514.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 2700.68
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 3302.09
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 4331.91
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 4870.76
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 1805.93
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 2135.41
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 2632.1
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 2284.21
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 2673.57
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 2554.37
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 2383.95
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 2122.88
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 2171.04
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 3146.44
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 3398.02
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 3091.55
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 205.85
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 738.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 810.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 936.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 945.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 855.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 792.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 972.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 747.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 891.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 1341.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 1368.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 1278.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 1143.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 783.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 882.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 981.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 918.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 837.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 909.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 927.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 1107.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 1152.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 1539.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 1773.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 648.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 747.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 999.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 846.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 999.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 927.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 819.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 801.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 720.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 1071.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 1215.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 1242.0
+  },
+  {
+    "retailer": "UNFI",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 72.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 268.11
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 325.79
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 344.43
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 250.48
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 340.19
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 282.51
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 337.46
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 364.04
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 348.36
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 451.25
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 476.1
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 483.84
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 305.37
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 248.97
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 318.63
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 372.26
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 322.94
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 296.63
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 362.19
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 317.13
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 425.73
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 428.85
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 517.85
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 427.41
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 305.28
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 301.5
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 303.6
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 320.81
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 323.01
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 323.67
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 408.75
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 341.37
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 398.84
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 441.24
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 439.25
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 537.68
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 33.84
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 53622.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 65157.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 68886.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 50097.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 68037.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 56502.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 67491.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 72807.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 69672.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 90249.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 95220.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 96768.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 61074.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 49794.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 63726.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 74451.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 64587.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 59325.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 72438.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 63426.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 85146.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 85770.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 103569.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 85482.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 61056.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 60300.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 60720.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 64161.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 64602.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 64734.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 81750.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 68274.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 79767.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 88248.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 87849.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 107535.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 6768.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 2394.54
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 3105.68
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 3095.53
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 2404.33
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 3219.77
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 2750.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 3248.39
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 3408.84
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 3401.78
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 3937.5
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 4577.69
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 4576.9
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 2881.22
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 2372.11
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 3054.35
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 3472.6
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 3172.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 2808.5
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 3373.63
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 3002.18
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 4254.3
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 3889.55
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 4629.78
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 4236.3
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 2857.57
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 2820.49
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 2854.76
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 2941.42
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 3255.62
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 3163.07
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 3887.14
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 3240.43
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 3552.88
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 4008.17
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 4000.28
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 5177.59
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 297.29
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 1917.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 2214.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 2241.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 1809.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 2466.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 1962.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 2403.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 2574.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 2493.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 2916.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 3420.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 3483.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 2115.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 1881.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 2304.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 2637.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 2295.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 2187.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 2628.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 2277.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 3141.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 2772.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 3393.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 3204.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 2061.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 1944.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 2196.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 2187.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 2286.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 2241.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 2880.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 2403.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 2646.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 3096.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 3033.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 3879.0
+  },
+  {
+    "retailer": "Walmart",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 225.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-01",
+    "cost": 172.29
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-02",
+    "cost": 169.34
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-03",
+    "cost": 182.71
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-04",
+    "cost": 193.34
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-05",
+    "cost": 244.8
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-06",
+    "cost": 222.94
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-07",
+    "cost": 214.71
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-08",
+    "cost": 195.49
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-09",
+    "cost": 178.63
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-10",
+    "cost": 227.05
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-11",
+    "cost": 283.39
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2024-12",
+    "cost": 316.12
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-01",
+    "cost": 184.95
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-02",
+    "cost": 141.71
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-03",
+    "cost": 165.59
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-04",
+    "cost": 186.22
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-05",
+    "cost": 171.44
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-06",
+    "cost": 236.09
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-07",
+    "cost": 251.44
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-08",
+    "cost": 216.69
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-09",
+    "cost": 209.51
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-10",
+    "cost": 242.24
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-11",
+    "cost": 269.15
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2025-12",
+    "cost": 345.51
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-01",
+    "cost": 159.67
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-02",
+    "cost": 130.13
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-03",
+    "cost": 174.96
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-04",
+    "cost": 212.14
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-05",
+    "cost": 221.43
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-06",
+    "cost": 193.95
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-07",
+    "cost": 230.53
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-08",
+    "cost": 205.34
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-09",
+    "cost": 233.23
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-10",
+    "cost": 189.55
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-11",
+    "cost": 306.73
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2026-12",
+    "cost": 331.21
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "chargebacks",
+    "month": "2027-01",
+    "cost": 22.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-01",
+    "cost": 57430.32
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-02",
+    "cost": 56445.18
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-03",
+    "cost": 60904.44
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-04",
+    "cost": 64447.74
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-05",
+    "cost": 81598.74
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-06",
+    "cost": 74313.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-07",
+    "cost": 71571.6
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-08",
+    "cost": 65162.76
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-09",
+    "cost": 59542.26
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-10",
+    "cost": 75682.2
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-11",
+    "cost": 94463.04
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2024-12",
+    "cost": 105372.48
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-01",
+    "cost": 61648.74
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-02",
+    "cost": 47237.76
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-03",
+    "cost": 55195.74
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-04",
+    "cost": 62071.68
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-05",
+    "cost": 57146.52
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-06",
+    "cost": 78698.28
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-07",
+    "cost": 83812.08
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-08",
+    "cost": 72229.62
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-09",
+    "cost": 69837.9
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-10",
+    "cost": 80746.8
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-11",
+    "cost": 89715.66
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2025-12",
+    "cost": 115170.9
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-01",
+    "cost": 53223.78
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-02",
+    "cost": 43375.44
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-03",
+    "cost": 58321.08
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-04",
+    "cost": 70713.42
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-05",
+    "cost": 73808.76
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-06",
+    "cost": 64651.14
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-07",
+    "cost": 76842.24
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-08",
+    "cost": 68448.06
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-09",
+    "cost": 77742.42
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-10",
+    "cost": 63184.2
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-11",
+    "cost": 102242.88
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2026-12",
+    "cost": 110403.84
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "lost_revenue",
+    "month": "2027-01",
+    "cost": 7332.42
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-01",
+    "cost": 1684.3
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-02",
+    "cost": 1747.54
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-03",
+    "cost": 1885.54
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-04",
+    "cost": 2008.42
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-05",
+    "cost": 2501.23
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-06",
+    "cost": 2338.39
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-07",
+    "cost": 2162.5
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-08",
+    "cost": 2019.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-09",
+    "cost": 1887.36
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-10",
+    "cost": 2225.3
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-11",
+    "cost": 2744.4
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2024-12",
+    "cost": 3220.97
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-01",
+    "cost": 1855.22
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-02",
+    "cost": 1531.39
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-03",
+    "cost": 1744.15
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-04",
+    "cost": 1876.1
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-05",
+    "cost": 1774.82
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-06",
+    "cost": 2364.17
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-07",
+    "cost": 2440.94
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-08",
+    "cost": 2270.47
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-09",
+    "cost": 2262.98
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-10",
+    "cost": 2350.8
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-11",
+    "cost": 2723.38
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2025-12",
+    "cost": 3746.47
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-01",
+    "cost": 1595.35
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-02",
+    "cost": 1317.62
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-03",
+    "cost": 1856.54
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-04",
+    "cost": 2104.58
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-05",
+    "cost": 2404.7
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-06",
+    "cost": 2061.38
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-07",
+    "cost": 2193.7
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-08",
+    "cost": 2110.82
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-09",
+    "cost": 2315.59
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-10",
+    "cost": 2034.24
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-11",
+    "cost": 3044.21
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2026-12",
+    "cost": 3514.97
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "otif_fines",
+    "month": "2027-01",
+    "cost": 260.86
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-01",
+    "cost": 1557.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-02",
+    "cost": 1503.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-03",
+    "cost": 1575.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-04",
+    "cost": 1827.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-05",
+    "cost": 2169.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-06",
+    "cost": 1980.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-07",
+    "cost": 1899.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-08",
+    "cost": 1809.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-09",
+    "cost": 1791.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-10",
+    "cost": 2034.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-11",
+    "cost": 2385.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2024-12",
+    "cost": 2817.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-01",
+    "cost": 1584.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-02",
+    "cost": 1368.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-03",
+    "cost": 1476.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-04",
+    "cost": 1629.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-05",
+    "cost": 1593.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-06",
+    "cost": 2052.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-07",
+    "cost": 2106.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-08",
+    "cost": 1944.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-09",
+    "cost": 2007.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-10",
+    "cost": 2205.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-11",
+    "cost": 2385.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2025-12",
+    "cost": 3231.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-01",
+    "cost": 1440.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-02",
+    "cost": 1260.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-03",
+    "cost": 1665.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-04",
+    "cost": 1845.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-05",
+    "cost": 2043.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-06",
+    "cost": 1791.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-07",
+    "cost": 1926.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-08",
+    "cost": 1926.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-09",
+    "cost": 2061.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-10",
+    "cost": 1791.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-11",
+    "cost": 2682.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2026-12",
+    "cost": 3114.0
+  },
+  {
+    "retailer": "Whole Foods",
+    "dimension": "triage_labor",
+    "month": "2027-01",
+    "cost": 234.0
+  }
+]

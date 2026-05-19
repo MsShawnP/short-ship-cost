@@ -29,6 +29,7 @@ improve.
 """
 from __future__ import annotations
 
+import gc
 import random
 import shutil
 import sqlite3
@@ -93,11 +94,14 @@ def measure_overall_fill_rate() -> float:
 def recover_retail_shorts(db: sqlite3.Connection, target_fill: float) -> int:
     """Lift quantity_shipped on each retail/distributor line to at least
     target_fill * quantity_ordered. Update order_shorts to match.
-    Returns the number of lines actually modified."""
+    Returns the number of lines actually modified.
+
+    Uses temp tables for bulk update — much faster than per-row UPDATEs
+    or UPDATE...FROM on 194K rows."""
     cur = db.cursor()
     cur.execute(
         """
-        SELECT ls.order_line_id, ls.original_line_id, ls.order_id, ls.sku,
+        SELECT ls.order_line_id, ls.order_id, ls.sku,
                ls.quantity_shipped, lo.quantity_ordered
         FROM order_lines_shipped ls
         JOIN order_lines_original lo ON lo.order_line_id = ls.original_line_id
@@ -107,31 +111,86 @@ def recover_retail_shorts(db: sqlite3.Connection, target_fill: float) -> int:
         """
     )
     rows = cur.fetchall()
-    modified = 0
+
+    # Compute new values in Python
+    shipped_updates = []   # (order_line_id, new_shipped)
+    shorts_updates = []    # (order_id, sku, new_short)
+    shorts_deletes = []    # (order_id, sku)
+
     for r in rows:
         target_qty = round(r["quantity_ordered"] * target_fill)
         new_shipped = max(r["quantity_shipped"], target_qty)
         new_shipped = min(r["quantity_ordered"], new_shipped)
         if new_shipped <= r["quantity_shipped"]:
             continue
-        cur.execute(
-            "UPDATE order_lines_shipped SET quantity_shipped = ? WHERE order_line_id = ?",
-            (new_shipped, r["order_line_id"]),
-        )
+        shipped_updates.append((r["order_line_id"], new_shipped))
         new_short = r["quantity_ordered"] - new_shipped
         if new_short == 0:
-            cur.execute(
-                "DELETE FROM order_shorts WHERE order_id = ? AND sku = ?",
-                (r["order_id"], r["sku"]),
-            )
+            shorts_deletes.append((r["order_id"], r["sku"]))
         else:
-            cur.execute(
-                "UPDATE order_shorts SET quantity_shorted = ? "
-                "WHERE order_id = ? AND sku = ?",
-                (new_short, r["order_id"], r["sku"]),
+            shorts_updates.append((r["order_id"], r["sku"], new_short))
+
+    if not shipped_updates:
+        return 0
+
+    # Bulk update via temp table — avoids 190K individual UPDATEs
+    cur.execute("""
+        CREATE TEMP TABLE _buf_shipped (
+            order_line_id TEXT PRIMARY KEY,
+            new_shipped INTEGER
+        )
+    """)
+    cur.executemany(
+        "INSERT INTO _buf_shipped VALUES (?, ?)", shipped_updates
+    )
+    cur.execute("""
+        UPDATE order_lines_shipped
+        SET quantity_shipped = b.new_shipped
+        FROM _buf_shipped b
+        WHERE order_lines_shipped.order_line_id = b.order_line_id
+    """)
+    cur.execute("DROP TABLE _buf_shipped")
+
+    # Bulk delete fully-shipped shorts via temp table
+    if shorts_deletes:
+        cur.execute("""
+            CREATE TEMP TABLE _buf_del (
+                order_id TEXT, sku TEXT,
+                PRIMARY KEY (order_id, sku)
             )
-        modified += 1
-    return modified
+        """)
+        cur.executemany("INSERT INTO _buf_del VALUES (?, ?)", shorts_deletes)
+        cur.execute("""
+            DELETE FROM order_shorts
+            WHERE EXISTS (
+                SELECT 1 FROM _buf_del d
+                WHERE d.order_id = order_shorts.order_id
+                  AND d.sku = order_shorts.sku
+            )
+        """)
+        cur.execute("DROP TABLE _buf_del")
+
+    # Bulk update remaining shorts via temp table
+    if shorts_updates:
+        cur.execute("""
+            CREATE TEMP TABLE _buf_upd (
+                order_id TEXT, sku TEXT, new_short INTEGER,
+                PRIMARY KEY (order_id, sku)
+            )
+        """)
+        cur.executemany(
+            "INSERT INTO _buf_upd VALUES (?, ?, ?)", shorts_updates
+        )
+        cur.execute("""
+            UPDATE order_shorts
+            SET quantity_shorted = u.new_short
+            FROM _buf_upd u
+            WHERE order_shorts.order_id = u.order_id
+              AND order_shorts.sku = u.sku
+        """)
+        cur.execute("DROP TABLE _buf_upd")
+
+    return len(shipped_updates)
 
 
 def recover_dtc_outcomes(
@@ -230,7 +289,11 @@ def simulate_at(target_fill: float, current_fill: float, rng: random.Random) -> 
     TEMP_DIR.mkdir(parents=True, exist_ok=True)
     temp_orders = TEMP_DIR / f"orders_{int(target_fill * 100):02d}.db"
     if temp_orders.exists():
-        temp_orders.unlink()
+        try:
+            temp_orders.unlink()
+        except PermissionError:
+            # Leftover from a crashed run — overwrite it
+            pass
     shutil.copy(ORDERS_DB, temp_orders)
 
     db = sqlite3.connect(temp_orders)
@@ -261,7 +324,14 @@ def simulate_at(target_fill: float, current_fill: float, rng: random.Random) -> 
     finally:
         common.ORDERS_DB = original_path
 
-    temp_orders.unlink()
+    # On Windows, SQLite file handles may linger after close().
+    # Force GC to release them, then try to clean up. If it still
+    # fails, main() will clean up the temp directory at the end.
+    gc.collect()
+    try:
+        temp_orders.unlink()
+    except PermissionError:
+        pass  # cleaned up in main()
 
     return {
         "target_fill_rate": target_fill,
@@ -385,18 +455,22 @@ def print_comparison(scenarios: list[dict], baseline: dict[str, dict]) -> None:
 
 
 def main() -> int:
+    import time as _time
     rng = random.Random(SEED)
-    print("Computing baseline (current state)...")
+    print("Computing baseline (current state)...", flush=True)
     current_fill = measure_overall_fill_rate()
-    print(f"  Current overall fill rate: {current_fill*100:.1f}%")
+    print(f"  Current overall fill rate: {current_fill*100:.1f}%", flush=True)
 
+    t0 = _time.time()
     baseline: dict[str, dict] = {}
     for name, mod in MODULES:
         baseline[name] = mod.calculate()
+    print(f"  Baseline computed in {_time.time()-t0:.1f}s", flush=True)
 
     scenarios: list[dict] = []
     for target in SCENARIO_FILL_RATES:
-        print(f"\nSimulating target fill {int(target*100)}%...")
+        print(f"\nSimulating target fill {int(target*100)}%...", flush=True)
+        t0 = _time.time()
         scen = simulate_at(target, current_fill, rng)
         scenarios.append(scen)
         print(f"  achieved fill: {scen['actual_fill_rate_achieved']*100:.1f}%, "
@@ -408,7 +482,13 @@ def main() -> int:
           f"buffer_deauth_recovery to {COST_DB}")
     print_comparison(scenarios, baseline)
 
+    # Clean up temp directory (may contain leftover .db files on Windows)
     if TEMP_DIR.exists():
+        for f in TEMP_DIR.glob("*.db"):
+            try:
+                f.unlink()
+            except OSError:
+                pass
         try:
             TEMP_DIR.rmdir()
         except OSError:

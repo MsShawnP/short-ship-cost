@@ -1,0 +1,6171 @@
+[
+  {
+    "sku": "CHP-PS-004",
+    "product_name": "Extra Virgin Olive Oil",
+    "product_line": "Pantry Staples",
+    "total_cost": 1066479.65,
+    "by_dimension": {
+      "chargebacks": 2609.84,
+      "deauthorization": 190735.74,
+      "distributor_returns": 16057.08,
+      "dtc_cancellations": 285.78,
+      "dtc_margin_leakage": 15.59,
+      "lost_revenue": 782493.48,
+      "otif_fines": 74282.15
+    },
+    "by_retailer": {
+      "Costco": 104498.25,
+      "DPI Northwest": 95664.62,
+      "DTC": 301.37,
+      "KeHE": 172360.64,
+      "Regional": 305755.57,
+      "UNFI": 208581.2,
+      "Walmart": 87006.6,
+      "Whole Foods": 92311.4
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 64.12,
+        "lost_revenue": 19294.62,
+        "otif_fines": 2416.98
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 59.0,
+        "distributor_returns": 107.64,
+        "dtc_cancellations": 38.97,
+        "lost_revenue": 17102.64,
+        "otif_fines": 2010.45
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 68.3,
+        "distributor_returns": 35.1,
+        "lost_revenue": 20800.44,
+        "otif_fines": 1779.3
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 66.03,
+        "distributor_returns": 212.94,
+        "lost_revenue": 20065.38,
+        "otif_fines": 1308.53
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 58.29,
+        "distributor_returns": 702.78,
+        "lost_revenue": 17383.08,
+        "otif_fines": 1994.51
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 75.7,
+        "distributor_returns": 858.0,
+        "lost_revenue": 22486.14,
+        "otif_fines": 2604.53
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 69.48,
+        "distributor_returns": 1141.92,
+        "dtc_cancellations": 25.98,
+        "lost_revenue": 20907.9,
+        "otif_fines": 1851.72
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 71.68,
+        "distributor_returns": 708.24,
+        "dtc_margin_leakage": 2.6,
+        "lost_revenue": 21590.52,
+        "otif_fines": 1865.96
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 62.14,
+        "distributor_returns": 850.2,
+        "lost_revenue": 18739.74,
+        "otif_fines": 1573.91
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 100.91,
+        "distributor_returns": 1089.66,
+        "lost_revenue": 31087.92,
+        "otif_fines": 2608.85
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 94.07,
+        "distributor_returns": 814.32,
+        "lost_revenue": 27970.8,
+        "otif_fines": 3490.87
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 97.38,
+        "distributor_returns": 531.18,
+        "lost_revenue": 30180.12,
+        "otif_fines": 1972.22
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 75.1,
+        "distributor_returns": 1138.8,
+        "lost_revenue": 22581.42,
+        "otif_fines": 2122.68
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 51.4,
+        "distributor_returns": 1278.42,
+        "dtc_cancellations": 38.97,
+        "lost_revenue": 15269.82,
+        "otif_fines": 1907.98
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 76.51,
+        "distributor_returns": 1526.46,
+        "lost_revenue": 23327.28,
+        "otif_fines": 2387.84
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 49.32,
+        "distributor_returns": 599.04,
+        "dtc_cancellations": 12.99,
+        "dtc_margin_leakage": 7.79,
+        "lost_revenue": 15130.92,
+        "otif_fines": 620.86
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 62.62,
+        "distributor_returns": 317.46,
+        "lost_revenue": 18959.88,
+        "otif_fines": 1715.64
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 71.46,
+        "distributor_returns": 1024.92,
+        "dtc_margin_leakage": 2.6,
+        "lost_revenue": 21561.18,
+        "otif_fines": 1616.21
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 63.86,
+        "distributor_returns": 603.72,
+        "lost_revenue": 20032.68,
+        "otif_fines": 1513.59
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 62.51,
+        "distributor_returns": 708.24,
+        "lost_revenue": 18497.7,
+        "otif_fines": 1352.77
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 63.43,
+        "distributor_returns": 356.46,
+        "lost_revenue": 18646.98,
+        "otif_fines": 1287.06
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 66.57,
+        "distributor_returns": 499.98,
+        "lost_revenue": 19401.0,
+        "otif_fines": 2073.4
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 86.34,
+        "distributor_returns": 460.2,
+        "dtc_cancellations": 12.99,
+        "lost_revenue": 26617.92,
+        "otif_fines": 2448.48
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 108.0,
+        "distributor_returns": 421.2,
+        "dtc_cancellations": 12.99,
+        "lost_revenue": 32209.74,
+        "otif_fines": 2909.83
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 52.37,
+        "distributor_returns": 70.2,
+        "lost_revenue": 15373.62,
+        "otif_fines": 2189.7
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 45.06,
+        "lost_revenue": 13791.0,
+        "otif_fines": 1130.72
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 67.31,
+        "lost_revenue": 20124.3,
+        "otif_fines": 1785.99
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 61.42,
+        "lost_revenue": 18662.58,
+        "otif_fines": 1730.22
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 76.51,
+        "lost_revenue": 22851.54,
+        "otif_fines": 2308.07
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 67.12,
+        "lost_revenue": 19182.18,
+        "otif_fines": 1898.39
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 103.22,
+        "dtc_cancellations": 25.98,
+        "lost_revenue": 31555.26,
+        "otif_fines": 1759.91
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 65.01,
+        "dtc_cancellations": 38.97,
+        "lost_revenue": 19036.32,
+        "otif_fines": 1787.7
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 81.13,
+        "lost_revenue": 23966.64,
+        "otif_fines": 2066.1
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 73.3,
+        "dtc_cancellations": 51.96,
+        "lost_revenue": 21681.72,
+        "otif_fines": 1888.28
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 83.6,
+        "dtc_margin_leakage": 2.6,
+        "lost_revenue": 24234.12,
+        "otif_fines": 4137.14
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 104.44,
+        "dtc_cancellations": 25.98,
+        "lost_revenue": 30889.74,
+        "otif_fines": 3873.26
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.12,
+        "lost_revenue": 1298.64,
+        "otif_fines": 292.49
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-009",
+    "product_name": "Truffle Mushroom Sauce",
+    "product_line": "Artisan Sauces",
+    "total_cost": 1063521.58,
+    "by_dimension": {
+      "chargebacks": 2528.23,
+      "deauthorization": 222468.48,
+      "distributor_returns": 14453.28,
+      "dtc_cancellations": 299.75,
+      "dtc_margin_leakage": 26.38,
+      "lost_revenue": 754731.12,
+      "otif_fines": 69014.34
+    },
+    "by_retailer": {
+      "Costco": 146303.86,
+      "DPI Northwest": 92078.09,
+      "DTC": 326.13,
+      "KeHE": 152824.95,
+      "Regional": 291326.4,
+      "UNFI": 194671.47,
+      "Walmart": 91578.24,
+      "Whole Foods": 94412.45
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 71.54,
+        "lost_revenue": 22206.24,
+        "otif_fines": 1598.82
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 78.1,
+        "dtc_cancellations": 35.97,
+        "lost_revenue": 22004.16,
+        "otif_fines": 1911.09
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 82.94,
+        "distributor_returns": 131.04,
+        "lost_revenue": 24182.76,
+        "otif_fines": 1918.8
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 46.86,
+        "distributor_returns": 194.4,
+        "dtc_margin_leakage": 2.4,
+        "lost_revenue": 13834.92,
+        "otif_fines": 2115.85
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 63.82,
+        "distributor_returns": 132.48,
+        "lost_revenue": 18908.4,
+        "otif_fines": 2187.9
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 63.46,
+        "distributor_returns": 1451.52,
+        "lost_revenue": 19167.24,
+        "otif_fines": 1973.03
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 94.47,
+        "distributor_returns": 979.2,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 27262.2,
+        "otif_fines": 2150.94
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 47.03,
+        "distributor_returns": 390.24,
+        "lost_revenue": 14265.12,
+        "otif_fines": 1610.95
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 64.93,
+        "distributor_returns": 325.44,
+        "lost_revenue": 19129.56,
+        "otif_fines": 1694.79
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 64.38,
+        "distributor_returns": 131.04,
+        "lost_revenue": 19004.52,
+        "otif_fines": 2429.07
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 113.22,
+        "distributor_returns": 591.84,
+        "dtc_cancellations": 23.98,
+        "lost_revenue": 33441.0,
+        "otif_fines": 3152.54
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 86.79,
+        "distributor_returns": 848.16,
+        "dtc_cancellations": 35.97,
+        "lost_revenue": 26521.68,
+        "otif_fines": 1840.98
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 71.81,
+        "distributor_returns": 1045.44,
+        "dtc_margin_leakage": 7.19,
+        "lost_revenue": 21476.4,
+        "otif_fines": 2492.18
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 45.23,
+        "distributor_returns": 129.6,
+        "lost_revenue": 13367.64,
+        "otif_fines": 836.55
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 53.66,
+        "distributor_returns": 911.52,
+        "lost_revenue": 15791.76,
+        "otif_fines": 1136.46
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 64.91,
+        "distributor_returns": 1044.0,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 19653.6,
+        "otif_fines": 1677.71
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 73.23,
+        "distributor_returns": 587.52,
+        "dtc_cancellations": 23.98,
+        "lost_revenue": 21671.88,
+        "otif_fines": 2703.85
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 64.37,
+        "distributor_returns": 982.08,
+        "lost_revenue": 19473.84,
+        "otif_fines": 1996.89
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 62.15,
+        "distributor_returns": 1175.04,
+        "lost_revenue": 18798.96,
+        "otif_fines": 2411.62
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 58.32,
+        "distributor_returns": 852.48,
+        "lost_revenue": 17495.4,
+        "otif_fines": 1338.85
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 68.77,
+        "distributor_returns": 780.48,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 20512.56,
+        "otif_fines": 2240.46
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 67.57,
+        "distributor_returns": 132.48,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 20376.12,
+        "otif_fines": 1018.35
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 94.02,
+        "distributor_returns": 918.72,
+        "lost_revenue": 29007.12,
+        "otif_fines": 1226.91
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 138.9,
+        "distributor_returns": 329.76,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 42980.76,
+        "otif_fines": 2877.15
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 54.09,
+        "distributor_returns": 388.8,
+        "lost_revenue": 15978.0,
+        "otif_fines": 2782.15
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 51.58,
+        "lost_revenue": 14853.72,
+        "otif_fines": 871.06
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 52.48,
+        "dtc_cancellations": 23.98,
+        "dtc_margin_leakage": 2.4,
+        "lost_revenue": 15827.16,
+        "otif_fines": 1431.63
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 72.43,
+        "dtc_cancellations": 11.99,
+        "lost_revenue": 21498.84,
+        "otif_fines": 2147.46
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 71.15,
+        "dtc_cancellations": 35.97,
+        "lost_revenue": 21445.92,
+        "otif_fines": 1779.56
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 50.03,
+        "lost_revenue": 14970.84,
+        "otif_fines": 2143.49
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 70.48,
+        "lost_revenue": 21408.6,
+        "otif_fines": 1004.0
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 57.47,
+        "lost_revenue": 17412.36,
+        "otif_fines": 1154.71
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 62.52,
+        "dtc_cancellations": 23.98,
+        "lost_revenue": 18327.72,
+        "otif_fines": 1253.85
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 66.36,
+        "dtc_cancellations": 23.98,
+        "lost_revenue": 19274.04,
+        "otif_fines": 2282.51
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 74.5,
+        "dtc_margin_leakage": 9.59,
+        "lost_revenue": 22616.28,
+        "otif_fines": 2330.65
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 100.54,
+        "dtc_margin_leakage": 4.8,
+        "lost_revenue": 29394.0,
+        "otif_fines": 3254.48
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.14,
+        "lost_revenue": 1189.8,
+        "otif_fines": 37.05
+      }
+    ]
+  },
+  {
+    "sku": "CHP-PS-009",
+    "product_name": "Maple Syrup Grade A",
+    "product_line": "Pantry Staples",
+    "total_cost": 956195.61,
+    "by_dimension": {
+      "chargebacks": 2364.87,
+      "deauthorization": 167013.2,
+      "distributor_returns": 12077.4,
+      "dtc_cancellations": 310.23,
+      "dtc_margin_leakage": 43.66,
+      "lost_revenue": 708284.64,
+      "otif_fines": 66101.6
+    },
+    "by_retailer": {
+      "Costco": 91805.28,
+      "DPI Northwest": 89458.09,
+      "DTC": 353.89,
+      "KeHE": 141315.18,
+      "Regional": 276516.86,
+      "UNFI": 191725.98,
+      "Walmart": 82600.65,
+      "Whole Foods": 82419.67
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 42.79,
+        "lost_revenue": 12866.04,
+        "otif_fines": 1624.27
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 58.58,
+        "dtc_cancellations": 11.49,
+        "lost_revenue": 17339.52,
+        "otif_fines": 1518.81
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 50.97,
+        "distributor_returns": 379.44,
+        "dtc_margin_leakage": 2.3,
+        "lost_revenue": 14942.64,
+        "otif_fines": 1142.48
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 48.56,
+        "distributor_returns": 315.96,
+        "lost_revenue": 14558.16,
+        "otif_fines": 1324.19
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 57.38,
+        "distributor_returns": 559.8,
+        "lost_revenue": 17779.56,
+        "otif_fines": 1721.03
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 52.21,
+        "distributor_returns": 373.68,
+        "dtc_cancellations": 34.47,
+        "lost_revenue": 15820.2,
+        "otif_fines": 1409.86
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 50.05,
+        "distributor_returns": 688.2,
+        "dtc_cancellations": 45.96,
+        "dtc_margin_leakage": 2.3,
+        "lost_revenue": 14826.36,
+        "otif_fines": 1931.66
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 64.18,
+        "distributor_returns": 686.76,
+        "lost_revenue": 18607.68,
+        "otif_fines": 1256.53
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 54.45,
+        "distributor_returns": 626.16,
+        "dtc_cancellations": 22.98,
+        "lost_revenue": 16893.72,
+        "otif_fines": 2115.78
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 88.07,
+        "distributor_returns": 813.72,
+        "dtc_cancellations": 11.49,
+        "dtc_margin_leakage": 4.6,
+        "lost_revenue": 26797.2,
+        "otif_fines": 637.56
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 133.95,
+        "distributor_returns": 376.56,
+        "dtc_cancellations": 22.98,
+        "lost_revenue": 39650.04,
+        "otif_fines": 3579.1
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 83.2,
+        "distributor_returns": 751.68,
+        "dtc_margin_leakage": 6.89,
+        "lost_revenue": 24252.48,
+        "otif_fines": 3604.82
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 58.78,
+        "distributor_returns": 756.0,
+        "lost_revenue": 17374.08,
+        "otif_fines": 2728.73
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 45.3,
+        "distributor_returns": 2194.44,
+        "dtc_cancellations": 34.47,
+        "lost_revenue": 13650.84,
+        "otif_fines": 1650.75
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 56.74,
+        "distributor_returns": 437.16,
+        "dtc_cancellations": 11.49,
+        "dtc_margin_leakage": 2.3,
+        "lost_revenue": 17014.44,
+        "otif_fines": 1140.96
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 63.86,
+        "distributor_returns": 62.04,
+        "lost_revenue": 18336.96,
+        "otif_fines": 2726.17
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 52.82,
+        "distributor_returns": 810.84,
+        "lost_revenue": 15876.36,
+        "otif_fines": 1391.54
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 77.83,
+        "distributor_returns": 750.24,
+        "dtc_margin_leakage": 4.6,
+        "lost_revenue": 23830.44,
+        "otif_fines": 1689.57
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 87.78,
+        "distributor_returns": 124.08,
+        "dtc_cancellations": 22.98,
+        "lost_revenue": 26366.04,
+        "otif_fines": 2761.66
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 49.97,
+        "distributor_returns": 186.12,
+        "lost_revenue": 14676.0,
+        "otif_fines": 2366.87
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 60.4,
+        "dtc_margin_leakage": 2.3,
+        "lost_revenue": 17450.04,
+        "otif_fines": 2010.55
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 93.16,
+        "distributor_returns": 124.08,
+        "lost_revenue": 27564.72,
+        "otif_fines": 2562.59
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 85.47,
+        "distributor_returns": 562.68,
+        "dtc_cancellations": 11.49,
+        "lost_revenue": 25586.04,
+        "otif_fines": 2373.66
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 104.14,
+        "distributor_returns": 310.2,
+        "lost_revenue": 32032.2,
+        "otif_fines": 2034.86
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 57.71,
+        "distributor_returns": 187.56,
+        "dtc_margin_leakage": 4.6,
+        "lost_revenue": 17113.08,
+        "otif_fines": 1098.89
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 45.36,
+        "lost_revenue": 13662.48,
+        "otif_fines": 840.11
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 39.61,
+        "lost_revenue": 11698.44,
+        "otif_fines": 1312.17
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 56.45,
+        "dtc_cancellations": 11.49,
+        "lost_revenue": 17325.84,
+        "otif_fines": 1132.15
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 70.19,
+        "dtc_margin_leakage": 2.3,
+        "lost_revenue": 21324.24,
+        "otif_fines": 2258.56
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 46.0,
+        "lost_revenue": 13529.28,
+        "otif_fines": 2300.28
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 70.36,
+        "lost_revenue": 21132.36,
+        "otif_fines": 2020.79
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 44.41,
+        "dtc_cancellations": 22.98,
+        "lost_revenue": 13657.56,
+        "otif_fines": 319.43
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 72.51,
+        "lost_revenue": 21840.36,
+        "otif_fines": 1591.88
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 56.29,
+        "lost_revenue": 17485.8,
+        "otif_fines": 421.45
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 94.26,
+        "dtc_cancellations": 11.49,
+        "lost_revenue": 27518.76,
+        "otif_fines": 3570.38
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 85.79,
+        "dtc_cancellations": 34.47,
+        "dtc_margin_leakage": 11.49,
+        "lost_revenue": 26241.24,
+        "otif_fines": 1656.72
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.26,
+        "lost_revenue": 1663.44,
+        "otif_fines": 274.82
+      }
+    ]
+  },
+  {
+    "sku": "CHP-DG-005",
+    "product_name": "Sun-Dried Tomatoes",
+    "product_line": "Dried Goods",
+    "total_cost": 900966.25,
+    "by_dimension": {
+      "chargebacks": 2117.71,
+      "deauthorization": 196083.6,
+      "distributor_returns": 10522.8,
+      "dtc_cancellations": 269.73,
+      "dtc_margin_leakage": 35.96,
+      "lost_revenue": 633819.6,
+      "otif_fines": 58116.84
+    },
+    "by_retailer": {
+      "Costco": 124307.82,
+      "DPI Northwest": 77539.44,
+      "DTC": 305.69,
+      "KeHE": 139862.94,
+      "Regional": 251868.97,
+      "UNFI": 160917.39,
+      "Walmart": 74939.18,
+      "Whole Foods": 71224.8
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 29.94,
+        "lost_revenue": 8761.68,
+        "otif_fines": 1217.45
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 44.33,
+        "lost_revenue": 13080.6,
+        "otif_fines": 1036.23
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 54.51,
+        "lost_revenue": 16284.24,
+        "otif_fines": 2337.41
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 45.48,
+        "distributor_returns": 441.6,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 14256.96,
+        "otif_fines": 571.19
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 67.35,
+        "distributor_returns": 661.2,
+        "lost_revenue": 20309.52,
+        "otif_fines": 1129.91
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 50.4,
+        "distributor_returns": 324.0,
+        "lost_revenue": 15258.72,
+        "otif_fines": 1600.21
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 51.77,
+        "distributor_returns": 824.4,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 15480.24,
+        "otif_fines": 1371.69
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 40.96,
+        "distributor_returns": 488.4,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 12195.48,
+        "otif_fines": 1535.73
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 48.68,
+        "distributor_returns": 218.4,
+        "lost_revenue": 14775.96,
+        "otif_fines": 2064.33
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 65.45,
+        "distributor_returns": 326.4,
+        "lost_revenue": 19362.72,
+        "otif_fines": 1207.85
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 68.2,
+        "distributor_returns": 164.4,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 20444.4,
+        "otif_fines": 1728.44
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 60.39,
+        "distributor_returns": 164.4,
+        "lost_revenue": 17059.32,
+        "otif_fines": 2734.61
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 48.07,
+        "distributor_returns": 378.0,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 14483.4,
+        "otif_fines": 838.8
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 43.33,
+        "distributor_returns": 324.0,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 13250.76,
+        "otif_fines": 1101.31
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 67.67,
+        "distributor_returns": 1249.2,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 20711.04,
+        "otif_fines": 1931.29
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 56.45,
+        "distributor_returns": 218.4,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 17274.96,
+        "otif_fines": 857.34
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 72.23,
+        "distributor_returns": 656.4,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 21018.24,
+        "otif_fines": 2651.45
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 49.28,
+        "distributor_returns": 380.4,
+        "dtc_margin_leakage": 5.99,
+        "lost_revenue": 15282.96,
+        "otif_fines": 1380.08
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 82.3,
+        "distributor_returns": 708.0,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 24380.64,
+        "otif_fines": 2656.35
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 68.15,
+        "distributor_returns": 597.6,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 20234.28,
+        "otif_fines": 1728.77
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 90.5,
+        "distributor_returns": 596.4,
+        "lost_revenue": 26176.92,
+        "otif_fines": 2207.22
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 98.98,
+        "distributor_returns": 604.8,
+        "lost_revenue": 28556.28,
+        "otif_fines": 3728.42
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 76.57,
+        "distributor_returns": 488.4,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 23067.48,
+        "otif_fines": 1807.36
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 83.93,
+        "distributor_returns": 708.0,
+        "lost_revenue": 25583.64,
+        "otif_fines": 3331.46
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 40.28,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 12597.72,
+        "otif_fines": 532.17
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 41.97,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 11738.04,
+        "otif_fines": 1546.16
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 58.63,
+        "lost_revenue": 17554.56,
+        "otif_fines": 626.4
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 42.74,
+        "lost_revenue": 13148.28,
+        "otif_fines": 1309.57
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 47.84,
+        "dtc_cancellations": 9.99,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 14797.92,
+        "otif_fines": 1131.79
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 43.2,
+        "lost_revenue": 12500.76,
+        "otif_fines": 1117.18
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 58.65,
+        "dtc_cancellations": 9.99,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 17373.0,
+        "otif_fines": 1429.01
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 50.75,
+        "lost_revenue": 15530.28,
+        "otif_fines": 851.79
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 59.71,
+        "lost_revenue": 18248.4,
+        "otif_fines": 1385.11
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 62.15,
+        "lost_revenue": 19291.32,
+        "otif_fines": 830.38
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 69.15,
+        "dtc_margin_leakage": 7.99,
+        "lost_revenue": 20811.84,
+        "otif_fines": 2508.05
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 72.32,
+        "lost_revenue": 21458.28,
+        "otif_fines": 2051.22
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.4,
+        "lost_revenue": 1478.76,
+        "otif_fines": 43.09
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SC-001",
+    "product_name": "Bourbon Bacon Jam",
+    "product_line": "Specialty Condiments",
+    "total_cost": 897950.1,
+    "by_dimension": {
+      "chargebacks": 2144.08,
+      "deauthorization": 185338.8,
+      "distributor_returns": 12925.2,
+      "dtc_cancellations": 319.68,
+      "dtc_margin_leakage": 37.96,
+      "lost_revenue": 639741.96,
+      "otif_fines": 57442.42
+    },
+    "by_retailer": {
+      "Costco": 127799.33,
+      "DPI Northwest": 73947.93,
+      "DTC": 357.64,
+      "KeHE": 134808.92,
+      "Regional": 247959.75,
+      "UNFI": 166851.67,
+      "Walmart": 75593.23,
+      "Whole Foods": 70631.62
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 61.79,
+        "lost_revenue": 17753.76,
+        "otif_fines": 2063.51
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 48.5,
+        "dtc_cancellations": 49.95,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 14389.92,
+        "otif_fines": 856.03
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 54.67,
+        "distributor_returns": 276.0,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 17044.92,
+        "otif_fines": 1388.35
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 54.59,
+        "distributor_returns": 382.8,
+        "lost_revenue": 15730.56,
+        "otif_fines": 2595.63
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 51.2,
+        "distributor_returns": 436.8,
+        "lost_revenue": 14704.32,
+        "otif_fines": 1583.55
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 41.9,
+        "distributor_returns": 817.2,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 13023.0,
+        "otif_fines": 815.65
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 50.89,
+        "distributor_returns": 164.4,
+        "lost_revenue": 15385.68,
+        "otif_fines": 1109.74
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 75.8,
+        "distributor_returns": 768.0,
+        "lost_revenue": 22746.36,
+        "otif_fines": 2392.3
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 53.8,
+        "distributor_returns": 432.0,
+        "dtc_cancellations": 29.97,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 16428.12,
+        "otif_fines": 643.8
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 75.65,
+        "distributor_returns": 540.0,
+        "lost_revenue": 22309.92,
+        "otif_fines": 2486.96
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 79.41,
+        "distributor_returns": 596.4,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 23504.64,
+        "otif_fines": 1705.65
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 73.25,
+        "distributor_returns": 384.0,
+        "lost_revenue": 22674.12,
+        "otif_fines": 1563.78
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 39.32,
+        "distributor_returns": 867.6,
+        "lost_revenue": 11915.16,
+        "otif_fines": 1015.05
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 46.82,
+        "distributor_returns": 547.2,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 14479.2,
+        "otif_fines": 1776.46
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 69.24,
+        "distributor_returns": 270.0,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 19619.88,
+        "otif_fines": 2379.03
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 48.15,
+        "distributor_returns": 656.4,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 14553.84,
+        "otif_fines": 1353.97
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 46.54,
+        "distributor_returns": 1086.0,
+        "dtc_margin_leakage": 5.99,
+        "lost_revenue": 13789.56,
+        "otif_fines": 2040.38
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 60.43,
+        "distributor_returns": 823.2,
+        "dtc_cancellations": 29.97,
+        "dtc_margin_leakage": 7.99,
+        "lost_revenue": 18454.56,
+        "otif_fines": 1125.14
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 53.23,
+        "distributor_returns": 706.8,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 15693.72,
+        "otif_fines": 881.02
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 54.14,
+        "distributor_returns": 600.0,
+        "lost_revenue": 16742.52,
+        "otif_fines": 1173.93
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 51.42,
+        "distributor_returns": 164.4,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 15602.88,
+        "otif_fines": 1155.66
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 82.8,
+        "distributor_returns": 1040.4,
+        "lost_revenue": 23851.92,
+        "otif_fines": 2246.45
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 120.01,
+        "distributor_returns": 656.4,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 35791.8,
+        "otif_fines": 1394.38
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 116.98,
+        "distributor_returns": 598.8,
+        "dtc_cancellations": 19.98,
+        "dtc_margin_leakage": 5.99,
+        "lost_revenue": 34489.44,
+        "otif_fines": 4317.05
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 41.94,
+        "distributor_returns": 110.4,
+        "lost_revenue": 12083.76,
+        "otif_fines": 1278.97
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 40.51,
+        "lost_revenue": 11535.24,
+        "otif_fines": 1258.86
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 50.16,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 15025.08,
+        "otif_fines": 1362.66
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 44.31,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 12761.28,
+        "otif_fines": 1549.83
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 48.51,
+        "lost_revenue": 15214.68,
+        "otif_fines": 389.6
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 49.69,
+        "lost_revenue": 14396.4,
+        "otif_fines": 1389.73
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 76.07,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 22785.72,
+        "otif_fines": 1377.38
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 40.11,
+        "lost_revenue": 11912.16,
+        "otif_fines": 987.84
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 55.89,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 16268.16,
+        "otif_fines": 2192.15
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 59.68,
+        "dtc_cancellations": 9.99,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 18207.6,
+        "otif_fines": 2145.4
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 58.83,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 18033.36,
+        "otif_fines": 1443.57
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 61.39,
+        "lost_revenue": 18965.52,
+        "otif_fines": 1713.82
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 6.44,
+        "lost_revenue": 1873.2,
+        "otif_fines": 289.16
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-006",
+    "product_name": "Balsamic Fig Glaze",
+    "product_line": "Artisan Sauces",
+    "total_cost": 849603.31,
+    "by_dimension": {
+      "chargebacks": 2001.6,
+      "deauthorization": 175890.4,
+      "distributor_returns": 12685.2,
+      "dtc_cancellations": 329.67,
+      "dtc_margin_leakage": 13.99,
+      "lost_revenue": 601764.84,
+      "otif_fines": 56917.62
+    },
+    "by_retailer": {
+      "Costco": 122383.15,
+      "DPI Northwest": 78285.77,
+      "DTC": 343.66,
+      "KeHE": 118754.41,
+      "Regional": 251267.23,
+      "UNFI": 146662.85,
+      "Walmart": 65284.7,
+      "Whole Foods": 66621.55
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 27.24,
+        "lost_revenue": 7928.04,
+        "otif_fines": 711.42
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 35.63,
+        "dtc_cancellations": 9.99,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 10377.48,
+        "otif_fines": 1250.95
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 46.62,
+        "distributor_returns": 162.0,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 13804.32,
+        "otif_fines": 1526.12
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 44.24,
+        "distributor_returns": 1038.0,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 14049.0,
+        "otif_fines": 782.74
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 59.33,
+        "distributor_returns": 763.2,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 17220.48,
+        "otif_fines": 1802.75
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 52.03,
+        "distributor_returns": 544.8,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 15271.92,
+        "otif_fines": 1791.57
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 45.59,
+        "distributor_returns": 598.8,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 14214.24,
+        "otif_fines": 779.68
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 55.31,
+        "distributor_returns": 543.6,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 16083.48,
+        "otif_fines": 1787.78
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 49.06,
+        "distributor_returns": 710.4,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 14467.08,
+        "otif_fines": 1559.49
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 59.58,
+        "distributor_returns": 866.4,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 17930.52,
+        "otif_fines": 1408.74
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 79.24,
+        "distributor_returns": 489.6,
+        "lost_revenue": 24488.88,
+        "otif_fines": 2217.97
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 70.74,
+        "distributor_returns": 981.6,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 21327.48,
+        "otif_fines": 1974.86
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 43.28,
+        "distributor_returns": 652.8,
+        "lost_revenue": 12920.52,
+        "otif_fines": 1025.88
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 43.28,
+        "distributor_returns": 704.4,
+        "lost_revenue": 13081.44,
+        "otif_fines": 1051.96
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 42.3,
+        "distributor_returns": 436.8,
+        "dtc_cancellations": 29.97,
+        "lost_revenue": 13032.84,
+        "otif_fines": 798.38
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 52.59,
+        "distributor_returns": 546.0,
+        "lost_revenue": 15881.76,
+        "otif_fines": 2324.21
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 47.84,
+        "distributor_returns": 817.2,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 14412.96,
+        "otif_fines": 1588.64
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 47.12,
+        "distributor_returns": 328.8,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 14206.68,
+        "otif_fines": 1043.86
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 56.87,
+        "distributor_returns": 490.8,
+        "lost_revenue": 17250.48,
+        "otif_fines": 1113.63
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 57.06,
+        "distributor_returns": 434.4,
+        "lost_revenue": 17380.56,
+        "otif_fines": 2097.96
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 60.22,
+        "distributor_returns": 274.8,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 17855.88,
+        "otif_fines": 890.13
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 61.97,
+        "distributor_returns": 488.4,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 18100.56,
+        "otif_fines": 2649.33
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 104.08,
+        "distributor_returns": 378.0,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 30782.52,
+        "otif_fines": 2811.82
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 75.17,
+        "distributor_returns": 271.2,
+        "lost_revenue": 22336.8,
+        "otif_fines": 2726.47
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 38.22,
+        "distributor_returns": 163.2,
+        "lost_revenue": 11491.92,
+        "otif_fines": 1230.1
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 35.79,
+        "lost_revenue": 10940.4,
+        "otif_fines": 519.55
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 51.14,
+        "lost_revenue": 15674.52,
+        "otif_fines": 1367.43
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 47.46,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 14326.08,
+        "otif_fines": 1808.12
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 47.5,
+        "lost_revenue": 14261.28,
+        "otif_fines": 1827.69
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 61.24,
+        "lost_revenue": 17418.12,
+        "otif_fines": 2573.12
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 58.16,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 17923.56,
+        "otif_fines": 1368.14
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 64.27,
+        "lost_revenue": 19531.56,
+        "otif_fines": 2124.02
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 61.46,
+        "lost_revenue": 19144.56,
+        "otif_fines": 949.54
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 71.28,
+        "lost_revenue": 21080.64,
+        "otif_fines": 2454.05
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 65.6,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 20043.0,
+        "otif_fines": 1186.8
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 78.16,
+        "dtc_cancellations": 9.99,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 24077.76,
+        "otif_fines": 1514.28
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.93,
+        "lost_revenue": 1445.52,
+        "otif_fines": 278.44
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SC-004",
+    "product_name": "Sun-Dried Tomato Tapenade",
+    "product_line": "Specialty Condiments",
+    "total_cost": 817233.11,
+    "by_dimension": {
+      "chargebacks": 1905.47,
+      "deauthorization": 175747.32,
+      "distributor_returns": 12814.2,
+      "dtc_cancellations": 197.78,
+      "dtc_margin_leakage": 17.98,
+      "lost_revenue": 571077.24,
+      "otif_fines": 55473.12
+    },
+    "by_retailer": {
+      "Costco": 117590.98,
+      "DPI Northwest": 79562.61,
+      "DTC": 215.76,
+      "KeHE": 113659.54,
+      "Regional": 225182.45,
+      "UNFI": 156471.67,
+      "Walmart": 64510.87,
+      "Whole Foods": 60039.23
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 44.26,
+        "lost_revenue": 12887.52,
+        "otif_fines": 515.92
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 55.67,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 17003.76,
+        "otif_fines": 1276.12
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 46.38,
+        "distributor_returns": 245.16,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 13401.0,
+        "otif_fines": 1539.13
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 40.38,
+        "distributor_returns": 293.76,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 12476.88,
+        "otif_fines": 2004.83
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 52.77,
+        "distributor_returns": 439.56,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 16389.96,
+        "otif_fines": 1831.16
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 48.43,
+        "distributor_returns": 536.76,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 14685.12,
+        "otif_fines": 1345.05
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 49.34,
+        "distributor_returns": 787.32,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 14138.88,
+        "otif_fines": 1778.41
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 41.82,
+        "distributor_returns": 590.76,
+        "lost_revenue": 12345.12,
+        "otif_fines": 1547.03
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 50.17,
+        "distributor_returns": 341.28,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 15671.28,
+        "otif_fines": 1527.23
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 55.01,
+        "distributor_returns": 390.96,
+        "dtc_cancellations": 35.96,
+        "lost_revenue": 16307.04,
+        "otif_fines": 873.6
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 68.19,
+        "distributor_returns": 833.76,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 20389.44,
+        "otif_fines": 1698.39
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 63.56,
+        "distributor_returns": 834.84,
+        "lost_revenue": 19100.28,
+        "otif_fines": 2454.15
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 37.57,
+        "distributor_returns": 590.76,
+        "lost_revenue": 11394.24,
+        "otif_fines": 1498.62
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 36.22,
+        "distributor_returns": 689.04,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 10830.84,
+        "otif_fines": 1272.54
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 45.05,
+        "distributor_returns": 444.96,
+        "lost_revenue": 13713.96,
+        "otif_fines": 1298.31
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 44.47,
+        "distributor_returns": 689.04,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 13119.96,
+        "otif_fines": 1829.29
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 68.55,
+        "distributor_returns": 928.8,
+        "lost_revenue": 19657.68,
+        "otif_fines": 4054.04
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 61.74,
+        "distributor_returns": 886.68,
+        "lost_revenue": 18908.4,
+        "otif_fines": 1584.39
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 51.62,
+        "distributor_returns": 589.68,
+        "lost_revenue": 15133.2,
+        "otif_fines": 1616.53
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 42.33,
+        "distributor_returns": 197.64,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 13158.0,
+        "otif_fines": 1027.49
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 58.56,
+        "distributor_returns": 345.6,
+        "lost_revenue": 17253.0,
+        "otif_fines": 2152.92
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 57.73,
+        "distributor_returns": 247.32,
+        "lost_revenue": 17723.88,
+        "otif_fines": 1914.53
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 64.76,
+        "distributor_returns": 1175.04,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 19482.6,
+        "otif_fines": 1717.56
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 82.39,
+        "distributor_returns": 589.68,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 25157.88,
+        "otif_fines": 1815.73
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 37.74,
+        "distributor_returns": 145.8,
+        "lost_revenue": 11059.68,
+        "otif_fines": 1229.68
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 36.42,
+        "lost_revenue": 10961.88,
+        "otif_fines": 995.01
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 55.66,
+        "lost_revenue": 16872.96,
+        "otif_fines": 1543.38
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 38.81,
+        "lost_revenue": 11335.2,
+        "otif_fines": 748.04
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 51.4,
+        "lost_revenue": 15680.04,
+        "otif_fines": 856.76
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 39.03,
+        "lost_revenue": 12193.32,
+        "otif_fines": 545.64
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 71.73,
+        "lost_revenue": 21273.24,
+        "otif_fines": 2168.76
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 37.48,
+        "lost_revenue": 11075.4,
+        "otif_fines": 1267.68
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 68.9,
+        "lost_revenue": 19509.36,
+        "otif_fines": 1426.19
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 46.59,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 13894.92,
+        "otif_fines": 1567.33
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 66.93,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 20135.28,
+        "otif_fines": 969.8
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 81.16,
+        "lost_revenue": 24610.44,
+        "otif_fines": 1948.08
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 6.65,
+        "lost_revenue": 2145.6,
+        "otif_fines": 33.83
+      }
+    ]
+  },
+  {
+    "sku": "CHP-PS-002",
+    "product_name": "Wildflower Honey",
+    "product_line": "Pantry Staples",
+    "total_cost": 795235.03,
+    "by_dimension": {
+      "chargebacks": 1964.72,
+      "deauthorization": 139300.8,
+      "distributor_returns": 13021.2,
+      "dtc_cancellations": 169.83,
+      "dtc_margin_leakage": 23.98,
+      "lost_revenue": 584353.56,
+      "otif_fines": 56400.94
+    },
+    "by_retailer": {
+      "Costco": 82055.95,
+      "DPI Northwest": 74889.46,
+      "DTC": 193.81,
+      "KeHE": 114049.94,
+      "Regional": 230939.44,
+      "UNFI": 154509.41,
+      "Walmart": 70946.5,
+      "Whole Foods": 67650.52
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 34.18,
+        "lost_revenue": 10222.32,
+        "otif_fines": 1199.45
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 31.8,
+        "distributor_returns": 217.2,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 8901.84,
+        "otif_fines": 1249.32
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 50.85,
+        "distributor_returns": 164.4,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 15089.64,
+        "otif_fines": 1133.3
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 56.96,
+        "distributor_returns": 489.6,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 16904.04,
+        "otif_fines": 1598.31
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 63.24,
+        "distributor_returns": 708.0,
+        "lost_revenue": 18380.76,
+        "otif_fines": 2894.93
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 56.84,
+        "distributor_returns": 866.4,
+        "lost_revenue": 17336.28,
+        "otif_fines": 1120.36
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 48.71,
+        "distributor_returns": 439.2,
+        "lost_revenue": 14416.44,
+        "otif_fines": 1357.04
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 51.94,
+        "distributor_returns": 163.2,
+        "lost_revenue": 16087.08,
+        "otif_fines": 619.89
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 70.71,
+        "distributor_returns": 655.2,
+        "lost_revenue": 20258.76,
+        "otif_fines": 1893.13
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 62.88,
+        "distributor_returns": 702.0,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 18670.56,
+        "otif_fines": 1455.45
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 67.24,
+        "distributor_returns": 324.0,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 19937.88,
+        "otif_fines": 2434.36
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 79.69,
+        "distributor_returns": 492.0,
+        "lost_revenue": 24207.84,
+        "otif_fines": 2090.05
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 53.07,
+        "distributor_returns": 433.2,
+        "dtc_margin_leakage": 9.99,
+        "lost_revenue": 15806.52,
+        "otif_fines": 2377.07
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 32.61,
+        "distributor_returns": 546.0,
+        "lost_revenue": 9917.16,
+        "otif_fines": 519.93
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 45.98,
+        "distributor_returns": 980.4,
+        "lost_revenue": 14151.24,
+        "otif_fines": 1297.82
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 56.7,
+        "distributor_returns": 54.0,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 16847.88,
+        "otif_fines": 2405.63
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 56.73,
+        "distributor_returns": 597.6,
+        "lost_revenue": 16706.4,
+        "otif_fines": 1623.36
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 49.59,
+        "distributor_returns": 600.0,
+        "dtc_margin_leakage": 2.0,
+        "lost_revenue": 15352.8,
+        "otif_fines": 1587.09
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 56.18,
+        "distributor_returns": 1207.2,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 16795.8,
+        "otif_fines": 1404.96
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 52.54,
+        "distributor_returns": 654.0,
+        "dtc_margin_leakage": 4.0,
+        "lost_revenue": 15223.92,
+        "otif_fines": 1875.71
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 52.43,
+        "distributor_returns": 705.6,
+        "lost_revenue": 15780.48,
+        "otif_fines": 1414.76
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 52.23,
+        "distributor_returns": 818.4,
+        "lost_revenue": 15176.16,
+        "otif_fines": 2353.59
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 99.63,
+        "distributor_returns": 273.6,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 29571.36,
+        "otif_fines": 1887.3
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 69.93,
+        "distributor_returns": 327.6,
+        "lost_revenue": 21414.24,
+        "otif_fines": 1526.12
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 30.19,
+        "distributor_returns": 602.4,
+        "lost_revenue": 8959.32,
+        "otif_fines": 1195.21
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 35.92,
+        "lost_revenue": 10153.56,
+        "otif_fines": 1494.8
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 44.7,
+        "lost_revenue": 13762.2,
+        "otif_fines": 1053.46
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 61.4,
+        "lost_revenue": 17837.04,
+        "otif_fines": 2105.77
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 52.78,
+        "lost_revenue": 16059.12,
+        "otif_fines": 1379.95
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 53.45,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 15614.52,
+        "otif_fines": 2437.07
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 50.94,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 14883.0,
+        "otif_fines": 1132.79
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 44.78,
+        "dtc_cancellations": 19.98,
+        "lost_revenue": 12877.08,
+        "otif_fines": 1309.49
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 46.4,
+        "lost_revenue": 14323.56,
+        "otif_fines": 1060.07
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 54.13,
+        "dtc_cancellations": 9.99,
+        "lost_revenue": 15597.12,
+        "otif_fines": 1636.55
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 62.47,
+        "lost_revenue": 18804.84,
+        "otif_fines": 1202.98
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 70.8,
+        "dtc_cancellations": 39.96,
+        "lost_revenue": 21190.2,
+        "otif_fines": 1044.96
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.12,
+        "lost_revenue": 1134.6,
+        "otif_fines": 28.91
+      }
+    ]
+  },
+  {
+    "sku": "CHP-DG-010",
+    "product_name": "Mixed Nut Butter Granola",
+    "product_line": "Dried Goods",
+    "total_cost": 794844.71,
+    "by_dimension": {
+      "chargebacks": 1997.02,
+      "deauthorization": 131192.0,
+      "distributor_returns": 11952.84,
+      "dtc_cancellations": 208.78,
+      "dtc_margin_leakage": 15.18,
+      "lost_revenue": 593815.92,
+      "otif_fines": 55662.97
+    },
+    "by_retailer": {
+      "Costco": 79925.67,
+      "DPI Northwest": 70717.79,
+      "DTC": 223.96,
+      "KeHE": 119720.47,
+      "Regional": 236041.66,
+      "UNFI": 146321.9,
+      "Walmart": 74702.43,
+      "Whole Foods": 67190.82
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 42.15,
+        "lost_revenue": 12334.8,
+        "otif_fines": 1268.37
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 43.17,
+        "distributor_returns": 104.88,
+        "lost_revenue": 12998.4,
+        "otif_fines": 1043.62
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 49.86,
+        "distributor_returns": 52.44,
+        "lost_revenue": 14654.52,
+        "otif_fines": 646.95
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 45.48,
+        "distributor_returns": 51.24,
+        "lost_revenue": 13848.0,
+        "otif_fines": 789.75
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 48.96,
+        "distributor_returns": 518.4,
+        "lost_revenue": 14442.12,
+        "otif_fines": 1324.74
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 53.72,
+        "distributor_returns": 516.0,
+        "dtc_cancellations": 9.49,
+        "lost_revenue": 16488.6,
+        "otif_fines": 1332.98
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 55.91,
+        "distributor_returns": 933.12,
+        "dtc_margin_leakage": 1.9,
+        "lost_revenue": 16626.0,
+        "otif_fines": 2280.83
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 48.34,
+        "distributor_returns": 307.44,
+        "lost_revenue": 13940.76,
+        "otif_fines": 1596.59
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 47.88,
+        "distributor_returns": 209.76,
+        "dtc_cancellations": 18.98,
+        "lost_revenue": 13562.16,
+        "otif_fines": 2371.0
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 54.07,
+        "distributor_returns": 412.32,
+        "dtc_cancellations": 28.47,
+        "lost_revenue": 15445.56,
+        "otif_fines": 1852.62
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 66.67,
+        "distributor_returns": 1134.48,
+        "lost_revenue": 20038.92,
+        "otif_fines": 1481.09
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 70.77,
+        "distributor_returns": 720.96,
+        "dtc_cancellations": 18.98,
+        "lost_revenue": 20788.68,
+        "otif_fines": 2955.22
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 42.63,
+        "distributor_returns": 978.36,
+        "lost_revenue": 13269.12,
+        "otif_fines": 1010.19
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 42.03,
+        "distributor_returns": 572.04,
+        "lost_revenue": 12551.04,
+        "otif_fines": 1303.36
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 49.42,
+        "distributor_returns": 623.28,
+        "lost_revenue": 14784.96,
+        "otif_fines": 1079.74
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 48.38,
+        "distributor_returns": 415.92,
+        "lost_revenue": 14428.44,
+        "otif_fines": 620.67
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 43.2,
+        "distributor_returns": 678.12,
+        "lost_revenue": 12528.0,
+        "otif_fines": 1527.29
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 45.47,
+        "distributor_returns": 679.32,
+        "dtc_margin_leakage": 1.9,
+        "lost_revenue": 13486.92,
+        "otif_fines": 1274.74
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 53.08,
+        "distributor_returns": 414.72,
+        "lost_revenue": 15974.4,
+        "otif_fines": 1606.22
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 59.63,
+        "distributor_returns": 412.32,
+        "lost_revenue": 17378.64,
+        "otif_fines": 1811.32
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 51.52,
+        "distributor_returns": 516.0,
+        "lost_revenue": 14765.04,
+        "otif_fines": 1925.43
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 61.06,
+        "distributor_returns": 361.08,
+        "dtc_margin_leakage": 1.9,
+        "lost_revenue": 17837.16,
+        "otif_fines": 2167.13
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 98.44,
+        "distributor_returns": 927.12,
+        "dtc_cancellations": 28.47,
+        "lost_revenue": 29658.48,
+        "otif_fines": 2278.68
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 86.62,
+        "distributor_returns": 259.8,
+        "dtc_margin_leakage": 1.9,
+        "lost_revenue": 25953.48,
+        "otif_fines": 2606.23
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 41.27,
+        "distributor_returns": 153.72,
+        "lost_revenue": 12039.6,
+        "otif_fines": 2021.16
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 34.53,
+        "lost_revenue": 9520.44,
+        "otif_fines": 1990.83
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 50.41,
+        "lost_revenue": 15726.72,
+        "otif_fines": 1293.08
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 63.63,
+        "dtc_cancellations": 9.49,
+        "lost_revenue": 18711.36,
+        "otif_fines": 1852.03
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 60.99,
+        "dtc_margin_leakage": 5.69,
+        "lost_revenue": 18300.72,
+        "otif_fines": 1402.1
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 44.83,
+        "lost_revenue": 13557.48,
+        "otif_fines": 1087.58
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 70.56,
+        "lost_revenue": 20935.32,
+        "otif_fines": 1353.54
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 49.53,
+        "dtc_cancellations": 28.47,
+        "lost_revenue": 15197.64,
+        "otif_fines": 807.17
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 47.43,
+        "lost_revenue": 14046.84,
+        "otif_fines": 1070.27
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 45.87,
+        "dtc_cancellations": 9.49,
+        "lost_revenue": 13685.76,
+        "otif_fines": 2037.82
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 71.45,
+        "dtc_cancellations": 18.98,
+        "lost_revenue": 21945.72,
+        "otif_fines": 1229.19
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 104.34,
+        "dtc_cancellations": 37.96,
+        "dtc_margin_leakage": 1.9,
+        "lost_revenue": 31275.24,
+        "otif_fines": 1087.86
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 3.71,
+        "lost_revenue": 1088.88,
+        "otif_fines": 275.57
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-001",
+    "product_name": "Smoky Chipotle BBQ Sauce",
+    "product_line": "Artisan Sauces",
+    "total_cost": 791909.88,
+    "by_dimension": {
+      "chargebacks": 2016.61,
+      "deauthorization": 121329.72,
+      "distributor_returns": 8628.12,
+      "dtc_cancellations": 197.78,
+      "dtc_margin_leakage": 21.58,
+      "lost_revenue": 599414.88,
+      "otif_fines": 60301.19
+    },
+    "by_retailer": {
+      "Costco": 88731.08,
+      "DPI Northwest": 68804.84,
+      "DTC": 219.36,
+      "KeHE": 121842.98,
+      "Regional": 228744.47,
+      "UNFI": 136450.41,
+      "Walmart": 72175.75,
+      "Whole Foods": 74941.0
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 44.05,
+        "lost_revenue": 12202.92,
+        "otif_fines": 1735.28
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 36.85,
+        "lost_revenue": 11182.2,
+        "otif_fines": 477.82
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 44.77,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 13436.76,
+        "otif_fines": 1313.68
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 45.28,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 13431.96,
+        "otif_fines": 1777.6
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 51.22,
+        "distributor_returns": 49.68,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 14974.2,
+        "otif_fines": 2553.43
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 59.27,
+        "distributor_returns": 346.68,
+        "lost_revenue": 18294.96,
+        "otif_fines": 1382.46
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 36.0,
+        "distributor_returns": 594.0,
+        "lost_revenue": 10410.96,
+        "otif_fines": 1734.06
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 40.07,
+        "distributor_returns": 198.72,
+        "lost_revenue": 12081.12,
+        "otif_fines": 1017.59
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 44.4,
+        "distributor_returns": 291.6,
+        "dtc_cancellations": 8.99,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 12990.0,
+        "otif_fines": 1834.2
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 57.15,
+        "distributor_returns": 294.84,
+        "lost_revenue": 17487.0,
+        "otif_fines": 1154.69
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 68.85,
+        "distributor_returns": 393.12,
+        "lost_revenue": 20683.56,
+        "otif_fines": 1862.38
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 94.59,
+        "distributor_returns": 880.2,
+        "lost_revenue": 27052.92,
+        "otif_fines": 2696.93
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 81.59,
+        "distributor_returns": 537.84,
+        "lost_revenue": 24348.84,
+        "otif_fines": 2418.28
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 36.2,
+        "distributor_returns": 683.64,
+        "lost_revenue": 11285.88,
+        "otif_fines": 273.11
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 44.55,
+        "distributor_returns": 733.32,
+        "lost_revenue": 13501.2,
+        "otif_fines": 1063.07
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 51.05,
+        "distributor_returns": 489.24,
+        "lost_revenue": 14660.52,
+        "otif_fines": 1074.41
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 57.4,
+        "distributor_returns": 491.4,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 17499.0,
+        "otif_fines": 1029.69
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 76.91,
+        "distributor_returns": 534.6,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 21674.16,
+        "otif_fines": 2860.96
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 51.88,
+        "distributor_returns": 195.48,
+        "lost_revenue": 15657.72,
+        "otif_fines": 1372.1
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 47.66,
+        "distributor_returns": 292.68,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 14600.04,
+        "otif_fines": 822.51
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 57.29,
+        "distributor_returns": 292.68,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 16589.4,
+        "otif_fines": 2590.46
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 92.67,
+        "distributor_returns": 245.16,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 27326.04,
+        "otif_fines": 1991.28
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 104.68,
+        "distributor_returns": 346.68,
+        "dtc_cancellations": 26.97,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 30235.08,
+        "otif_fines": 3664.52
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 73.82,
+        "distributor_returns": 639.36,
+        "lost_revenue": 22879.92,
+        "otif_fines": 1972.4
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 44.11,
+        "distributor_returns": 97.2,
+        "lost_revenue": 12807.0,
+        "otif_fines": 809.2
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 32.8,
+        "lost_revenue": 9659.28,
+        "otif_fines": 968.15
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 42.06,
+        "lost_revenue": 12921.12,
+        "otif_fines": 1048.71
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 36.4,
+        "lost_revenue": 10994.16,
+        "otif_fines": 493.08
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 58.05,
+        "lost_revenue": 17485.44,
+        "otif_fines": 2837.92
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 38.53,
+        "lost_revenue": 11995.68,
+        "otif_fines": 781.69
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 54.39,
+        "lost_revenue": 16646.28,
+        "otif_fines": 1599.73
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 43.1,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 12839.16,
+        "otif_fines": 1268.39
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 44.65,
+        "lost_revenue": 13601.76,
+        "otif_fines": 1054.04
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 90.02,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 26080.44,
+        "otif_fines": 2683.02
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 59.16,
+        "dtc_cancellations": 35.96,
+        "lost_revenue": 17426.4,
+        "otif_fines": 2860.51
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 70.74,
+        "dtc_cancellations": 8.99,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 21252.6,
+        "otif_fines": 2935.51
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.4,
+        "lost_revenue": 1219.2,
+        "otif_fines": 288.32
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SB-008",
+    "product_name": "Maple Pecan Clusters",
+    "product_line": "Snack Bites",
+    "total_cost": 782943.46,
+    "by_dimension": {
+      "chargebacks": 1826.29,
+      "deauthorization": 179294.04,
+      "distributor_returns": 10400.4,
+      "dtc_cancellations": 161.82,
+      "dtc_margin_leakage": 10.79,
+      "lost_revenue": 544532.52,
+      "otif_fines": 46717.61
+    },
+    "by_retailer": {
+      "Costco": 109014.08,
+      "DPI Northwest": 73179.53,
+      "DTC": 172.61,
+      "KeHE": 121931.55,
+      "Regional": 205527.28,
+      "UNFI": 141331.76,
+      "Walmart": 66223.98,
+      "Whole Foods": 65562.66
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 32.66,
+        "lost_revenue": 9684.48,
+        "otif_fines": 696.8
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 36.1,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 11253.48,
+        "otif_fines": 741.71
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 48.57,
+        "distributor_returns": 48.6,
+        "lost_revenue": 14333.16,
+        "otif_fines": 1018.22
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 42.59,
+        "lost_revenue": 12625.32,
+        "otif_fines": 813.9
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 51.11,
+        "distributor_returns": 687.96,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 15398.52,
+        "otif_fines": 831.1
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 44.19,
+        "distributor_returns": 491.4,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 12837.24,
+        "otif_fines": 575.83
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 37.39,
+        "distributor_returns": 342.36,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 11022.0,
+        "otif_fines": 1255.35
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 48.49,
+        "distributor_returns": 198.72,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 14387.76,
+        "otif_fines": 1806.07
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 48.75,
+        "distributor_returns": 542.16,
+        "lost_revenue": 14879.76,
+        "otif_fines": 1019.89
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 60.17,
+        "distributor_returns": 441.72,
+        "lost_revenue": 17925.36,
+        "otif_fines": 1364.36
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 64.15,
+        "distributor_returns": 97.2,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 18512.04,
+        "otif_fines": 1669.09
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 75.79,
+        "distributor_returns": 585.36,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 22698.6,
+        "otif_fines": 1702.24
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 43.29,
+        "distributor_returns": 442.8,
+        "lost_revenue": 12837.24,
+        "otif_fines": 1290.65
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 39.2,
+        "distributor_returns": 584.28,
+        "lost_revenue": 11859.0,
+        "otif_fines": 1010.82
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 38.67,
+        "distributor_returns": 346.68,
+        "lost_revenue": 11794.2,
+        "otif_fines": 757.19
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 39.52,
+        "distributor_returns": 682.56,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 11928.0,
+        "otif_fines": 1043.39
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 46.62,
+        "distributor_returns": 340.2,
+        "lost_revenue": 13919.28,
+        "otif_fines": 2046.71
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 39.7,
+        "distributor_returns": 388.8,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 11988.36,
+        "otif_fines": 1007.31
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 52.87,
+        "distributor_returns": 442.8,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 15566.52,
+        "otif_fines": 1100.39
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 56.12,
+        "distributor_returns": 194.4,
+        "lost_revenue": 16820.76,
+        "otif_fines": 1402.03
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 58.79,
+        "distributor_returns": 347.76,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 17254.8,
+        "otif_fines": 2181.29
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 62.44,
+        "distributor_returns": 437.4,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 18266.4,
+        "otif_fines": 2639.26
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 85.34,
+        "distributor_returns": 789.48,
+        "lost_revenue": 25470.36,
+        "otif_fines": 2219.24
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 75.14,
+        "distributor_returns": 1672.92,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 22636.92,
+        "otif_fines": 1318.67
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 47.15,
+        "distributor_returns": 294.84,
+        "lost_revenue": 13916.04,
+        "otif_fines": 1263.96
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 30.05,
+        "lost_revenue": 9055.44,
+        "otif_fines": 471.58
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 31.68,
+        "lost_revenue": 9316.56,
+        "otif_fines": 962.5
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 38.72,
+        "lost_revenue": 11766.36,
+        "otif_fines": 752.22
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 46.28,
+        "lost_revenue": 14047.8,
+        "otif_fines": 1103.99
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 44.35,
+        "lost_revenue": 13321.92,
+        "otif_fines": 1312.11
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 51.79,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 15547.56,
+        "otif_fines": 795.22
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 49.9,
+        "lost_revenue": 14476.68,
+        "otif_fines": 2129.49
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 48.36,
+        "lost_revenue": 14592.96,
+        "otif_fines": 1300.88
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 61.22,
+        "lost_revenue": 18629.28,
+        "otif_fines": 1152.36
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 84.36,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 25034.04,
+        "otif_fines": 1980.35
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 61.1,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 18056.4,
+        "otif_fines": 1709.8
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 3.67,
+        "lost_revenue": 871.92,
+        "otif_fines": 271.62
+      }
+    ]
+  },
+  {
+    "sku": "CHP-DG-007",
+    "product_name": "Trail Mix Premium",
+    "product_line": "Dried Goods",
+    "total_cost": 774204.18,
+    "by_dimension": {
+      "chargebacks": 1805.88,
+      "deauthorization": 168068.88,
+      "distributor_returns": 10663.92,
+      "dtc_cancellations": 242.73,
+      "dtc_margin_leakage": 8.99,
+      "lost_revenue": 540251.4,
+      "otif_fines": 53162.38
+    },
+    "by_retailer": {
+      "Costco": 114512.1,
+      "DPI Northwest": 73818.98,
+      "DTC": 251.72,
+      "KeHE": 113158.4,
+      "Regional": 205632.82,
+      "UNFI": 138393.94,
+      "Walmart": 62384.02,
+      "Whole Foods": 66052.2
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 24.11,
+        "lost_revenue": 7506.24,
+        "otif_fines": 415.65
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 43.72,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 12861.36,
+        "otif_fines": 843.1
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 44.41,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 13706.16,
+        "otif_fines": 1322.48
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 44.84,
+        "distributor_returns": 99.36,
+        "lost_revenue": 14281.32,
+        "otif_fines": 1238.46
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 50.09,
+        "distributor_returns": 443.88,
+        "lost_revenue": 14497.56,
+        "otif_fines": 1363.89
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 43.16,
+        "distributor_returns": 731.16,
+        "lost_revenue": 13397.52,
+        "otif_fines": 817.47
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 36.33,
+        "distributor_returns": 343.44,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 11329.08,
+        "otif_fines": 488.1
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 40.69,
+        "distributor_returns": 493.56,
+        "lost_revenue": 12669.6,
+        "otif_fines": 782.18
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 66.34,
+        "distributor_returns": 396.36,
+        "lost_revenue": 19693.08,
+        "otif_fines": 1137.18
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 73.22,
+        "distributor_returns": 639.36,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 21678.24,
+        "otif_fines": 1627.51
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 60.23,
+        "distributor_returns": 343.44,
+        "dtc_cancellations": 17.98,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 17661.12,
+        "otif_fines": 2220.55
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 74.49,
+        "distributor_returns": 345.6,
+        "lost_revenue": 21927.36,
+        "otif_fines": 2401.77
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 59.21,
+        "distributor_returns": 441.72,
+        "lost_revenue": 17911.68,
+        "otif_fines": 2367.83
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 26.85,
+        "distributor_returns": 343.44,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 8488.32,
+        "otif_fines": 200.79
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 37.16,
+        "distributor_returns": 246.24,
+        "lost_revenue": 10943.28,
+        "otif_fines": 1962.21
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 49.62,
+        "distributor_returns": 197.64,
+        "lost_revenue": 14626.44,
+        "otif_fines": 1556.79
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 61.86,
+        "distributor_returns": 346.68,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 18182.88,
+        "otif_fines": 2892.02
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 41.71,
+        "distributor_returns": 346.68,
+        "lost_revenue": 12563.64,
+        "otif_fines": 1508.84
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 49.69,
+        "distributor_returns": 640.44,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 15064.2,
+        "otif_fines": 605.92
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 74.13,
+        "distributor_returns": 927.72,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 21707.88,
+        "otif_fines": 694.52
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 43.66,
+        "distributor_returns": 443.88,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 12880.44,
+        "otif_fines": 830.73
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 56.71,
+        "distributor_returns": 342.36,
+        "lost_revenue": 16768.44,
+        "otif_fines": 1642.34
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 59.37,
+        "distributor_returns": 834.84,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 17802.6,
+        "otif_fines": 1630.82
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 69.09,
+        "distributor_returns": 1227.96,
+        "lost_revenue": 21047.04,
+        "otif_fines": 2249.8
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 42.22,
+        "distributor_returns": 488.16,
+        "lost_revenue": 13248.84,
+        "otif_fines": 309.7
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 51.18,
+        "lost_revenue": 14853.84,
+        "otif_fines": 1256.83
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 44.19,
+        "lost_revenue": 13377.72,
+        "otif_fines": 1330.57
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 46.04,
+        "dtc_cancellations": 26.97,
+        "lost_revenue": 13692.6,
+        "otif_fines": 2797.48
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 48.14,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 13665.6,
+        "otif_fines": 2850.12
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 31.48,
+        "lost_revenue": 9285.12,
+        "otif_fines": 995.57
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 37.68,
+        "lost_revenue": 11286.96,
+        "otif_fines": 997.35
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 48.36,
+        "lost_revenue": 14416.92,
+        "otif_fines": 1603.1
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 43.94,
+        "lost_revenue": 13126.08,
+        "otif_fines": 2046.74
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 58.28,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 16982.76,
+        "otif_fines": 2613.99
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 45.68,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 13957.68,
+        "otif_fines": 1306.69
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 75.68,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 22493.52,
+        "otif_fines": 2238.27
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 2.32,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 668.28,
+        "otif_fines": 15.03
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-010",
+    "product_name": "Carolina Gold BBQ",
+    "product_line": "Artisan Sauces",
+    "total_cost": 758317.35,
+    "by_dimension": {
+      "chargebacks": 1808.49,
+      "deauthorization": 159949.32,
+      "distributor_returns": 9250.08,
+      "dtc_cancellations": 237.72,
+      "dtc_margin_leakage": 18.68,
+      "lost_revenue": 538071.12,
+      "otif_fines": 48981.94
+    },
+    "by_retailer": {
+      "Costco": 110749.52,
+      "DPI Northwest": 70496.79,
+      "DTC": 256.4,
+      "KeHE": 114230.81,
+      "Regional": 214283.01,
+      "UNFI": 125119.38,
+      "Walmart": 64443.24,
+      "Whole Foods": 58738.2
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 45.83,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 13742.64,
+        "otif_fines": 1812.15
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 37.27,
+        "lost_revenue": 11010.24,
+        "otif_fines": 784.01
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 39.83,
+        "distributor_returns": 93.84,
+        "lost_revenue": 12139.56,
+        "otif_fines": 1022.01
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 36.56,
+        "distributor_returns": 233.52,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 10816.68,
+        "otif_fines": 956.76
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 42.08,
+        "distributor_returns": 278.28,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 12787.8,
+        "otif_fines": 1291.56
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 53.95,
+        "distributor_returns": 737.76,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 15998.52,
+        "otif_fines": 1065.58
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 44.01,
+        "distributor_returns": 595.92,
+        "lost_revenue": 13397.52,
+        "otif_fines": 1522.82
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 42.64,
+        "distributor_returns": 139.68,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 12712.92,
+        "otif_fines": 1532.44
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 43.45,
+        "distributor_returns": 463.8,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 13043.04,
+        "otif_fines": 1542.61
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 63.7,
+        "distributor_returns": 736.68,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 18798.6,
+        "otif_fines": 2355.42
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 58.65,
+        "distributor_returns": 324.12,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 17808.48,
+        "otif_fines": 1386.46
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 87.98,
+        "distributor_returns": 601.32,
+        "lost_revenue": 25984.44,
+        "otif_fines": 2189.26
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 58.8,
+        "distributor_returns": 650.4,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 16943.04,
+        "otif_fines": 1539.76
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 31.46,
+        "distributor_returns": 557.64,
+        "lost_revenue": 9507.72,
+        "otif_fines": 238.67
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 52.63,
+        "distributor_returns": 324.12,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 16063.32,
+        "otif_fines": 789.38
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 42.36,
+        "distributor_returns": 327.36,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 12239.16,
+        "otif_fines": 1306.23
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 41.88,
+        "distributor_returns": 232.44,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 12612.72,
+        "otif_fines": 1040.15
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 40.55,
+        "distributor_returns": 460.56,
+        "dtc_cancellations": 16.98,
+        "dtc_margin_leakage": 5.09,
+        "lost_revenue": 11782.8,
+        "otif_fines": 1522.44
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 48.84,
+        "distributor_returns": 508.56,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 14810.64,
+        "otif_fines": 1801.55
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 45.15,
+        "distributor_returns": 412.56,
+        "lost_revenue": 13442.28,
+        "otif_fines": 1062.88
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 51.46,
+        "distributor_returns": 552.24,
+        "dtc_cancellations": 33.96,
+        "lost_revenue": 15847.44,
+        "otif_fines": 819.15
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 72.12,
+        "distributor_returns": 554.4,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 21177.48,
+        "otif_fines": 2870.03
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 59.31,
+        "distributor_returns": 185.52,
+        "lost_revenue": 17094.48,
+        "otif_fines": 1371.68
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 68.81,
+        "distributor_returns": 279.36,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 20727.24,
+        "otif_fines": 1735.17
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 41.78,
+        "lost_revenue": 12678.24,
+        "otif_fines": 289.85
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 31.88,
+        "lost_revenue": 9386.28,
+        "otif_fines": 673.1
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 38.6,
+        "lost_revenue": 11587.32,
+        "otif_fines": 502.3
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 34.98,
+        "lost_revenue": 10188.6,
+        "otif_fines": 730.51
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 51.13,
+        "lost_revenue": 14966.64,
+        "otif_fines": 1834.93
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 38.27,
+        "lost_revenue": 11683.56,
+        "otif_fines": 1043.11
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 51.86,
+        "lost_revenue": 15318.12,
+        "otif_fines": 2057.97
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 59.07,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 17510.52,
+        "otif_fines": 1051.4
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 62.15,
+        "lost_revenue": 17553.84,
+        "otif_fines": 1801.07
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 47.65,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 14316.36,
+        "otif_fines": 1299.36
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 69.23,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 20842.92,
+        "otif_fines": 1702.17
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 67.02,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 19865.28,
+        "otif_fines": 2151.29
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.55,
+        "lost_revenue": 1684.68,
+        "otif_fines": 286.71
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SC-002",
+    "product_name": "Caramelized Onion Spread",
+    "product_line": "Specialty Condiments",
+    "total_cost": 743759.56,
+    "by_dimension": {
+      "chargebacks": 1758.19,
+      "deauthorization": 160467.72,
+      "distributor_returns": 12207.6,
+      "dtc_cancellations": 169.8,
+      "dtc_margin_leakage": 15.28,
+      "lost_revenue": 527717.64,
+      "otif_fines": 41423.33
+    },
+    "by_retailer": {
+      "Costco": 97843.12,
+      "DPI Northwest": 77545.62,
+      "DTC": 185.08,
+      "KeHE": 110631.4,
+      "Regional": 205866.83,
+      "UNFI": 130951.19,
+      "Walmart": 58866.94,
+      "Whole Foods": 61869.38
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 29.75,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 8426.4,
+        "otif_fines": 1457.1
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 31.59,
+        "distributor_returns": 45.84,
+        "lost_revenue": 9249.72,
+        "otif_fines": 485.88
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 63.36,
+        "distributor_returns": 415.8,
+        "lost_revenue": 19170.24,
+        "otif_fines": 859.48
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 46.65,
+        "distributor_returns": 46.92,
+        "lost_revenue": 14382.84,
+        "otif_fines": 1292.06
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 58.46,
+        "distributor_returns": 554.4,
+        "lost_revenue": 17479.32,
+        "otif_fines": 1517.68
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 41.82,
+        "distributor_returns": 787.92,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 12929.88,
+        "otif_fines": 773.85
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 43.88,
+        "distributor_returns": 1160.04,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 12735.24,
+        "otif_fines": 306.7
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 37.46,
+        "distributor_returns": 367.8,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 10869.72,
+        "otif_fines": 723.45
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 42.09,
+        "distributor_returns": 321.96,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 12857.52,
+        "otif_fines": 1029.54
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 55.46,
+        "distributor_returns": 368.88,
+        "lost_revenue": 16265.16,
+        "otif_fines": 872.29
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 64.38,
+        "distributor_returns": 233.52,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 18930.48,
+        "otif_fines": 1847.39
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 67.55,
+        "distributor_returns": 829.44,
+        "lost_revenue": 20286.96,
+        "otif_fines": 1911.31
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 62.78,
+        "distributor_returns": 881.76,
+        "lost_revenue": 18168.48,
+        "otif_fines": 1349.36
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 28.95,
+        "distributor_returns": 603.48,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 9013.56,
+        "otif_fines": 903.29
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 48.52,
+        "distributor_returns": 551.16,
+        "lost_revenue": 14339.88,
+        "otif_fines": 758.22
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 43.55,
+        "distributor_returns": 276.12,
+        "dtc_cancellations": 42.45,
+        "lost_revenue": 12810.0,
+        "otif_fines": 1782.85
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 52.95,
+        "distributor_returns": 462.72,
+        "lost_revenue": 16553.4,
+        "otif_fines": 1343.3
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 44.53,
+        "distributor_returns": 419.04,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 13736.52,
+        "otif_fines": 816.84
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 39.84,
+        "distributor_returns": 781.44,
+        "lost_revenue": 11970.12,
+        "otif_fines": 1022.42
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 37.18,
+        "distributor_returns": 835.92,
+        "lost_revenue": 11388.36,
+        "otif_fines": 1022.09
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 52.95,
+        "distributor_returns": 690.84,
+        "lost_revenue": 15574.44,
+        "otif_fines": 1136.83
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 58.25,
+        "distributor_returns": 229.2,
+        "lost_revenue": 17245.8,
+        "otif_fines": 1365.56
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 66.45,
+        "distributor_returns": 510.72,
+        "dtc_cancellations": 42.45,
+        "lost_revenue": 20498.04,
+        "otif_fines": 739.44
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 53.21,
+        "distributor_returns": 279.36,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 16186.68,
+        "otif_fines": 1169.85
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 39.4,
+        "distributor_returns": 553.32,
+        "lost_revenue": 12025.8,
+        "otif_fines": 1015.71
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 30.63,
+        "lost_revenue": 8450.28,
+        "otif_fines": 1906.56
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 46.56,
+        "lost_revenue": 14121.24,
+        "otif_fines": 1777.71
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 32.32,
+        "lost_revenue": 9828.72,
+        "otif_fines": 476.04
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 52.79,
+        "lost_revenue": 16090.92,
+        "otif_fines": 1120.76
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 43.69,
+        "lost_revenue": 13384.92,
+        "otif_fines": 550.22
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 54.42,
+        "lost_revenue": 15498.48,
+        "otif_fines": 2292.71
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 38.91,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 12028.8,
+        "otif_fines": 506.95
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 47.16,
+        "lost_revenue": 14517.36,
+        "otif_fines": 792.14
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 72.38,
+        "lost_revenue": 21713.64,
+        "otif_fines": 1329.35
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 61.88,
+        "dtc_margin_leakage": 6.79,
+        "lost_revenue": 18814.92,
+        "otif_fines": 1718.66
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 62.45,
+        "lost_revenue": 18934.56,
+        "otif_fines": 1426.9
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.02,
+        "lost_revenue": 1239.24,
+        "otif_fines": 22.81
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SC-009",
+    "product_name": "Raspberry Chipotle Glaze",
+    "product_line": "Specialty Condiments",
+    "total_cost": 737263.36,
+    "by_dimension": {
+      "chargebacks": 1855.11,
+      "deauthorization": 123252.48,
+      "distributor_returns": 11076.48,
+      "dtc_cancellations": 233.74,
+      "dtc_margin_leakage": 25.17,
+      "lost_revenue": 552968.16,
+      "otif_fines": 47852.22
+    },
+    "by_retailer": {
+      "Costco": 70281.27,
+      "DPI Northwest": 66070.52,
+      "DTC": 258.91,
+      "KeHE": 99672.37,
+      "Regional": 228557.58,
+      "UNFI": 141572.35,
+      "Walmart": 67490.01,
+      "Whole Foods": 63360.34
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 36.3,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 10543.2,
+        "otif_fines": 1482.07
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 43.31,
+        "distributor_returns": 49.68,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 13011.96,
+        "otif_fines": 793.69
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 56.71,
+        "distributor_returns": 98.28,
+        "lost_revenue": 16754.88,
+        "otif_fines": 1860.9
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 40.43,
+        "distributor_returns": 496.8,
+        "lost_revenue": 12278.04,
+        "otif_fines": 1234.29
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 43.28,
+        "distributor_returns": 292.68,
+        "dtc_cancellations": 35.96,
+        "lost_revenue": 13293.36,
+        "otif_fines": 555.11
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 48.01,
+        "distributor_returns": 784.08,
+        "lost_revenue": 14664.84,
+        "otif_fines": 1563.01
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 59.18,
+        "distributor_returns": 1168.56,
+        "dtc_cancellations": 26.97,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 18084.96,
+        "otif_fines": 1056.8
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 43.11,
+        "distributor_returns": 146.88,
+        "lost_revenue": 12407.76,
+        "otif_fines": 1265.12
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 57.6,
+        "distributor_returns": 345.6,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 16237.8,
+        "otif_fines": 1580.59
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 85.22,
+        "distributor_returns": 441.72,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 24750.72,
+        "otif_fines": 2654.14
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 58.87,
+        "distributor_returns": 390.96,
+        "dtc_margin_leakage": 5.39,
+        "lost_revenue": 17404.08,
+        "otif_fines": 2117.68
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 67.47,
+        "distributor_returns": 441.72,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 20141.04,
+        "otif_fines": 1224.98
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 42.59,
+        "distributor_returns": 342.36,
+        "lost_revenue": 13212.36,
+        "otif_fines": 1297.7
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 33.38,
+        "distributor_returns": 439.56,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 10027.56,
+        "otif_fines": 1486.14
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 46.0,
+        "distributor_returns": 444.96,
+        "lost_revenue": 14333.88,
+        "otif_fines": 571.33
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 45.59,
+        "distributor_returns": 589.68,
+        "dtc_margin_leakage": 3.6,
+        "lost_revenue": 13491.84,
+        "otif_fines": 1284.87
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 46.78,
+        "distributor_returns": 491.4,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 13937.4,
+        "otif_fines": 2033.8
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 48.51,
+        "distributor_returns": 394.2,
+        "lost_revenue": 14463.48,
+        "otif_fines": 1059.84
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 51.41,
+        "distributor_returns": 779.76,
+        "lost_revenue": 15471.72,
+        "otif_fines": 1329.57
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 32.88,
+        "distributor_returns": 587.52,
+        "dtc_cancellations": 8.99,
+        "dtc_margin_leakage": 5.39,
+        "lost_revenue": 10077.72,
+        "otif_fines": 517.28
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 43.18,
+        "distributor_returns": 636.12,
+        "lost_revenue": 12820.56,
+        "otif_fines": 567.68
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 58.86,
+        "distributor_returns": 342.36,
+        "lost_revenue": 17801.52,
+        "otif_fines": 1154.82
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 67.65,
+        "distributor_returns": 732.24,
+        "dtc_cancellations": 17.98,
+        "lost_revenue": 20114.76,
+        "otif_fines": 1937.95
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 71.08,
+        "distributor_returns": 589.68,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 21457.56,
+        "otif_fines": 1236.38
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 53.27,
+        "distributor_returns": 49.68,
+        "lost_revenue": 15533.88,
+        "otif_fines": 1746.72
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 29.55,
+        "lost_revenue": 8776.2,
+        "otif_fines": 227.78
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 38.34,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 11292.48,
+        "otif_fines": 1026.63
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 56.41,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 17090.64,
+        "otif_fines": 1265.65
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 54.89,
+        "lost_revenue": 16098.96,
+        "otif_fines": 1616.57
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 32.83,
+        "lost_revenue": 9408.36,
+        "otif_fines": 1003.83
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 48.59,
+        "lost_revenue": 14414.88,
+        "otif_fines": 1329.58
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 55.49,
+        "dtc_margin_leakage": 1.8,
+        "lost_revenue": 16351.92,
+        "otif_fines": 1271.96
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 50.87,
+        "dtc_cancellations": 8.99,
+        "lost_revenue": 15285.0,
+        "otif_fines": 1587.34
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 58.65,
+        "lost_revenue": 17204.88,
+        "otif_fines": 1143.68
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 77.62,
+        "dtc_cancellations": 62.93,
+        "lost_revenue": 23126.52,
+        "otif_fines": 974.98
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 65.37,
+        "lost_revenue": 19805.64,
+        "otif_fines": 2506.27
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.81,
+        "lost_revenue": 1795.8,
+        "otif_fines": 285.5
+      }
+    ]
+  },
+  {
+    "sku": "CHP-DG-002",
+    "product_name": "Quinoa Medley",
+    "product_line": "Dried Goods",
+    "total_cost": 735437.38,
+    "by_dimension": {
+      "chargebacks": 1764.31,
+      "deauthorization": 156441.96,
+      "distributor_returns": 9499.8,
+      "dtc_cancellations": 178.29,
+      "dtc_margin_leakage": 23.77,
+      "lost_revenue": 523451.64,
+      "otif_fines": 44077.61
+    },
+    "by_retailer": {
+      "Costco": 103692.1,
+      "DPI Northwest": 68427.32,
+      "DTC": 202.06,
+      "KeHE": 115100.8,
+      "Regional": 204668.84,
+      "UNFI": 120633.72,
+      "Walmart": 66485.43,
+      "Whole Foods": 56227.11
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 26.58,
+        "lost_revenue": 7527.12,
+        "otif_fines": 1179.42
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 30.16,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 9017.4,
+        "otif_fines": 951.73
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 37.61,
+        "lost_revenue": 11561.16,
+        "otif_fines": 498.34
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 50.74,
+        "distributor_returns": 281.52,
+        "lost_revenue": 14575.08,
+        "otif_fines": 2255.86
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 41.14,
+        "distributor_returns": 554.4,
+        "lost_revenue": 11802.84,
+        "otif_fines": 1504.55
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 54.63,
+        "distributor_returns": 139.68,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 16001.88,
+        "otif_fines": 1825.32
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 45.0,
+        "distributor_returns": 231.36,
+        "dtc_cancellations": 33.96,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 13901.64,
+        "otif_fines": 995.31
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 62.63,
+        "distributor_returns": 231.36,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 17523.72,
+        "otif_fines": 1564.59
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 45.67,
+        "distributor_returns": 326.28,
+        "lost_revenue": 12634.2,
+        "otif_fines": 2277.29
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 67.9,
+        "distributor_returns": 369.96,
+        "lost_revenue": 20392.08,
+        "otif_fines": 2073.79
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 54.78,
+        "distributor_returns": 374.28,
+        "dtc_margin_leakage": 5.09,
+        "lost_revenue": 15945.0,
+        "otif_fines": 2398.11
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 55.91,
+        "distributor_returns": 1064.04,
+        "lost_revenue": 17228.04,
+        "otif_fines": 629.91
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 42.3,
+        "distributor_returns": 694.08,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 6.79,
+        "lost_revenue": 12963.36,
+        "otif_fines": 1054.95
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 39.43,
+        "distributor_returns": 789.0,
+        "lost_revenue": 11905.56,
+        "otif_fines": 980.77
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 51.16,
+        "distributor_returns": 742.08,
+        "lost_revenue": 15045.24,
+        "otif_fines": 1771.32
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 45.28,
+        "distributor_returns": 92.76,
+        "lost_revenue": 13143.96,
+        "otif_fines": 1041.71
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 48.11,
+        "distributor_returns": 229.2,
+        "lost_revenue": 14622.24,
+        "otif_fines": 283.72
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 52.52,
+        "distributor_returns": 462.72,
+        "lost_revenue": 15628.8,
+        "otif_fines": 1035.95
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 46.71,
+        "distributor_returns": 555.48,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 14030.16,
+        "otif_fines": 1542.74
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 44.43,
+        "distributor_returns": 232.44,
+        "lost_revenue": 13732.44,
+        "otif_fines": 328.85
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 45.65,
+        "distributor_returns": 416.88,
+        "lost_revenue": 13627.08,
+        "otif_fines": 289.48
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 47.95,
+        "distributor_returns": 964.8,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 14420.28,
+        "otif_fines": 1066.92
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 63.42,
+        "distributor_returns": 327.36,
+        "lost_revenue": 19428.48,
+        "otif_fines": 1159.39
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 66.61,
+        "distributor_returns": 232.44,
+        "lost_revenue": 20865.72,
+        "otif_fines": 914.96
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 62.09,
+        "distributor_returns": 187.68,
+        "lost_revenue": 18120.48,
+        "otif_fines": 1835.42
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 33.56,
+        "lost_revenue": 10249.56,
+        "otif_fines": 458.68
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 45.59,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 13956.6,
+        "otif_fines": 787.42
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 34.24,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 9724.2,
+        "otif_fines": 711.29
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 45.34,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 13541.04,
+        "otif_fines": 1835.83
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 34.09,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 10596.36,
+        "otif_fines": 206.87
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 39.14,
+        "lost_revenue": 11274.84,
+        "otif_fines": 1017.89
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 45.33,
+        "lost_revenue": 12997.92,
+        "otif_fines": 1242.22
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 54.12,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 15562.44,
+        "otif_fines": 2325.55
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 50.7,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 14483.88,
+        "otif_fines": 835.04
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 77.94,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 23085.84,
+        "otif_fines": 1141.45
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 71.92,
+        "lost_revenue": 21064.08,
+        "otif_fines": 2011.15
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 3.91,
+        "lost_revenue": 1270.92,
+        "otif_fines": 43.83
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SB-002",
+    "product_name": "Almond Butter Protein Bites",
+    "product_line": "Snack Bites",
+    "total_cost": 717000.31,
+    "by_dimension": {
+      "chargebacks": 1684.53,
+      "deauthorization": 153464.96,
+      "distributor_returns": 9333.12,
+      "dtc_cancellations": 271.66,
+      "dtc_margin_leakage": 19.18,
+      "lost_revenue": 501830.16,
+      "otif_fines": 50396.7
+    },
+    "by_retailer": {
+      "Costco": 110431.93,
+      "DPI Northwest": 62879.39,
+      "DTC": 290.84,
+      "KeHE": 102707.52,
+      "Regional": 195880.95,
+      "UNFI": 129150.37,
+      "Walmart": 58510.51,
+      "Whole Foods": 57148.79
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 31.19,
+        "lost_revenue": 8760.48,
+        "otif_fines": 688.6
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 38.71,
+        "distributor_returns": 88.32,
+        "lost_revenue": 11516.88,
+        "otif_fines": 1249.16
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 42.81,
+        "distributor_returns": 88.32,
+        "lost_revenue": 12745.2,
+        "otif_fines": 1036.99
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 45.36,
+        "distributor_returns": 174.72,
+        "lost_revenue": 13296.48,
+        "otif_fines": 1238.6
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 37.65,
+        "distributor_returns": 877.44,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 11665.68,
+        "otif_fines": 971.05
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 51.7,
+        "distributor_returns": 518.4,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 15775.2,
+        "otif_fines": 1054.13
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 40.6,
+        "distributor_returns": 172.8,
+        "lost_revenue": 11387.04,
+        "otif_fines": 1998.98
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 34.49,
+        "distributor_returns": 86.4,
+        "lost_revenue": 10246.56,
+        "otif_fines": 2193.21
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 34.98,
+        "distributor_returns": 606.72,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 10844.64,
+        "otif_fines": 975.32
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 54.95,
+        "distributor_returns": 86.4,
+        "dtc_cancellations": 23.97,
+        "lost_revenue": 16505.52,
+        "otif_fines": 2066.23
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 47.77,
+        "distributor_returns": 264.96,
+        "dtc_cancellations": 15.98,
+        "dtc_margin_leakage": 4.79,
+        "lost_revenue": 14661.12,
+        "otif_fines": 1056.55
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 64.9,
+        "distributor_returns": 614.4,
+        "dtc_cancellations": 23.97,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 18803.28,
+        "otif_fines": 2357.27
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 38.81,
+        "distributor_returns": 261.12,
+        "lost_revenue": 11411.28,
+        "otif_fines": 520.65
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 46.83,
+        "distributor_returns": 693.12,
+        "lost_revenue": 14034.0,
+        "otif_fines": 1463.06
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 38.64,
+        "distributor_returns": 696.96,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 11623.44,
+        "otif_fines": 1718.74
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 33.59,
+        "distributor_returns": 176.64,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 9859.92,
+        "otif_fines": 470.42
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 43.13,
+        "distributor_returns": 174.72,
+        "dtc_cancellations": 23.97,
+        "lost_revenue": 12554.64,
+        "otif_fines": 2253.08
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 37.64,
+        "distributor_returns": 873.6,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 11528.88,
+        "otif_fines": 236.81
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 45.35,
+        "distributor_returns": 263.04,
+        "dtc_cancellations": 23.97,
+        "lost_revenue": 13237.44,
+        "otif_fines": 1771.02
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 42.09,
+        "distributor_returns": 877.44,
+        "lost_revenue": 13030.32,
+        "otif_fines": 1257.01
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 47.93,
+        "distributor_returns": 693.12,
+        "lost_revenue": 14460.0,
+        "otif_fines": 1047.5
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 60.38,
+        "distributor_returns": 435.84,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 18358.56,
+        "otif_fines": 1136.25
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 78.56,
+        "distributor_returns": 345.6,
+        "dtc_margin_leakage": 3.2,
+        "lost_revenue": 23409.12,
+        "otif_fines": 1889.39
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 72.32,
+        "distributor_returns": 174.72,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 21779.52,
+        "otif_fines": 1987.22
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 51.26,
+        "distributor_returns": 88.32,
+        "lost_revenue": 14374.8,
+        "otif_fines": 1468.05
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 25.47,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 7486.08,
+        "otif_fines": 1154.45
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 33.33,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 9918.72,
+        "otif_fines": 1706.37
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 33.78,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 9939.36,
+        "otif_fines": 1442.08
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 40.05,
+        "lost_revenue": 12209.76,
+        "otif_fines": 994.7
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 37.0,
+        "lost_revenue": 10575.12,
+        "otif_fines": 1988.51
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 46.1,
+        "lost_revenue": 14041.44,
+        "otif_fines": 1280.59
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 32.06,
+        "lost_revenue": 9736.8,
+        "otif_fines": 467.48
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 40.72,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 12055.2,
+        "otif_fines": 1056.15
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 74.24,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 21217.92,
+        "otif_fines": 2625.53
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 91.5,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 4.79,
+        "lost_revenue": 27924.48,
+        "otif_fines": 2172.89
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 55.04,
+        "lost_revenue": 16697.28,
+        "otif_fines": 1369.62
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 13.61,
+        "lost_revenue": 4158.0,
+        "otif_fines": 33.02
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-004",
+    "product_name": "Sweet Thai Chili Sauce",
+    "product_line": "Artisan Sauces",
+    "total_cost": 711051.44,
+    "by_dimension": {
+      "chargebacks": 1776.46,
+      "deauthorization": 118408.32,
+      "distributor_returns": 8473.92,
+      "dtc_cancellations": 199.75,
+      "dtc_margin_leakage": 28.76,
+      "lost_revenue": 531891.96,
+      "otif_fines": 50272.26
+    },
+    "by_retailer": {
+      "Costco": 74001.25,
+      "DPI Northwest": 67425.06,
+      "DTC": 228.51,
+      "KeHE": 115341.85,
+      "Regional": 202662.82,
+      "UNFI": 126066.07,
+      "Walmart": 58894.27,
+      "Whole Foods": 66431.6
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 32.1,
+        "lost_revenue": 9589.92,
+        "otif_fines": 734.53
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 45.2,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 13491.12,
+        "otif_fines": 1292.7
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 40.55,
+        "lost_revenue": 12201.96,
+        "otif_fines": 1277.93
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 53.39,
+        "distributor_returns": 261.12,
+        "lost_revenue": 16881.72,
+        "otif_fines": 1068.17
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 59.39,
+        "distributor_returns": 88.32,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 17272.68,
+        "otif_fines": 2045.53
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 45.68,
+        "distributor_returns": 43.2,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 14402.4,
+        "otif_fines": 532.06
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 35.38,
+        "distributor_returns": 394.56,
+        "dtc_cancellations": 23.97,
+        "lost_revenue": 10689.84,
+        "otif_fines": 1270.9
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 40.06,
+        "distributor_returns": 347.52,
+        "lost_revenue": 11717.64,
+        "otif_fines": 1732.93
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 60.74,
+        "distributor_returns": 261.12,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 18076.08,
+        "otif_fines": 1568.39
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 63.92,
+        "distributor_returns": 220.8,
+        "lost_revenue": 18955.08,
+        "otif_fines": 2061.5
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 68.48,
+        "distributor_returns": 174.72,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 20491.56,
+        "otif_fines": 1728.78
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 62.56,
+        "distributor_returns": 701.76,
+        "lost_revenue": 18618.72,
+        "otif_fines": 2188.24
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 33.27,
+        "distributor_returns": 613.44,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 10113.36,
+        "otif_fines": 721.3
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 32.17,
+        "distributor_returns": 525.12,
+        "lost_revenue": 9936.48,
+        "otif_fines": 712.62
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 43.05,
+        "distributor_returns": 910.08,
+        "lost_revenue": 12620.52,
+        "otif_fines": 2029.63
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 45.42,
+        "distributor_returns": 523.2,
+        "lost_revenue": 13698.84,
+        "otif_fines": 2021.68
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 35.89,
+        "distributor_returns": 434.88,
+        "dtc_margin_leakage": 6.39,
+        "lost_revenue": 10773.6,
+        "otif_fines": 1725.77
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 29.62,
+        "distributor_returns": 834.24,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 8551.08,
+        "otif_fines": 1454.86
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 54.96,
+        "distributor_returns": 131.52,
+        "lost_revenue": 16684.68,
+        "otif_fines": 1051.61
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 55.37,
+        "distributor_returns": 173.76,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 16995.24,
+        "otif_fines": 820.36
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 61.25,
+        "distributor_returns": 307.2,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 18368.76,
+        "otif_fines": 2022.25
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 51.75,
+        "distributor_returns": 259.2,
+        "dtc_margin_leakage": 3.2,
+        "lost_revenue": 15338.88,
+        "otif_fines": 1807.62
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 63.56,
+        "distributor_returns": 917.76,
+        "dtc_cancellations": 23.97,
+        "lost_revenue": 19391.52,
+        "otif_fines": 1455.24
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 62.33,
+        "distributor_returns": 350.4,
+        "dtc_cancellations": 7.99,
+        "dtc_margin_leakage": 3.2,
+        "lost_revenue": 19263.12,
+        "otif_fines": 1430.47
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 36.72,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 10851.48,
+        "otif_fines": 1491.36
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 35.8,
+        "lost_revenue": 10540.32,
+        "otif_fines": 791.71
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 46.25,
+        "lost_revenue": 13877.28,
+        "otif_fines": 1437.63
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 35.95,
+        "lost_revenue": 10559.4,
+        "otif_fines": 735.79
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 49.94,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 15164.04,
+        "otif_fines": 1006.74
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 39.76,
+        "lost_revenue": 11999.76,
+        "otif_fines": 1228.9
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 51.0,
+        "dtc_margin_leakage": 4.79,
+        "lost_revenue": 15314.04,
+        "otif_fines": 312.91
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 38.03,
+        "dtc_cancellations": 15.98,
+        "lost_revenue": 10852.44,
+        "otif_fines": 1231.89
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 45.48,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 14370.36,
+        "otif_fines": 1069.42
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 49.81,
+        "dtc_cancellations": 7.99,
+        "lost_revenue": 14652.24,
+        "otif_fines": 1358.92
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 85.07,
+        "lost_revenue": 25512.24,
+        "otif_fines": 1671.52
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 81.7,
+        "dtc_margin_leakage": 4.79,
+        "lost_revenue": 22536.36,
+        "otif_fines": 3133.33
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 4.9,
+        "lost_revenue": 1537.2,
+        "otif_fines": 47.08
+      }
+    ]
+  },
+  {
+    "sku": "CHP-AS-007",
+    "product_name": "Lemon Herb Chimichurri",
+    "product_line": "Artisan Sauces",
+    "total_cost": 709096.64,
+    "by_dimension": {
+      "chargebacks": 1783.44,
+      "deauthorization": 118599.36,
+      "distributor_returns": 9695.04,
+      "dtc_cancellations": 212.25,
+      "dtc_margin_leakage": 20.38,
+      "lost_revenue": 536455.32,
+      "otif_fines": 42330.86
+    },
+    "by_retailer": {
+      "Costco": 62544.25,
+      "DPI Northwest": 68550.91,
+      "DTC": 232.63,
+      "KeHE": 109980.19,
+      "Regional": 215172.88,
+      "UNFI": 136842.73,
+      "Walmart": 58809.24,
+      "Whole Foods": 56963.82
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 43.38,
+        "lost_revenue": 13162.32,
+        "otif_fines": 1055.72
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 42.72,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 13060.8,
+        "otif_fines": 781.71
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 43.55,
+        "distributor_returns": 91.68,
+        "lost_revenue": 12658.08,
+        "otif_fines": 218.59
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 35.21,
+        "distributor_returns": 232.44,
+        "lost_revenue": 10598.28,
+        "otif_fines": 1010.4
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 45.4,
+        "distributor_returns": 139.68,
+        "lost_revenue": 13696.08,
+        "otif_fines": 2280.3
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 41.25,
+        "distributor_returns": 280.44,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 12000.24,
+        "otif_fines": 1033.42
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 46.24,
+        "distributor_returns": 467.04,
+        "lost_revenue": 14511.72,
+        "otif_fines": 1342.93
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 71.34,
+        "distributor_returns": 279.36,
+        "lost_revenue": 20721.36,
+        "otif_fines": 2867.41
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 34.06,
+        "distributor_returns": 553.32,
+        "lost_revenue": 10417.92,
+        "otif_fines": 985.49
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 73.73,
+        "distributor_returns": 558.72,
+        "lost_revenue": 22665.12,
+        "otif_fines": 1395.2
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 56.71,
+        "distributor_returns": 278.28,
+        "lost_revenue": 16224.12,
+        "otif_fines": 2380.49
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 77.3,
+        "distributor_returns": 373.2,
+        "lost_revenue": 23490.96,
+        "otif_fines": 1379.98
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 52.85,
+        "distributor_returns": 878.52,
+        "lost_revenue": 16343.4,
+        "otif_fines": 774.71
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 36.5,
+        "distributor_returns": 1016.04,
+        "lost_revenue": 10801.2,
+        "otif_fines": 963.09
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 43.48,
+        "distributor_returns": 971.28,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 13658.16,
+        "otif_fines": 1039.41
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 47.07,
+        "distributor_returns": 278.28,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 14515.56,
+        "otif_fines": 775.55
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 47.36,
+        "distributor_returns": 462.72,
+        "lost_revenue": 14304.96,
+        "otif_fines": 805.68
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 38.6,
+        "distributor_returns": 930.84,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 11890.8,
+        "otif_fines": 983.58
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 62.02,
+        "distributor_returns": 369.96,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 18521.4,
+        "otif_fines": 1342.83
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 44.63,
+        "distributor_returns": 279.36,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 13635.96,
+        "otif_fines": 545.18
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 36.21,
+        "distributor_returns": 185.52,
+        "lost_revenue": 10896.72,
+        "otif_fines": 1236.58
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 61.5,
+        "distributor_returns": 327.36,
+        "lost_revenue": 18043.2,
+        "otif_fines": 1152.69
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 48.28,
+        "distributor_returns": 324.12,
+        "dtc_cancellations": 59.43,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 14254.08,
+        "otif_fines": 1578.81
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 88.04,
+        "distributor_returns": 369.96,
+        "dtc_cancellations": 33.96,
+        "lost_revenue": 26684.88,
+        "otif_fines": 2479.25
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 37.56,
+        "distributor_returns": 46.92,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 11175.96,
+        "otif_fines": 736.46
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 31.3,
+        "lost_revenue": 9261.84,
+        "otif_fines": 1454.76
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 41.04,
+        "lost_revenue": 12044.04,
+        "otif_fines": 750.56
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 33.87,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 10389.0,
+        "otif_fines": 1220.42
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 43.08,
+        "lost_revenue": 12883.32,
+        "otif_fines": 339.43
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 47.64,
+        "lost_revenue": 14210.52,
+        "otif_fines": 1016.83
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 41.89,
+        "lost_revenue": 12786.72,
+        "otif_fines": 521.28
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 59.14,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 17697.96,
+        "otif_fines": 776.43
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 39.26,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 12054.6,
+        "otif_fines": 1526.69
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 51.97,
+        "lost_revenue": 15641.28,
+        "otif_fines": 616.06
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 66.15,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 19973.04,
+        "otif_fines": 1446.14
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 67.74,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 20122.56,
+        "otif_fines": 1228.38
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 5.36,
+        "lost_revenue": 1457.16,
+        "otif_fines": 288.43
+      }
+    ]
+  },
+  {
+    "sku": "CHP-SB-003",
+    "product_name": "Coconut Cashew Clusters",
+    "product_line": "Snack Bites",
+    "total_cost": 704810.43,
+    "by_dimension": {
+      "chargebacks": 1775.51,
+      "deauthorization": 121308.44,
+      "distributor_returns": 10240.8,
+      "dtc_cancellations": 246.21,
+      "dtc_margin_leakage": 18.68,
+      "lost_revenue": 528574.2,
+      "otif_fines": 42646.6
+    },
+    "by_retailer": {
+      "Costco": 62195.84,
+      "DPI Northwest": 66328.75,
+      "DTC": 264.89,
+      "KeHE": 105684.41,
+      "Regional": 204315.38,
+      "UNFI": 140680.58,
+      "Walmart": 67310.17,
+      "Whole Foods": 58030.41
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 37.16,
+        "lost_revenue": 10978.8,
+        "otif_fines": 732.13
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 37.85,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 11504.76,
+        "otif_fines": 529.21
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 38.14,
+        "distributor_returns": 186.6,
+        "lost_revenue": 11897.16,
+        "otif_fines": 553.9
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 44.45,
+        "distributor_returns": 279.36,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 13543.44,
+        "otif_fines": 1291.71
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 42.56,
+        "distributor_returns": 697.32,
+        "lost_revenue": 12856.2,
+        "otif_fines": 1254.69
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 46.23,
+        "distributor_returns": 599.16,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 13677.12,
+        "otif_fines": 1583.87
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 60.39,
+        "distributor_returns": 513.96,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 18303.6,
+        "otif_fines": 2327.46
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 38.39,
+        "distributor_returns": 184.44,
+        "lost_revenue": 11589.0,
+        "otif_fines": 1001.56
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 69.3,
+        "distributor_returns": 512.88,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 20173.08,
+        "otif_fines": 1381.66
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 71.86,
+        "distributor_returns": 277.2,
+        "lost_revenue": 21372.6,
+        "otif_fines": 1426.83
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 55.16,
+        "distributor_returns": 1152.48,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 16167.84,
+        "otif_fines": 1623.85
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 72.64,
+        "distributor_returns": 320.88,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 22431.84,
+        "otif_fines": 1248.72
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 56.11,
+        "distributor_returns": 372.12,
+        "lost_revenue": 17197.08,
+        "otif_fines": 547.79
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 30.05,
+        "distributor_returns": 558.72,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 8846.64,
+        "otif_fines": 1198.09
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 38.28,
+        "distributor_returns": 186.6,
+        "lost_revenue": 11616.24,
+        "otif_fines": 788.93
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 37.82,
+        "distributor_returns": 139.68,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 10727.28,
+        "otif_fines": 770.31
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 50.48,
+        "distributor_returns": 419.04,
+        "lost_revenue": 14620.56,
+        "otif_fines": 2077.67
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 38.72,
+        "distributor_returns": 792.24,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 11562.12,
+        "otif_fines": 746.42
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 44.21,
+        "distributor_returns": 463.8,
+        "dtc_cancellations": 8.49,
+        "lost_revenue": 13145.76,
+        "otif_fines": 1760.07
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 43.71,
+        "distributor_returns": 414.72,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 13269.72,
+        "otif_fines": 1261.99
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 41.42,
+        "distributor_returns": 551.16,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 12029.76,
+        "otif_fines": 1026.63
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 54.02,
+        "distributor_returns": 598.08,
+        "lost_revenue": 16197.6,
+        "otif_fines": 1397.61
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 76.53,
+        "distributor_returns": 510.72,
+        "dtc_cancellations": 25.47,
+        "lost_revenue": 23308.08,
+        "otif_fines": 1738.64
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 62.88,
+        "distributor_returns": 417.96,
+        "lost_revenue": 19015.68,
+        "otif_fines": 1168.77
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 40.64,
+        "distributor_returns": 91.68,
+        "lost_revenue": 11484.84,
+        "otif_fines": 569.0
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 27.38,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 8120.16,
+        "otif_fines": 202.47
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 51.35,
+        "lost_revenue": 15487.44,
+        "otif_fines": 2058.31
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 53.49,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 15574.08,
+        "otif_fines": 1529.3
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 38.4,
+        "lost_revenue": 11451.0,
+        "otif_fines": 1068.82
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 45.39,
+        "lost_revenue": 13213.8,
+        "otif_fines": 1095.55
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 41.51,
+        "lost_revenue": 12089.52,
+        "otif_fines": 1006.55
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 45.07,
+        "dtc_cancellations": 16.98,
+        "lost_revenue": 13268.64,
+        "otif_fines": 834.04
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 52.06,
+        "dtc_cancellations": 33.96,
+        "lost_revenue": 15286.68,
+        "otif_fines": 400.11
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 59.75,
+        "dtc_margin_leakage": 3.4,
+        "lost_revenue": 17726.76,
+        "otif_fines": 1070.11
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 72.79,
+        "dtc_cancellations": 8.49,
+        "dtc_margin_leakage": 5.09,
+        "lost_revenue": 21382.44,
+        "otif_fines": 1704.33
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 55.48,
+        "dtc_cancellations": 16.98,
+        "dtc_margin_leakage": 1.7,
+        "lost_revenue": 16276.56,
+        "otif_fines": 1643.62
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 3.85,
+        "lost_revenue": 1180.32,
+        "otif_fines": 25.86
+      }
+    ]
+  },
+  {
+    "sku": "Other",
+    "product_name": "Other (30 SKUs)",
+    "product_line": "Other",
+    "total_cost": 16320075.6,
+    "by_dimension": {
+      "chargebacks": 39458.18,
+      "deauthorization": 3258263.0,
+      "distributor_returns": 226857.36,
+      "dtc_cancellations": 4316.35,
+      "dtc_margin_leakage": 479.05,
+      "lost_revenue": 11812809.12,
+      "otif_fines": 977892.53
+    },
+    "by_retailer": {
+      "Costco": 1876989.47,
+      "DPI Northwest": 1575430.89,
+      "DTC": 4795.4,
+      "KeHE": 2455580.27,
+      "Regional": 4627033.47,
+      "UNFI": 3072602.41,
+      "Walmart": 1366723.52,
+      "Whole Foods": 1340920.17
+    },
+    "by_month": [
+      {
+        "month": "2024-01",
+        "chargebacks": 835.17,
+        "dtc_cancellations": 52.41,
+        "dtc_margin_leakage": 5.39,
+        "lost_revenue": 250365.72,
+        "otif_fines": 17605.64
+      },
+      {
+        "month": "2024-02",
+        "chargebacks": 860.73,
+        "distributor_returns": 618.96,
+        "dtc_cancellations": 59.4,
+        "dtc_margin_leakage": 19.17,
+        "lost_revenue": 255373.92,
+        "otif_fines": 25221.04
+      },
+      {
+        "month": "2024-03",
+        "chargebacks": 1026.11,
+        "distributor_returns": 2775.84,
+        "dtc_cancellations": 91.87,
+        "dtc_margin_leakage": 10.18,
+        "lost_revenue": 307720.68,
+        "otif_fines": 27334.39
+      },
+      {
+        "month": "2024-04",
+        "chargebacks": 923.3,
+        "distributor_returns": 6677.88,
+        "dtc_cancellations": 53.41,
+        "dtc_margin_leakage": 16.28,
+        "lost_revenue": 278449.38,
+        "otif_fines": 24522.72
+      },
+      {
+        "month": "2024-05",
+        "chargebacks": 1031.5,
+        "distributor_returns": 8912.52,
+        "dtc_cancellations": 196.68,
+        "dtc_margin_leakage": 15.97,
+        "lost_revenue": 306920.64,
+        "otif_fines": 28654.67
+      },
+      {
+        "month": "2024-06",
+        "chargebacks": 985.52,
+        "distributor_returns": 10118.64,
+        "dtc_cancellations": 90.86,
+        "dtc_margin_leakage": 29.15,
+        "lost_revenue": 300322.98,
+        "otif_fines": 25347.01
+      },
+      {
+        "month": "2024-07",
+        "chargebacks": 1023.87,
+        "distributor_returns": 9872.4,
+        "dtc_cancellations": 226.16,
+        "dtc_margin_leakage": 5.49,
+        "lost_revenue": 306564.72,
+        "otif_fines": 23250.09
+      },
+      {
+        "month": "2024-08",
+        "chargebacks": 953.42,
+        "distributor_returns": 9560.28,
+        "dtc_cancellations": 51.92,
+        "dtc_margin_leakage": 1.6,
+        "lost_revenue": 281575.5,
+        "otif_fines": 22808.66
+      },
+      {
+        "month": "2024-09",
+        "chargebacks": 1019.19,
+        "distributor_returns": 8965.56,
+        "dtc_cancellations": 172.74,
+        "dtc_margin_leakage": 12.68,
+        "lost_revenue": 304302.84,
+        "otif_fines": 28953.29
+      },
+      {
+        "month": "2024-10",
+        "chargebacks": 1278.25,
+        "distributor_returns": 9237.12,
+        "dtc_cancellations": 122.82,
+        "dtc_margin_leakage": 8.59,
+        "lost_revenue": 378447.84,
+        "otif_fines": 31770.33
+      },
+      {
+        "month": "2024-11",
+        "chargebacks": 1389.89,
+        "distributor_returns": 9804.96,
+        "dtc_cancellations": 192.22,
+        "dtc_margin_leakage": 7.99,
+        "lost_revenue": 416640.48,
+        "otif_fines": 34489.79
+      },
+      {
+        "month": "2024-12",
+        "chargebacks": 1500.16,
+        "distributor_returns": 12338.04,
+        "dtc_cancellations": 166.23,
+        "dtc_margin_leakage": 34.85,
+        "lost_revenue": 449746.74,
+        "otif_fines": 39419.02
+      },
+      {
+        "month": "2025-01",
+        "chargebacks": 997.78,
+        "distributor_returns": 14387.04,
+        "dtc_cancellations": 78.39,
+        "dtc_margin_leakage": 10.68,
+        "lost_revenue": 302184.18,
+        "otif_fines": 23721.66
+      },
+      {
+        "month": "2025-02",
+        "chargebacks": 801.48,
+        "distributor_returns": 15879.0,
+        "dtc_cancellations": 189.69,
+        "lost_revenue": 237800.64,
+        "otif_fines": 22128.0
+      },
+      {
+        "month": "2025-03",
+        "chargebacks": 996.93,
+        "distributor_returns": 13838.04,
+        "dtc_cancellations": 82.38,
+        "dtc_margin_leakage": 7.59,
+        "lost_revenue": 295571.52,
+        "otif_fines": 26163.82
+      },
+      {
+        "month": "2025-04",
+        "chargebacks": 1023.94,
+        "distributor_returns": 8498.4,
+        "dtc_cancellations": 68.39,
+        "dtc_margin_leakage": 39.14,
+        "lost_revenue": 303092.88,
+        "otif_fines": 27923.58
+      },
+      {
+        "month": "2025-05",
+        "chargebacks": 1115.03,
+        "distributor_returns": 10012.56,
+        "dtc_cancellations": 120.29,
+        "dtc_margin_leakage": 13.18,
+        "lost_revenue": 335064.24,
+        "otif_fines": 29826.64
+      },
+      {
+        "month": "2025-06",
+        "chargebacks": 981.24,
+        "distributor_returns": 13771.32,
+        "dtc_cancellations": 129.3,
+        "dtc_margin_leakage": 20.77,
+        "lost_revenue": 296991.12,
+        "otif_fines": 20934.34
+      },
+      {
+        "month": "2025-07",
+        "chargebacks": 1216.82,
+        "distributor_returns": 13425.84,
+        "dtc_cancellations": 209.17,
+        "dtc_margin_leakage": 6.49,
+        "lost_revenue": 364787.16,
+        "otif_fines": 28283.18
+      },
+      {
+        "month": "2025-08",
+        "chargebacks": 1008.01,
+        "distributor_returns": 10347.48,
+        "dtc_cancellations": 34.44,
+        "dtc_margin_leakage": 10.78,
+        "lost_revenue": 304587.36,
+        "otif_fines": 23756.39
+      },
+      {
+        "month": "2025-09",
+        "chargebacks": 1126.83,
+        "distributor_returns": 8481.84,
+        "dtc_cancellations": 126.8,
+        "dtc_margin_leakage": 5.49,
+        "lost_revenue": 335300.76,
+        "otif_fines": 24487.87
+      },
+      {
+        "month": "2025-10",
+        "chargebacks": 1251.97,
+        "distributor_returns": 9309.12,
+        "dtc_cancellations": 68.4,
+        "dtc_margin_leakage": 13.78,
+        "lost_revenue": 376865.7,
+        "otif_fines": 29032.13
+      },
+      {
+        "month": "2025-11",
+        "chargebacks": 1414.88,
+        "distributor_returns": 9480.24,
+        "dtc_cancellations": 231.65,
+        "dtc_margin_leakage": 13.18,
+        "lost_revenue": 423297.54,
+        "otif_fines": 33216.13
+      },
+      {
+        "month": "2025-12",
+        "chargebacks": 1517.79,
+        "distributor_returns": 7914.24,
+        "dtc_cancellations": 152.78,
+        "dtc_margin_leakage": 21.97,
+        "lost_revenue": 463927.8,
+        "otif_fines": 32212.48
+      },
+      {
+        "month": "2026-01",
+        "chargebacks": 854.98,
+        "distributor_returns": 2630.04,
+        "dtc_cancellations": 84.87,
+        "dtc_margin_leakage": 11.68,
+        "lost_revenue": 253935.3,
+        "otif_fines": 20616.34
+      },
+      {
+        "month": "2026-02",
+        "chargebacks": 792.39,
+        "dtc_cancellations": 63.4,
+        "dtc_margin_leakage": 7.19,
+        "lost_revenue": 235470.6,
+        "otif_fines": 19519.29
+      },
+      {
+        "month": "2026-03",
+        "chargebacks": 981.18,
+        "dtc_cancellations": 72.39,
+        "dtc_margin_leakage": 11.98,
+        "lost_revenue": 294708.42,
+        "otif_fines": 19614.99
+      },
+      {
+        "month": "2026-04",
+        "chargebacks": 962.07,
+        "dtc_cancellations": 99.35,
+        "dtc_margin_leakage": 10.88,
+        "lost_revenue": 288292.98,
+        "otif_fines": 21694.73
+      },
+      {
+        "month": "2026-05",
+        "chargebacks": 1103.92,
+        "dtc_cancellations": 52.92,
+        "dtc_margin_leakage": 15.58,
+        "lost_revenue": 331081.14,
+        "otif_fines": 30858.33
+      },
+      {
+        "month": "2026-06",
+        "chargebacks": 946.65,
+        "dtc_cancellations": 74.39,
+        "dtc_margin_leakage": 3.79,
+        "lost_revenue": 283185.72,
+        "otif_fines": 24941.65
+      },
+      {
+        "month": "2026-07",
+        "chargebacks": 1099.25,
+        "dtc_cancellations": 139.29,
+        "dtc_margin_leakage": 10.28,
+        "lost_revenue": 326818.02,
+        "otif_fines": 26435.66
+      },
+      {
+        "month": "2026-08",
+        "chargebacks": 1020.3,
+        "dtc_cancellations": 121.81,
+        "dtc_margin_leakage": 7.79,
+        "lost_revenue": 307677.12,
+        "otif_fines": 23178.88
+      },
+      {
+        "month": "2026-09",
+        "chargebacks": 1110.86,
+        "dtc_cancellations": 154.27,
+        "dtc_margin_leakage": 16.38,
+        "lost_revenue": 333057.66,
+        "otif_fines": 22500.38
+      },
+      {
+        "month": "2026-10",
+        "chargebacks": 1179.62,
+        "dtc_cancellations": 50.92,
+        "dtc_margin_leakage": 4.99,
+        "lost_revenue": 347633.34,
+        "otif_fines": 35004.32
+      },
+      {
+        "month": "2026-11",
+        "chargebacks": 1493.93,
+        "dtc_cancellations": 232.64,
+        "dtc_margin_leakage": 12.28,
+        "lost_revenue": 449319.66,
+        "otif_fines": 40875.61
+      },
+      {
+        "month": "2026-12",
+        "chargebacks": 1536.04,
+        "dtc_cancellations": 201.7,
+        "dtc_margin_leakage": 29.25,
+        "lost_revenue": 456961.32,
+        "otif_fines": 37720.98
+      },
+      {
+        "month": "2027-01",
+        "chargebacks": 97.2,
+        "dtc_margin_leakage": 6.59,
+        "lost_revenue": 28765.5,
+        "otif_fines": 3868.5
+      }
+    ]
+  }
+]
