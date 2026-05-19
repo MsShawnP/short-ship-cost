@@ -1,19 +1,19 @@
 """Cost dimension: deauthorization events triggered by shorts.
 
-Two mechanisms (per PLAN task 5):
+Two mechanisms:
 
-1. Retailer velocity-based (Walmart, Costco, Whole Foods, regionals)
+1. Retailer velocity-based (Walmart, Costco, Whole Foods, Kroger,
+   Sprouts, Regional Group)
    For each (sku, retailer) pair:
      velocity_without_shorts = qty_ordered / store_count / 157 weeks
      velocity_with_shorts    = qty_shipped / store_count / 157 weeks
    If velocity_without_shorts > threshold AND velocity_with_shorts <
-   threshold, the short pushed the SKU below the delisting threshold
-   for that retailer — a short-caused deauth event.
-   Thresholds (units/store/week): Walmart 2.00, Costco 5.00,
-   WF 1.50, Regional 1.00.
+   threshold, the short pushed the SKU below the delisting threshold.
+   Thresholds (units/store/week): Walmart 2.50, Costco 10.00,
+   WF 1.50, Kroger 2.50, Sprouts 1.50, Regional 1.50.
    Cost: 12 months of annualized revenue for that (sku, retailer).
 
-2. Distributor fill-rate-based (UNFI, KeHE)
+2. Distributor fill-rate-based (UNFI, KeHE, DPI Northwest)
    For each (sku, distributor), compute monthly fill rate. If 3+
    consecutive months fall below 90%, the SKU is delisted.
    Cost: 12 months of annualized revenue for that (sku, distributor).
@@ -33,9 +33,10 @@ VELOCITY_THRESHOLD = {
     "Walmart": get("deauth_velocity_walmart"),
     "Costco": get("deauth_velocity_costco"),
     "Whole Foods": get("deauth_velocity_whole_foods"),
+    "Kroger": get("deauth_velocity_kroger"),
+    "Sprouts": get("deauth_velocity_sprouts"),
+    "Regional Group": get("deauth_velocity_regional"),
 }
-for _chain in REGIONAL_CHAINS:
-    VELOCITY_THRESHOLD[_chain] = get("deauth_velocity_regional")
 
 WEEKS_IN_WINDOW = 157
 
@@ -45,9 +46,16 @@ def _velocity_events(db) -> list[dict]:
     determine whether shorts pushed velocity below the delist line."""
     cur = db.cursor()
 
-    # Per-retailer store counts (DTC and distributors aggregated as 1)
-    cur.execute("SELECT retailer, COUNT(*) AS n FROM ext.stores GROUP BY retailer")
-    store_counts = {r["retailer"]: r["n"] for r in cur.fetchall()}
+    # Per (sku, retailer) distributed store counts — velocity measured
+    # only at stores that carry the SKU, not the entire chain.
+    cur.execute("""
+        SELECT s.retailer, dl.sku, COUNT(DISTINCT dl.store_id) AS n
+        FROM ext.distribution_log dl
+        JOIN ext.stores s ON s.store_id = dl.store_id
+        WHERE s.retailer NOT IN ('DTC', 'UNFI', 'KeHE', 'DPI Northwest')
+        GROUP BY s.retailer, dl.sku
+    """)
+    dist_store_counts = {(r["retailer"], r["sku"]): r["n"] for r in cur.fetchall()}
 
     # Per (sku, retailer): qty_ordered units, qty_shipped units, revenue
     cur.execute(
@@ -74,7 +82,7 @@ def _velocity_events(db) -> list[dict]:
         threshold = VELOCITY_THRESHOLD.get(retailer)
         if threshold is None:
             continue
-        store_n = store_counts.get(retailer, 0)
+        store_n = dist_store_counts.get((retailer, r["sku"]), 0)
         if store_n <= 0:
             continue
         demand_units = r["demand_units"] or 0
@@ -129,7 +137,7 @@ def _distributor_events(db) -> list[dict]:
         JOIN order_lines_original lo ON lo.order_id = o.order_id
         JOIN order_lines_shipped ls  ON ls.original_line_id = lo.order_line_id
         JOIN ext.product_master pm   ON pm.sku = lo.sku
-        WHERE o.retailer IN ('UNFI', 'KeHE')
+        WHERE o.retailer IN ('UNFI', 'KeHE', 'DPI Northwest')
         GROUP BY o.retailer, lo.sku, month
         ORDER BY o.retailer, lo.sku, month
         """
@@ -185,7 +193,7 @@ def calculate() -> dict:
         "deauthorizations: 12 months of annualized revenue for each "
         "SKU x retailer pair where shorts pushed velocity below the "
         "delist threshold (or where fill stayed below 90% for 3+ "
-        "consecutive months at UNFI/KeHE).",
+        "consecutive months at UNFI/KeHE/DPI Northwest).",
     )
     result["total_cost"] = sum(r["cost"] for r in rows)
     result.update(aggregate_breakdowns(rows))

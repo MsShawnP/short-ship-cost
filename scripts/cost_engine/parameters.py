@@ -8,8 +8,7 @@ table so downstream consumers can see exactly what was used."""
 from __future__ import annotations
 
 REGIONAL_CHAINS = (
-    "Southside Grocers", "Green Basket Market", "Prairie Provisions",
-    "Mountain Pantry Co", "Harbor Fresh",
+    "Kroger", "Sprouts", "Regional Group",
 )
 
 PARAMETERS: dict[str, dict] = {
@@ -65,36 +64,47 @@ PARAMETERS: dict[str, dict] = {
     },
 
     # Deauthorization thresholds (units per store per week)
+    # Canonical values from IRI/Nielsen category review norms
     "deauth_velocity_walmart": {
-        "value": 2.00, "unit": "units/store/week",
+        "value": 2.50, "unit": "units/store/week",
         "description": "Walmart delisting threshold",
-        "source": "PLAN task 5 spec",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_velocity_costco": {
-        "value": 5.00, "unit": "units/store/week",
-        "description": "Costco delisting threshold",
-        "source": "PLAN task 5 spec",
+        "value": 10.00, "unit": "units/store/week",
+        "description": "Costco delisting threshold (club channel, higher bar)",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_velocity_whole_foods": {
         "value": 1.50, "unit": "units/store/week",
         "description": "Whole Foods delisting threshold",
-        "source": "PLAN task 5 spec",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
+    },
+    "deauth_velocity_kroger": {
+        "value": 2.50, "unit": "units/store/week",
+        "description": "Kroger delisting threshold",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
+    },
+    "deauth_velocity_sprouts": {
+        "value": 1.50, "unit": "units/store/week",
+        "description": "Sprouts delisting threshold",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_velocity_regional": {
-        "value": 1.00, "unit": "units/store/week",
+        "value": 1.50, "unit": "units/store/week",
         "description": "Regional chain delisting threshold",
-        "source": "PLAN task 5 spec",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_distributor_fill_rate": {
         "value": 0.90, "unit": "fraction",
-        "description": "UNFI/KeHE delisting threshold — fill rate below this for "
-                       "consecutive months triggers deauthorization",
-        "source": "PLAN task 5 spec",
+        "description": "Distributor delisting threshold — fill rate below this for "
+                       "consecutive months triggers deauthorization (UNFI, KeHE, DPI Northwest)",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_distributor_consecutive_months": {
         "value": 3, "unit": "months",
-        "description": "UNFI/KeHE consecutive-months window for distributor deauth",
-        "source": "PLAN task 5 spec",
+        "description": "Distributor consecutive-months window for deauth (UNFI, KeHE, DPI Northwest)",
+        "source": "IRI/Nielsen category review norms — delisting floor, not performance target",
     },
     "deauth_revenue_horizon_months": {
         "value": 12, "unit": "months",

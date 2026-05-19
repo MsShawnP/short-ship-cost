@@ -36,14 +36,13 @@ EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
 REGIONAL_CHAINS = {
-    "Southside Grocers", "Green Basket Market", "Prairie Provisions",
-    "Mountain Pantry Co", "Harbor Fresh",
+    "Kroger", "Sprouts", "Regional Group",
 }
 
 TIER_OF_RETAILER = {
     "Walmart": 1, "Costco": 1,
     "Whole Foods": 2,
-    "UNFI": 3, "KeHE": 3,
+    "UNFI": 3, "KeHE": 3, "DPI Northwest": 3,
     # regional chains are tier 4 (set below)
 }
 for _chain in REGIONAL_CHAINS:
@@ -70,6 +69,7 @@ TARGET_FILL = {
     "Whole Foods": 0.75,
     "UNFI": 0.70,
     "KeHE": 0.70,
+    "DPI Northwest": 0.70,
 }
 for _chain in REGIONAL_CHAINS:
     TARGET_FILL[_chain] = 0.65
