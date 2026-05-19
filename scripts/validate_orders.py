@@ -21,8 +21,7 @@ EXTRACT_DB = REPO / "data" / "cinderhaven_extract.db"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
 REGIONAL_CHAINS = (
-    "Southside Grocers", "Green Basket Market", "Prairie Provisions",
-    "Mountain Pantry Co", "Harbor Fresh",
+    "Kroger", "Sprouts", "Regional Group",
 )
 
 CHANNEL_FILL_TARGETS = {

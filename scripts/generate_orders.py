@@ -11,17 +11,19 @@ Per docs/order-data-schema.md:
 - Every (sku, retailer) on an order must have an active authorization
   in distribution_log at order_date.
 
-Volume targets (so that triage at channel-specific fill rates lands
-shipped revenue at ~$25M/yr). UNFI/KeHE share the 18% distributor
-mix at 11/7 (i.e. 60/40 of distributor demand):
-    Walmart      $16.0M/yr  ($48.0M over 3yr)
-    UNFI         $ 3.93M/yr ($11.8M)    = 60% of distributor
-    KeHE         $ 2.50M/yr ($ 7.5M)    = 40% of distributor
-    Whole Foods  $ 3.3M/yr  ($10.0M)
-    Costco       $ 2.8M/yr  ($ 8.4M)
-    Regional     $ 3.5M/yr  ($10.5M)
-    DTC          $ 0.88M/yr ($ 2.6M)
-    TOTAL       ~$32.9M/yr  ($98.8M)
+Volume targets calibrated to Postgres revenue (~$3.9M over 2yr,
+scaled to 3yr window). Channel mix from fct tables:
+    UNFI         $845K/3yr   (distributor, largest channel)
+    DPI Northwest $830K/3yr  (regional distributor)
+    KeHE         $726K/3yr   (distributor)
+    DTC          $550K/3yr   (DTC/Shopify)
+    Sprouts      $524K/3yr   (retailer, 90 stores)
+    Whole Foods  $509K/3yr   (retailer, 120 stores)
+    Regional Grp $493K/3yr   (retailer, 40 stores)
+    Kroger       $491K/3yr   (retailer, 150 stores)
+    Walmart      $482K/3yr   (retailer, 180 stores)
+    Costco       $466K/3yr   (retailer, 60 stores)
+    TOTAL       ~$5.9M/3yr   (~$2.0M/yr)
 """
 from __future__ import annotations
 
@@ -44,23 +46,23 @@ WINDOW_START = date(2024, 1, 6)
 WINDOW_END = date(2027, 1, 2)
 
 REGIONAL_CHAINS = {
-    "Southside Grocers",
-    "Green Basket Market",
-    "Prairie Provisions",
-    "Mountain Pantry Co",
-    "Harbor Fresh",
+    "Kroger",
+    "Sprouts",
+    "Regional Group",
 }
 
 WHOLESALE_COL = {
     "Walmart": "wholesale_walmart",
     "Costco": "wholesale_costco",
     "Whole Foods": "wholesale_whole_foods",
+    "Sprouts": "wholesale_sprouts",
+    "Kroger": "wholesale_regional",
+    "Regional Group": "wholesale_regional",
+    "DPI Northwest": "wholesale_regional",
     "UNFI": "wholesale_unfi",
     "KeHE": "wholesale_kehe",
     "DTC": "wholesale_dtc",
 }
-for chain in REGIONAL_CHAINS:
-    WHOLESALE_COL[chain] = "wholesale_regional"
 
 SEED = 20260507  # reproducibility
 
@@ -237,7 +239,7 @@ def all_months() -> list[date]:
 
 def generate_walmart(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
     """Walmart: one DC = (region, state). Weekly orders per DC with skip
-    probability. 5-12 lines, log-quantities 2-80 cases, velocity-weighted.
+    probability. 3-6 lines, log-quantities 1-5 cases, velocity-weighted.
     """
     dcs = sorted({(s["region"], s["state"]) for s in refs["stores"] if s["retailer"] == "Walmart"})
     velocity = refs["velocity"]
@@ -246,13 +248,13 @@ def generate_walmart(refs: dict, auth: dict, promo: dict, rng: random.Random) ->
     line_seq = 0
     for week in all_weeks():
         for region, state in dcs:
-            if rng.random() > 0.65:  # ~65% chance any DC orders in any given week
+            if rng.random() > 0.06:
                 continue
-            order_date = week + timedelta(days=rng.randint(0, 4))  # Mon-Fri
+            order_date = week + timedelta(days=rng.randint(0, 4))
             available = [s for s in authorized_skus_for(auth, "Walmart", order_date)]
             if not available:
                 continue
-            lo, hi = min(4, len(available)), min(11, len(available))
+            lo, hi = min(3, len(available)), min(6, len(available))
             n_lines = rng.randint(lo, hi) if hi >= lo else hi
             if n_lines == 0:
                 continue
@@ -262,7 +264,6 @@ def generate_walmart(refs: dict, auth: dict, promo: dict, rng: random.Random) ->
             seq += 1
             order_id = f"WMT-{seq:06d}"
             order_type = "replenishment"
-            # If any picked SKU is on a Walmart promo, flag whole order as promo
             if any(is_on_promo(promo, "Walmart", s, order_date) for s in picked):
                 order_type = "promo"
             due = order_date + timedelta(days=rng.randint(7, 10))
@@ -277,9 +278,8 @@ def generate_walmart(refs: dict, auth: dict, promo: dict, rng: random.Random) ->
                 "order_type": order_type,
             })
             for sku in picked:
-                # On-promo lines run heavier
                 on_promo = is_on_promo(promo, "Walmart", sku, order_date)
-                qty = lognormal_qty(3, 70 if on_promo else 47, rng)
+                qty = lognormal_qty(2, 16 if on_promo else 12, rng)
                 line_seq += 1
                 lines.append({
                     "order_line_id": f"WMT-L-{line_seq:07d}",
@@ -294,7 +294,7 @@ def generate_walmart(refs: dict, auth: dict, promo: dict, rng: random.Random) ->
 
 def generate_costco(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
     """Costco: monthly orders per region. Larger orders against
-    contracted volume. 6-15 lines, 20-150 cases each."""
+    contracted volume. 4-8 lines, 2-15 cases each."""
     regions = sorted({s["region"] for s in refs["stores"] if s["retailer"] == "Costco"})
     velocity = refs["velocity"]
     orders, lines = [], []
@@ -302,7 +302,7 @@ def generate_costco(refs: dict, auth: dict, promo: dict, rng: random.Random) -> 
     line_seq = 0
     for month_start in all_months():
         for region in regions:
-            if rng.random() > 0.85:  # most months active
+            if rng.random() > 0.85:
                 continue
             order_date = month_start + timedelta(days=rng.randint(0, 14))
             if order_date > WINDOW_END:
@@ -310,7 +310,7 @@ def generate_costco(refs: dict, auth: dict, promo: dict, rng: random.Random) -> 
             available = authorized_skus_for(auth, "Costco", order_date)
             if not available:
                 continue
-            lo, hi = min(7, len(available)), min(15, len(available))
+            lo, hi = min(4, len(available)), min(8, len(available))
             n_lines = rng.randint(lo, hi) if hi >= lo else hi
             if n_lines == 0:
                 continue
@@ -335,7 +335,7 @@ def generate_costco(refs: dict, auth: dict, promo: dict, rng: random.Random) -> 
             })
             for sku in picked:
                 on_promo = is_on_promo(promo, "Costco", sku, order_date)
-                qty = lognormal_qty(30, 300 if on_promo else 200, rng)
+                qty = lognormal_qty(4, 35 if on_promo else 25, rng)
                 line_seq += 1
                 lines.append({
                     "order_line_id": f"CST-L-{line_seq:06d}",
@@ -349,7 +349,7 @@ def generate_costco(refs: dict, auth: dict, promo: dict, rng: random.Random) -> 
 
 
 def generate_whole_foods(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
-    """Whole Foods: weekly stock-to-level per region. 5-10 lines, 3-40 cases."""
+    """Whole Foods: weekly stock-to-level per region. 3-6 lines, 1-5 cases."""
     regions = sorted({s["region"] for s in refs["stores"] if s["retailer"] == "Whole Foods"})
     velocity = refs["velocity"]
     orders, lines = [], []
@@ -357,13 +357,13 @@ def generate_whole_foods(refs: dict, auth: dict, promo: dict, rng: random.Random
     line_seq = 0
     for week in all_weeks():
         for region in regions:
-            if rng.random() > 0.85:
+            if rng.random() > 0.50:
                 continue
             order_date = week + timedelta(days=rng.randint(0, 4))
             available = authorized_skus_for(auth, "Whole Foods", order_date)
             if not available:
                 continue
-            lo, hi = min(5, len(available)), min(10, len(available))
+            lo, hi = min(3, len(available)), min(6, len(available))
             n_lines = rng.randint(lo, hi) if hi >= lo else hi
             if n_lines == 0:
                 continue
@@ -388,7 +388,7 @@ def generate_whole_foods(refs: dict, auth: dict, promo: dict, rng: random.Random
             })
             for sku in picked:
                 on_promo = is_on_promo(promo, "Whole Foods", sku, order_date)
-                qty = lognormal_qty(5, 80 if on_promo else 60, rng)
+                qty = lognormal_qty(2, 16 if on_promo else 10, rng)
                 line_seq += 1
                 lines.append({
                     "order_line_id": f"WFM-L-{line_seq:07d}",
@@ -505,34 +505,44 @@ def _generate_distributor(
 
 
 def generate_unfi(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
-    """UNFI: twice-weekly replenishment + promo over-orders. Sized for
-    ~60% of distributor demand (~$7.9M over 2 yr)."""
+    """UNFI: twice-weekly replenishment + promo over-orders. Target ~$845K/3yr."""
     return _generate_distributor(
         refs, auth, rng,
         retailer="UNFI", delivery_location="UNFI-AGG",
         id_prefix="UNFI", line_prefix="UNFI",
-        line_lo=12, line_hi=22,
-        qty_lo=8, qty_hi=70,
-        promo_qty_lo=80, promo_qty_hi=400,
+        line_lo=4, line_hi=8,
+        qty_lo=3, qty_hi=22,
+        promo_qty_lo=25, promo_qty_hi=78,
     )
 
 
 def generate_kehe(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
-    """KeHE: twice-weekly replenishment + promo over-orders. Sized for
-    ~40% of distributor demand (~$5.0M over 2 yr). Smaller per-order
-    line counts than UNFI."""
+    """KeHE: twice-weekly replenishment + promo over-orders. Target ~$726K/3yr."""
     return _generate_distributor(
         refs, auth, rng,
         retailer="KeHE", delivery_location="KEHE-AGG",
         id_prefix="KEHE", line_prefix="KEHE",
-        line_lo=8, line_hi=15,
-        qty_lo=5, qty_hi=55,
-        promo_qty_lo=60, promo_qty_hi=300,
+        line_lo=3, line_hi=6,
+        qty_lo=4, qty_hi=28,
+        promo_qty_lo=25, promo_qty_hi=84,
+    )
+
+
+def generate_dpi_northwest(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
+    """DPI Northwest: regional distributor. Target ~$830K/3yr."""
+    return _generate_distributor(
+        refs, auth, rng,
+        retailer="DPI Northwest", delivery_location="DPI-AGG",
+        id_prefix="DPI", line_prefix="DPI",
+        line_lo=4, line_hi=7,
+        qty_lo=3, qty_hi=20,
+        promo_qty_lo=20, promo_qty_hi=65,
     )
 
 
 def generate_regionals(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
-    """Five regional chains, weekly orders per chain. 4-10 lines, 3-50 cases."""
+    """Three regional retailers (Kroger, Sprouts, Regional Group),
+    weekly orders per chain. 3-6 lines, 1-7 cases."""
     velocity = refs["velocity"]
     orders, lines = [], []
     seq = 0
@@ -545,7 +555,7 @@ def generate_regionals(refs: dict, auth: dict, promo: dict, rng: random.Random) 
             available = authorized_skus_for(auth, chain, order_date)
             if not available:
                 continue
-            lo, hi = min(4, len(available)), min(10, len(available))
+            lo, hi = min(3, len(available)), min(6, len(available))
             n_lines = rng.randint(lo, hi) if hi >= lo else hi
             if n_lines == 0:
                 continue
@@ -570,7 +580,7 @@ def generate_regionals(refs: dict, auth: dict, promo: dict, rng: random.Random) 
             })
             for sku in picked:
                 on_promo = is_on_promo(promo, chain, sku, order_date)
-                qty = lognormal_qty(3, 80 if on_promo else 65, rng)
+                qty = lognormal_qty(4, 45 if on_promo else 35, rng)
                 line_seq += 1
                 lines.append({
                     "order_line_id": f"RGN-L-{line_seq:07d}",
@@ -578,20 +588,20 @@ def generate_regionals(refs: dict, auth: dict, promo: dict, rng: random.Random) 
                     "sku": sku,
                     "quantity_ordered": qty,
                     "unit_of_measure": "case",
-                    "unit_price": refs["sku_costs"][sku]["wholesale_regional"],
+                    "unit_price": refs["sku_costs"][sku][WHOLESALE_COL[chain]],
                 })
     return orders, lines
 
 
 def generate_dtc(refs: dict, auth: dict, promo: dict, rng: random.Random) -> tuple[list[dict], list[dict]]:
-    """DTC: ~250 consumer orders per week, 1-4 lines each, 1-3 units per line.
-    Units, not cases. Velocity-weighted SKU selection."""
+    """DTC: ~100 consumer orders/week, 1-4 lines each, 1-3 units per line.
+    Units, not cases. Target ~$550K/3yr."""
     velocity = refs["velocity"]
     orders, lines = [], []
     seq = 0
     line_seq = 0
     weeks = all_weeks()
-    target_orders_per_week = 380
+    target_orders_per_week = 100
     for week in weeks:
         n_orders = rng.randint(int(target_orders_per_week * 0.85), int(target_orders_per_week * 1.15))
         for _ in range(n_orders):
@@ -681,13 +691,16 @@ def _load_calibration_targets() -> tuple[dict[str, float], str]:
     """Load 3-year revenue targets from calibration.json if present,
     otherwise fall back to hardcoded defaults."""
     fallback = {
-        "Walmart": 48_000_000,
-        "UNFI": 11_790_000,
-        "KeHE": 7_500_000,
-        "Whole Foods": 9_900_000,
-        "Costco": 8_400_000,
-        "Regional": 10_500_000,
-        "DTC": 2_640_000,
+        "UNFI": 845_000,
+        "DPI Northwest": 830_000,
+        "KeHE": 726_000,
+        "DTC": 550_000,
+        "Sprouts": 524_000,
+        "Whole Foods": 509_000,
+        "Regional Group": 493_000,
+        "Kroger": 491_000,
+        "Walmart": 482_000,
+        "Costco": 466_000,
     }
     if not CALIBRATION_FILE.exists():
         return fallback, "hardcoded (run extract_calibration.py to sync)"
@@ -715,31 +728,33 @@ def report_revenue(orders: list[dict], lines: list[dict], refs: dict) -> None:
             rev = L["quantity_ordered"] * pack[L["sku"]] * L["unit_price"]
         else:
             rev = L["quantity_ordered"] * L["unit_price"]
-        ch = "Regional" if o["retailer"] in REGIONAL_CHAINS else o["retailer"]
-        by_channel[ch] += rev
-        line_count_by_channel[ch] += 1
+        by_channel[o["retailer"]] += rev
+        line_count_by_channel[o["retailer"]] += 1
 
     target_3yr, target_source = _load_calibration_targets()
     print()
     print(f"Targets: {target_source}")
-    print(f"{'Channel':<14} {'Orders':>8} {'Lines':>10} {'Revenue ($)':>16} {'Target':>14} {'Diff':>10}")
-    print("-" * 76)
+    print(f"{'Channel':<16} {'Orders':>8} {'Lines':>10} {'Revenue ($)':>16} {'Target':>14} {'Diff':>10}")
+    print("-" * 78)
     order_count_by_ch: dict[str, int] = defaultdict(int)
     for o in orders:
-        ch = "Regional" if o["retailer"] in REGIONAL_CHAINS else o["retailer"]
-        order_count_by_ch[ch] += 1
+        order_count_by_ch[o["retailer"]] += 1
+    report_order = [
+        "UNFI", "DPI Northwest", "KeHE", "Walmart", "Costco",
+        "Whole Foods", "Sprouts", "Kroger", "Regional Group", "DTC",
+    ]
     total_rev = 0.0
-    for ch in ["Walmart", "UNFI", "KeHE", "Whole Foods", "Costco", "Regional", "DTC"]:
+    for ch in report_order:
         rev = by_channel.get(ch, 0)
         total_rev += rev
         target = target_3yr.get(ch, 0)
         diff_pct = (rev - target) / target * 100 if target else 0
-        print(f"{ch:<14} {order_count_by_ch.get(ch, 0):>8,} {line_count_by_channel.get(ch, 0):>10,} "
+        print(f"{ch:<16} {order_count_by_ch.get(ch, 0):>8,} {line_count_by_channel.get(ch, 0):>10,} "
               f"${rev:>15,.0f} ${target:>13,} {diff_pct:>+9.1f}%")
     target_total = sum(target_3yr.values())
     diff_pct = (total_rev - target_total) / target_total * 100
-    print("-" * 76)
-    print(f"{'TOTAL':<14} {len(orders):>8,} {len(lines):>10,} ${total_rev:>15,.0f} ${target_total:>13,} {diff_pct:>+9.1f}%")
+    print("-" * 78)
+    print(f"{'TOTAL':<16} {len(orders):>8,} {len(lines):>10,} ${total_rev:>15,.0f} ${target_total:>13,} {diff_pct:>+9.1f}%")
 
 
 def main() -> int:
@@ -760,6 +775,7 @@ def main() -> int:
         (generate_whole_foods, "Whole Foods"),
         (generate_unfi, "UNFI"),
         (generate_kehe, "KeHE"),
+        (generate_dpi_northwest, "DPI Northwest"),
         (generate_regionals, "Regionals"),
         (generate_dtc, "DTC"),
     ]:

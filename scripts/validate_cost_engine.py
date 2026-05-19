@@ -39,8 +39,7 @@ WINDOW_END = "2027-01-15"  # ship/due dates can spill ~13 days past scan window
 WINDOW_END_HARD = "2027-03-31"  # strict outer bound for any date
 
 REGIONAL_CHAINS = (
-    "Southside Grocers", "Green Basket Market", "Prairie Provisions",
-    "Mountain Pantry Co", "Harbor Fresh",
+    "Kroger", "Sprouts", "Regional Group",
 )
 
 CHANNEL_FILL_TARGETS = {

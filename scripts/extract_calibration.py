@@ -30,11 +30,9 @@ REPO = Path(__file__).resolve().parent.parent
 OUT = REPO / "data" / "calibration.json"
 
 REGIONAL_CHAINS = {
-    "Southside Grocers",
-    "Green Basket Market",
-    "Prairie Provisions",
-    "Mountain Pantry Co",
-    "Harbor Fresh",
+    "Kroger",
+    "Sprouts",
+    "Regional Group",
 }
 
 
