@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 
-import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_ORDER } from '../lib/dimensions.js'
+import { DIMENSION_COLOR, DIMENSION_LABEL, DIMENSION_LABEL_SHORT, DIMENSION_ORDER } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct, hexToRgba } from '../lib/format.js'
 import { useTimeRange } from '../lib/timeRange.jsx'
 import PinnedCallout from './PinnedCallout.jsx'
@@ -410,7 +410,7 @@ function SkuTable({
               {dims.map((d) => (
                 <SortableTh
                   key={d}
-                  label={DIMENSION_LABEL[d].split(' ')[0]}
+                  label={DIMENSION_LABEL_SHORT[d]}
                   title={DIMENSION_LABEL[d]}
                   sortKey={d}
                   sortBy={sortBy}
