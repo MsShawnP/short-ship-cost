@@ -28,7 +28,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #c54b4b;
+  background: var(--color-red);
 }
 
 /* Sidebar */
@@ -134,11 +134,11 @@
 }
 
 .validationOk {
-  color: #1f8078;
+  color: var(--color-success);
 }
 
 .validationFail {
-  color: #c54b4b;
+  color: var(--color-red);
 }
 
 .body {
@@ -187,7 +187,7 @@
 }
 
 .fieldValueChanged {
-  color: #c54b4b;
+  color: var(--color-red);
 }
 
 .slider {

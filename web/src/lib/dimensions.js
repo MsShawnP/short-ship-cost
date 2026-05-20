@@ -32,15 +32,15 @@ export const DIMENSION_LABEL_SHORT = {
   triage_labor: 'Triage',
 }
 
-// Sequential teal palette, darkest at largest dimension → lightest at smallest.
-// Used by all sections so the same dimension reads the same color page-wide.
+// Hong Kong (teal) sequential ramp — Lailara DS v2, steps 5–85.
+// Darkest at largest dimension, lightest at smallest.
 export const DIMENSION_COLOR = {
-  lost_revenue: '#0A3D3D',
-  deauthorization: '#14605C',
-  otif_fines: '#1F8078',
-  chargebacks: '#2A9D93',
-  dtc_cancellations: '#45B5AA',
-  triage_labor: '#6BCABD',
-  distributor_returns: '#93DCD2',
-  dtc_margin_leakage: '#BDEEE8',
+  lost_revenue: '#063d32',
+  deauthorization: '#0a5c4b',
+  otif_fines: '#0e6e5a',
+  chargebacks: '#158f75',
+  dtc_cancellations: '#1fa282',
+  triage_labor: '#35b595',
+  distributor_returns: '#6dcdb5',
+  dtc_margin_leakage: '#b5e4d8',
 }

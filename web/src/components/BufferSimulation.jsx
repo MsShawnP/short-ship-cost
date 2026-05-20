@@ -20,8 +20,8 @@ import styles from './BufferSimulation.module.css'
 
 const ORDER = DIMENSION_ORDER
 
-const PRIMARY_TEAL = '#0A3D3D'
-const ACCENT_RED = '#C54B4B'
+const PRIMARY_TEAL = '#063d32'
+const ACCENT_RED = '#cc100a'
 
 function buildScenarioBreakdown(scenario, activeDims) {
   return ORDER.filter((d) => activeDims.has(d))

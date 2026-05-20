@@ -52,7 +52,7 @@
 }
 
 .printButton:hover {
-  background: #14304b;
+  background: var(--color-navy-hover);
 }
 
 /* ---------- Mobile ---------- */
