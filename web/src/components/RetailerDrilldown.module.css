@@ -361,23 +361,23 @@
 }
 
 .colSku {
-  width: 80px;
+  width: 66px;
 }
 
 .colProduct {
-  width: 200px;
-}
-
-.colLine {
   width: 130px;
 }
 
+.colLine {
+  width: 88px;
+}
+
 .colTotal {
-  width: 80px;
+  width: 64px;
 }
 
 .colDim {
-  width: 80px;
+  width: 63px;
 }
 
 .heatCell {
