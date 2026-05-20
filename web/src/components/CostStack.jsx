@@ -156,7 +156,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   const wholesaleMargin = meta.cost_parameters.wholesale_margin_pct.value
   const estMargin = shipped * wholesaleMargin
   const pctOfShipped = shipped > 0 ? total / shipped : 0
-  const pctOfMargin = estMargin > 0 ? total / estMargin : 0
+  const pctOfMargin = estMargin > 0 ? cascading / estMargin : 0
 
   const topCascading = segs
     .filter((s) => s.key !== 'lost_revenue' && s.value > 0)
@@ -376,7 +376,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
         </div>
         <div className={styles.benchmark}>
           <div className={styles.benchmarkValue}>{animPctMargin}</div>
-          <div className={styles.benchmarkLabel}>of estimated gross margin</div>
+          <div className={styles.benchmarkLabel}>of gross margin lost to cascading costs</div>
           <div className={styles.benchmarkNote}>
             assumes {fmtPct(wholesaleMargin)} wholesale margin
           </div>
