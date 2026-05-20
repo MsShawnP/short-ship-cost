@@ -36,7 +36,7 @@ dimensions:
 | Distributor returns | Unsold promo product returned or written off |
 | Triage labour | Human time spent editing every order |
 
-The headline: **$33.2M in total short-shipping costs on $74.2M
+The headline: **$33.1M in total short-shipping costs on $74.2M
 shipped revenue** — 44.7% of the topline. The business thinks it
 ships $25M a year. The demand it cannot see is nearly $34M annually.
 
