@@ -9,6 +9,26 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-05-20 — DS v2 brand kit, review fixes, polish
+
+**Started from:** Project deployed and feature-complete. Requested Lailara DS v2 brand kit migration and code review.
+
+**Did (7 commits, all deployed):**
+1. Migrated all visual tokens to Lailara DS v2 — Hong Kong teal ramp, Chicago-20 accent, Red-42 brand red, London greyscale. 8 files changed.
+2. Ran 6-agent code review, fixed all 7 findings (missed file, hardcoded hex values, red-as-background violation, unused tokens, missing semantic token).
+3. Regenerated OG card with DS v2 palette (2x retina).
+4. Fixed OG/README rounding — $33.2M → $33.1M to match what `Intl.NumberFormat` compact actually produces from $33,128,550.93.
+5. Fixed SKU table column header overlap — switched from `.split(' ')[0]` to `DIMENSION_LABEL_SHORT`, removed `white-space: nowrap`.
+6. Fixed margin benchmark logic — old calc divided total cost ($33.1M including lost revenue) by realized margin ($18.6M) = 178%, which is logically incoherent. Now shows cascading costs only ($9.5M) / realized margin = 51.3%.
+7. Fixed SKU table horizontal scroll — tightened column widths to fit 852px container (was 1130px).
+8. Updated parent `~/projects/active/CLAUDE.md` from DS v1 to DS v2 color tables (not in git — shared instruction file).
+
+**State:** Fully deployed at https://short-ship-cost.msshawnp.workers.dev. Build clean. All DS v2 tokens applied, zero old palette values remaining. No known issues.
+
+**Next:** Project is ship-ready. Only remaining optional item: real-device mobile testing on an actual phone.
+
+---
+
 ## 2026-05-17 16:15 — Full audit + data resync + deploy
 
 **Started from:** Pipeline rebuilt (commit 6ee429b) with new cinderhaven-data but web app JSON never re-exported. Tool displayed $25.6M while databases held $33.2M.
