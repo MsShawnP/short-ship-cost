@@ -59,23 +59,23 @@ May open on phone first; will explore on desktop if hooked.
 
 ### Wave 1 — Quick wins
 
-- [ ] OG/meta tags + social card — add `<meta>` description,
+- [x] OG/meta tags + social card — add `<meta>` description,
       OG title/description/image, Twitter card to `index.html`.
       Consider a static screenshot as OG image.
-- [ ] Code cleanup bundle — fix duplicate `SEQUENTIAL_TEALS` in
+- [x] Code cleanup bundle — fix duplicate `SEQUENTIAL_TEALS` in
       `CostStack.jsx` (import from `lib/dimensions.js`), extract
       `hexToRgba` to `lib/format.js`, consolidate dimension
       ordering to one canonical export, fix footer repo-path
       reference.
-- [ ] Self-host fonts — download Playfair Display + Source Sans 3
+- [x] Self-host fonts — download Playfair Display + Source Sans 3
       woff2 files, serve from `web/public/fonts/`, remove Google
       Fonts `<link>`, add local `@font-face` declarations.
-- [ ] Python dependency manifest — add `requirements.txt` or
+- [x] Python dependency manifest — add `requirements.txt` or
       minimal `pyproject.toml` documenting stdlib-only deps.
 
 ### Wave 2 — Direct framing statement
 
-- [ ] Opening framing — replace the current cold open with a
+- [x] Opening framing — replace the current cold open with a
       sharp 2-3 sentence statement that sets up the problem in
       plain English: the original order is overwritten, the cost
       disappears, here's what it actually looks like. Then drop
@@ -84,13 +84,13 @@ May open on phone first; will explore on desktop if hooked.
 
 ### Wave 3 — Narrative + methodology
 
-- [ ] Insight lines between sections — add one-line declarative
+- [x] Insight lines between sections — add one-line declarative
       statements above or below each chart that tell the viewer
       what the data means. Not paragraphs. "Walmart bears 38% of
       the cost" not "In this section you will see a breakdown by
       retailer." Dynamic where possible (driven by the data, not
       hardcoded). Economist voice.
-- [ ] Methodology appendix — collapsible "About this analysis"
+- [x] Methodology appendix — collapsible "About this analysis"
       section at the bottom of the page. Covers: synthetic data
       modeled on a ~$25M brand, 43K orders, 8 cost dimensions,
       all parameters tunable, methodology documented. Frame as
@@ -99,7 +99,7 @@ May open on phone first; will explore on desktop if hooked.
 
 ### Wave 4 — Safety net
 
-- [ ] JS cost engine tests — test file for `utils/costEngine.js`
+- [x] JS cost engine tests — test file for `utils/costEngine.js`
       covering all exported functions at baseline params (match
       `validation.json`) AND at modified params (known-input
       snapshots). Install vitest or use Node's built-in test
@@ -134,22 +134,22 @@ May open on phone first; will explore on desktop if hooked.
 
 ## Definition of done for this arc
 
-- [ ] URL shared in Slack renders a rich preview card
-- [ ] No duplicate code between components (colors, utilities)
-- [ ] Fonts load from the app's own domain
-- [ ] Opening framing statement sets up the problem before the
+- [x] URL shared in Slack renders a rich preview card
+- [x] No duplicate code between components (colors, utilities)
+- [x] Fonts load from the app's own domain
+- [x] Opening framing statement sets up the problem before the
       headline number
-- [ ] Each section has a declarative insight line that tells the
+- [x] Each section has a declarative insight line that tells the
       viewer what the data means
-- [ ] Methodology section available as a collapsible appendix
-- [ ] JS cost engine has automated tests at baseline and non-
+- [x] Methodology section available as a collapsible appendix
+- [x] JS cost engine has automated tests at baseline and non-
       baseline params, all passing
-- [ ] Animations on number changes, chart reflows, and parameter
+- [x] Animations on number changes, chart reflows, and parameter
       recalculations; respects prefers-reduced-motion
-- [ ] Tool works well on mobile (tested at phone viewport)
-- [ ] Parameter panel usable on mobile (full-screen sheet or
+- [x] Tool works well on mobile (tested at phone viewport)
+- [x] Parameter panel usable on mobile (full-screen sheet or
       drawer)
-- [ ] The tool reads as a self-selling argument, not a dashboard
+- [x] The tool reads as a self-selling argument, not a dashboard
 
 ---
 

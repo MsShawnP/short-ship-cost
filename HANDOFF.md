@@ -29,6 +29,18 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-05-22 — wrap
+
+**Started from:** Project fully deployed and ship-ready after DS v2 migration (2026-05-20). No open issues.
+
+**Did:** Status check only. Confirmed project is ship-ready. Fixed stale PLAN.md checkboxes — Waves 1-4 and definition-of-done items were completed but never marked done.
+
+**State:** Deployed at https://short-ship-cost.msshawnp.workers.dev. Build clean, 34/34 tests pass, DS v2 tokens applied. No known issues. All PLAN.md tasks and DoD items now marked complete.
+
+**Next:** Project is shipped. Only optional item: real-device mobile testing on an actual phone. Otherwise, this project is done.
+
+---
+
 ## 2026-05-17 16:15 — Full audit + data resync + deploy
 
 **Started from:** Pipeline rebuilt (commit 6ee429b) with new cinderhaven-data but web app JSON never re-exported. Tool displayed $25.6M while databases held $33.2M.
