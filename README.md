@@ -86,6 +86,10 @@ web/                React app (Vite)
   src/utils/        Browser-side cost engine
 ```
 
+## Data contract
+
+Canonical Cinderhaven conformance — 50 SKUs across 5 product lines and 6 contracted retailers.
+
 ## Run locally
 
 ```
