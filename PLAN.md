@@ -568,4 +568,4 @@ time series, buffer staircase), parameter panel with JS cost
 engine, print CSS, polish pass, Cloudflare Pages deploy. Custom
 SVG charts, click-to-pin callouts, global time-range filter,
 dimension toggles, code-split Recharts. 218 KB initial / 371 KB
-lazy chunk. Deployed to short-ship-cost.msshawnp.workers.dev.
+lazy chunk. Deployed to shortships.lailarallc.com.
