@@ -23,7 +23,7 @@ For things that didn't work, see FAILURES.md.
 7. Fixed SKU table horizontal scroll — tightened column widths to fit 852px container (was 1130px).
 8. Updated parent `~/projects/active/CLAUDE.md` from DS v1 to DS v2 color tables (not in git — shared instruction file).
 
-**State:** Fully deployed at https://short-ship-cost.msshawnp.workers.dev. Build clean. All DS v2 tokens applied, zero old palette values remaining. No known issues.
+**State:** Fully deployed at https://shortships.lailarallc.com. Build clean. All DS v2 tokens applied, zero old palette values remaining. No known issues.
 
 **Next:** Project is ship-ready. Only remaining optional item: real-device mobile testing on an actual phone.
 
@@ -35,7 +35,7 @@ For things that didn't work, see FAILURES.md.
 
 **Did:** Status check only. Confirmed project is ship-ready. Fixed stale PLAN.md checkboxes — Waves 1-4 and definition-of-done items were completed but never marked done.
 
-**State:** Deployed at https://short-ship-cost.msshawnp.workers.dev. Build clean, 34/34 tests pass, DS v2 tokens applied. No known issues. All PLAN.md tasks and DoD items now marked complete.
+**State:** Deployed at https://shortships.lailarallc.com. Build clean, 34/34 tests pass, DS v2 tokens applied. No known issues. All PLAN.md tasks and DoD items now marked complete.
 
 **Next:** Project is shipped. Only optional item: real-device mobile testing on an actual phone. Otherwise, this project is done.
 
@@ -47,7 +47,7 @@ For things that didn't work, see FAILURES.md.
 
 **Did:** Ran 4-phase audit (AUDIT.md updated). Identified single root cause: missed `export_json.py` step. Re-exported JSON, updated hardcoded numbers in OG tags/methodology/README, deleted obsolete `add_kehe.py`, rewrote stale data/README.md. Tests 34/34, build clean. PR #7 merged and deployed to Cloudflare Workers.
 
-**State:** Fully deployed at https://short-ship-cost.msshawnp.workers.dev with correct data ($33.2M, 50 SKUs, 66K orders, 3-year window). All definition-of-done criteria met. No known issues.
+**State:** Fully deployed at https://shortships.lailarallc.com with correct data ($33.2M, 50 SKUs, 66K orders, 3-year window). All definition-of-done criteria met. No known issues.
 
 **Next:** Project is ship-ready — share with the prospect. Optional: regenerate OG card image to show $33.2M instead of $25.6M; real-device mobile testing on an actual phone.
 
