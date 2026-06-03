@@ -4,7 +4,7 @@ An interactive analysis of what it costs a specialty food business
 when it cannot fulfill retail partner orders as submitted — and why
 the true cost is invisible when the original order is overwritten.
 
-**[View the live tool →](https://shortships.lailarallc.com)**
+**Live:** https://shortships.lailarallc.com
 
 ## What this is
 
