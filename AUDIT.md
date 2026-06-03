@@ -21,7 +21,7 @@ work and deep understanding of the problem.
 ### What Exists Today
 
 A working, deployed interactive tool at
-`short-ship-cost.msshawnp.workers.dev`. Feature-complete across
+`shortships.lailarallc.com`. Feature-complete across
 three build arcs (data pipeline, interactive tool, dashboard-to-
 argument transformation) plus a visual polish pass.
 
@@ -243,7 +243,7 @@ data leak. The attack surface is near-zero.
 Social media crawlers (Slack, Twitter/X, LinkedIn, iMessage) require
 an absolute URL to render the preview image. A relative path will
 either show no image or fail to resolve. Should be:
-`https://short-ship-cost.msshawnp.workers.dev/og-card.png`.
+`https://shortships.lailarallc.com/og-card.png`.
 Same for `twitter:image` on line 15. This is the primary mechanism
 by which the prospect would first encounter the tool (friend shares
 URL in text/Slack), so the preview card is the literal first
@@ -436,7 +436,7 @@ cold via a friend's text.
 ### What Exists Today
 
 The same deployed interactive tool at
-`short-ship-cost.msshawnp.workers.dev`, feature-complete after
+`shortships.lailarallc.com`, feature-complete after
 3 build arcs + visual polish + 2 prior audits. All structural
 issues from the May 15/16 audits were resolved (error boundaries,
 CI, OG image URL, fonts, tests, narrative, mobile).
