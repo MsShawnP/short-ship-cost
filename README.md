@@ -6,11 +6,16 @@ the true cost is invisible when the original order is overwritten.
 
 **Live:** https://shortships.lailarallc.com
 
+## Data Contract
+
+Cinderhaven canonical platform data: 50 SKUs across 5 product lines (Artisan Sauces, Pantry Staples, Specialty Condiments, Dried Goods, Snack Bites), 6 contracted retailers (Walmart, Costco, Whole Foods, Sprouts, Kroger, Regional Group), 3 distributors (UNFI, KeHE, DPI Northwest) + 1 DTC channel (Shopify). Source: `CINDERHAVEN_CANONICAL.md` in `cinderhaven-data-platform`.
+
 ## What this is
 
 Cinderhaven Provisions is a ~$25M specialty food brand selling
-through Walmart, Costco, Whole Foods, UNFI, KeHE, regional chains,
-and direct-to-consumer. Like many manufacturers its size, it
+through 6 contracted retailers (Walmart, Costco, Whole Foods,
+Sprouts, Kroger, Regional Group) via 3 distributors (UNFI, KeHE,
+DPI Northwest) plus a DTC channel (Shopify). Like many manufacturers its size, it
 produces mostly to order and cannot keep up with demand. Every week
 an EDI/sales admin manually edits orders down to match available
 inventory, prioritising by retailer importance and due date. The
@@ -21,7 +26,7 @@ gone. And with it, any ability to measure the cost of not fulfilling
 it.
 
 This tool reconstructs that cost. It generates synthetic order data
-(66,101 orders, $74.2M shipped over three years), models the triage
+(66,101 orders, $53M shipped over three years), models the triage
 process, and calculates the full cost of every short across eight
 dimensions:
 
@@ -36,8 +41,8 @@ dimensions:
 | Distributor returns | Unsold promo product returned or written off |
 | Triage labour | Human time spent editing every order |
 
-The headline: **$33.1M in total short-shipping costs on $74.2M
-shipped revenue** — 44.7% of the topline. The business thinks it
+The headline: **$33.1M in total short-shipping costs across 8 cost
+dimensions on $53M shipped revenue**. The business thinks it
 ships $25M a year. The demand it cannot see is nearly $34M annually.
 
 ## What the tool does
