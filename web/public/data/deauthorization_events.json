@@ -6,9 +6,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5307,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 82005.3
+    "annualized_revenue_lost": 73698.3
   },
   {
     "sku": "CHP-AS-009",
@@ -17,20 +17,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4697,
+    "fill_rate": 0.4143,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 77068.8
-  },
-  {
-    "sku": "CHP-PS-009",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4933,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 74117.12
+    "annualized_revenue_lost": 70416.0
   },
   {
     "sku": "CHP-PS-004",
@@ -39,53 +28,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5379,
+    "fill_rate": 0.4773,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 67729.48
-  },
-  {
-    "sku": "CHP-DG-005",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5294,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 63270.0
-  },
-  {
-    "sku": "CHP-SC-004",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4397,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 61511.4
-  },
-  {
-    "sku": "CHP-SC-001",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.45,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 61434.0
-  },
-  {
-    "sku": "CHP-PS-002",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5263,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 60660.0
+    "annualized_revenue_lost": 67801.24
   },
   {
     "sku": "CHP-AS-009",
@@ -94,53 +39,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4917,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 59395.2
-  },
-  {
-    "sku": "CHP-SB-008",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5926,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 59243.4
-  },
-  {
-    "sku": "CHP-DG-010",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 57730.4
-  },
-  {
-    "sku": "CHP-DG-005",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
     "fill_rate": 0.5217,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 57242.4
+    "annualized_revenue_lost": 65842.56
   },
   {
-    "sku": "CHP-AS-006",
+    "sku": "CHP-PS-009",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5263,
+    "fill_rate": 0.3786,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 57060.0
+    "annualized_revenue_lost": 62184.76
   },
   {
     "sku": "CHP-PS-009",
@@ -149,9 +61,163 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5,
+    "fill_rate": 0.3971,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 56666.48
+    "annualized_revenue_lost": 60327.16
+  },
+  {
+    "sku": "CHP-SC-001",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4493,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 60282.0
+  },
+  {
+    "sku": "CHP-DG-005",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4815,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 56340.8
+  },
+  {
+    "sku": "CHP-DG-005",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5278,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 56034.0
+  },
+  {
+    "sku": "CHP-SC-004",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4643,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 55890.0
+  },
+  {
+    "sku": "CHP-AS-001",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5688,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 55647.0
+  },
+  {
+    "sku": "CHP-AS-006",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4222,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 54450.0
+  },
+  {
+    "sku": "CHP-DG-010",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3077,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 53733.68
+  },
+  {
+    "sku": "CHP-SB-008",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5164,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 52495.2
+  },
+  {
+    "sku": "CHP-AS-010",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3125,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 52104.8
+  },
+  {
+    "sku": "CHP-AS-006",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5417,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 52035.2
+  },
+  {
+    "sku": "CHP-PS-002",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.375,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 51538.4
+  },
+  {
+    "sku": "CHP-PS-002",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4403,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 51228.0
+  },
+  {
+    "sku": "CHP-DG-007",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5174,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 50819.4
+  },
+  {
+    "sku": "CHP-DG-010",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5641,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 50814.36
   },
   {
     "sku": "CHP-SC-009",
@@ -160,97 +226,42 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5146,
+    "fill_rate": 0.5566,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 56149.2
+    "annualized_revenue_lost": 50171.4
   },
   {
-    "sku": "CHP-PS-010",
+    "sku": "CHP-SB-008",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.48,
+    "fill_rate": 0.5147,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 54676.8
+    "annualized_revenue_lost": 49734.0
   },
   {
-    "sku": "CHP-DG-007",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5424,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 54626.4
-  },
-  {
-    "sku": "CHP-SC-002",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4375,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 52502.08
-  },
-  {
-    "sku": "CHP-DG-001",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 52459.2
-  },
-  {
-    "sku": "CHP-SB-003",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4783,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 52074.24
-  },
-  {
-    "sku": "CHP-SB-002",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5526,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 51408.0
-  },
-  {
-    "sku": "CHP-SC-001",
+    "sku": "CHP-AS-010",
     "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4167,
+    "fill_rate": 0.6084,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 51170.4
+    "annualized_revenue_lost": 49438.04
   },
   {
-    "sku": "CHP-SC-006",
-    "retailer": "UNFI",
+    "sku": "CHP-SC-002",
+    "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5,
+    "fill_rate": 0.5167,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 51062.24
+    "annualized_revenue_lost": 49203.44
   },
   {
     "sku": "CHP-SB-010",
@@ -259,9 +270,64 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5126,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 51019.2
+    "annualized_revenue_lost": 48916.8
+  },
+  {
+    "sku": "CHP-DG-007",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4615,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 48852.0
+  },
+  {
+    "sku": "CHP-SB-003",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4196,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 48828.08
+  },
+  {
+    "sku": "CHP-SB-003",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4615,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 48682.08
+  },
+  {
+    "sku": "CHP-SC-002",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.541,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 48666.8
+  },
+  {
+    "sku": "CHP-SC-001",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4868,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 48502.4
   },
   {
     "sku": "CHP-AS-007",
@@ -270,31 +336,42 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4062,
+    "fill_rate": 0.6111,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 50485.12
+    "annualized_revenue_lost": 47398.56
   },
   {
-    "sku": "CHP-AS-010",
+    "sku": "CHP-SC-004",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4747,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 47311.92
+  },
+  {
+    "sku": "CHP-PS-010",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4574,
+    "fill_rate": 0.4692,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 50347.6
+    "annualized_revenue_lost": 46958.4
   },
   {
-    "sku": "CHP-AS-004",
-    "retailer": "UNFI",
+    "sku": "CHP-PS-010",
+    "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4649,
+    "fill_rate": 0.5312,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 49939.2
+    "annualized_revenue_lost": 46500.48
   },
   {
     "sku": "CHP-DG-008",
@@ -303,196 +380,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4792,
+    "fill_rate": 0.5536,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 49498.56
-  },
-  {
-    "sku": "CHP-AS-001",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5058,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 49167.0
-  },
-  {
-    "sku": "CHP-AS-009",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.7792,
-    "velocity_with_shorts": 8.9766,
-    "threshold": 10.0,
-    "fill_rate": 0.7621,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 48706.56
-  },
-  {
-    "sku": "CHP-DG-002",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5407,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 48208.4
-  },
-  {
-    "sku": "CHP-SB-008",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3333,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 48206.16
-  },
-  {
-    "sku": "CHP-AS-003",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.6154,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 47275.2
-  },
-  {
-    "sku": "CHP-AS-008",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 47023.2
-  },
-  {
-    "sku": "CHP-SC-010",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5075,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 46600.36
-  },
-  {
-    "sku": "CHP-PS-010",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4623,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 46529.92
-  },
-  {
-    "sku": "CHP-AS-006",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5333,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 46220.8
-  },
-  {
-    "sku": "CHP-SB-006",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3537,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 46007.24
-  },
-  {
-    "sku": "CHP-PS-002",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5729,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 45429.6
-  },
-  {
-    "sku": "CHP-SC-007",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4524,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 45158.4
-  },
-  {
-    "sku": "CHP-DG-010",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4054,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 44853.68
-  },
-  {
-    "sku": "CHP-SC-008",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4654,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 44618.4
-  },
-  {
-    "sku": "CHP-AS-001",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4573,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 44347.68
-  },
-  {
-    "sku": "CHP-AS-010",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.52,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 43995.32
-  },
-  {
-    "sku": "CHP-DG-007",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.44,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 43966.8
+    "annualized_revenue_lost": 46438.6
   },
   {
     "sku": "CHP-SC-003",
@@ -501,31 +391,86 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3889,
+    "fill_rate": 0.3333,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 43772.4
+    "annualized_revenue_lost": 46368.0
   },
   {
-    "sku": "CHP-AS-002",
+    "sku": "CHP-SC-010",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4,
+    "fill_rate": 0.5244,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 43648.24
+    "annualized_revenue_lost": 46209.44
   },
   {
-    "sku": "CHP-SC-001",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.3427,
-    "velocity_with_shorts": 8.6446,
-    "threshold": 10.0,
-    "fill_rate": 0.7621,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 43430.4
+    "sku": "CHP-SC-006",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4569,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 46155.52
+  },
+  {
+    "sku": "CHP-AS-004",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4018,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 45230.4
+  },
+  {
+    "sku": "CHP-DG-002",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4444,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 44357.84
+  },
+  {
+    "sku": "CHP-SC-009",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3824,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 44331.12
+  },
+  {
+    "sku": "CHP-DG-001",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5282,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 44150.4
+  },
+  {
+    "sku": "CHP-SB-002",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4146,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 44150.4
   },
   {
     "sku": "CHP-DG-002",
@@ -534,210 +479,34 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5259,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 43275.88
-  },
-  {
-    "sku": "CHP-DG-005",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.2718,
-    "velocity_with_shorts": 9.5202,
-    "threshold": 10.0,
-    "fill_rate": 0.7758,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 43046.4
-  },
-  {
-    "sku": "CHP-SC-004",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
     "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 42642.0
-  },
-  {
-    "sku": "CHP-SC-002",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5217,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 42431.32
-  },
-  {
-    "sku": "CHP-SB-001",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4565,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 42210.0
-  },
-  {
-    "sku": "CHP-AS-004",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4118,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 42055.04
-  },
-  {
-    "sku": "CHP-AS-006",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.2719,
-    "velocity_with_shorts": 8.7415,
-    "threshold": 10.0,
-    "fill_rate": 0.7755,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 41721.6
-  },
-  {
-    "sku": "CHP-SB-003",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.381,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 41618.04
-  },
-  {
-    "sku": "CHP-DG-006",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 41335.52
-  },
-  {
-    "sku": "CHP-PS-004",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5625,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 41000.96
-  },
-  {
-    "sku": "CHP-AS-007",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3289,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 40976.8
-  },
-  {
-    "sku": "CHP-SB-008",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.7219,
-    "velocity_with_shorts": 9.9788,
-    "threshold": 10.0,
-    "fill_rate": 0.7844,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 40608.0
-  },
-  {
-    "sku": "CHP-PS-003",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4186,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 40307.68
-  },
-  {
-    "sku": "CHP-SB-002",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 39802.88
+    "annualized_revenue_lost": 44089.16
   },
   {
     "sku": "CHP-SC-008",
-    "retailer": "KeHE",
+    "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4265,
+    "fill_rate": 0.516,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 39626.24
+    "annualized_revenue_lost": 43999.2
   },
   {
-    "sku": "CHP-DG-007",
+    "sku": "CHP-SC-001",
     "retailer": "Costco",
     "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.2204,
-    "velocity_with_shorts": 8.7478,
+    "velocity_without_shorts": 11.4726,
+    "velocity_with_shorts": 8.7516,
     "threshold": 10.0,
-    "fill_rate": 0.7796,
+    "fill_rate": 0.7628,
     "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 39553.92
+    "annualized_revenue_lost": 43968.0
   },
   {
-    "sku": "CHP-SB-006",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5125,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 39399.0
-  },
-  {
-    "sku": "CHP-SC-004",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.2142,
-    "velocity_with_shorts": 7.8657,
-    "threshold": 10.0,
-    "fill_rate": 0.7701,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 39121.92
-  },
-  {
-    "sku": "CHP-DG-001",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4792,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 39052.16
-  },
-  {
-    "sku": "CHP-SB-010",
+    "sku": "CHP-AS-001",
     "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
@@ -745,62 +514,139 @@
     "threshold": 0.9,
     "fill_rate": 0.4545,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 38787.2
+    "annualized_revenue_lost": 43884.0
   },
   {
-    "sku": "CHP-SC-009",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 38733.84
+    "sku": "CHP-DG-005",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 12.4841,
+    "velocity_with_shorts": 9.6985,
+    "threshold": 10.0,
+    "fill_rate": 0.7769,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 43852.8
   },
   {
-    "sku": "CHP-AS-005",
+    "sku": "CHP-AS-008",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4803,
+    "fill_rate": 0.4118,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 38649.12
+    "annualized_revenue_lost": 43835.4
   },
   {
-    "sku": "CHP-SB-010",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.4304,
-    "velocity_with_shorts": 9.8921,
-    "threshold": 10.0,
-    "fill_rate": 0.7958,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 37770.24
-  },
-  {
-    "sku": "CHP-AS-009",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3846,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 37297.92
-  },
-  {
-    "sku": "CHP-SC-010",
+    "sku": "CHP-SB-006",
     "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.373,
+    "fill_rate": 0.5182,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 36956.4
+    "annualized_revenue_lost": 43580.4
+  },
+  {
+    "sku": "CHP-AS-004",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4731,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 43497.6
+  },
+  {
+    "sku": "CHP-AS-002",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4831,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 43338.2
+  },
+  {
+    "sku": "CHP-SB-006",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4605,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 42799.0
+  },
+  {
+    "sku": "CHP-AS-007",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4038,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 42603.36
+  },
+  {
+    "sku": "CHP-SC-007",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5303,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 42537.6
+  },
+  {
+    "sku": "CHP-AS-006",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.5213,
+    "velocity_with_shorts": 8.8823,
+    "threshold": 10.0,
+    "fill_rate": 0.7709,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 42393.6
+  },
+  {
+    "sku": "CHP-AS-003",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4655,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 41554.8
+  },
+  {
+    "sku": "CHP-DG-008",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5185,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 41027.4
+  },
+  {
+    "sku": "CHP-SC-008",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4286,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 40943.68
   },
   {
     "sku": "CHP-SC-006",
@@ -809,31 +655,284 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.45,
+    "fill_rate": 0.5584,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 36887.4
+    "annualized_revenue_lost": 40447.8
+  },
+  {
+    "sku": "CHP-SB-010",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3889,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 39788.16
+  },
+  {
+    "sku": "CHP-DG-007",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.3732,
+    "velocity_with_shorts": 8.7936,
+    "threshold": 10.0,
+    "fill_rate": 0.7732,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 39761.28
+  },
+  {
+    "sku": "CHP-DG-001",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.38,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 39376.0
+  },
+  {
+    "sku": "CHP-SB-008",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 12.1953,
+    "velocity_with_shorts": 9.5881,
+    "threshold": 10.0,
+    "fill_rate": 0.7862,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 39018.24
+  },
+  {
+    "sku": "CHP-SB-002",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4667,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38890.24
+  },
+  {
+    "sku": "CHP-PS-004",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4219,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38632.88
+  },
+  {
+    "sku": "CHP-SB-001",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.475,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38631.6
+  },
+  {
+    "sku": "CHP-SC-009",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 10.5987,
+    "velocity_with_shorts": 8.1165,
+    "threshold": 10.0,
+    "fill_rate": 0.7658,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 38534.4
+  },
+  {
+    "sku": "CHP-SC-010",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.2692,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38377.8
+  },
+  {
+    "sku": "CHP-AS-003",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38305.12
+  },
+  {
+    "sku": "CHP-SB-001",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5577,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 38279.36
+  },
+  {
+    "sku": "CHP-SC-004",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 10.1656,
+    "velocity_with_shorts": 7.685,
+    "threshold": 10.0,
+    "fill_rate": 0.756,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 38223.36
   },
   {
     "sku": "CHP-AS-010",
     "retailer": "Costco",
     "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.442,
-    "velocity_with_shorts": 8.6369,
+    "velocity_without_shorts": 11.3427,
+    "velocity_with_shorts": 8.9312,
     "threshold": 10.0,
-    "fill_rate": 0.7548,
+    "fill_rate": 0.7874,
     "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 36883.2
+    "annualized_revenue_lost": 38139.84
   },
   {
     "sku": "CHP-DG-002",
     "retailer": "Costco",
     "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.6715,
-    "velocity_with_shorts": 8.1711,
+    "velocity_without_shorts": 10.8826,
+    "velocity_with_shorts": 8.4986,
     "threshold": 10.0,
-    "fill_rate": 0.7657,
+    "fill_rate": 0.7809,
     "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 36638.4
+    "annualized_revenue_lost": 38107.2
+  },
+  {
+    "sku": "CHP-AS-008",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5357,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 37905.84
+  },
+  {
+    "sku": "CHP-DG-006",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4265,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 37854.88
+  },
+  {
+    "sku": "CHP-DG-001",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.8013,
+    "velocity_with_shorts": 9.3248,
+    "threshold": 10.0,
+    "fill_rate": 0.7902,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 37478.4
+  },
+  {
+    "sku": "CHP-PS-003",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4875,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 36897.12
+  },
+  {
+    "sku": "CHP-SC-002",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.5132,
+    "velocity_with_shorts": 9.0714,
+    "threshold": 10.0,
+    "fill_rate": 0.7879,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 36801.6
+  },
+  {
+    "sku": "CHP-PS-010",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 10.3949,
+    "velocity_with_shorts": 7.8992,
+    "threshold": 10.0,
+    "fill_rate": 0.7599,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 36510.72
+  },
+  {
+    "sku": "CHP-SB-010",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 12.2856,
+    "velocity_with_shorts": 9.5099,
+    "threshold": 10.0,
+    "fill_rate": 0.7741,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 36311.04
+  },
+  {
+    "sku": "CHP-AS-005",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4333,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 36044.48
+  },
+  {
+    "sku": "CHP-SC-003",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 35960.96
+  },
+  {
+    "sku": "CHP-SC-010",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.6251,
+    "velocity_with_shorts": 9.0155,
+    "threshold": 10.0,
+    "fill_rate": 0.7755,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 35668.8
+  },
+  {
+    "sku": "CHP-SB-002",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.7948,
+    "velocity_with_shorts": 9.2927,
+    "threshold": 10.0,
+    "fill_rate": 0.7879,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 35481.6
   },
   {
     "sku": "CHP-SC-007",
@@ -842,20 +941,31 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4286,
+    "fill_rate": 0.4459,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 36450.4
+    "annualized_revenue_lost": 34930.56
   },
   {
-    "sku": "CHP-SB-002",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.4465,
-    "velocity_with_shorts": 9.534,
-    "threshold": 10.0,
-    "fill_rate": 0.766,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 36403.2
+    "sku": "CHP-DG-006",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4634,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 34660.08
+  },
+  {
+    "sku": "CHP-AS-002",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.505,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 34458.6
   },
   {
     "sku": "CHP-PS-009",
@@ -864,108 +974,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4324,
+    "fill_rate": 0.475,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 36229.6
-  },
-  {
-    "sku": "CHP-SC-003",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 36141.28
-  },
-  {
-    "sku": "CHP-AS-002",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4375,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35811.0
-  },
-  {
-    "sku": "CHP-PS-001",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4595,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35672.4
-  },
-  {
-    "sku": "CHP-SC-002",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.4006,
-    "velocity_with_shorts": 8.7898,
-    "threshold": 10.0,
-    "fill_rate": 0.771,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 35659.2
-  },
-  {
-    "sku": "CHP-DG-008",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5203,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35659.2
-  },
-  {
-    "sku": "CHP-PS-006",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.537,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35508.72
-  },
-  {
-    "sku": "CHP-SB-005",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5128,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35508.72
-  },
-  {
-    "sku": "CHP-AS-008",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3676,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35420.0
-  },
-  {
-    "sku": "CHP-DG-009",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.2889,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35121.6
+    "annualized_revenue_lost": 34246.08
   },
   {
     "sku": "CHP-SB-009",
@@ -974,97 +985,31 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5116,
+    "fill_rate": 0.3793,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 35078.4
+    "annualized_revenue_lost": 34236.0
   },
   {
-    "sku": "CHP-PS-007",
+    "sku": "CHP-PS-001",
     "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.44,
+    "fill_rate": 0.4674,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 34063.2
+    "annualized_revenue_lost": 34052.4
   },
   {
-    "sku": "CHP-AS-002",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.388,
-    "velocity_with_shorts": 8.1853,
-    "threshold": 10.0,
-    "fill_rate": 0.788,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 33926.4
-  },
-  {
-    "sku": "CHP-DG-008",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.7662,
-    "velocity_with_shorts": 8.5569,
-    "threshold": 10.0,
-    "fill_rate": 0.7948,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 33854.4
-  },
-  {
-    "sku": "CHP-DG-001",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.8459,
-    "velocity_with_shorts": 8.3236,
-    "threshold": 10.0,
-    "fill_rate": 0.7674,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 33454.08
-  },
-  {
-    "sku": "CHP-SC-010",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.9409,
-    "velocity_with_shorts": 8.404,
-    "threshold": 10.0,
-    "fill_rate": 0.7681,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 33249.6
-  },
-  {
-    "sku": "CHP-DG-006",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.569,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 33224.88
-  },
-  {
-    "sku": "CHP-PS-002",
+    "sku": "CHP-AS-009",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5,
+    "fill_rate": 0.5357,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 33211.2
-  },
-  {
-    "sku": "CHP-PS-001",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4151,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32678.4
+    "annualized_revenue_lost": 34045.44
   },
   {
     "sku": "CHP-DG-005",
@@ -1073,20 +1018,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5463,
+    "fill_rate": 0.3281,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32524.8
+    "annualized_revenue_lost": 34038.4
   },
   {
-    "sku": "CHP-SC-004",
-    "retailer": "DPI Northwest",
+    "sku": "CHP-PS-001",
+    "retailer": "KeHE",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.45,
+    "fill_rate": 0.49,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32472.0
+    "annualized_revenue_lost": 33506.4
   },
   {
     "sku": "CHP-SC-005",
@@ -1095,163 +1040,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4813,
+    "fill_rate": 0.475,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32324.4
-  },
-  {
-    "sku": "CHP-AS-003",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.56,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32225.76
-  },
-  {
-    "sku": "CHP-SB-001",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4737,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 32071.2
-  },
-  {
-    "sku": "CHP-AS-008",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.5061,
-    "velocity_with_shorts": 8.2339,
-    "threshold": 10.0,
-    "fill_rate": 0.7837,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 31852.8
-  },
-  {
-    "sku": "CHP-SB-006",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.9397,
-    "velocity_with_shorts": 9.9183,
-    "threshold": 10.0,
-    "fill_rate": 0.7665,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 31766.4
-  },
-  {
-    "sku": "CHP-SC-007",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.4922,
-    "velocity_with_shorts": 8.2096,
-    "threshold": 10.0,
-    "fill_rate": 0.7825,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 31758.72
-  },
-  {
-    "sku": "CHP-SB-008",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4688,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 31236.48
-  },
-  {
-    "sku": "CHP-DG-004",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 31194.0
-  },
-  {
-    "sku": "CHP-DG-003",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.2955,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 31161.52
-  },
-  {
-    "sku": "CHP-AS-005",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 31143.84
-  },
-  {
-    "sku": "CHP-AS-006",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4756,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 30888.0
-  },
-  {
-    "sku": "CHP-DG-009",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4262,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 30878.88
-  },
-  {
-    "sku": "CHP-PS-003",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5833,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 30665.44
-  },
-  {
-    "sku": "CHP-SB-004",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.6061,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 30348.0
-  },
-  {
-    "sku": "CHP-DG-007",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3214,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 29921.76
+    "annualized_revenue_lost": 33156.0
   },
   {
     "sku": "CHP-SC-002",
@@ -1260,130 +1051,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4444,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 29875.12
-  },
-  {
-    "sku": "CHP-PS-005",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
     "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 29610.0
-  },
-  {
-    "sku": "CHP-PS-010",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 29314.56
-  },
-  {
-    "sku": "CHP-SC-001",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4167,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 29304.0
-  },
-  {
-    "sku": "CHP-SB-007",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5505,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28942.56
-  },
-  {
-    "sku": "CHP-AS-010",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4118,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28723.2
-  },
-  {
-    "sku": "CHP-DG-010",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4762,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28607.92
-  },
-  {
-    "sku": "CHP-SC-009",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4615,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28369.44
-  },
-  {
-    "sku": "CHP-DG-002",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4595,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28319.28
-  },
-  {
-    "sku": "CHP-DG-008",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5116,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28208.4
-  },
-  {
-    "sku": "CHP-PS-007",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.5672,
-    "velocity_with_shorts": 9.8237,
-    "threshold": 10.0,
-    "fill_rate": 0.7817,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 28131.84
-  },
-  {
-    "sku": "CHP-SB-009",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5789,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 28107.84
+    "annualized_revenue_lost": 33061.6
   },
   {
     "sku": "CHP-SC-005",
@@ -1392,42 +1062,31 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.463,
+    "fill_rate": 0.519,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27864.96
+    "annualized_revenue_lost": 32777.76
   },
   {
-    "sku": "CHP-SB-004",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27839.2
-  },
-  {
-    "sku": "CHP-DG-001",
+    "sku": "CHP-SC-001",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3684,
+    "fill_rate": 0.4268,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27822.08
+    "annualized_revenue_lost": 32524.8
   },
   {
-    "sku": "CHP-AS-001",
-    "retailer": "DPI Northwest",
+    "sku": "CHP-SB-005",
+    "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3571,
+    "fill_rate": 0.42,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27815.04
+    "annualized_revenue_lost": 32485.44
   },
   {
     "sku": "CHP-PS-007",
@@ -1436,20 +1095,130 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27798.72
+    "annualized_revenue_lost": 32457.6
   },
   {
-    "sku": "CHP-SB-003",
+    "sku": "CHP-AS-005",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5795,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 32435.52
+  },
+  {
+    "sku": "CHP-DG-008",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 10.5914,
+    "velocity_with_shorts": 8.1965,
+    "threshold": 10.0,
+    "fill_rate": 0.7739,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 32428.8
+  },
+  {
+    "sku": "CHP-PS-007",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4167,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 32313.6
+  },
+  {
+    "sku": "CHP-AS-008",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 10.7562,
+    "velocity_with_shorts": 8.3277,
+    "threshold": 10.0,
+    "fill_rate": 0.7742,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 32215.68
+  },
+  {
+    "sku": "CHP-SB-008",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4583,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27616.16
+    "annualized_revenue_lost": 31458.24
+  },
+  {
+    "sku": "CHP-PS-003",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.39,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 31275.4
+  },
+  {
+    "sku": "CHP-AS-001",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.25,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 31046.4
+  },
+  {
+    "sku": "CHP-PS-002",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3214,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 30729.6
+  },
+  {
+    "sku": "CHP-SB-004",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 30528.0
+  },
+  {
+    "sku": "CHP-DG-009",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4261,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 30412.8
+  },
+  {
+    "sku": "CHP-DG-009",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.2857,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 29885.28
   },
   {
     "sku": "CHP-SB-005",
@@ -1458,31 +1227,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5244,
+    "fill_rate": 0.5098,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27425.2
+    "annualized_revenue_lost": 29773.04
   },
   {
-    "sku": "CHP-AS-007",
-    "retailer": "DPI Northwest",
+    "sku": "CHP-PS-006",
+    "retailer": "UNFI",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3889,
+    "fill_rate": 0.4933,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 27137.44
-  },
-  {
-    "sku": "CHP-SC-008",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 26970.24
+    "annualized_revenue_lost": 29402.88
   },
   {
     "sku": "CHP-DG-003",
@@ -1491,20 +1249,108 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5714,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 26797.76
+    "annualized_revenue_lost": 29024.16
   },
   {
-    "sku": "CHP-AS-004",
+    "sku": "CHP-SB-009",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3529,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28880.64
+  },
+  {
+    "sku": "CHP-DG-010",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3509,
+    "fill_rate": 0.5484,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 26414.08
+    "annualized_revenue_lost": 28825.28
+  },
+  {
+    "sku": "CHP-SC-009",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4692,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28670.4
+  },
+  {
+    "sku": "CHP-DG-001",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3333,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28554.24
+  },
+  {
+    "sku": "CHP-AS-007",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3333,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28513.76
+  },
+  {
+    "sku": "CHP-AS-006",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28336.0
+  },
+  {
+    "sku": "CHP-SC-004",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3333,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28242.72
+  },
+  {
+    "sku": "CHP-DG-003",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4865,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 28217.28
+  },
+  {
+    "sku": "CHP-DG-007",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3103,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27925.92
   },
   {
     "sku": "CHP-PS-006",
@@ -1513,9 +1359,86 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3333,
+    "fill_rate": 0.4444,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 26048.88
+    "annualized_revenue_lost": 27870.48
+  },
+  {
+    "sku": "CHP-PS-005",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3889,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27774.0
+  },
+  {
+    "sku": "CHP-SB-009",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.6713,
+    "velocity_with_shorts": 9.1873,
+    "threshold": 10.0,
+    "fill_rate": 0.7872,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 27694.08
+  },
+  {
+    "sku": "CHP-DG-004",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.2,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27558.0
+  },
+  {
+    "sku": "CHP-PS-007",
+    "retailer": "Costco",
+    "trigger_type": "velocity_below_threshold",
+    "velocity_without_shorts": 11.9557,
+    "velocity_with_shorts": 9.5099,
+    "threshold": 10.0,
+    "fill_rate": 0.7954,
+    "consecutive_months_below_threshold": null,
+    "annualized_revenue_lost": 27233.28
+  },
+  {
+    "sku": "CHP-SB-004",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27121.6
+  },
+  {
+    "sku": "CHP-SB-010",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4412,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27019.52
+  },
+  {
+    "sku": "CHP-DG-002",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5417,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 27002.8
   },
   {
     "sku": "CHP-SB-002",
@@ -1526,73 +1449,7 @@
     "threshold": 0.9,
     "fill_rate": 0.3333,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25850.88
-  },
-  {
-    "sku": "CHP-AS-002",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3438,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25792.8
-  },
-  {
-    "sku": "CHP-SB-010",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4167,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25738.24
-  },
-  {
-    "sku": "CHP-PS-008",
-    "retailer": "UNFI",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.55,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25694.4
-  },
-  {
-    "sku": "CHP-SC-006",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.25,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25568.4
-  },
-  {
-    "sku": "CHP-DG-006",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.0045,
-    "velocity_with_shorts": 9.199,
-    "threshold": 10.0,
-    "fill_rate": 0.7663,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 25534.08
-  },
-  {
-    "sku": "CHP-SB-009",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.6395,
-    "velocity_with_shorts": 8.4688,
-    "threshold": 10.0,
-    "fill_rate": 0.796,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 25528.32
+    "annualized_revenue_lost": 26752.0
   },
   {
     "sku": "CHP-SC-010",
@@ -1601,42 +1458,9 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3125,
+    "fill_rate": 0.4783,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25093.2
-  },
-  {
-    "sku": "CHP-AS-008",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4231,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 25034.24
-  },
-  {
-    "sku": "CHP-PS-003",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5208,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 24550.24
-  },
-  {
-    "sku": "CHP-DG-004",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 24508.8
+    "annualized_revenue_lost": 26730.0
   },
   {
     "sku": "CHP-PS-005",
@@ -1645,42 +1469,130 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
+    "fill_rate": 0.5128,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 26367.2
+  },
+  {
+    "sku": "CHP-AS-002",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
     "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 24343.2
+    "annualized_revenue_lost": 26096.4
   },
   {
-    "sku": "CHP-PS-001",
+    "sku": "CHP-SC-008",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.51,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 25879.04
+  },
+  {
+    "sku": "CHP-SC-006",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5238,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 25832.4
+  },
+  {
+    "sku": "CHP-AS-004",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4915,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 25484.8
+  },
+  {
+    "sku": "CHP-PS-010",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3182,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 25048.32
+  },
+  {
+    "sku": "CHP-DG-003",
     "retailer": "Costco",
     "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 11.8217,
-    "velocity_with_shorts": 8.9427,
+    "velocity_without_shorts": 11.335,
+    "velocity_with_shorts": 8.9197,
     "threshold": 10.0,
-    "fill_rate": 0.7565,
+    "fill_rate": 0.7869,
     "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 24261.12
+    "annualized_revenue_lost": 24647.04
   },
   {
-    "sku": "CHP-SC-007",
+    "sku": "CHP-SB-007",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4444,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 24579.36
+  },
+  {
+    "sku": "CHP-SB-003",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.375,
+    "fill_rate": 0.4512,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 23962.4
+    "annualized_revenue_lost": 24429.68
   },
   {
-    "sku": "CHP-SC-003",
+    "sku": "CHP-DG-004",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3824,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 24214.4
+  },
+  {
+    "sku": "CHP-PS-008",
+    "retailer": "UNFI",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4655,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 24143.04
+  },
+  {
+    "sku": "CHP-AS-010",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.434,
+    "fill_rate": 0.4844,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 23420.32
+    "annualized_revenue_lost": 24085.6
   },
   {
     "sku": "CHP-PS-008",
@@ -1689,9 +1601,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4894,
+    "fill_rate": 0.5688,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 23101.2
+    "annualized_revenue_lost": 24012.0
+  },
+  {
+    "sku": "CHP-SB-007",
+    "retailer": "KeHE",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 23531.76
   },
   {
     "sku": "CHP-AS-003",
@@ -1700,42 +1623,42 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5455,
+    "fill_rate": 0.3636,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 22964.48
+    "annualized_revenue_lost": 23531.2
   },
   {
-    "sku": "CHP-AS-005",
+    "sku": "CHP-PS-003",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.1333,
+    "fill_rate": 0.5443,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 22799.92
+    "annualized_revenue_lost": 23257.52
   },
   {
-    "sku": "CHP-SC-005",
+    "sku": "CHP-DG-008",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4138,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 22513.92
+    "annualized_revenue_lost": 22611.6
   },
   {
-    "sku": "CHP-DG-003",
+    "sku": "CHP-PS-005",
     "retailer": "Costco",
     "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 10.2115,
-    "velocity_with_shorts": 8.0713,
+    "velocity_without_shorts": 12.6879,
+    "velocity_with_shorts": 9.9363,
     "threshold": 10.0,
-    "fill_rate": 0.7904,
+    "fill_rate": 0.7831,
     "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 22302.72
+    "annualized_revenue_lost": 22464.0
   },
   {
     "sku": "CHP-SB-006",
@@ -1744,97 +1667,42 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.3571,
+    "fill_rate": 0.5,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 22096.8
+    "annualized_revenue_lost": 22426.8
   },
   {
-    "sku": "CHP-PS-005",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.0764,
-    "velocity_with_shorts": 9.6476,
-    "threshold": 10.0,
-    "fill_rate": 0.7989,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 21811.2
-  },
-  {
-    "sku": "CHP-SB-009",
+    "sku": "CHP-SC-007",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5385,
+    "fill_rate": 0.3788,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 21669.12
+    "annualized_revenue_lost": 22397.76
   },
   {
-    "sku": "CHP-DG-006",
+    "sku": "CHP-SC-003",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.525,
+    "fill_rate": 0.3125,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 21472.88
+    "annualized_revenue_lost": 22015.84
   },
   {
-    "sku": "CHP-SB-001",
+    "sku": "CHP-SC-005",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4667,
+    "fill_rate": 0.4038,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 21116.48
-  },
-  {
-    "sku": "CHP-PS-007",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4375,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 19810.56
-  },
-  {
-    "sku": "CHP-SB-005",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3913,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 19631.04
-  },
-  {
-    "sku": "CHP-SB-007",
-    "retailer": "Costco",
-    "trigger_type": "velocity_below_threshold",
-    "velocity_without_shorts": 12.2038,
-    "velocity_with_shorts": 9.6306,
-    "threshold": 10.0,
-    "fill_rate": 0.7891,
-    "consecutive_months_below_threshold": null,
-    "annualized_revenue_lost": 19595.52
-  },
-  {
-    "sku": "CHP-SB-007",
-    "retailer": "KeHE",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.3857,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 18861.84
+    "annualized_revenue_lost": 21141.12
   },
   {
     "sku": "CHP-DG-009",
@@ -1843,9 +1711,53 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5333,
+    "fill_rate": 0.4423,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 18817.92
+    "annualized_revenue_lost": 20940.48
+  },
+  {
+    "sku": "CHP-AS-008",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.398,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 20783.84
+  },
+  {
+    "sku": "CHP-AS-005",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4559,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 20672.08
+  },
+  {
+    "sku": "CHP-SB-001",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3462,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 20328.0
+  },
+  {
+    "sku": "CHP-SB-005",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 20211.84
   },
   {
     "sku": "CHP-PS-001",
@@ -1854,9 +1766,53 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4118,
+    "fill_rate": 0.3,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 17371.2
+    "annualized_revenue_lost": 20053.44
+  },
+  {
+    "sku": "CHP-DG-006",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.3731,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 20020.0
+  },
+  {
+    "sku": "CHP-PS-007",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.5161,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 19282.56
+  },
+  {
+    "sku": "CHP-SB-009",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4211,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 18881.28
+  },
+  {
+    "sku": "CHP-DG-003",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4815,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 17946.72
   },
   {
     "sku": "CHP-PS-006",
@@ -1865,9 +1821,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.4318,
+    "fill_rate": 0.4727,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 17017.44
+    "annualized_revenue_lost": 17056.16
+  },
+  {
+    "sku": "CHP-DG-004",
+    "retailer": "DPI Northwest",
+    "trigger_type": "distributor_consecutive_months",
+    "velocity_without_shorts": null,
+    "velocity_with_shorts": null,
+    "threshold": 0.9,
+    "fill_rate": 0.4615,
+    "consecutive_months_below_threshold": 3,
+    "annualized_revenue_lost": 16825.6
   },
   {
     "sku": "CHP-SB-004",
@@ -1876,20 +1843,20 @@
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.5641,
+    "fill_rate": 0.4412,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 16561.6
+    "annualized_revenue_lost": 16350.4
   },
   {
-    "sku": "CHP-PS-008",
+    "sku": "CHP-SB-007",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
     "velocity_with_shorts": null,
     "threshold": 0.9,
-    "fill_rate": 0.2667,
+    "fill_rate": 0.4815,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 16552.8
+    "annualized_revenue_lost": 15238.08
   },
   {
     "sku": "CHP-PS-005",
@@ -1900,21 +1867,10 @@
     "threshold": 0.9,
     "fill_rate": 0.3333,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 16174.4
+    "annualized_revenue_lost": 15224.0
   },
   {
-    "sku": "CHP-SB-007",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.5,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 16061.76
-  },
-  {
-    "sku": "CHP-DG-003",
+    "sku": "CHP-PS-008",
     "retailer": "DPI Northwest",
     "trigger_type": "distributor_consecutive_months",
     "velocity_without_shorts": null,
@@ -1922,17 +1878,6 @@
     "threshold": 0.9,
     "fill_rate": 0.3333,
     "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 15855.84
-  },
-  {
-    "sku": "CHP-DG-004",
-    "retailer": "DPI Northwest",
-    "trigger_type": "distributor_consecutive_months",
-    "velocity_without_shorts": null,
-    "velocity_with_shorts": null,
-    "threshold": 0.9,
-    "fill_rate": 0.4634,
-    "consecutive_months_below_threshold": 3,
-    "annualized_revenue_lost": 15646.4
+    "annualized_revenue_lost": 14018.4
   }
 ]

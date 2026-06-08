@@ -40,7 +40,7 @@ DATABASE_URL = os.environ.get(
     f" password={os.environ.get('POSTGRES_PASSWORD', '')}",
 )
 
-WEEKS_IN_WINDOW = 157  # 2024-01-06 .. 2027-01-02
+WEEKS_IN_WINDOW = 157  # 2023-01-06 .. 2026-01-02
 
 
 def _sqlite_row(d: dict) -> dict:

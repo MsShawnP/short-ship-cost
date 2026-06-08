@@ -1,1222 +1,1237 @@
 [
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "chargebacks",
-    "cost": 1636.28
+    "cost": 1615.75
   },
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "dtc_cancellations",
     "cost": 86.87
   },
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "dtc_margin_leakage",
     "cost": 5.39
   },
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "lost_revenue",
-    "cost": 486745.26
+    "cost": 483552.42
   },
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "otif_fines",
-    "cost": 42211.29
+    "cost": 42728.56
   },
   {
-    "month": "2024-01",
+    "month": "2023-01",
     "dimension": "triage_labor",
     "cost": 10503.0
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "chargebacks",
-    "cost": 1739.01
+    "cost": 1724.64
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "distributor_returns",
-    "cost": 1232.52
+    "cost": 841.56
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "dtc_cancellations",
     "cost": 257.21
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "dtc_margin_leakage",
     "cost": 33.96
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "lost_revenue",
-    "cost": 515732.16
+    "cost": 508634.88
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "otif_fines",
-    "cost": 46304.37
+    "cost": 45256.78
   },
   {
-    "month": "2024-02",
+    "month": "2023-02",
     "dimension": "triage_labor",
-    "cost": 10962.0
+    "cost": 10638.0
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "chargebacks",
-    "cost": 2031.52
+    "cost": 1952.19
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "distributor_returns",
-    "cost": 5244.54
+    "cost": 4716.06
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "dtc_cancellations",
     "cost": 149.81
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "dtc_margin_leakage",
     "cost": 21.67
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "lost_revenue",
-    "cost": 608529.48
+    "cost": 584752.08
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "otif_fines",
-    "cost": 51728.75
+    "cost": 51263.97
   },
   {
-    "month": "2024-03",
+    "month": "2023-03",
     "dimension": "triage_labor",
-    "cost": 12402.0
+    "cost": 12339.0
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "chargebacks",
-    "cost": 1857.37
+    "cost": 1862.81
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "distributor_returns",
-    "cost": 12203.94
+    "cost": 9975.66
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "dtc_cancellations",
     "cost": 100.36
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "dtc_margin_leakage",
     "cost": 27.76
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "lost_revenue",
-    "cost": 560884.44
+    "cost": 561001.02
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "otif_fines",
-    "cost": 51791.56
+    "cost": 49760.91
   },
   {
-    "month": "2024-04",
+    "month": "2023-04",
     "dimension": "triage_labor",
-    "cost": 12024.0
+    "cost": 11952.0
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "chargebacks",
-    "cost": 2076.2
+    "cost": 2032.55
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "distributor_returns",
-    "cost": 18498.78
+    "cost": 18036.96
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "dtc_cancellations",
     "cost": 294.57
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "dtc_margin_leakage",
     "cost": 24.56
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "lost_revenue",
-    "cost": 618163.08
+    "cost": 604418.64
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "otif_fines",
-    "cost": 61294.05
+    "cost": 63844.3
   },
   {
-    "month": "2024-05",
+    "month": "2023-05",
     "dimension": "triage_labor",
-    "cost": 13617.0
+    "cost": 13608.0
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "chargebacks",
-    "cost": 2010.09
+    "cost": 2036.99
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "distributor_returns",
-    "cost": 21866.88
+    "cost": 20975.04
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "dtc_cancellations",
     "cost": 285.15
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "dtc_margin_leakage",
     "cost": 43.14
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "lost_revenue",
-    "cost": 609840.0
+    "cost": 618073.32
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "otif_fines",
-    "cost": 51547.25
+    "cost": 51371.61
   },
   {
-    "month": "2024-06",
+    "month": "2023-06",
     "dimension": "triage_labor",
-    "cost": 12726.0
+    "cost": 12870.0
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "chargebacks",
-    "cost": 2024.48
+    "cost": 1965.15
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "distributor_returns",
-    "cost": 22413.0
+    "cost": 25077.9
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "dtc_cancellations",
     "cost": 458.92
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "dtc_margin_leakage",
     "cost": 24.07
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "lost_revenue",
-    "cost": 605596.26
+    "cost": 588712.98
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "otif_fines",
-    "cost": 52161.21
+    "cost": 51730.56
   },
   {
-    "month": "2024-07",
+    "month": "2023-07",
     "dimension": "triage_labor",
-    "cost": 12960.0
+    "cost": 12807.0
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "chargebacks",
-    "cost": 1949.85
+    "cost": 2001.81
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "distributor_returns",
-    "cost": 16881.36
+    "cost": 16315.56
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "dtc_cancellations",
     "cost": 103.36
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "dtc_margin_leakage",
     "cost": 12.19
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "lost_revenue",
-    "cost": 576364.26
+    "cost": 589133.4
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "otif_fines",
-    "cost": 53507.97
+    "cost": 52330.33
   },
   {
-    "month": "2024-08",
+    "month": "2023-08",
     "dimension": "triage_labor",
-    "cost": 12420.0
+    "cost": 12483.0
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "chargebacks",
-    "cost": 2068.38
+    "cost": 2145.06
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "distributor_returns",
-    "cost": 17956.2
+    "cost": 16710.36
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "dtc_cancellations",
     "cost": 350.05
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "dtc_margin_leakage",
     "cost": 21.87
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "lost_revenue",
-    "cost": 616076.34
+    "cost": 638825.1
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "otif_fines",
-    "cost": 59728.92
+    "cost": 59653.88
   },
   {
-    "month": "2024-09",
+    "month": "2023-09",
     "dimension": "triage_labor",
-    "cost": 13437.0
+    "cost": 13491.0
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "chargebacks",
-    "cost": 2631.53
+    "cost": 2399.01
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "distributor_returns",
-    "cost": 18945.9
+    "cost": 19994.46
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "dtc_cancellations",
-    "cost": 297.13
+    "cost": 270.61
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "dtc_margin_leakage",
-    "cost": 13.18
+    "cost": 13.89
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "lost_revenue",
-    "cost": 782159.28
+    "cost": 712895.88
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "otif_fines",
-    "cost": 65783.0
+    "cost": 67143.13
   },
   {
-    "month": "2024-10",
+    "month": "2023-10",
     "dimension": "triage_labor",
-    "cost": 15543.0
+    "cost": 15660.0
   },
   {
-    "month": "2024-11",
+    "month": "2023-11",
     "dimension": "chargebacks",
-    "cost": 2818.1
+    "cost": 2965.78
   },
   {
-    "month": "2024-11",
+    "month": "2023-11",
     "dimension": "distributor_returns",
-    "cost": 19157.4
+    "cost": 21029.1
   },
   {
-    "month": "2024-11",
+    "month": "2023-11",
     "dimension": "dtc_cancellations",
-    "cost": 345.56
+    "cost": 204.73
   },
   {
-    "month": "2024-11",
+    "month": "2023-11",
+    "dimension": "dtc_margin_leakage",
+    "cost": 39.95
+  },
+  {
+    "month": "2023-11",
+    "dimension": "lost_revenue",
+    "cost": 882855.42
+  },
+  {
+    "month": "2023-11",
+    "dimension": "otif_fines",
+    "cost": 73748.99
+  },
+  {
+    "month": "2023-11",
+    "dimension": "triage_labor",
+    "cost": 18702.0
+  },
+  {
+    "month": "2023-12",
+    "dimension": "chargebacks",
+    "cost": 3018.25
+  },
+  {
+    "month": "2023-12",
+    "dimension": "distributor_returns",
+    "cost": 28445.1
+  },
+  {
+    "month": "2023-12",
+    "dimension": "dtc_cancellations",
+    "cost": 443.95
+  },
+  {
+    "month": "2023-12",
+    "dimension": "dtc_margin_leakage",
+    "cost": 37.65
+  },
+  {
+    "month": "2023-12",
+    "dimension": "lost_revenue",
+    "cost": 917646.66
+  },
+  {
+    "month": "2023-12",
+    "dimension": "otif_fines",
+    "cost": 80051.52
+  },
+  {
+    "month": "2023-12",
+    "dimension": "triage_labor",
+    "cost": 19629.0
+  },
+  {
+    "month": "2024-01",
+    "dimension": "chargebacks",
+    "cost": 1971.43
+  },
+  {
+    "month": "2024-01",
+    "dimension": "distributor_returns",
+    "cost": 32580.18
+  },
+  {
+    "month": "2024-01",
+    "dimension": "dtc_cancellations",
+    "cost": 212.25
+  },
+  {
+    "month": "2024-01",
+    "dimension": "dtc_margin_leakage",
+    "cost": 32.66
+  },
+  {
+    "month": "2024-01",
+    "dimension": "lost_revenue",
+    "cost": 590795.28
+  },
+  {
+    "month": "2024-01",
+    "dimension": "otif_fines",
+    "cost": 47869.61
+  },
+  {
+    "month": "2024-01",
+    "dimension": "triage_labor",
+    "cost": 12078.0
+  },
+  {
+    "month": "2024-02",
+    "dimension": "chargebacks",
+    "cost": 1573.48
+  },
+  {
+    "month": "2024-02",
+    "dimension": "distributor_returns",
+    "cost": 31648.38
+  },
+  {
+    "month": "2024-02",
+    "dimension": "dtc_cancellations",
+    "cost": 250.65
+  },
+  {
+    "month": "2024-02",
+    "dimension": "dtc_margin_leakage",
+    "cost": 9.29
+  },
+  {
+    "month": "2024-02",
+    "dimension": "lost_revenue",
+    "cost": 479255.16
+  },
+  {
+    "month": "2024-02",
+    "dimension": "otif_fines",
+    "cost": 37094.55
+  },
+  {
+    "month": "2024-02",
+    "dimension": "triage_labor",
+    "cost": 10080.0
+  },
+  {
+    "month": "2024-03",
+    "dimension": "chargebacks",
+    "cost": 1948.73
+  },
+  {
+    "month": "2024-03",
+    "dimension": "distributor_returns",
+    "cost": 27649.8
+  },
+  {
+    "month": "2024-03",
+    "dimension": "dtc_cancellations",
+    "cost": 349.01
+  },
+  {
+    "month": "2024-03",
+    "dimension": "dtc_margin_leakage",
+    "cost": 11.89
+  },
+  {
+    "month": "2024-03",
+    "dimension": "lost_revenue",
+    "cost": 577600.08
+  },
+  {
+    "month": "2024-03",
+    "dimension": "otif_fines",
+    "cost": 48982.12
+  },
+  {
+    "month": "2024-03",
+    "dimension": "triage_labor",
+    "cost": 12348.0
+  },
+  {
+    "month": "2024-04",
+    "dimension": "chargebacks",
+    "cost": 1878.71
+  },
+  {
+    "month": "2024-04",
+    "dimension": "distributor_returns",
+    "cost": 19665.18
+  },
+  {
+    "month": "2024-04",
+    "dimension": "dtc_cancellations",
+    "cost": 262.63
+  },
+  {
+    "month": "2024-04",
+    "dimension": "dtc_margin_leakage",
+    "cost": 36.95
+  },
+  {
+    "month": "2024-04",
+    "dimension": "lost_revenue",
+    "cost": 564215.52
+  },
+  {
+    "month": "2024-04",
+    "dimension": "otif_fines",
+    "cost": 48898.03
+  },
+  {
+    "month": "2024-04",
+    "dimension": "triage_labor",
+    "cost": 12420.0
+  },
+  {
+    "month": "2024-05",
+    "dimension": "chargebacks",
+    "cost": 2229.28
+  },
+  {
+    "month": "2024-05",
+    "dimension": "distributor_returns",
+    "cost": 22341.18
+  },
+  {
+    "month": "2024-05",
+    "dimension": "dtc_cancellations",
+    "cost": 291.16
+  },
+  {
+    "month": "2024-05",
+    "dimension": "dtc_margin_leakage",
+    "cost": 35.95
+  },
+  {
+    "month": "2024-05",
+    "dimension": "lost_revenue",
+    "cost": 662305.92
+  },
+  {
+    "month": "2024-05",
+    "dimension": "otif_fines",
+    "cost": 56191.92
+  },
+  {
+    "month": "2024-05",
+    "dimension": "triage_labor",
+    "cost": 13797.0
+  },
+  {
+    "month": "2024-06",
+    "dimension": "chargebacks",
+    "cost": 1976.32
+  },
+  {
+    "month": "2024-06",
+    "dimension": "distributor_returns",
+    "cost": 23678.94
+  },
+  {
+    "month": "2024-06",
+    "dimension": "dtc_cancellations",
+    "cost": 323.07
+  },
+  {
+    "month": "2024-06",
     "dimension": "dtc_margin_leakage",
     "cost": 34.26
   },
   {
+    "month": "2024-06",
+    "dimension": "lost_revenue",
+    "cost": 591165.06
+  },
+  {
+    "month": "2024-06",
+    "dimension": "otif_fines",
+    "cost": 57674.08
+  },
+  {
+    "month": "2024-06",
+    "dimension": "triage_labor",
+    "cost": 13176.0
+  },
+  {
+    "month": "2024-07",
+    "dimension": "chargebacks",
+    "cost": 2171.37
+  },
+  {
+    "month": "2024-07",
+    "dimension": "distributor_returns",
+    "cost": 23594.28
+  },
+  {
+    "month": "2024-07",
+    "dimension": "dtc_cancellations",
+    "cost": 181.27
+  },
+  {
+    "month": "2024-07",
+    "dimension": "dtc_margin_leakage",
+    "cost": 10.38
+  },
+  {
+    "month": "2024-07",
+    "dimension": "lost_revenue",
+    "cost": 658631.4
+  },
+  {
+    "month": "2024-07",
+    "dimension": "otif_fines",
+    "cost": 55618.49
+  },
+  {
+    "month": "2024-07",
+    "dimension": "triage_labor",
+    "cost": 13437.0
+  },
+  {
+    "month": "2024-08",
+    "dimension": "chargebacks",
+    "cost": 2021.82
+  },
+  {
+    "month": "2024-08",
+    "dimension": "distributor_returns",
+    "cost": 23412.66
+  },
+  {
+    "month": "2024-08",
+    "dimension": "dtc_cancellations",
+    "cost": 316.58
+  },
+  {
+    "month": "2024-08",
+    "dimension": "dtc_margin_leakage",
+    "cost": 31.96
+  },
+  {
+    "month": "2024-08",
+    "dimension": "lost_revenue",
+    "cost": 599175.42
+  },
+  {
+    "month": "2024-08",
+    "dimension": "otif_fines",
+    "cost": 53369.9
+  },
+  {
+    "month": "2024-08",
+    "dimension": "triage_labor",
+    "cost": 12834.0
+  },
+  {
+    "month": "2024-09",
+    "dimension": "chargebacks",
+    "cost": 2281.42
+  },
+  {
+    "month": "2024-09",
+    "dimension": "distributor_returns",
+    "cost": 18012.24
+  },
+  {
+    "month": "2024-09",
+    "dimension": "dtc_cancellations",
+    "cost": 87.88
+  },
+  {
+    "month": "2024-09",
+    "dimension": "dtc_margin_leakage",
+    "cost": 13.08
+  },
+  {
+    "month": "2024-09",
+    "dimension": "lost_revenue",
+    "cost": 677071.26
+  },
+  {
+    "month": "2024-09",
+    "dimension": "otif_fines",
+    "cost": 58153.96
+  },
+  {
+    "month": "2024-09",
+    "dimension": "triage_labor",
+    "cost": 14769.0
+  },
+  {
+    "month": "2024-10",
+    "dimension": "chargebacks",
+    "cost": 2320.19
+  },
+  {
+    "month": "2024-10",
+    "dimension": "distributor_returns",
+    "cost": 17379.72
+  },
+  {
+    "month": "2024-10",
+    "dimension": "dtc_cancellations",
+    "cost": 206.26
+  },
+  {
+    "month": "2024-10",
+    "dimension": "dtc_margin_leakage",
+    "cost": 34.85
+  },
+  {
+    "month": "2024-10",
+    "dimension": "lost_revenue",
+    "cost": 684932.16
+  },
+  {
+    "month": "2024-10",
+    "dimension": "otif_fines",
+    "cost": 64410.15
+  },
+  {
+    "month": "2024-10",
+    "dimension": "triage_labor",
+    "cost": 15624.0
+  },
+  {
+    "month": "2024-11",
+    "dimension": "chargebacks",
+    "cost": 2842.39
+  },
+  {
+    "month": "2024-11",
+    "dimension": "distributor_returns",
+    "cost": 19803.9
+  },
+  {
+    "month": "2024-11",
+    "dimension": "dtc_cancellations",
+    "cost": 462.87
+  },
+  {
+    "month": "2024-11",
+    "dimension": "dtc_margin_leakage",
+    "cost": 30.56
+  },
+  {
     "month": "2024-11",
     "dimension": "lost_revenue",
-    "cost": 840995.88
+    "cost": 849257.16
   },
   {
     "month": "2024-11",
     "dimension": "otif_fines",
-    "cost": 76269.52
+    "cost": 71972.68
   },
   {
     "month": "2024-11",
     "dimension": "triage_labor",
-    "cost": 17388.0
+    "cost": 18189.0
   },
   {
     "month": "2024-12",
     "dimension": "chargebacks",
-    "cost": 2987.11
+    "cost": 3220.84
   },
   {
     "month": "2024-12",
     "dimension": "distributor_returns",
-    "cost": 24804.78
+    "cost": 18634.5
   },
   {
     "month": "2024-12",
     "dimension": "dtc_cancellations",
-    "cost": 311.08
+    "cost": 368.02
   },
   {
     "month": "2024-12",
     "dimension": "dtc_margin_leakage",
-    "cost": 45.14
+    "cost": 52.13
   },
   {
     "month": "2024-12",
     "dimension": "lost_revenue",
-    "cost": 894522.9
+    "cost": 955742.4
   },
   {
     "month": "2024-12",
     "dimension": "otif_fines",
-    "cost": 80540.32
+    "cost": 91097.18
   },
   {
     "month": "2024-12",
     "dimension": "triage_labor",
-    "cost": 19593.0
+    "cost": 20916.0
   },
   {
     "month": "2025-01",
     "dimension": "chargebacks",
-    "cost": 2039.0
+    "cost": 1851.74
   },
   {
     "month": "2025-01",
     "dimension": "distributor_returns",
-    "cost": 27344.16
+    "cost": 3838.2
   },
   {
     "month": "2025-01",
     "dimension": "dtc_cancellations",
-    "cost": 106.86
+    "cost": 68.9
   },
   {
     "month": "2025-01",
     "dimension": "dtc_margin_leakage",
-    "cost": 37.95
+    "cost": 25.96
   },
   {
     "month": "2025-01",
     "dimension": "lost_revenue",
-    "cost": 614855.16
+    "cost": 557522.58
   },
   {
     "month": "2025-01",
     "dimension": "otif_fines",
-    "cost": 52713.86
+    "cost": 54403.87
   },
   {
     "month": "2025-01",
     "dimension": "triage_labor",
-    "cost": 12411.0
+    "cost": 12024.0
   },
   {
     "month": "2025-02",
     "dimension": "chargebacks",
-    "cost": 1568.74
+    "cost": 1632.19
   },
   {
     "month": "2025-02",
     "dimension": "distributor_returns",
-    "cost": 29658.18
+    "cost": 35.88
   },
   {
     "month": "2025-02",
     "dimension": "dtc_cancellations",
-    "cost": 354.03
+    "cost": 243.22
+  },
+  {
+    "month": "2025-02",
+    "dimension": "dtc_margin_leakage",
+    "cost": 49.74
   },
   {
     "month": "2025-02",
     "dimension": "lost_revenue",
-    "cost": 469905.3
+    "cost": 483056.1
   },
   {
     "month": "2025-02",
     "dimension": "otif_fines",
-    "cost": 42979.3
+    "cost": 45777.7
   },
   {
     "month": "2025-02",
     "dimension": "triage_labor",
-    "cost": 10053.0
+    "cost": 10422.0
   },
   {
     "month": "2025-03",
     "dimension": "chargebacks",
-    "cost": 1985.64
-  },
-  {
-    "month": "2025-03",
-    "dimension": "distributor_returns",
-    "cost": 26871.3
+    "cost": 1765.43
   },
   {
     "month": "2025-03",
     "dimension": "dtc_cancellations",
-    "cost": 187.27
+    "cost": 64.91
   },
   {
     "month": "2025-03",
     "dimension": "dtc_margin_leakage",
-    "cost": 13.48
+    "cost": 35.16
   },
   {
     "month": "2025-03",
     "dimension": "lost_revenue",
-    "cost": 593258.28
+    "cost": 526547.58
   },
   {
     "month": "2025-03",
     "dimension": "otif_fines",
-    "cost": 52863.07
+    "cost": 51285.12
   },
   {
     "month": "2025-03",
     "dimension": "triage_labor",
-    "cost": 12402.0
+    "cost": 11772.0
   },
   {
     "month": "2025-04",
     "dimension": "chargebacks",
-    "cost": 1989.64
-  },
-  {
-    "month": "2025-04",
-    "dimension": "distributor_returns",
-    "cost": 16556.4
+    "cost": 1969.47
   },
   {
     "month": "2025-04",
     "dimension": "dtc_cancellations",
-    "cost": 196.25
+    "cost": 279.12
   },
   {
     "month": "2025-04",
     "dimension": "dtc_margin_leakage",
-    "cost": 60.32
+    "cost": 33.76
   },
   {
     "month": "2025-04",
     "dimension": "lost_revenue",
-    "cost": 590022.72
+    "cost": 590889.36
   },
   {
     "month": "2025-04",
     "dimension": "otif_fines",
-    "cost": 55467.64
+    "cost": 44896.34
   },
   {
     "month": "2025-04",
     "dimension": "triage_labor",
-    "cost": 13050.0
+    "cost": 12438.0
   },
   {
     "month": "2025-05",
     "dimension": "chargebacks",
-    "cost": 2171.26
-  },
-  {
-    "month": "2025-05",
-    "dimension": "distributor_returns",
-    "cost": 20577.9
+    "cost": 2217.69
   },
   {
     "month": "2025-05",
     "dimension": "dtc_cancellations",
-    "cost": 310.59
+    "cost": 217.7
   },
   {
     "month": "2025-05",
     "dimension": "dtc_margin_leakage",
-    "cost": 27.36
+    "cost": 5.99
   },
   {
     "month": "2025-05",
     "dimension": "lost_revenue",
-    "cost": 649265.88
+    "cost": 666890.46
   },
   {
     "month": "2025-05",
     "dimension": "otif_fines",
-    "cost": 66654.4
+    "cost": 53757.22
   },
   {
     "month": "2025-05",
     "dimension": "triage_labor",
-    "cost": 14049.0
+    "cost": 14130.0
   },
   {
     "month": "2025-06",
     "dimension": "chargebacks",
-    "cost": 1997.55
-  },
-  {
-    "month": "2025-06",
-    "dimension": "distributor_returns",
-    "cost": 26664.48
+    "cost": 2041.71
   },
   {
     "month": "2025-06",
     "dimension": "dtc_cancellations",
-    "cost": 248.17
+    "cost": 146.82
   },
   {
     "month": "2025-06",
     "dimension": "dtc_margin_leakage",
-    "cost": 55.83
+    "cost": 6.69
   },
   {
     "month": "2025-06",
     "dimension": "lost_revenue",
-    "cost": 602919.54
+    "cost": 610259.4
   },
   {
     "month": "2025-06",
     "dimension": "otif_fines",
-    "cost": 47466.15
+    "cost": 58517.19
   },
   {
     "month": "2025-06",
     "dimension": "triage_labor",
-    "cost": 13032.0
+    "cost": 12969.0
   },
   {
     "month": "2025-07",
     "dimension": "chargebacks",
-    "cost": 2331.67
-  },
-  {
-    "month": "2025-07",
-    "dimension": "distributor_returns",
-    "cost": 24578.16
+    "cost": 2158.57
   },
   {
     "month": "2025-07",
     "dimension": "dtc_cancellations",
-    "cost": 478.88
+    "cost": 369.02
   },
   {
     "month": "2025-07",
-    "dimension": "dtc_margin_leakage",
-    "cost": 6.49
-  },
-  {
-    "month": "2025-07",
-    "dimension": "lost_revenue",
-    "cost": 699373.44
-  },
-  {
-    "month": "2025-07",
-    "dimension": "otif_fines",
-    "cost": 58948.97
-  },
-  {
-    "month": "2025-07",
-    "dimension": "triage_labor",
-    "cost": 14274.0
-  },
-  {
-    "month": "2025-08",
-    "dimension": "chargebacks",
-    "cost": 2036.02
-  },
-  {
-    "month": "2025-08",
-    "dimension": "distributor_returns",
-    "cost": 20218.8
-  },
-  {
-    "month": "2025-08",
-    "dimension": "dtc_cancellations",
-    "cost": 140.82
-  },
-  {
-    "month": "2025-08",
-    "dimension": "dtc_margin_leakage",
-    "cost": 25.37
-  },
-  {
-    "month": "2025-08",
-    "dimension": "lost_revenue",
-    "cost": 614075.1
-  },
-  {
-    "month": "2025-08",
-    "dimension": "otif_fines",
-    "cost": 48264.77
-  },
-  {
-    "month": "2025-08",
-    "dimension": "triage_labor",
-    "cost": 12465.0
-  },
-  {
-    "month": "2025-09",
-    "dimension": "chargebacks",
-    "cost": 2223.88
-  },
-  {
-    "month": "2025-09",
-    "dimension": "distributor_returns",
-    "cost": 17338.98
-  },
-  {
-    "month": "2025-09",
-    "dimension": "dtc_cancellations",
-    "cost": 306.6
-  },
-  {
-    "month": "2025-09",
-    "dimension": "dtc_margin_leakage",
-    "cost": 7.79
-  },
-  {
-    "month": "2025-09",
-    "dimension": "lost_revenue",
-    "cost": 659693.94
-  },
-  {
-    "month": "2025-09",
-    "dimension": "otif_fines",
-    "cost": 53520.64
-  },
-  {
-    "month": "2025-09",
-    "dimension": "triage_labor",
-    "cost": 14688.0
-  },
-  {
-    "month": "2025-10",
-    "dimension": "chargebacks",
-    "cost": 2570.69
-  },
-  {
-    "month": "2025-10",
-    "dimension": "distributor_returns",
-    "cost": 18362.22
-  },
-  {
-    "month": "2025-10",
-    "dimension": "dtc_cancellations",
-    "cost": 115.35
-  },
-  {
-    "month": "2025-10",
-    "dimension": "dtc_margin_leakage",
-    "cost": 25.86
-  },
-  {
-    "month": "2025-10",
-    "dimension": "lost_revenue",
-    "cost": 766397.7
-  },
-  {
-    "month": "2025-10",
-    "dimension": "otif_fines",
-    "cost": 67970.31
-  },
-  {
-    "month": "2025-10",
-    "dimension": "triage_labor",
-    "cost": 16119.0
-  },
-  {
-    "month": "2025-11",
-    "dimension": "chargebacks",
-    "cost": 3017.35
-  },
-  {
-    "month": "2025-11",
-    "dimension": "distributor_returns",
-    "cost": 21145.44
-  },
-  {
-    "month": "2025-11",
-    "dimension": "dtc_cancellations",
-    "cost": 576.77
-  },
-  {
-    "month": "2025-11",
-    "dimension": "dtc_margin_leakage",
-    "cost": 23.37
-  },
-  {
-    "month": "2025-11",
-    "dimension": "lost_revenue",
-    "cost": 903869.46
-  },
-  {
-    "month": "2025-11",
-    "dimension": "otif_fines",
-    "cost": 70547.41
-  },
-  {
-    "month": "2025-11",
-    "dimension": "triage_labor",
-    "cost": 18018.0
-  },
-  {
-    "month": "2025-12",
-    "dimension": "chargebacks",
-    "cost": 3147.15
-  },
-  {
-    "month": "2025-12",
-    "dimension": "distributor_returns",
-    "cost": 17964.6
-  },
-  {
-    "month": "2025-12",
-    "dimension": "dtc_cancellations",
-    "cost": 301.12
-  },
-  {
-    "month": "2025-12",
-    "dimension": "dtc_margin_leakage",
-    "cost": 34.75
-  },
-  {
-    "month": "2025-12",
-    "dimension": "lost_revenue",
-    "cost": 958630.26
-  },
-  {
-    "month": "2025-12",
-    "dimension": "otif_fines",
-    "cost": 74020.32
-  },
-  {
-    "month": "2025-12",
-    "dimension": "triage_labor",
-    "cost": 20115.0
-  },
-  {
-    "month": "2026-01",
-    "dimension": "chargebacks",
-    "cost": 1744.99
-  },
-  {
-    "month": "2026-01",
-    "dimension": "distributor_returns",
-    "cost": 6349.92
-  },
-  {
-    "month": "2026-01",
-    "dimension": "dtc_cancellations",
-    "cost": 104.85
-  },
-  {
-    "month": "2026-01",
-    "dimension": "dtc_margin_leakage",
-    "cost": 21.27
-  },
-  {
-    "month": "2026-01",
-    "dimension": "lost_revenue",
-    "cost": 516849.36
-  },
-  {
-    "month": "2026-01",
-    "dimension": "otif_fines",
-    "cost": 45709.8
-  },
-  {
-    "month": "2026-01",
-    "dimension": "triage_labor",
-    "cost": 10935.0
-  },
-  {
-    "month": "2026-02",
-    "dimension": "chargebacks",
-    "cost": 1519.13
-  },
-  {
-    "month": "2026-02",
-    "dimension": "dtc_cancellations",
-    "cost": 79.88
-  },
-  {
-    "month": "2026-02",
-    "dimension": "dtc_margin_leakage",
-    "cost": 14.48
-  },
-  {
-    "month": "2026-02",
-    "dimension": "lost_revenue",
-    "cost": 448466.64
-  },
-  {
-    "month": "2026-02",
-    "dimension": "otif_fines",
-    "cost": 39732.46
-  },
-  {
-    "month": "2026-02",
-    "dimension": "triage_labor",
-    "cost": 9846.0
-  },
-  {
-    "month": "2026-03",
-    "dimension": "chargebacks",
-    "cost": 1910.28
-  },
-  {
-    "month": "2026-03",
-    "dimension": "dtc_cancellations",
-    "cost": 112.85
-  },
-  {
-    "month": "2026-03",
-    "dimension": "dtc_margin_leakage",
-    "cost": 18.18
-  },
-  {
-    "month": "2026-03",
-    "dimension": "lost_revenue",
-    "cost": 574874.88
-  },
-  {
-    "month": "2026-03",
-    "dimension": "otif_fines",
-    "cost": 44779.89
-  },
-  {
-    "month": "2026-03",
-    "dimension": "triage_labor",
-    "cost": 12123.0
-  },
-  {
-    "month": "2026-04",
-    "dimension": "chargebacks",
-    "cost": 1886.94
-  },
-  {
-    "month": "2026-04",
-    "dimension": "dtc_cancellations",
-    "cost": 246.69
-  },
-  {
-    "month": "2026-04",
-    "dimension": "dtc_margin_leakage",
-    "cost": 10.88
-  },
-  {
-    "month": "2026-04",
-    "dimension": "lost_revenue",
-    "cost": 563646.6
-  },
-  {
-    "month": "2026-04",
-    "dimension": "otif_fines",
-    "cost": 48231.78
-  },
-  {
-    "month": "2026-04",
-    "dimension": "triage_labor",
-    "cost": 12087.0
-  },
-  {
-    "month": "2026-05",
-    "dimension": "chargebacks",
-    "cost": 2158.89
-  },
-  {
-    "month": "2026-05",
-    "dimension": "dtc_cancellations",
-    "cost": 123.35
-  },
-  {
-    "month": "2026-05",
-    "dimension": "dtc_margin_leakage",
-    "cost": 27.36
-  },
-  {
-    "month": "2026-05",
-    "dimension": "lost_revenue",
-    "cost": 648621.12
-  },
-  {
-    "month": "2026-05",
-    "dimension": "otif_fines",
-    "cost": 60802.24
-  },
-  {
-    "month": "2026-05",
-    "dimension": "triage_labor",
-    "cost": 13779.0
-  },
-  {
-    "month": "2026-06",
-    "dimension": "chargebacks",
-    "cost": 1834.28
-  },
-  {
-    "month": "2026-06",
-    "dimension": "dtc_cancellations",
-    "cost": 111.35
-  },
-  {
-    "month": "2026-06",
-    "dimension": "dtc_margin_leakage",
-    "cost": 3.79
-  },
-  {
-    "month": "2026-06",
-    "dimension": "lost_revenue",
-    "cost": 546223.74
-  },
-  {
-    "month": "2026-06",
-    "dimension": "otif_fines",
-    "cost": 51657.32
-  },
-  {
-    "month": "2026-06",
-    "dimension": "triage_labor",
-    "cost": 12015.0
-  },
-  {
-    "month": "2026-07",
-    "dimension": "chargebacks",
-    "cost": 2247.76
-  },
-  {
-    "month": "2026-07",
-    "dimension": "dtc_cancellations",
-    "cost": 204.23
-  },
-  {
-    "month": "2026-07",
     "dimension": "dtc_margin_leakage",
     "cost": 23.07
   },
   {
-    "month": "2026-07",
+    "month": "2025-07",
     "dimension": "lost_revenue",
-    "cost": 670306.92
+    "cost": 652844.76
   },
   {
-    "month": "2026-07",
+    "month": "2025-07",
     "dimension": "otif_fines",
-    "cost": 53261.74
+    "cost": 53812.92
   },
   {
-    "month": "2026-07",
+    "month": "2025-07",
     "dimension": "triage_labor",
-    "cost": 14229.0
+    "cost": 13374.0
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "chargebacks",
-    "cost": 1988.56
+    "cost": 1868.46
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "dtc_cancellations",
-    "cost": 334.59
+    "cost": 327.6
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "dtc_margin_leakage",
-    "cost": 9.59
+    "cost": 1.6
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "lost_revenue",
-    "cost": 596085.24
+    "cost": 558838.14
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "otif_fines",
-    "cost": 46172.06
+    "cost": 50632.73
   },
   {
-    "month": "2026-08",
+    "month": "2025-08",
     "dimension": "triage_labor",
-    "cost": 12762.0
+    "cost": 12078.0
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "chargebacks",
-    "cost": 2195.57
+    "cost": 2056.35
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "dtc_cancellations",
-    "cost": 273.64
+    "cost": 154.27
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "dtc_margin_leakage",
-    "cost": 19.77
+    "cost": 19.38
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "lost_revenue",
-    "cost": 656739.54
+    "cost": 613510.32
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "otif_fines",
-    "cost": 50455.66
+    "cost": 50478.36
   },
   {
-    "month": "2026-09",
+    "month": "2025-09",
     "dimension": "triage_labor",
-    "cost": 13554.0
+    "cost": 13203.0
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "chargebacks",
-    "cost": 2389.94
+    "cost": 2331.58
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "dtc_cancellations",
-    "cost": 205.77
+    "cost": 358.56
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "dtc_margin_leakage",
-    "cost": 19.28
+    "cost": 40.05
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "lost_revenue",
-    "cost": 706481.7
+    "cost": 694118.1
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "otif_fines",
-    "cost": 66995.51
+    "cost": 59416.81
   },
   {
-    "month": "2026-10",
+    "month": "2025-10",
     "dimension": "triage_labor",
-    "cost": 14931.0
+    "cost": 15120.0
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "chargebacks",
-    "cost": 2932.08
+    "cost": 2945.29
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "dtc_cancellations",
-    "cost": 496.85
+    "cost": 464.89
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "dtc_margin_leakage",
-    "cost": 54.34
+    "cost": 26.16
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "lost_revenue",
-    "cost": 880543.38
+    "cost": 883319.34
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "otif_fines",
-    "cost": 78133.86
+    "cost": 69093.5
   },
   {
-    "month": "2026-11",
+    "month": "2025-11",
     "dimension": "triage_labor",
-    "cost": 18522.0
+    "cost": 18531.0
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "chargebacks",
-    "cost": 3029.23
+    "cost": 3228.77
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "dtc_cancellations",
-    "cost": 402.5
+    "cost": 321.58
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "dtc_margin_leakage",
-    "cost": 64.82
+    "cost": 90.99
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "lost_revenue",
-    "cost": 902168.58
+    "cost": 950874.42
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "otif_fines",
-    "cost": 78219.8
+    "cost": 91142.08
   },
   {
-    "month": "2026-12",
+    "month": "2025-12",
     "dimension": "triage_labor",
-    "cost": 20223.0
+    "cost": 20529.0
   },
   {
-    "month": "2027-01",
+    "month": "2026-01",
     "dimension": "chargebacks",
-    "cost": 200.37
+    "cost": 189.65
   },
   {
-    "month": "2027-01",
+    "month": "2026-01",
+    "dimension": "dtc_cancellations",
+    "cost": 53.45
+  },
+  {
+    "month": "2026-01",
     "dimension": "dtc_margin_leakage",
-    "cost": 8.39
+    "cost": 11.79
   },
   {
-    "month": "2027-01",
+    "month": "2026-01",
     "dimension": "lost_revenue",
-    "cost": 59166.66
+    "cost": 56062.74
   },
   {
-    "month": "2027-01",
+    "month": "2026-01",
     "dimension": "otif_fines",
-    "cost": 7030.08
+    "cost": 6458.44
   },
   {
-    "month": "2027-01",
+    "month": "2026-01",
     "dimension": "triage_labor",
-    "cost": 1395.0
+    "cost": 1278.0
   }
 ]

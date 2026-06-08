@@ -42,8 +42,8 @@ CALIBRATION_FILE = REPO / "data" / "calibration.json"
 ORDERS_DB = REPO / "data" / "short_ship_orders.db"
 
 # 157-week Cinderhaven window aligned with scan_data
-WINDOW_START = date(2024, 1, 6)
-WINDOW_END = date(2027, 1, 2)
+WINDOW_START = date(2023, 1, 6)
+WINDOW_END = date(2026, 1, 2)
 
 REGIONAL_CHAINS = {
     "Kroger",

@@ -1,49 +1,49 @@
 [
   {
     "dimension": "lost_revenue",
-    "total_cost": 23608050.48,
-    "pct_of_shipped": 0.445,
+    "total_cost": 23425381.92,
+    "pct_of_shipped": 0.4417,
     "description": "Lost revenue from short-shipped retail and distributor lines (qty_ordered - qty_shipped) × pack × unit_price"
   },
   {
     "dimension": "deauthorization",
-    "total_cost": 6422618.54,
-    "pct_of_shipped": 0.1211,
+    "total_cost": 6202090.22,
+    "pct_of_shipped": 0.1169,
     "description": "Forward-looking revenue at risk from short-caused deauthorizations: 12 months of annualized revenue for each SKU x retailer pair where shorts pushed velocity below the delist threshold (or where fill stayed below 90% for 3+ consecutive months at UNFI/KeHE/DPI Northwest)."
   },
   {
     "dimension": "otif_fines",
-    "total_cost": 2055467.24,
-    "pct_of_shipped": 0.0387,
+    "total_cost": 2069889.52,
+    "pct_of_shipped": 0.039,
     "description": "Retailer-specific OTIF fines per the schedule in docs/cost-engine-benchmarks.md (with UNFI updated to 3% of shorted goods value per PLAN task 5)"
   },
   {
     "dimension": "triage_labor",
-    "total_cost": 500652.0,
-    "pct_of_shipped": 0.0094,
+    "total_cost": 502218.0,
+    "pct_of_shipped": 0.0095,
     "description": "Manual order-edit labor at 20 min/order × $30.0/hr × 90% of retail/distributor orders. DTC orders are excluded — they go through automated fulfillment with no manual edit."
   },
   {
     "dimension": "distributor_returns",
-    "total_cost": 452835.84,
-    "pct_of_shipped": 0.0085,
+    "total_cost": 464392.8,
+    "pct_of_shipped": 0.0088,
     "description": "Distributor return and claim credits issued to UNFI/KeHE for unsold promo and written-off product, summed from the distributor_returns table."
   },
   {
     "dimension": "chargebacks",
-    "total_cost": 78946.52,
+    "total_cost": 78412.89,
     "pct_of_shipped": 0.0015,
     "description": "Estimated retailer chargebacks beyond OTIF — fallback rates of 0.5% (Walmart/Costco) and 0.3% (other) applied to shorted goods value. Cinderhaven's historical chargebacks table was not used because those rows reflect data-quality and shipment issues unrelated to our synthetic shorts."
   },
   {
     "dimension": "dtc_cancellations",
-    "total_cost": 9059.33,
+    "total_cost": 9387.28,
     "pct_of_shipped": 0.0002,
     "description": "Lost revenue from DTC orders the customer cancelled while held for complete fulfillment — full order value, since nothing shipped."
   },
   {
     "dimension": "dtc_margin_leakage",
-    "total_cost": 920.98,
+    "total_cost": 1010.39,
     "pct_of_shipped": 0.0,
     "description": "Margin lost when DTC customers gave up on a held order and bought in-store instead — order_value × (dtc_margin - wholesale_margin) = order_value × 20%."
   }
