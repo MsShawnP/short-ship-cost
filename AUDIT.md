@@ -449,7 +449,7 @@ CI, OG image URL, fonts, tests, narrative, mobile).
   - Annualization divisor: /3.0 (was /2.0)
 - New pipeline output:
   - 74,306 orders (was 43,110)
-  - 191,371 lines (was 125,748)
+  - 272,352 lines (was 125,748)
   - Total cost of shorts: **$33.16M** (was $25.60M)
   - Cost engine validation: 35/35 pass
   - Order validation: 24/25 pass (1 statistical edge case)
@@ -465,7 +465,7 @@ serving stale data from the old pipeline run:
 | Total cost | $33,159,817 | $25,597,978 |
 | SKU count | 50 | 90 |
 | Order count | 74,306 | 43,110 |
-| Line items | 191,371 | 125,748 |
+| Line items | 272,352 | 125,748 |
 | Time window | Jan 2024 – Jan 2027 (3 yr) | May 2024 – May 2026 (2 yr) |
 | Lost revenue | $26.5M | $18.7M |
 | Deauthorization | $5.2M | $5.9M |
@@ -596,7 +596,7 @@ Same assessment as the May 16 audit:
 
 **Hardcoded numbers to update after re-export:**
 - `web/src/App.jsx:272-273` — "43,110 orders and 125,748 line items
-  over an 18–24 month window" → should be "74,306 orders and 191,371
+  over an 18–24 month window" → should be "74,306 orders and 272,352
   line items over a 3-year window"
 - `web/index.html:9,14` — "$25.6M" in OG/Twitter descriptions →
   will be ~$33.2M

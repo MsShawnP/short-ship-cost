@@ -517,7 +517,7 @@ Steps:
     - Depends on: D1 (need actual numbers from new meta.json)
     - Edit `web/src/App.jsx` lines 269–273: update order count,
       line count, and time window description to match new data
-    - Done when: methodology text says "74,306 orders and 191,371
+    - Done when: methodology text says "74,306 orders and 272,352
       line items over a 3-year window" (or whatever meta.json shows)
 
 - [x] D4: Update OG/Twitter meta descriptions
