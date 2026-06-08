@@ -26,7 +26,7 @@ gone. And with it, any ability to measure the cost of not fulfilling
 it.
 
 This tool reconstructs that cost. It generates synthetic order data
-(66,101 orders, $53M shipped over three years), models the triage
+(74,306 orders, $53M shipped over three years), models the triage
 process, and calculates the full cost of every short across eight
 dimensions:
 
