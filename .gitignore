@@ -39,12 +39,7 @@ node_modules/
 *.sqlite3
 *.parquet
 *.duckdb
-# Self-contained Cinderhaven extract (~1.6 MB) is a committed artifact
-!data/cinderhaven_extract.db
-# Synthetic order data generated locally (>100 MB, too large for GitHub)
-# Regenerate with: python scripts/generate_orders.py
-# data/short_ship_orders.db
-# Cost-engine output (small) is committed for the same reason
+# Cost-engine output from rebuild_from_platform.py
 !data/short_ship_cost.db
 
 # Logs

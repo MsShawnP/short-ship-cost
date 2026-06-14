@@ -7,7 +7,6 @@ import PinnedCallout from './PinnedCallout.jsx'
 import styles from './RetailerDrilldown.module.css'
 
 const ALL_DIMS = DIMENSION_ORDER
-const FILTERED_DIMS = ALL_DIMS.filter((d) => d !== 'deauthorization')
 
 // ---- Helpers ---------------------------------------------------------------
 
@@ -465,9 +464,7 @@ function SkuTable({
 
       <p className={styles.tableFootnote}>
         Top 20 SKUs by total cost plus an &ldquo;Other&rdquo; row for the
-        remaining SKUs. Triage labor is excluded from per-SKU attribution
-        because it is a per-order cost, not per-SKU. Cell shading scales
-        with each column&rsquo;s magnitude.
+        remaining SKUs. Cell shading scales with each column&rsquo;s magnitude.
       </p>
     </div>
   )
@@ -481,10 +478,9 @@ export default function RetailerDrilldown({ costByRetailer, costBySku }) {
   const [selectedRetailer, setSelectedRetailer] = useState(null)
   const [sortBy, setSortBy] = useState({ key: 'total', dir: 'desc' })
 
-  const baseDims = range.isFiltered ? FILTERED_DIMS : ALL_DIMS
   const dims = useMemo(
-    () => baseDims.filter((d) => activeDims.has(d)),
-    [baseDims, activeDims],
+    () => ALL_DIMS.filter((d) => activeDims.has(d)),
+    [activeDims],
   )
 
   const retailerRows = useMemo(

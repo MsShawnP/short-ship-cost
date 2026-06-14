@@ -9,14 +9,12 @@ import ParameterPanel, {
 import { TimeRangeProvider, useTimeRange } from './lib/timeRange.jsx'
 import {
   getRatios,
-  filterDeauthEvents,
   scaleCostByRetailer,
   scaleCostByMonth,
   scaleCostBySku,
   scaleBufferScenarios,
   summaryFromMonthly,
   validateBaseline,
-  deauthTotal,
 } from './utils/costEngine.js'
 import './App.css'
 
@@ -32,7 +30,6 @@ const SOURCES = [
   'cost_by_retailer',
   'cost_by_sku',
   'buffer_scenarios',
-  'deauthorization_events',
   'validation',
 ]
 
@@ -148,29 +145,14 @@ function AppShell({ data }) {
   const scaled = useMemo(() => {
     if (!params || !baselineParams) return null
     const ratios = getRatios(params, baselineParams)
-    const events = filterDeauthEvents(data.deauthorization_events, params)
-    const cost_by_retailer = scaleCostByRetailer(
-      data.cost_by_retailer,
-      ratios,
-      events,
-    )
+    const cost_by_retailer = scaleCostByRetailer(data.cost_by_retailer, ratios)
     const cost_by_month = scaleCostByMonth(data.cost_by_month, ratios)
-    const cost_by_sku = scaleCostBySku(data.cost_by_sku, ratios, events)
-    const cost_summary = summaryFromMonthly(
-      data.cost_summary,
-      cost_by_month,
-      events,
-    )
-    const baselineDeauth = data.cost_summary.find(
-      (r) => r.dimension === 'deauthorization',
-    )?.total_cost || 1
-    const filteredDeauth = deauthTotal(events)
-    const deauthScale = filteredDeauth / baselineDeauth
+    const cost_by_sku = scaleCostBySku(data.cost_by_sku, ratios)
+    const cost_summary = summaryFromMonthly(data.cost_summary, cost_by_month)
     const buffer_scenarios = {
       scenarios: scaleBufferScenarios(
         data.buffer_scenarios.scenarios,
         ratios,
-        deauthScale,
       ),
     }
     return {
@@ -178,13 +160,10 @@ function AppShell({ data }) {
       cost_by_retailer,
       cost_by_month,
       cost_by_sku,
-      deauthorization_events: events,
       buffer_scenarios,
     }
   }, [data, params, baselineParams])
 
-  // Validate JS-baseline output against validation.json on first load (and
-  // again whenever params equal baseline — the check only matters then).
   const validation = useMemo(() => {
     if (!scaled || paramsModified) return null
     const result = validateBaseline(scaled.cost_summary, data.validation)
@@ -266,45 +245,35 @@ function AppShell({ data }) {
           </summary>
           <div className="methodology-body">
             <p>
-              This analysis uses synthetic order data modeled on a ~$25M annual
-              revenue specialty food brand operating across six retail channels
-              (Walmart, Costco, Whole Foods, UNFI, KeHE, and regional grocers)
-              plus direct-to-consumer. The dataset covers{' '}
+              This analysis uses order and shipment data from the Cinderhaven
+              Provisions data platform, covering a ~$25M annual revenue
+              specialty food brand operating across retail channels (Walmart,
+              Costco, Whole Foods, Kroger, Sprouts, and regional grocers) and
+              distributors (UNFI, KeHE, DPI Northwest). The dataset covers{' '}
               {data.meta.total_orders.toLocaleString()} orders and{' '}
-              {data.meta.total_lines.toLocaleString()} line items over a{' '}
+              {data.meta.total_lines.toLocaleString()} shipment lines over a{' '}
               {Math.round((new Date(data.meta.time_window.end) - new Date(data.meta.time_window.start)) / (365.25 * 86400000))}-year window.
             </p>
             <p>
-              Every order passes through a triage simulation that mirrors
-              real-world prioritization: orders are ranked by retailer
-              importance and fulfillment completeness, then edited down when
-              inventory falls short. The edited (shipped) order replaces the
-              original — exactly as it does in most ERP systems — creating the
-              visibility gap this analysis quantifies.
-            </p>
-            <p>
-              Eight cost dimensions are computed from the gap between original
-              and shipped orders: lost revenue, OTIF fines, chargebacks,
-              deauthorization risk, DTC cancellations, DTC-to-retail margin
-              leakage, distributor returns, and triage labor. Each dimension
-              uses retailer-specific parameters (fine rates, velocity
-              thresholds, margin spreads) that can be adjusted via the
-              parameter panel. Deauthorization models both distributor
-              consecutive-month fill rate failures and retailer velocity-based
-              delisting triggers.
+              Four cost dimensions are computed from the gap between ordered
+              and shipped quantities: forgone revenue, compliance fines,
+              chargebacks, and deductions. Compliance fines use
+              retailer-specific schedules (rate, basis, threshold) that can be
+              adjusted via the parameter panel. Chargebacks and deductions are
+              actual platform events attributed to short-ship causes.
             </p>
             <p>
               The buffer simulation models structural improvements to fill rate
-              by lifting every order line to a target percentage, then
-              recomputing all eight dimensions. It does not prescribe how to
-              build the buffer — only what even a modest improvement would
+              by lifting every shipment line to a target percentage, then
+              recomputing all four dimensions. It does not prescribe how to
+              build the buffer &mdash; only what even a modest improvement would
               recover in quantifiable costs.
             </p>
             <p>
-              All parameters are tunable. The baseline values reflect
-              industry-standard fine structures and thresholds drawn from
-              publicly available retailer compliance programs. Adjusting any
-              parameter recalculates all downstream totals in real time.
+              Compliance fine parameters are tunable. The baseline values
+              reflect the fine schedules embedded in the platform data.
+              Adjusting any parameter recalculates all downstream totals in
+              real time.
             </p>
           </div>
         </details>
@@ -312,7 +281,7 @@ function AppShell({ data }) {
       <footer className="footer">
         <span>
           Data window: {data.meta.time_window.start} to{' '}
-          {data.meta.time_window.end}. Synthetic order data &mdash;{' '}
+          {data.meta.time_window.end}. Platform order data &mdash;{' '}
           <a href="#methodology" className="footer-link">methodology</a>.
           {paramsModified && (
             <span className="footer-mod">

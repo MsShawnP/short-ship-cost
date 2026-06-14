@@ -4,46 +4,17 @@ import styles from './ParameterPanel.module.css'
 
 const GROUPS = [
   {
-    title: 'OTIF fines',
+    title: 'Compliance fine rates',
     fields: [
-      { key: 'otif_walmart_rate', label: 'Walmart rate', type: 'pct', min: 0, max: 0.1, step: 0.001 },
-      { key: 'otif_costco_flat_fee', label: 'Costco flat fee', type: 'usd', min: 0, max: 1000, step: 25 },
-      { key: 'otif_whole_foods_rate', label: 'Whole Foods rate', type: 'pct', min: 0, max: 0.1, step: 0.001 },
-      { key: 'otif_unfi_rate', label: 'UNFI rate', type: 'pct', min: 0, max: 0.1, step: 0.001 },
-      { key: 'otif_kehe_rate', label: 'KeHE rate', type: 'pct', min: 0, max: 0.1, step: 0.001 },
-      { key: 'otif_regional_rate', label: 'Regional rate', type: 'pct', min: 0, max: 0.1, step: 0.001 },
-    ],
-  },
-  {
-    title: 'Deauthorization thresholds',
-    fields: [
-      { key: 'deauth_velocity_walmart', label: 'Walmart velocity', type: 'units', min: 0.5, max: 6, step: 0.1, suffix: ' u/store/wk' },
-      { key: 'deauth_velocity_costco', label: 'Costco velocity', type: 'units', min: 1, max: 12, step: 0.1, suffix: ' u/store/wk' },
-      { key: 'deauth_velocity_whole_foods', label: 'Whole Foods velocity', type: 'units', min: 0.25, max: 4, step: 0.1, suffix: ' u/store/wk' },
-      { key: 'deauth_velocity_regional', label: 'Regional velocity', type: 'units', min: 0.25, max: 4, step: 0.1, suffix: ' u/store/wk' },
-      { key: 'deauth_distributor_fill_rate', label: 'Distributor fill threshold', type: 'pct', min: 0.7, max: 1.0, step: 0.005, hint: 'shifts the cliff' },
-    ],
-  },
-  {
-    title: 'Margins',
-    fields: [
-      { key: 'dtc_margin_pct', label: 'DTC margin', type: 'pct', min: 0.3, max: 0.8, step: 0.005 },
-      { key: 'wholesale_margin_pct', label: 'Wholesale margin', type: 'pct', min: 0.2, max: 0.6, step: 0.005 },
-    ],
-  },
-  {
-    title: 'Triage labor',
-    fields: [
-      { key: 'triage_minutes_per_order', label: 'Minutes per edit', type: 'units', min: 0, max: 60, step: 1, suffix: ' min' },
-      { key: 'triage_hourly_rate', label: 'Hourly rate', type: 'usd', min: 0, max: 100, step: 1 },
-      { key: 'triage_share_of_orders', label: 'Share of orders', type: 'pct', min: 0, max: 1, step: 0.01 },
-    ],
-  },
-  {
-    title: 'Chargebacks',
-    fields: [
-      { key: 'chargeback_rate_walmart_costco', label: 'Walmart/Costco', type: 'pct', min: 0, max: 0.05, step: 0.001 },
-      { key: 'chargeback_rate_other', label: 'Other retailers', type: 'pct', min: 0, max: 0.05, step: 0.001 },
+      { key: 'fine_walmart', label: 'Walmart (line COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_costco', label: 'Costco (flat per PO)', type: 'usd', min: 0, max: 1000, step: 25 },
+      { key: 'fine_whole_foods', label: 'Whole Foods (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_unfi', label: 'UNFI (shorted value)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_kehe', label: 'KeHE (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_sprouts', label: 'Sprouts (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_kroger', label: 'Kroger (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_regional', label: 'Regional (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
+      { key: 'fine_dpi_northwest', label: 'DPI Northwest (PO COGS)', type: 'pct', min: 0, max: 0.1, step: 0.001 },
     ],
   },
 ]
@@ -83,7 +54,6 @@ function ParameterField({ field, value, baseline, onChange }) {
       />
       <div className={styles.fieldDefault}>
         baseline {formatValue(field, baseline)}
-        {field.hint ? ` · ${field.hint}` : ''}
       </div>
     </div>
   )

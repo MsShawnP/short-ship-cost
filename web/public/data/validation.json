@@ -1,15 +1,11 @@
 {
   "baseline_totals": {
-    "lost_revenue": 23425381.92,
-    "otif_fines": 2069889.52,
-    "chargebacks": 78412.89,
-    "deauthorization": 6202090.22,
-    "dtc_cancellations": 9387.28,
-    "dtc_margin_leakage": 1010.39,
-    "distributor_returns": 464392.8,
-    "triage_labor": 502218.0,
-    "total": 32752783.02
+    "forgone_revenue": 5537091.85,
+    "compliance_fines": 368758.11,
+    "chargebacks": 344065.61,
+    "deductions": 331289.12,
+    "total": 6581204.69
   },
-  "shipped_revenue": 53035756.78,
-  "overall_fill_rate": 0.6935
+  "shipped_revenue": 70530214.31,
+  "overall_fill_rate": 0.9272
 }

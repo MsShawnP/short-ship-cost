@@ -75,13 +75,9 @@ function RecoveryTable({ scenarios, activeDims }) {
           <tbody>
             {rows.map((r) => {
               const max = r.original || 1
-              const isDeauth = r.dim === 'deauthorization'
               const baselineBg = hexToRgba(DIMENSION_COLOR[r.dim], 0.55)
               return (
-                <tr
-                  key={r.dim}
-                  className={isDeauth ? styles.deauthRow : undefined}
-                >
+                <tr key={r.dim}>
                   <td>
                     <span className={styles.dimensionLabel}>
                       {DIMENSION_LABEL[r.dim]}
@@ -116,9 +112,9 @@ function RecoveryTable({ scenarios, activeDims }) {
         </table>
       </div>
       <p className={styles.tableFootnote}>
-        Distributor returns and triage labor are unchanged across scenarios
-        by design &mdash; returns depend on promo volume, triage reflects
-        the process running regardless of outcome.
+        Chargebacks and deductions scale proportionally with remaining
+        shortage ratio. Forgone revenue and compliance fines are recomputed
+        at each target fill rate.
       </p>
     </div>
   )
@@ -130,8 +126,6 @@ export default function BufferSimulation({ bufferScenarios }) {
   const scenarios = bufferScenarios.scenarios
   const [pinned, setPinned] = useState(null) // target_fill_rate or null
 
-  // Re-derive each scenario's total over only the active dimensions so the
-  // staircase, tooltip, and pinned panel all agree under any toggle state.
   const scenariosFiltered = useMemo(
     () =>
       scenarios.map((s) => {
@@ -165,12 +159,10 @@ export default function BufferSimulation({ bufferScenarios }) {
     [scenariosFiltered, baseline],
   )
 
-  const s90 = barData.find((s) => s.target_fill_rate === 0.9)
-  const recoveredAt90 = baseline - (s90?.total_cost ?? baseline)
+  const bestScenario = barData[barData.length - 1]
+  const recoveredAtBest = baseline - (bestScenario?.total_cost ?? baseline)
 
-  const title = activeDims.has('deauthorization')
-    ? `At 90% fill rate, ${fmtCompact(recoveredAt90)} in costs disappear — most from deauthorization`
-    : `At 90% fill rate, ${fmtCompact(recoveredAt90)} in costs disappear`
+  const title = `At ${bestScenario?.targetLabel ?? '99%'} fill rate, ${fmtCompact(recoveredAtBest)} in costs disappear`
 
   const pinnedScenario =
     pinned !== null ? scenarios.find((s) => s.target_fill_rate === pinned) : null
@@ -181,6 +173,8 @@ export default function BufferSimulation({ bufferScenarios }) {
       setPinned((prev) => (prev === target ? null : target))
     }
   }
+
+  const baselineFillLabel = `${Math.round((scenarios[0]?.by_dimension?.forgone_revenue ? 92.7 : 75))}%`
 
   return (
     <section className={styles.section}>
@@ -203,8 +197,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         <h3 className={styles.chartTitle}>{title}</h3>
         <p className={styles.chartSubtitle}>
           Total cost of shorts at four target fill rates compared to the{' '}
-          {fmtCompact(baseline)} baseline at 75% fill. Click any bar to pin
-          its breakdown.
+          {fmtCompact(baseline)} baseline. Click any bar to pin its breakdown.
         </p>
 
         {pinnedScenario && (
@@ -227,7 +220,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         <div
           className={styles.chartContainer}
           role="img"
-          aria-label={`Bar chart: total cost of shorts across four target fill rates (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAt90)} recovered at 90% fill.`}
+          aria-label={`Bar chart: total cost of shorts across four target fill rates (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAtBest)} recovered at ${bestScenario?.targetLabel ?? '99%'} fill.`}
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -274,7 +267,7 @@ export default function BufferSimulation({ bufferScenarios }) {
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
                 label={{
-                  value: `Current: ${fmtCompact(baseline)} at 75% fill`,
+                  value: `Current: ${fmtCompact(baseline)}`,
                   position: 'insideTopRight',
                   fill: ACCENT_RED,
                   fontSize: 12,
@@ -329,26 +322,10 @@ export default function BufferSimulation({ bufferScenarios }) {
         <p className={styles.chartFootnote}>
           Source: Cinderhaven Provisions buffer-simulation outputs. Each
           scenario lifts every retail/distributor line to the target fill
-          rate and recomputes all eight cost dimensions; achieved fill is
-          slightly higher than target due to asymmetric clamping. Click any
-          bar for a pinned breakdown.
+          rate and recomputes all four cost dimensions. Click any bar for
+          a pinned breakdown.
         </p>
       </div>
-
-      {activeDims.has('deauthorization') && (
-        <div className={styles.cliffCallout}>
-          <p className={styles.cliffTitle}>The deauthorization cliff</p>
-          <p className={styles.cliffBody}>
-            Between 85% and 95% fill, deauthorization costs drop from{' '}
-            <strong>$6.2M</strong> to near zero &mdash; in two steps. At 90%,
-            distributor catalog risk clears as UNFI and KeHE fill rates
-            cross their 90% threshold (<strong>$1.8M</strong> recovered).
-            At 95%, retailer shelf risk clears as velocity recovers above
-            delisting thresholds (<strong>$4.4M</strong> more). The total:{' '}
-            <strong>$6.2M</strong> in forward revenue no longer at risk.
-          </p>
-        </div>
-      )}
       </div>
 
       <RecoveryTable scenarios={scenarios} activeDims={activeDims} />

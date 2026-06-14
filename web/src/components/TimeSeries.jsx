@@ -8,24 +8,14 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 
-import { DIMENSION_LABEL, DIMENSION_COLOR } from '../lib/dimensions.js'
+import { DIMENSION_LABEL, DIMENSION_COLOR, DIMENSION_ORDER } from '../lib/dimensions.js'
 import { fmtCompact, fmtPct } from '../lib/format.js'
 import { useTimeRange, formatMonthLabel } from '../lib/timeRange.jsx'
 import useAnimatedValue, { REDUCED_MOTION } from '../lib/useAnimatedValue.js'
 import PinnedCallout from './PinnedCallout.jsx'
 import styles from './TimeSeries.module.css'
 
-// cost_by_month covers 7 dimensions — deauthorization is event-level only
-// (no monthly attribution), per docs/cost-engine-docs.md.
-const ALL_MONTHLY_DIMS = [
-  'lost_revenue',
-  'otif_fines',
-  'chargebacks',
-  'dtc_cancellations',
-  'triage_labor',
-  'distributor_returns',
-  'dtc_margin_leakage',
-]
+const ALL_MONTHLY_DIMS = DIMENSION_ORDER
 
 function fmtShortMonth(ym) {
   if (!ym) return ''
@@ -267,10 +257,8 @@ export default function TimeSeries({ costByMonth }) {
         )}
 
         <p className={styles.chartFootnote}>
-          Source: Cinderhaven Provisions synthetic order data. Deauthorization
-          is omitted because the underlying events are SKU- and
-          retailer-level, not monthly. Layer heights have a minimum display
-          size; click any month for exact values.
+          Source: Cinderhaven Provisions platform data. Layer heights have a
+          minimum display size; click any month for exact values.
         </p>
       </div>
 

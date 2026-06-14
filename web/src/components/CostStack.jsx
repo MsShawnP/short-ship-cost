@@ -106,7 +106,6 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   const { activeDims } = range
   const [pinned, setPinned] = useState(null)
 
-  // Filter by month range.
   const filteredCosts = useMemo(
     () => filterByMonth(costByMonth, range),
     [costByMonth, range],
@@ -116,50 +115,34 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
     [ordersByMonth, range],
   )
 
-  // Sum filtered costs by dimension. Deauthorization is missing from
-  // cost_by_month (events are SKU/retailer-level, not monthly), so when
-  // filtered we omit it and surface a note. When unfiltered we pull
-  // deauth from cost_summary so the headline matches the full-period total.
-  // Then narrow further by the user's active-dimension toggles.
-  const { dims, costsByDim, deauthFull, deauthSuppressed } = useMemo(() => {
+  const { dims, costsByDim } = useMemo(() => {
     const byDim = {}
     for (const r of filteredCosts) {
       byDim[r.dimension] = (byDim[r.dimension] || 0) + r.cost
     }
-    const deauthRow = summary.find((r) => r.dimension === 'deauthorization')
-    const deauthFull = deauthRow ? deauthRow.total_cost : 0
-    let availableDims
-    if (range.isFiltered) {
-      availableDims = ORDER.filter((d) => d !== 'deauthorization')
-    } else {
-      byDim.deauthorization = deauthFull
-      availableDims = ORDER
-    }
-    const dims = availableDims.filter((d) => activeDims.has(d))
-    const deauthSuppressed =
-      availableDims.includes('deauthorization') && !activeDims.has('deauthorization')
-    return { dims, costsByDim: byDim, deauthFull, deauthSuppressed }
-  }, [filteredCosts, summary, range.isFiltered, activeDims])
+    const dims = ORDER.filter((d) => activeDims.has(d))
+    return { dims, costsByDim: byDim }
+  }, [filteredCosts, activeDims])
 
   const { segs, total } = useMemo(
     () => buildLayout(costsByDim, dims),
     [costsByDim, dims],
   )
 
-  const lostRevenue = costsByDim.lost_revenue || 0
-  const cascading = total - lostRevenue
+  const forgoneRevenue = costsByDim.forgone_revenue || 0
+  const cascading = total - forgoneRevenue
 
   const shipped = filteredOrders.reduce((s, r) => s + r.shipped_revenue, 0)
   const demand = filteredOrders.reduce((s, r) => s + r.demand, 0)
   const demandGap = demand - shipped
 
-  const wholesaleMargin = meta.cost_parameters.wholesale_margin_pct.value
-  const estMargin = shipped * wholesaleMargin
+  const contributionMargin = meta.contribution_margin_pct || 0.52
+  const estMargin = shipped * contributionMargin
   const pctOfShipped = shipped > 0 ? total / shipped : 0
   const pctOfMargin = estMargin > 0 ? cascading / estMargin : 0
 
   const topCascading = segs
-    .filter((s) => s.key !== 'lost_revenue' && s.value > 0)
+    .filter((s) => s.key !== 'forgone_revenue' && s.value > 0)
     .sort((a, b) => b.value - a.value)[0]
 
   const fmtC = useCallback((v) => fmtCompact(v), [])
@@ -225,7 +208,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
       {topCascading && (
         <p className={styles.insightLine}>
-          Lost revenue is {fmtPct(lostRevenue / total)} of the total. The
+          Forgone revenue is {fmtPct(forgoneRevenue / total)} of the total. The
           other {fmtPct(cascading / total)}&mdash;led
           by {topCascading.label.toLowerCase()} at {fmtCompact(topCascading.value)}&mdash;are
           costs no one can measure when the original order is overwritten.
@@ -263,7 +246,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
             y={BAR_Y}
             width={LEFT_W}
             height={BAR_H}
-            fill={DIMENSION_COLOR.lost_revenue}
+            fill={DIMENSION_COLOR.forgone_revenue}
           />
           <text
             className={styles.totalLabelLarge}
@@ -345,26 +328,10 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
         </svg>
 
         <p className={styles.chartFootnote}>
-          Source: Cinderhaven Provisions synthetic order data, {periodLabel}.
+          Source: Cinderhaven Provisions platform data, {periodLabel}.
           The smallest dimensions are drawn at a {RIGHT_MIN_H}-pixel minimum
           block height for readability; the connecting flows preserve true
           proportional width on the left.
-          {range.isFiltered && (
-            <>
-              {' '}
-              Deauthorization ({fmtCompact(deauthFull)} full-period) is
-              omitted when a time filter is active because the underlying
-              events are SKU- and retailer-level, not monthly. Buffer
-              simulation is also full-period only.
-            </>
-          )}
-          {deauthSuppressed && !range.isFiltered && (
-            <>
-              {' '}
-              Deauthorization ({fmtCompact(deauthFull)}) is excluded by the
-              dimension toggle.
-            </>
-          )}
         </p>
 
       </div>
@@ -376,9 +343,9 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
         </div>
         <div className={styles.benchmark}>
           <div className={styles.benchmarkValue}>{animPctMargin}</div>
-          <div className={styles.benchmarkLabel}>of gross margin lost to cascading costs</div>
+          <div className={styles.benchmarkLabel}>of contribution margin lost to cascading costs</div>
           <div className={styles.benchmarkNote}>
-            assumes {fmtPct(wholesaleMargin)} wholesale margin
+            assumes {fmtPct(contributionMargin)} contribution margin
           </div>
         </div>
         <div className={styles.benchmark}>

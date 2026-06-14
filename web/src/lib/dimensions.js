@@ -1,46 +1,30 @@
 // Ordered by magnitude (largest → smallest), matching color assignment.
 export const DIMENSION_ORDER = [
-  'lost_revenue',
-  'deauthorization',
-  'otif_fines',
+  'forgone_revenue',
+  'compliance_fines',
   'chargebacks',
-  'dtc_cancellations',
-  'triage_labor',
-  'distributor_returns',
-  'dtc_margin_leakage',
+  'deductions',
 ]
 
 export const DIMENSION_LABEL = {
-  lost_revenue: 'Lost revenue',
-  otif_fines: 'OTIF fines',
+  forgone_revenue: 'Forgone revenue',
+  compliance_fines: 'Compliance fines',
   chargebacks: 'Chargebacks',
-  deauthorization: 'Deauthorization',
-  dtc_cancellations: 'DTC cancellations',
-  dtc_margin_leakage: 'DTC margin leakage',
-  distributor_returns: 'Distributor returns',
-  triage_labor: 'Triage labor',
+  deductions: 'Deductions',
 }
 
 export const DIMENSION_LABEL_SHORT = {
-  lost_revenue: 'Lost revenue',
-  otif_fines: 'OTIF fines',
+  forgone_revenue: 'Forgone rev.',
+  compliance_fines: 'Fines',
   chargebacks: 'Chargebacks',
-  deauthorization: 'Deauth.',
-  dtc_cancellations: 'DTC cancel',
-  dtc_margin_leakage: 'DTC leakage',
-  distributor_returns: 'Distrib. returns',
-  triage_labor: 'Triage',
+  deductions: 'Deductions',
 }
 
-// Hong Kong (teal) sequential ramp — Lailara DS v2, steps 5–85.
-// Darkest at largest dimension, lightest at smallest.
+// Hong Kong (teal) sequential ramp — Lailara DS v2.
+// Four steps, darkest at largest dimension, lightest at smallest.
 export const DIMENSION_COLOR = {
-  lost_revenue: '#063d32',
-  deauthorization: '#0a5c4b',
-  otif_fines: '#0e6e5a',
-  chargebacks: '#158f75',
-  dtc_cancellations: '#1fa282',
-  triage_labor: '#35b595',
-  distributor_returns: '#6dcdb5',
-  dtc_margin_leakage: '#b5e4d8',
+  forgone_revenue: '#063d32',
+  compliance_fines: '#0e6e5a',
+  chargebacks: '#1fa282',
+  deductions: '#6dcdb5',
 }

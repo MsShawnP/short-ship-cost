@@ -1,239 +1,80 @@
 {
-  "last_updated": "2026-06-13T18:09:15.032089+00:00",
+  "last_updated": "2026-06-14T16:59:50.509765+00:00",
   "time_window": {
-    "start": "2023-01-01",
-    "end": "2026-01-02"
+    "start": "2023-01-02",
+    "end": "2026-01-07"
   },
-  "shipped_revenue": 53035756.78,
-  "shipped_revenue_annual": 17678585.59,
-  "total_orders": 74299,
-  "total_lines": 272474,
-  "total_skus": 50,
-  "overall_fill_rate": 0.6935,
+  "shipped_revenue": 70530214.31,
+  "total_demand": 76067306.16,
+  "total_orders": 55802,
+  "total_lines": 236996,
+  "overall_fill_rate": 0.9272,
+  "retailer_fill_rate": 0.9206,
+  "distributor_fill_rate": 0.9415,
+  "contribution_margin_pct": 0.52,
   "cost_parameters": {
-    "chargeback_rate_other": {
-      "value": 0.003,
+    "fine_walmart": {
+      "value": 0.03,
       "unit": "fraction",
-      "basis": "shorted goods value",
-      "level": null,
-      "description": "Estimated chargeback rate for non-Walmart/Costco retailers",
-      "source": "PLAN task 5 spec"
+      "basis": "line_cogs",
+      "level": "line",
+      "description": "Walmart compliance fine schedule"
     },
-    "chargeback_rate_walmart_costco": {
-      "value": 0.005,
-      "unit": "fraction",
-      "basis": "shorted goods value",
-      "level": null,
-      "description": "Estimated chargeback rate for Walmart and Costco",
-      "source": "PLAN task 5 spec"
-    },
-    "deauth_distributor_consecutive_months": {
-      "value": 3.0,
-      "unit": "months",
-      "basis": null,
-      "level": null,
-      "description": "Distributor consecutive-months window for deauth (UNFI, KeHE, DPI Northwest)",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_distributor_fill_rate": {
-      "value": 0.9,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "Distributor delisting threshold — fill rate below this for consecutive months triggers deauthorization (UNFI, KeHE, DPI Northwest)",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_revenue_horizon_months": {
-      "value": 12.0,
-      "unit": "months",
-      "basis": null,
-      "level": null,
-      "description": "Annualized revenue window used to value a deauth event",
-      "source": "PLAN task 5 spec"
-    },
-    "deauth_velocity_costco": {
-      "value": 10.0,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Costco delisting threshold (club channel, higher bar)",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_velocity_kroger": {
-      "value": 2.5,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Kroger delisting threshold",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_velocity_regional": {
-      "value": 1.5,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Regional chain delisting threshold",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_velocity_sprouts": {
-      "value": 1.5,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Sprouts delisting threshold",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_velocity_walmart": {
-      "value": 2.5,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Walmart delisting threshold",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "deauth_velocity_whole_foods": {
-      "value": 1.5,
-      "unit": "units/store/week",
-      "basis": null,
-      "level": null,
-      "description": "Whole Foods delisting threshold",
-      "source": "IRI/Nielsen category review norms — delisting floor, not performance target"
-    },
-    "distributor_claim_filed_rate": {
-      "value": 0.05,
-      "unit": "fraction",
-      "basis": "shipped promo cases",
-      "level": null,
-      "description": "Share of UNFI/KeHE promo volume claimed/written off",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "distributor_unsold_promo_rate": {
-      "value": 0.12,
-      "unit": "fraction",
-      "basis": "shipped promo cases",
-      "level": null,
-      "description": "Share of UNFI/KeHE promo volume returned unsold",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "dtc_cancel_3_to_7_days": {
-      "value": 0.25,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "DTC cancellation rate when held 3-7 days",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "dtc_cancel_7_to_14_days": {
-      "value": 0.4,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "DTC cancellation rate when held 7-14 days",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "dtc_cancel_over_14_days": {
-      "value": 0.6,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "DTC cancellation rate when held > 14 days",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "dtc_cancel_under_3_days": {
-      "value": 0.1,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "DTC cancellation rate when held < 3 days",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "dtc_margin_pct": {
-      "value": 0.55,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "DTC channel gross margin (used in margin leakage calc)",
-      "source": "PLAN task 5 spec"
-    },
-    "otif_costco_flat_fee": {
+    "fine_costco": {
       "value": 250.0,
       "unit": "USD",
-      "basis": "flat per short event",
+      "basis": "flat",
       "level": "PO",
-      "description": "Costco appointment-window flat fee per PO with any short",
-      "source": "docs/cost-engine-benchmarks.md"
+      "description": "Costco compliance fine schedule"
     },
-    "otif_kehe_rate": {
+    "fine_whole_foods": {
       "value": 0.02,
       "unit": "fraction",
-      "basis": "COGS",
+      "basis": "po_cogs",
       "level": "PO",
-      "description": "KeHE fine rate per PO below 95% fill rate",
-      "source": "docs/cost-engine-benchmarks.md"
+      "description": "Whole Foods compliance fine schedule"
     },
-    "otif_regional_rate": {
+    "fine_sprouts": {
       "value": 0.01,
       "unit": "fraction",
-      "basis": "COGS",
+      "basis": "po_cogs",
       "level": "PO",
-      "description": "Regional chain OTIF fine rate per non-compliant PO",
-      "source": "docs/cost-engine-benchmarks.md"
+      "description": "Sprouts compliance fine schedule"
     },
-    "otif_unfi_rate": {
+    "fine_kroger": {
+      "value": 0.01,
+      "unit": "fraction",
+      "basis": "po_cogs",
+      "level": "PO",
+      "description": "Kroger compliance fine schedule"
+    },
+    "fine_regional": {
+      "value": 0.01,
+      "unit": "fraction",
+      "basis": "po_cogs",
+      "level": "PO",
+      "description": "Regional compliance fine schedule"
+    },
+    "fine_unfi": {
       "value": 0.03,
       "unit": "fraction",
-      "basis": "shorted goods value",
+      "basis": "shorted_value",
       "level": "PO",
-      "description": "UNFI fine rate, applied to shorted goods value when PO fill < 95%",
-      "source": "PLAN task 5 spec (overrides earlier 2% of COGS in benchmarks doc)"
+      "description": "UNFI compliance fine schedule"
     },
-    "otif_walmart_rate": {
-      "value": 0.03,
-      "unit": "fraction",
-      "basis": "COGS",
-      "level": "PO line",
-      "description": "Walmart OTIF fine rate, applied per non-compliant PO line",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "otif_whole_foods_rate": {
+    "fine_kehe": {
       "value": 0.02,
       "unit": "fraction",
-      "basis": "COGS",
+      "basis": "po_cogs",
       "level": "PO",
-      "description": "Whole Foods OTIF fine rate per non-compliant PO",
-      "source": "docs/cost-engine-benchmarks.md"
+      "description": "KeHE compliance fine schedule"
     },
-    "triage_hourly_rate": {
-      "value": 30.0,
-      "unit": "USD/hour",
-      "basis": null,
-      "level": null,
-      "description": "Blended hourly rate for EDI/sales admin team",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "triage_minutes_per_order": {
-      "value": 20.0,
-      "unit": "minutes",
-      "basis": null,
-      "level": null,
-      "description": "Minutes per triaged order edit (median)",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "triage_share_of_orders": {
-      "value": 0.9,
+    "fine_dpi_northwest": {
+      "value": 0.01,
       "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "Share of retail/distributor orders requiring triage",
-      "source": "docs/cost-engine-benchmarks.md"
-    },
-    "wholesale_margin_pct": {
-      "value": 0.35,
-      "unit": "fraction",
-      "basis": null,
-      "level": null,
-      "description": "Wholesale channel gross margin (used in margin leakage calc)",
-      "source": "PLAN task 5 spec"
+      "basis": "po_cogs",
+      "level": "PO",
+      "description": "DPI Northwest compliance fine schedule"
     }
   }
 }
