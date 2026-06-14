@@ -1,127 +1,112 @@
-# The Cost of Shorts
+# Short-Ship Cost Analysis — Cinderhaven Provisions
 
-An interactive analysis of what it costs a specialty food business
-when it cannot fulfill retail partner orders as submitted — and why
-the true cost is invisible when the original order is overwritten.
+What does it cost when you can't fulfill orders as submitted? This
+tool traces every dollar of fulfillment shortfall cost to a specific
+platform event — a shipment line where units ordered exceeded units
+shipped.
+
+Cinderhaven Provisions is a fictional ~$25M specialty food brand.
+The dataset is synthetic. The methodology is real. Every figure
+regenerates from a single pipeline against the Cinderhaven Data
+Platform (Postgres).
 
 **Live:** https://shortships.lailarallc.com
 
-## Data Contract
+## What it finds
 
-Cinderhaven canonical platform data: 50 SKUs across 5 product lines (Artisan Sauces, Pantry Staples, Specialty Condiments, Dried Goods, Snack Bites), 6 contracted retailers (Walmart, Costco, Whole Foods, Sprouts, Kroger, Regional Group), 3 distributors (UNFI, KeHE, DPI Northwest) + 1 DTC channel (Shopify). Source: `CINDERHAVEN_CANONICAL.md` in `cinderhaven-data-platform`.
+At a 92.7% portfolio fill rate, Cinderhaven loses $6.6M over three
+years ($2.2M/yr) across four cost dimensions:
 
-## What this is
+| Dimension | 3-Year | Annual | % of Shipped |
+|---|---|---|---|
+| Forgone revenue | $5.5M | $1.8M | 7.85% |
+| Compliance fines | $369K | $123K | 0.52% |
+| Chargebacks | $344K | $115K | 0.49% |
+| Deductions | $331K | $110K | 0.47% |
 
-Cinderhaven Provisions is a ~$25M specialty food brand selling
-through 6 contracted retailers (Walmart, Costco, Whole Foods,
-Sprouts, Kroger, Regional Group) via 3 distributors (UNFI, KeHE,
-DPI Northwest) plus a DTC channel (Shopify). Like many manufacturers its size, it
-produces mostly to order and cannot keep up with demand. Every week
-an EDI/sales admin manually edits orders down to match available
-inventory, prioritising by retailer importance and due date. The
-legacy system overwrites the original order with the edited version.
+Every dollar traces to a platform event. No modeled soft costs, no
+forward projections, no assumed admin time.
 
-The original order — the thing the retailer actually asked for — is
-gone. And with it, any ability to measure the cost of not fulfilling
-it.
+Forgone contribution margin — the actual profit impact — runs
+$958K/yr, roughly 52% of the forgone revenue figure.
 
-This tool reconstructs that cost. It generates synthetic order data
-(74,306 orders, $53M shipped over three years), models the triage
-process, and calculates the full cost of every short across eight
-dimensions:
+## The Costco finding
 
-| Dimension | Description |
-|---|---|
-| Lost revenue | Units ordered but never shipped |
-| Deauthorization | Shelf placement lost from chronic underfill |
-| OTIF fines | Walmart, Costco, Whole Foods, UNFI, KeHE penalties |
-| Chargebacks | Retailer compliance charges on shorted POs |
-| DTC cancellations | Customer cancellations from hold-for-complete delays |
-| DTC margin leakage | Cancelled DTC customers who buy in-store at lower margin |
-| Distributor returns | Unsold promo product returned or written off |
-| Triage labour | Human time spent editing every order |
+Costco generates 76% of all compliance fines ($281K of $369K)
+because of its $250 flat fee per any-short PO. At 92% fill, 17% of
+Costco POs have at least one shorted line. Improving Costco fill
+from 92% to 95% is the single highest-return operational fix in the
+analysis.
 
-The headline: **$33.1M in total short-shipping costs across 8 cost
-dimensions on $53M shipped revenue**. The business thinks it
-ships $25M a year. The demand it cannot see is nearly $34M annually.
+## Buffer simulation
 
-## What the tool does
+The tool models what happens as fill rate improves:
 
-- **Headline cost stack** — flow-split chart showing total cost
-  allocated across eight dimensions, with contextual benchmarks
-  (% of revenue, % of estimated margin, unshipped demand gap)
-- **Retailer and SKU drill-down** — stacked bars by retailer,
-  sortable heatmap table of the 20 costliest SKUs
-- **Time series** — monthly stacked area chart with trend detection
-  (rising, steady, eased) and summary statistics
-- **Buffer simulation** — staircase chart showing cost recovery at
-  80/85/90/95% fill rates, with a deauthorization cliff at 90%
-- **Parameter adjustment** — sliders for OTIF rates, deauthorization
-  thresholds, margins, triage costs, and chargebacks; costs
-  recalculate in the browser with a reset-to-baseline button
-- **Time-range filter** — narrow any section to a custom month range
-- **Dimension toggles** — exclude/include individual cost dimensions
-- **Print export** — `Ctrl+P` produces a paginated, Economist-style
-  PDF with clean typography and sharp SVG charts
+| Target | Total Cost | Recovery | Recovery % |
+|---|---|---|---|
+| Baseline (92.7%) | $6.6M | — | — |
+| 95% | $1.2M | $5.4M | 81.5% |
+| 97% | $835K | $5.7M | 87.3% |
+| 98% | $640K | $5.9M | 90.3% |
+| 99% | $411K | $6.2M | 93.8% |
 
-## Tech stack
-
-- **Frontend** — React (Vite), custom SVG charts, Recharts for area
-  and bar charts, CSS Modules, code-split via React.lazy
-- **Data pipeline** — Python scripts generating synthetic orders and
-  running a modular cost engine across eight dimensions
-- **Data delivery** — pre-aggregated JSON (81 KB total); no backend,
-  no API
-- **Cost engine (browser)** — JS implementation scaling aggregates
-  by parameter ratios, validated against Python output
-- **Hosting** — Cloudflare Pages (static site)
-- **Typography** — Playfair Display + Source Sans 3
-
-## Repository structure
-
-```
-data/               SQLite databases (extract, orders, costs)
-docs/               Schema, cost-engine docs, design spec
-scripts/            Python pipeline: order generation, cost engine,
-                    validation, JSON export
-web/                React app (Vite)
-  public/data/      Pre-aggregated JSON consumed by the app
-  src/components/   Section components, parameter panel, header
-  src/lib/          Shared utilities (time range, dimensions, format)
-  src/utils/        Browser-side cost engine
-```
+Moving from 92% to 95% fill recovers 81% of the total shortfall
+cost. Diminishing returns set in above 97%.
 
 ## Data contract
 
-Canonical Cinderhaven conformance — 50 SKUs across 5 product lines and 6 contracted retailers.
+Consumes the Cinderhaven Data Platform directly:
+
+- `fct_retailer_shipment_lines` / `fct_distributor_shipment_lines`
+  — units ordered vs shipped per line
+- `raw.retailer_chargebacks` / `raw.distributor_chargebacks` where
+  reason = 'short_ship'
+- `raw.retailer_deductions` / `raw.distributor_deductions` where
+  deduction_type = 'short_ship'
+- `raw.sku_costs` — COGS for contribution margin calculation
+- Compliance fines modeled from published retailer schedules
+  (Walmart 3% of COGS, Costco $250 flat, etc.)
+
+50 SKUs, 5 product lines, 6 retailers, 3 distributors. Canonical
+reference: `CINDERHAVEN_CANONICAL.md`.
+
+## Stack
+
+- **Frontend:** React 19, Vite
+- **Charts:** D3 / custom SVG
+- **Data pipeline:** Python → JSON from platform Postgres
+- **Deployment:** Cloudflare Workers
 
 ## Run locally
 
-```
-cd web
+```bash
 npm install
 npm run dev
 ```
 
-Opens at `http://localhost:5173`. The app loads JSON from
-`web/public/data/`; no backend or database connection required.
+To regenerate data from the platform:
 
-To regenerate JSON from the SQLite databases:
-
-```
-python scripts/export_json.py
+```bash
+python scripts/rebuild_from_platform.py
 ```
 
-## Methodology
+Requires a flyctl proxy to the Cinderhaven database.
 
-The synthetic order data, triage model, and cost engine are
-documented in [`docs/cost-engine-docs.md`](docs/cost-engine-docs.md).
-All cost parameters are tunable via the interactive panel and
-documented in [`docs/cost-engine-benchmarks.md`](docs/cost-engine-benchmarks.md).
+## What this replaced
+
+This tool previously generated its own synthetic orders at a 69%
+fill rate, producing a $33.1M cost figure across 8 dimensions. The
+plausibility audit found that figure was indefensible — three
+incompatible fulfillment realities coexisted in the portfolio. The
+rebuild replaced the synthetic engine with direct platform queries.
+$33M became $6.6M. Eight dimensions became four. Every dollar now
+has a receipt.
 
 ---
 
-A [Lailara LLC](https://github.com/MsShawnP) portfolio piece.
+Built by [Lailara LLC](https://lailarallc.com) — data hygiene and
+analytics consulting for specialty food brands scaling into national
+retail.
 
 ## License
 
