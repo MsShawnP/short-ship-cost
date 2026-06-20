@@ -1,26 +1,26 @@
 [
   {
     "dimension": "forgone_revenue",
-    "total_cost": 5537091.85,
-    "pct_of_shipped": 0.0785,
+    "total_cost": 523326.17,
+    "pct_of_shipped": 0.0069,
     "description": "Units not shipped × wholesale price. Secondary: forgone contribution margin."
   },
   {
     "dimension": "compliance_fines",
-    "total_cost": 368758.11,
-    "pct_of_shipped": 0.0052,
+    "total_cost": 164543.2,
+    "pct_of_shipped": 0.0022,
     "description": "Contractual OTIF fines applied to real shortfall events. Rates from industry-standard retailer compliance programs."
   },
   {
     "dimension": "chargebacks",
-    "total_cost": 344065.61,
-    "pct_of_shipped": 0.0049,
+    "total_cost": 118813.97,
+    "pct_of_shipped": 0.0016,
     "description": "Event-driven chargebacks for short_ship reason. Actual amounts from platform — no fallback rates."
   },
   {
     "dimension": "deductions",
-    "total_cost": 331289.12,
-    "pct_of_shipped": 0.0047,
+    "total_cost": 87490.49,
+    "pct_of_shipped": 0.0012,
     "description": "Event-driven deductions for short_ship type. Actual amounts withheld from remittance payments."
   }
 ]

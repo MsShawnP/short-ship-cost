@@ -3,132 +3,132 @@
     {
       "target_fill_rate": 0.95,
       "achieved_fill_rate": 0.95,
-      "total_cost": 1219160.73,
-      "total_recovery": 5362043.96,
-      "recovery_pct": 0.8148,
+      "total_cost": 587141.52,
+      "total_recovery": 307032.32,
+      "recovery_pct": 0.3434,
       "by_dimension": {
         "forgone_revenue": {
-          "original": 5537091.85,
-          "simulated": 444711.74,
-          "recovery": 5092380.11,
-          "recovery_pct": 0.9197
+          "original": 523326.17,
+          "simulated": 226430.04,
+          "recovery": 296896.13,
+          "recovery_pct": 0.5673
         },
         "compliance_fines": {
-          "original": 368758.11,
-          "simulated": 310555.52,
-          "recovery": 58202.59,
-          "recovery_pct": 0.1578
+          "original": 164543.2,
+          "simulated": 154407.02,
+          "recovery": 10136.19,
+          "recovery_pct": 0.0616
         },
         "chargebacks": {
-          "original": 344065.61,
-          "simulated": 236334.75,
-          "recovery": 107730.86,
-          "recovery_pct": 0.3131
+          "original": 118813.97,
+          "simulated": 118813.97,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         },
         "deductions": {
-          "original": 331289.12,
-          "simulated": 227558.72,
-          "recovery": 103730.4,
-          "recovery_pct": 0.3131
+          "original": 87490.49,
+          "simulated": 87490.49,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         }
       }
     },
     {
       "target_fill_rate": 0.97,
       "achieved_fill_rate": 0.97,
-      "total_cost": 835171.68,
-      "total_recovery": 5746033.01,
-      "recovery_pct": 0.8731,
+      "total_cost": 489568.86,
+      "total_recovery": 404604.97,
+      "recovery_pct": 0.4525,
       "by_dimension": {
         "forgone_revenue": {
-          "original": 5537091.85,
-          "simulated": 249367.51,
-          "recovery": 5287724.34,
-          "recovery_pct": 0.955
+          "original": 523326.17,
+          "simulated": 130033.3,
+          "recovery": 393292.87,
+          "recovery_pct": 0.7515
         },
         "compliance_fines": {
-          "original": 368758.11,
-          "simulated": 307468.08,
-          "recovery": 61290.02,
-          "recovery_pct": 0.1662
+          "original": 164543.2,
+          "simulated": 153231.1,
+          "recovery": 11312.1,
+          "recovery_pct": 0.0687
         },
         "chargebacks": {
-          "original": 344065.61,
-          "simulated": 141800.85,
-          "recovery": 202264.76,
-          "recovery_pct": 0.5879
+          "original": 118813.97,
+          "simulated": 118813.97,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         },
         "deductions": {
-          "original": 331289.12,
-          "simulated": 136535.23,
-          "recovery": 194753.89,
-          "recovery_pct": 0.5879
+          "original": 87490.49,
+          "simulated": 87490.49,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         }
       }
     },
     {
       "target_fill_rate": 0.98,
       "achieved_fill_rate": 0.98,
-      "total_cost": 639892.99,
-      "total_recovery": 5941311.69,
-      "recovery_pct": 0.9028,
+      "total_cost": 436213.52,
+      "total_recovery": 457960.31,
+      "recovery_pct": 0.5122,
       "by_dimension": {
         "forgone_revenue": {
-          "original": 5537091.85,
-          "simulated": 160949.66,
-          "recovery": 5376142.19,
-          "recovery_pct": 0.9709
+          "original": 523326.17,
+          "simulated": 83561.72,
+          "recovery": 439764.45,
+          "recovery_pct": 0.8403
         },
         "compliance_fines": {
-          "original": 368758.11,
-          "simulated": 293385.94,
-          "recovery": 75372.16,
-          "recovery_pct": 0.2044
+          "original": 164543.2,
+          "simulated": 146347.34,
+          "recovery": 18195.86,
+          "recovery_pct": 0.1106
         },
         "chargebacks": {
-          "original": 344065.61,
-          "simulated": 94533.9,
-          "recovery": 249531.71,
-          "recovery_pct": 0.7252
+          "original": 118813.97,
+          "simulated": 118813.97,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         },
         "deductions": {
-          "original": 331289.12,
-          "simulated": 91023.49,
-          "recovery": 240265.63,
-          "recovery_pct": 0.7252
+          "original": 87490.49,
+          "simulated": 87490.49,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         }
       }
     },
     {
       "target_fill_rate": 0.99,
       "achieved_fill_rate": 0.99,
-      "total_cost": 410678.23,
-      "total_recovery": 6170526.45,
-      "recovery_pct": 0.9376,
+      "total_cost": 370737.83,
+      "total_recovery": 523436.0,
+      "recovery_pct": 0.5854,
       "by_dimension": {
         "forgone_revenue": {
-          "original": 5537091.85,
-          "simulated": 73899.54,
-          "recovery": 5463192.31,
-          "recovery_pct": 0.9867
+          "original": 523326.17,
+          "simulated": 38683.37,
+          "recovery": 484642.8,
+          "recovery_pct": 0.9261
         },
         "compliance_fines": {
-          "original": 368758.11,
-          "simulated": 244000.0,
-          "recovery": 124758.11,
-          "recovery_pct": 0.3383
+          "original": 164543.2,
+          "simulated": 125750.0,
+          "recovery": 38793.2,
+          "recovery_pct": 0.2358
         },
         "chargebacks": {
-          "original": 344065.61,
-          "simulated": 47266.95,
-          "recovery": 296798.66,
-          "recovery_pct": 0.8626
+          "original": 118813.97,
+          "simulated": 118813.97,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         },
         "deductions": {
-          "original": 331289.12,
-          "simulated": 45511.74,
-          "recovery": 285777.38,
-          "recovery_pct": 0.8626
+          "original": 87490.49,
+          "simulated": 87490.49,
+          "recovery": 0.0,
+          "recovery_pct": 0.0
         }
       }
     }

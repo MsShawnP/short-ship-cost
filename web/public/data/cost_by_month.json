@@ -2,741 +2,741 @@
   {
     "month": "2023-01",
     "dimension": "chargebacks",
-    "cost": 4854.62
+    "cost": 1080.98
   },
   {
     "month": "2023-01",
     "dimension": "compliance_fines",
-    "cost": 6220.16
+    "cost": 3008.79
   },
   {
     "month": "2023-01",
     "dimension": "deductions",
-    "cost": 597.86
+    "cost": 40.0
   },
   {
     "month": "2023-01",
     "dimension": "forgone_revenue",
-    "cost": 89688.03
+    "cost": 6982.49
   },
   {
     "month": "2023-02",
     "dimension": "chargebacks",
-    "cost": 6926.63
+    "cost": 2427.4
   },
   {
     "month": "2023-02",
     "dimension": "compliance_fines",
-    "cost": 6501.47
+    "cost": 3259.46
   },
   {
     "month": "2023-02",
     "dimension": "deductions",
-    "cost": 4137.17
+    "cost": 1073.67
   },
   {
     "month": "2023-02",
     "dimension": "forgone_revenue",
-    "cost": 110754.27
+    "cost": 9445.87
   },
   {
     "month": "2023-03",
     "dimension": "chargebacks",
-    "cost": 7500.22
+    "cost": 2271.98
   },
   {
     "month": "2023-03",
     "dimension": "compliance_fines",
-    "cost": 8925.82
+    "cost": 1849.8
   },
   {
     "month": "2023-03",
     "dimension": "deductions",
-    "cost": 7117.76
+    "cost": 1831.76
   },
   {
     "month": "2023-03",
     "dimension": "forgone_revenue",
-    "cost": 105810.39
+    "cost": 9796.61
   },
   {
     "month": "2023-04",
     "dimension": "chargebacks",
-    "cost": 8151.09
+    "cost": 2948.26
   },
   {
     "month": "2023-04",
     "dimension": "compliance_fines",
-    "cost": 8464.6
+    "cost": 3359.69
   },
   {
     "month": "2023-04",
     "dimension": "deductions",
-    "cost": 7431.78
+    "cost": 2001.97
   },
   {
     "month": "2023-04",
     "dimension": "forgone_revenue",
-    "cost": 129458.62
+    "cost": 7777.23
   },
   {
     "month": "2023-05",
     "dimension": "chargebacks",
-    "cost": 7871.72
+    "cost": 2917.51
   },
   {
     "month": "2023-05",
     "dimension": "compliance_fines",
-    "cost": 9208.63
+    "cost": 4792.85
   },
   {
     "month": "2023-05",
     "dimension": "deductions",
-    "cost": 8716.49
+    "cost": 2157.75
   },
   {
     "month": "2023-05",
     "dimension": "forgone_revenue",
-    "cost": 136509.38
+    "cost": 13875.23
   },
   {
     "month": "2023-06",
     "dimension": "chargebacks",
-    "cost": 8366.23
+    "cost": 2585.65
   },
   {
     "month": "2023-06",
     "dimension": "compliance_fines",
-    "cost": 8388.04
+    "cost": 3749.38
   },
   {
     "month": "2023-06",
     "dimension": "deductions",
-    "cost": 8502.26
+    "cost": 2236.88
   },
   {
     "month": "2023-06",
     "dimension": "forgone_revenue",
-    "cost": 126824.62
+    "cost": 12554.06
   },
   {
     "month": "2023-07",
     "dimension": "chargebacks",
-    "cost": 8698.94
+    "cost": 2170.0
   },
   {
     "month": "2023-07",
     "dimension": "compliance_fines",
-    "cost": 7929.53
+    "cost": 3788.28
   },
   {
     "month": "2023-07",
     "dimension": "deductions",
-    "cost": 8733.71
+    "cost": 2185.25
   },
   {
     "month": "2023-07",
     "dimension": "forgone_revenue",
-    "cost": 121115.56
+    "cost": 8413.56
   },
   {
     "month": "2023-08",
     "dimension": "chargebacks",
-    "cost": 7397.44
+    "cost": 2595.44
   },
   {
     "month": "2023-08",
     "dimension": "compliance_fines",
-    "cost": 10841.26
+    "cost": 4423.38
   },
   {
     "month": "2023-08",
     "dimension": "deductions",
-    "cost": 7884.45
+    "cost": 2045.94
   },
   {
     "month": "2023-08",
     "dimension": "forgone_revenue",
-    "cost": 125669.56
+    "cost": 11691.65
   },
   {
     "month": "2023-09",
     "dimension": "chargebacks",
-    "cost": 8731.7
+    "cost": 2729.05
   },
   {
     "month": "2023-09",
     "dimension": "compliance_fines",
-    "cost": 7516.88
+    "cost": 3886.1
   },
   {
     "month": "2023-09",
     "dimension": "deductions",
-    "cost": 7723.34
+    "cost": 1976.63
   },
   {
     "month": "2023-09",
     "dimension": "forgone_revenue",
-    "cost": 123811.96
+    "cost": 13211.12
   },
   {
     "month": "2023-10",
     "dimension": "chargebacks",
-    "cost": 9685.18
+    "cost": 3405.75
   },
   {
     "month": "2023-10",
     "dimension": "compliance_fines",
-    "cost": 9367.39
+    "cost": 5545.56
   },
   {
     "month": "2023-10",
     "dimension": "deductions",
-    "cost": 8713.1
+    "cost": 2383.97
   },
   {
     "month": "2023-10",
     "dimension": "forgone_revenue",
-    "cost": 131102.86
+    "cost": 14361.33
   },
   {
     "month": "2023-11",
     "dimension": "chargebacks",
-    "cost": 18956.58
+    "cost": 6367.11
   },
   {
     "month": "2023-11",
     "dimension": "compliance_fines",
-    "cost": 19640.83
+    "cost": 7258.59
   },
   {
     "month": "2023-11",
     "dimension": "deductions",
-    "cost": 8966.87
+    "cost": 2744.18
   },
   {
     "month": "2023-11",
     "dimension": "forgone_revenue",
-    "cost": 301127.46
+    "cost": 28079.08
   },
   {
     "month": "2023-12",
     "dimension": "chargebacks",
-    "cost": 17599.89
+    "cost": 5594.61
   },
   {
     "month": "2023-12",
     "dimension": "compliance_fines",
-    "cost": 18479.63
+    "cost": 8194.13
   },
   {
     "month": "2023-12",
     "dimension": "deductions",
-    "cost": 17205.61
+    "cost": 4486.21
   },
   {
     "month": "2023-12",
     "dimension": "forgone_revenue",
-    "cost": 296221.54
+    "cost": 27547.62
   },
   {
     "month": "2024-01",
     "dimension": "chargebacks",
-    "cost": 8009.56
+    "cost": 2859.7
   },
   {
     "month": "2024-01",
     "dimension": "compliance_fines",
-    "cost": 7280.39
+    "cost": 3526.04
   },
   {
     "month": "2024-01",
     "dimension": "deductions",
-    "cost": 17993.26
+    "cost": 4536.72
   },
   {
     "month": "2024-01",
     "dimension": "forgone_revenue",
-    "cost": 144002.15
+    "cost": 13845.96
   },
   {
     "month": "2024-02",
     "dimension": "chargebacks",
-    "cost": 6030.32
+    "cost": 2040.88
   },
   {
     "month": "2024-02",
     "dimension": "compliance_fines",
-    "cost": 5038.24
+    "cost": 2127.09
   },
   {
     "month": "2024-02",
     "dimension": "deductions",
-    "cost": 9267.69
+    "cost": 2454.74
   },
   {
     "month": "2024-02",
     "dimension": "forgone_revenue",
-    "cost": 85013.31
+    "cost": 8138.24
   },
   {
     "month": "2024-03",
     "dimension": "chargebacks",
-    "cost": 8286.62
+    "cost": 2384.78
   },
   {
     "month": "2024-03",
     "dimension": "compliance_fines",
-    "cost": 7772.87
+    "cost": 2256.65
   },
   {
     "month": "2024-03",
     "dimension": "deductions",
-    "cost": 6024.87
+    "cost": 1679.97
   },
   {
     "month": "2024-03",
     "dimension": "forgone_revenue",
-    "cost": 134705.16
+    "cost": 9652.21
   },
   {
     "month": "2024-04",
     "dimension": "chargebacks",
-    "cost": 8107.5
+    "cost": 2740.34
   },
   {
     "month": "2024-04",
     "dimension": "compliance_fines",
-    "cost": 7803.75
+    "cost": 3176.63
   },
   {
     "month": "2024-04",
     "dimension": "deductions",
-    "cost": 8044.41
+    "cost": 1605.1
   },
   {
     "month": "2024-04",
     "dimension": "forgone_revenue",
-    "cost": 138069.33
+    "cost": 9850.79
   },
   {
     "month": "2024-05",
     "dimension": "chargebacks",
-    "cost": 7820.67
+    "cost": 2671.47
   },
   {
     "month": "2024-05",
     "dimension": "compliance_fines",
-    "cost": 10693.34
+    "cost": 2840.76
   },
   {
     "month": "2024-05",
     "dimension": "deductions",
-    "cost": 9180.89
+    "cost": 2061.53
   },
   {
     "month": "2024-05",
     "dimension": "forgone_revenue",
-    "cost": 131204.32
+    "cost": 12990.24
   },
   {
     "month": "2024-06",
     "dimension": "chargebacks",
-    "cost": 7524.71
+    "cost": 2664.19
   },
   {
     "month": "2024-06",
     "dimension": "compliance_fines",
-    "cost": 9601.0
+    "cost": 5020.8
   },
   {
     "month": "2024-06",
     "dimension": "deductions",
-    "cost": 7421.9
+    "cost": 1971.3
   },
   {
     "month": "2024-06",
     "dimension": "forgone_revenue",
-    "cost": 128165.96
+    "cost": 9055.96
   },
   {
     "month": "2024-07",
     "dimension": "chargebacks",
-    "cost": 8704.67
+    "cost": 2550.16
   },
   {
     "month": "2024-07",
     "dimension": "compliance_fines",
-    "cost": 9417.86
+    "cost": 3114.4
   },
   {
     "month": "2024-07",
     "dimension": "deductions",
-    "cost": 9069.41
+    "cost": 1881.58
   },
   {
     "month": "2024-07",
     "dimension": "forgone_revenue",
-    "cost": 136331.28
+    "cost": 12681.56
   },
   {
     "month": "2024-08",
     "dimension": "chargebacks",
-    "cost": 8098.36
+    "cost": 3342.24
   },
   {
     "month": "2024-08",
     "dimension": "compliance_fines",
-    "cost": 7490.89
+    "cost": 3076.44
   },
   {
     "month": "2024-08",
     "dimension": "deductions",
-    "cost": 8645.88
+    "cost": 1935.85
   },
   {
     "month": "2024-08",
     "dimension": "forgone_revenue",
-    "cost": 133982.67
+    "cost": 12277.72
   },
   {
     "month": "2024-09",
     "dimension": "chargebacks",
-    "cost": 8609.89
+    "cost": 3258.77
   },
   {
     "month": "2024-09",
     "dimension": "compliance_fines",
-    "cost": 8512.84
+    "cost": 4201.5
   },
   {
     "month": "2024-09",
     "dimension": "deductions",
-    "cost": 8899.57
+    "cost": 2315.67
   },
   {
     "month": "2024-09",
     "dimension": "forgone_revenue",
-    "cost": 144193.58
+    "cost": 14290.43
   },
   {
     "month": "2024-10",
     "dimension": "chargebacks",
-    "cost": 9344.96
+    "cost": 3706.19
   },
   {
     "month": "2024-10",
     "dimension": "compliance_fines",
-    "cost": 10893.35
+    "cost": 5398.9
   },
   {
     "month": "2024-10",
     "dimension": "deductions",
-    "cost": 8520.8
+    "cost": 2613.25
   },
   {
     "month": "2024-10",
     "dimension": "forgone_revenue",
-    "cost": 150420.59
+    "cost": 12020.09
   },
   {
     "month": "2024-11",
     "dimension": "chargebacks",
-    "cost": 16726.62
+    "cost": 5103.11
   },
   {
     "month": "2024-11",
     "dimension": "compliance_fines",
-    "cost": 16623.77
+    "cost": 9109.18
   },
   {
     "month": "2024-11",
     "dimension": "deductions",
-    "cost": 10915.59
+    "cost": 2723.07
   },
   {
     "month": "2024-11",
     "dimension": "forgone_revenue",
-    "cost": 273021.44
+    "cost": 28258.26
   },
   {
     "month": "2024-12",
     "dimension": "chargebacks",
-    "cost": 18258.81
+    "cost": 7362.39
   },
   {
     "month": "2024-12",
     "dimension": "compliance_fines",
-    "cost": 22231.76
+    "cost": 10154.06
   },
   {
     "month": "2024-12",
     "dimension": "deductions",
-    "cost": 15474.21
+    "cost": 4793.27
   },
   {
     "month": "2024-12",
     "dimension": "forgone_revenue",
-    "cost": 298260.12
+    "cost": 30671.05
   },
   {
     "month": "2025-01",
     "dimension": "chargebacks",
-    "cost": 7924.0
+    "cost": 2721.45
   },
   {
     "month": "2025-01",
     "dimension": "compliance_fines",
-    "cost": 10098.18
+    "cost": 5087.53
   },
   {
     "month": "2025-01",
     "dimension": "deductions",
-    "cost": 17627.55
+    "cost": 4563.21
   },
   {
     "month": "2025-01",
     "dimension": "forgone_revenue",
-    "cost": 139757.93
+    "cost": 11356.29
   },
   {
     "month": "2025-02",
     "dimension": "chargebacks",
-    "cost": 5819.04
+    "cost": 2272.29
   },
   {
     "month": "2025-02",
     "dimension": "compliance_fines",
-    "cost": 8944.99
+    "cost": 2538.52
   },
   {
     "month": "2025-02",
     "dimension": "deductions",
-    "cost": 9465.21
+    "cost": 2782.06
   },
   {
     "month": "2025-02",
     "dimension": "forgone_revenue",
-    "cost": 94437.92
+    "cost": 8188.0
   },
   {
     "month": "2025-03",
     "dimension": "chargebacks",
-    "cost": 7499.25
+    "cost": 2340.0
   },
   {
     "month": "2025-03",
     "dimension": "compliance_fines",
-    "cost": 5939.73
+    "cost": 2724.47
   },
   {
     "month": "2025-03",
     "dimension": "deductions",
-    "cost": 6328.91
+    "cost": 1856.3
   },
   {
     "month": "2025-03",
     "dimension": "forgone_revenue",
-    "cost": 108154.82
+    "cost": 9329.48
   },
   {
     "month": "2025-04",
     "dimension": "chargebacks",
-    "cost": 6810.92
+    "cost": 2631.29
   },
   {
     "month": "2025-04",
     "dimension": "compliance_fines",
-    "cost": 5886.56
+    "cost": 3788.43
   },
   {
     "month": "2025-04",
     "dimension": "deductions",
-    "cost": 7081.51
+    "cost": 1946.04
   },
   {
     "month": "2025-04",
     "dimension": "forgone_revenue",
-    "cost": 116302.46
+    "cost": 10493.56
   },
   {
     "month": "2025-05",
     "dimension": "chargebacks",
-    "cost": 8703.86
+    "cost": 2737.2
   },
   {
     "month": "2025-05",
     "dimension": "compliance_fines",
-    "cost": 11187.74
+    "cost": 5352.64
   },
   {
     "month": "2025-05",
     "dimension": "deductions",
-    "cost": 8293.83
+    "cost": 1962.16
   },
   {
     "month": "2025-05",
     "dimension": "forgone_revenue",
-    "cost": 138302.71
+    "cost": 15455.47
   },
   {
     "month": "2025-06",
     "dimension": "chargebacks",
-    "cost": 8809.44
+    "cost": 2360.48
   },
   {
     "month": "2025-06",
     "dimension": "compliance_fines",
-    "cost": 9161.9
+    "cost": 3552.62
   },
   {
     "month": "2025-06",
     "dimension": "deductions",
-    "cost": 8749.13
+    "cost": 2264.21
   },
   {
     "month": "2025-06",
     "dimension": "forgone_revenue",
-    "cost": 133101.37
+    "cost": 11586.3
   },
   {
     "month": "2025-07",
     "dimension": "chargebacks",
-    "cost": 7662.91
+    "cost": 2966.18
   },
   {
     "month": "2025-07",
     "dimension": "compliance_fines",
-    "cost": 9088.08
+    "cost": 5205.15
   },
   {
     "month": "2025-07",
     "dimension": "deductions",
-    "cost": 8616.62
+    "cost": 1963.5
   },
   {
     "month": "2025-07",
     "dimension": "forgone_revenue",
-    "cost": 133651.79
+    "cost": 15592.12
   },
   {
     "month": "2025-08",
     "dimension": "chargebacks",
-    "cost": 7609.0
+    "cost": 3239.33
   },
   {
     "month": "2025-08",
     "dimension": "compliance_fines",
-    "cost": 6683.77
+    "cost": 5050.43
   },
   {
     "month": "2025-08",
     "dimension": "deductions",
-    "cost": 9084.13
+    "cost": 2364.74
   },
   {
     "month": "2025-08",
     "dimension": "forgone_revenue",
-    "cost": 111072.43
+    "cost": 13583.93
   },
   {
     "month": "2025-09",
     "dimension": "chargebacks",
-    "cost": 7488.48
+    "cost": 2791.57
   },
   {
     "month": "2025-09",
     "dimension": "compliance_fines",
-    "cost": 8384.58
+    "cost": 1964.79
   },
   {
     "month": "2025-09",
     "dimension": "deductions",
-    "cost": 7562.41
+    "cost": 2540.14
   },
   {
     "month": "2025-09",
     "dimension": "forgone_revenue",
-    "cost": 133387.71
+    "cost": 11174.04
   },
   {
     "month": "2025-10",
     "dimension": "chargebacks",
-    "cost": 9055.64
+    "cost": 3067.71
   },
   {
     "month": "2025-10",
     "dimension": "compliance_fines",
-    "cost": 8112.49
+    "cost": 3177.76
   },
   {
     "month": "2025-10",
     "dimension": "deductions",
-    "cost": 7548.62
+    "cost": 2253.07
   },
   {
     "month": "2025-10",
     "dimension": "forgone_revenue",
-    "cost": 125522.25
+    "cost": 12025.47
   },
   {
     "month": "2025-11",
     "dimension": "chargebacks",
-    "cost": 15905.66
+    "cost": 6291.55
   },
   {
     "month": "2025-11",
     "dimension": "compliance_fines",
-    "cost": 16862.72
+    "cost": 6600.44
   },
   {
     "month": "2025-11",
     "dimension": "deductions",
-    "cost": 8859.67
+    "cost": 2415.79
   },
   {
     "month": "2025-11",
     "dimension": "forgone_revenue",
-    "cost": 265092.0
+    "cost": 27002.28
   },
   {
     "month": "2025-12",
     "dimension": "chargebacks",
-    "cost": 18219.08
+    "cost": 6716.96
   },
   {
     "month": "2025-12",
     "dimension": "compliance_fines",
-    "cost": 22442.73
+    "cost": 11226.57
   },
   {
     "month": "2025-12",
     "dimension": "deductions",
-    "cost": 14978.04
+    "cost": 4511.95
   },
   {
     "month": "2025-12",
     "dimension": "forgone_revenue",
-    "cost": 309930.42
+    "cost": 35302.14
   },
   {
     "month": "2026-01",
     "dimension": "chargebacks",
-    "cost": 2295.4
+    "cost": 900.0
   },
   {
     "month": "2026-01",
     "dimension": "compliance_fines",
-    "cost": 1120.34
+    "cost": 1155.4
   },
   {
     "month": "2026-01",
     "dimension": "deductions",
-    "cost": 1904.61
+    "cost": 331.06
   },
   {
     "month": "2026-01",
     "dimension": "forgone_revenue",
-    "cost": 32913.88
+    "cost": 4768.73
   }
 ]

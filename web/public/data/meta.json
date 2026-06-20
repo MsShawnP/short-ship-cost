@@ -1,16 +1,16 @@
 {
-  "last_updated": "2026-06-14T16:59:50.509765+00:00",
+  "last_updated": "2026-06-20T22:48:46.668234+00:00",
   "time_window": {
     "start": "2023-01-02",
     "end": "2026-01-07"
   },
-  "shipped_revenue": 70530214.31,
+  "shipped_revenue": 75543979.99,
   "total_demand": 76067306.16,
   "total_orders": 55802,
   "total_lines": 236996,
-  "overall_fill_rate": 0.9272,
-  "retailer_fill_rate": 0.9206,
-  "distributor_fill_rate": 0.9415,
+  "overall_fill_rate": 0.9931,
+  "retailer_fill_rate": 0.9924,
+  "distributor_fill_rate": 0.9947,
   "contribution_margin_pct": 0.52,
   "cost_parameters": {
     "fine_walmart": {
