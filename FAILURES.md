@@ -115,4 +115,16 @@ quarto" or "scope, scrollytelling, decoration"]
 
 **Tags:** cost-engine, approximations, buffer-simulation, parameter-panel, deauthorization
 
+### 2026-06-14 — Docker container name mismatch during platform rebuild
+
+**Attempted:** Connected to local Postgres replica using container name `cinderhaven-postgres` in the rebuild script.
+
+**Why it didn't work:** The actual Docker container name is `cinderhaven-data-platform-postgres-1` (Docker Compose names containers as `{project}-{service}-{instance}`). The shorter name was a guess.
+
+**What we tried instead:** Ran `docker ps -a` to find the actual container name. Minor issue, fixed in seconds.
+
+**Status:** Resolved
+
+**Tags:** docker, container-name, postgres, rebuild
+
 ---

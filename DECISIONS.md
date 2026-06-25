@@ -135,8 +135,25 @@ Each entry:
 - **Scope:** `DimensionToggle.jsx` and `DimensionToggle.module.css`
 - **Do not:** Put the label/hint text back inline with the chips. They live in a separate `.labelRow` flex container above the grid.
 
+### 2026-06-14 — Replace 8-dimension synthetic model with 4-dimension causal model from platform
+- **Why:** The plausibility audit found the synthetic 69% fill / $33.1M figure was indefensible — three incompatible fulfillment realities coexisted in the portfolio. The cinderhaven-data-platform now generates causal shipment lines with event-driven chargebacks and deductions. Four dimensions have receipts: forgone revenue (actual gap), compliance fines (modeled from retailer schedules), chargebacks (platform events), deductions (platform events). The dropped dimensions (deauthorization, DTC cancellations, DTC margin leakage, distributor returns, triage labor) were synthetic constructs without platform backing.
+- **Scope:** Entire project — data pipeline, React app, all documentation
+- **Do not:** Re-add synthetic dimensions. Every cost dollar must trace to a platform event or a retailer-published fine schedule.
+
+### 2026-06-14 — Integrate JSON export into rebuild_from_platform.py, not a separate script
+- **Why:** The old pipeline had a separate `export_json.py` that re-queried databases. The rebuild script's `results` dict already contains all granular breakdowns (by_retailer_month, by_sku_month, by_sku_retailer) from `_build_result`. Exporting in the same script avoids re-querying Postgres and keeps the pipeline to one command: `python scripts/rebuild_from_platform.py`.
+- **Scope:** Data pipeline
+- **Do not:** Create a separate JSON export script. If new JSON shapes are needed, add builder functions to `rebuild_from_platform.py`.
+
 ---
 
 ## Reversed / Superseded
 
-(No reversed decisions yet)
+### ~~2026-05-07 — Generate synthetic order data (original + edited) as a new data layer~~
+- **Superseded by:** 2026-06-14 — 4-dimension causal model from platform. Platform generates actual shipment lines; synthetic orders retired.
+
+### ~~2026-05-07 — Model three short behaviors by channel~~
+- **Superseded by:** 2026-06-14 — 4-dimension causal model. Channel-specific synthetic behaviors (DTC hold-for-complete, distributor returns) replaced by platform events.
+
+### ~~2026-05-08 — Browser-side parameter overrides operate by ratio scaling on pre-aggregated JSON~~
+- **Partially superseded:** Only compliance_fines have tunable parameters now. Chargebacks and deductions are actual platform events (not scalable). Forgone revenue is the actual gap. The ratio-scaling mechanism still applies to the fine schedule rates.

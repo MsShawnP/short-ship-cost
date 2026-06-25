@@ -627,3 +627,34 @@ link.
 **Next:** Deploy the OG fix (`cd web && npm run deploy`). Project is then ready to share with the prospect. Optional: error boundaries (15 min), GitHub Actions CI (30 min).
 
 ---
+
+## 2026-06-14 — Phase 2 rebuild from platform causal data
+
+**Started from:** Phase 1 complete (SHORT_SHIP_REBUILD_DESIGN.md approved). Previous session rewrote all 8 React source files for 4-dimension model. JSON export and data regeneration still needed.
+
+**Did:**
+1. Added JSON export to `rebuild_from_platform.py` — 7 builder functions producing 8 JSON files directly from the platform query results (no separate export script).
+2. Ran rebuild against local Docker Postgres replica. Generated web/public/data/*.json.
+3. Verified React app renders all 4 sections correctly (dev server + build).
+4. Deleted 26 old files: 12 cost_engine modules, 12 old scripts, cinderhaven_extract.db, short_ship_orders.db, calibration.json, deauthorization_events.json.
+5. Cleaned up .gitignore (removed cinderhaven_extract.db exception).
+6. Committed and pushed (a6bc0d8). Updated OG meta tags (4537555) and README (a5e1c54).
+7. Answered data pull questions: top SKU = CHP-PS-009 (Maple Syrup Grade A, $215K), ten decision figures for thesis range recomputation.
+
+**State:** Phase 2 complete. App renders 4 dimensions (forgone_revenue, compliance_fines, chargebacks, deductions). Old 69% fill / 8-dimension synthetic model fully deleted. At time of session: $6.6M/3yr, 92.7% fill, 55K orders.
+
+**Next:** Phase 3 — CINDERHAVEN_CANONICAL.md update (blocked on OTIF overlap scoping), thesis range recomputation.
+
+---
+
+## 2026-06-20 — Cinderhaven reseed regeneration
+
+**Started from:** Phase 2 complete. Upstream cinderhaven-data-platform reseeded.
+
+**Did:** Regenerated data from platform reseed (commit 994438f). Figures changed dramatically: $6.6M → $894K, 92.7% → 99.3% fill.
+
+**State:** Data files regenerated. README is stale (still shows $6.6M/92.7% figures from June 14). CINDERHAVEN_CANONICAL.md still pending. Thesis range still awaiting recomputation.
+
+**Next:** Update README with current figures ($894K/3yr, 99.3% fill). CINDERHAVEN_CANONICAL.md update (pending OTIF overlap scoping). Thesis range recomputation with current ten-decision figures.
+
+---

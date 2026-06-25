@@ -5,7 +5,50 @@ session. For session-by-session state, see HANDOFF.md.
 
 ---
 
-## Goal
+## Current: Phase 3 — Post-reseed alignment
+
+### Goal
+
+Bring all documentation and cross-project references into alignment
+with the current platform data ($894K/3yr at 99.3% fill after the
+June 20 cinderhaven reseed).
+
+### Tasks
+
+- [ ] P3-1: Update README.md with current figures
+    - Fill rate, total cost, dimension breakdown table, buffer
+      simulation table all stale (show $6.6M/92.7% from June 14)
+    - Shawn writes replacement prose; Claude reports figures
+
+- [ ] P3-2: Update CINDERHAVEN_CANONICAL.md
+    - BLOCKED on OTIF overlap scoping note
+    - Thesis range ($1.4M–$3.1M) marked "awaiting regen"
+    - Multiple figures marked awaiting regen
+
+- [ ] P3-3: Thesis range recomputation
+    - Ten decision figures reported in June 14 session
+    - Need recomputation with post-reseed numbers
+    - Decision 4 dropped from ~$11M/yr to $2.2M/yr (pre-reseed);
+      will be lower still at 99.3% fill
+
+- [ ] P3-4: Update check_canonical.py
+    - Regression test may need new expected values
+
+- [ ] P3-5: Verify deployed app matches current data
+    - Confirm shortships.lailarallc.com shows $894K headline
+    - If stale, redeploy
+
+### Out of scope
+
+- Do NOT touch lailara-website
+- Do NOT write narrative prose — report figures, Shawn writes text
+- Commit and push only after figure approval
+
+---
+
+## Completed: Arc 4 — Dashboard to argument (2026-05-15)
+
+### Goal (archived)
 
 Transform the tool into a self-selling argument that works cold
 — a CEO with an MBA opens it on his phone from a friend's text,
