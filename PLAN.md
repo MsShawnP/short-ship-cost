@@ -20,10 +20,10 @@ June 20 cinderhaven reseed).
       simulation table all stale (show $6.6M/92.7% from June 14)
     - Shawn writes replacement prose; Claude reports figures
 
-- [ ] P3-2: Update CINDERHAVEN_CANONICAL.md
-    - BLOCKED on OTIF overlap scoping note
-    - Thesis range ($1.4M–$3.1M) marked "awaiting regen"
-    - Multiple figures marked awaiting regen
+- [x] P3-2: Update CINDERHAVEN_CANONICAL.md
+    - Done 2026-06-26 (commit 88049a1 in cinderhaven-data-platform)
+    - 8 headline figures, 3 approved phrasings, overlap note, thesis flag, 2 SUPERSEDED
+    - check_canonical.py 12/12 GREEN
 
 - [ ] P3-3: Thesis range recomputation
     - Ten decision figures reported in June 14 session
@@ -31,8 +31,9 @@ June 20 cinderhaven reseed).
     - Decision 4 dropped from ~$11M/yr to $2.2M/yr (pre-reseed);
       will be lower still at 99.3% fill
 
-- [ ] P3-4: Update check_canonical.py
-    - Regression test may need new expected values
+- [x] P3-4: Update check_canonical.py
+    - No changes needed — script parses figures from CINDERHAVEN_CANONICAL.md
+    - 12/12 GREEN with updated figures
 
 - [ ] P3-5: Verify deployed app matches current data
     - Confirm shortships.lailarallc.com shows $894K headline

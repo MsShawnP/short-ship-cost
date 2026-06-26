@@ -9,6 +9,39 @@ For things that didn't work, see FAILURES.md.
 
 ---
 
+## 2026-06-26 — Platform data restoration + canonical short-ship update
+
+**Started from:** Exec-readiness audit found OG card stale ($33.1M from old 8-dimension model). Investigating revealed commit 994438f had changed validation.json to $894K/99.3% fill. User halted all short-ship-cost work to investigate whether platform data was corrupted.
+
+**Did:**
+1. Diagnosed the Docker Desktop stale AF_UNIX socket blocker — deleted via WSL `rm -f`, cleaned up 8 stale `run.*` directories from prior socket battles.
+2. Started Docker Desktop, spun up cinderhaven-data-platform Postgres, ran `check_canonical.py` — 12/12 GREEN.
+3. Ran `rebuild_from_platform.py` — produced $894K / 99.3% fill. Same as commit 994438f.
+4. Diagnosed the apparent data corruption: the `check_canonical.py` short-ship checks are **self-consistency checks on the markdown file** (dimensions sum = total), not Postgres queries. The platform data genuinely produces $894K because commit 7370151 deliberately raised unit fill targets to 99.1–99.5%.
+5. Investigated commit 7370151 at user's request: deliberate analytical decision. Old 89–95% unit fill targets produced per-retailer fills so low the retailer would have deauthorized. New 99% targets produce shallow widespread shortfalls — 85–92% in-full rate, 84–92% OTIF — consistent with specialty food operations.
+6. User accepted the 99% fill regime as correct.
+7. Verified all short-ship figures against live platform Postgres (forgone revenue, chargebacks, deductions exact match; compliance fines modeled at rebuild time).
+8. Updated CINDERHAVEN_CANONICAL.md (commit 88049a1 in cinderhaven-data-platform):
+   - 8 headline figures (fill rates, 4 dimensions, total, annual)
+   - 3 approved phrasings (annual, 3yr, framing)
+   - Overlap scoping note ($39.6K/yr)
+   - Thesis range flagged ⚠️ awaiting regen
+   - 2 SUPERSEDED entries for old $6.58M and old 92%/94% fill rates
+   - check_canonical.py: 12/12 GREEN
+
+**State:** Platform canonical is current. short-ship-cost data files (validation.json, all JSON) match platform. OG card and meta tags in web/index.html still show $894K (from commit ca8f4a4 — this is now correct). Deployed app may be stale. Docker Desktop running with cinderhaven Postgres up.
+
+**Pending (not started):**
+- P3-1: Update README.md with current figures ($894K/3yr, 99.3% fill)
+- P3-3: Thesis range recomputation (short-ship dropped from $2.2M/yr to $298K/yr; range cannot be recomputed until all ten decision figures are current)
+- P3-5: Verify/redeploy app at shortships.lailarallc.com
+- FIX 2 (deferred): Design system compliance fixes (modifiedDot red background, PinnedCallout hardcoded hex, BufferSimulation hardcoded constants)
+- FIX 3 (deferred): Deploy (`npm run build && npm run deploy`)
+
+**Next:** Revert commit ca8f4a4 (which wrote wrong OG card with wrong $894K framing — wait, $894K is now correct). Actually: the OG card commit ca8f4a4 used $894K figures which are now confirmed correct. But the OG card itself and meta tags may need regeneration with correct approved phrasing ("99% unit fill still costs $300K/yr"). Check whether current OG card/meta tags match the new approved phrasings before deciding whether to regenerate.
+
+---
+
 ## 2026-05-20 — DS v2 brand kit, review fixes, polish
 
 **Started from:** Project deployed and feature-complete. Requested Lailara DS v2 brand kit migration and code review.
