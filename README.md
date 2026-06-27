@@ -14,44 +14,48 @@ Platform (Postgres).
 
 ## What it finds
 
-At a 92.7% portfolio fill rate, Cinderhaven loses $6.6M over three
-years ($2.2M/yr) across four cost dimensions:
+At a 99.3% portfolio fill rate (99.2% retailer / 99.5% distributor),
+Cinderhaven loses $894K over three years ($298K/yr) across four cost
+dimensions:
 
 | Dimension | 3-Year | Annual | % of Shipped |
 |---|---|---|---|
-| Forgone revenue | $5.5M | $1.8M | 7.85% |
-| Compliance fines | $369K | $123K | 0.52% |
-| Chargebacks | $344K | $115K | 0.49% |
-| Deductions | $331K | $110K | 0.47% |
+| Forgone revenue | $523K | $174K | 0.69% |
+| Compliance fines | $165K | $55K | 0.22% |
+| Chargebacks | $119K | $40K | 0.16% |
+| Deductions | $87K | $29K | 0.12% |
 
 Every dollar traces to a platform event. No modeled soft costs, no
 forward projections, no assumed admin time.
 
 Forgone contribution margin — the actual profit impact — runs
-$958K/yr, roughly 52% of the forgone revenue figure.
+$91K/yr, roughly 52% of the forgone revenue figure.
 
 ## The Costco finding
 
-Costco generates 76% of all compliance fines ($281K of $369K)
-because of its $250 flat fee per any-short PO. At 92% fill, 17% of
-Costco POs have at least one shorted line. Improving Costco fill
-from 92% to 95% is the single highest-return operational fix in the
-analysis.
+Costco generates 85% of all compliance fines ($140K of $165K)
+because of its $250 flat fee per any-short PO. Even at 99%+ fill,
+the flat-fee structure means any shorted line on a Costco PO
+triggers the full penalty. Costco is also the largest single-
+retailer cost contributor at $212K (24% of total).
 
 ## Buffer simulation
 
-The tool models what happens as fill rate improves:
+The tool models what a line-level fill floor recovers. At 99.3%
+average fill, individual lines still fall below target — the buffer
+simulation lifts the floor and recomputes all four dimensions:
 
-| Target | Total Cost | Recovery | Recovery % |
+| Floor | Total Cost | Recovery | Recovery % |
 |---|---|---|---|
-| Baseline (92.7%) | $6.6M | — | — |
-| 95% | $1.2M | $5.4M | 81.5% |
-| 97% | $835K | $5.7M | 87.3% |
-| 98% | $640K | $5.9M | 90.3% |
-| 99% | $411K | $6.2M | 93.8% |
+| Baseline (99.3% avg) | $894K | — | — |
+| 95% floor | $587K | $307K | 34.3% |
+| 97% floor | $490K | $405K | 45.3% |
+| 98% floor | $436K | $458K | 51.2% |
+| 99% floor | $371K | $523K | 58.5% |
 
-Moving from 92% to 95% fill recovers 81% of the total shortfall
-cost. Diminishing returns set in above 97%.
+Lifting the floor to 99% recovers 59% of total shortfall cost.
+Chargebacks and deductions are unaffected by the fill-rate lift
+because they are actual platform events, not modeled from the gap.
 
 ## Data contract
 
@@ -94,13 +98,15 @@ Requires a flyctl proxy to the Cinderhaven database.
 
 ## What this replaced
 
-This tool previously generated its own synthetic orders at a 69%
-fill rate, producing a $33.1M cost figure across 8 dimensions. The
-plausibility audit found that figure was indefensible — three
-incompatible fulfillment realities coexisted in the portfolio. The
-rebuild replaced the synthetic engine with direct platform queries.
-$33M became $6.6M. Eight dimensions became four. Every dollar now
-has a receipt.
+This tool has been rebuilt twice. The original synthetic engine
+generated orders at a 69% fill rate, producing $33.1M across 8
+dimensions. A plausibility audit found that figure indefensible —
+three incompatible fulfillment realities coexisted in the portfolio.
+The first rebuild replaced the synthetic engine with platform
+queries and landed at $6.6M / 92.7% fill across 4 dimensions. A
+subsequent cinderhaven-data-platform reseed recalibrated fill rates
+upward to 99.3%, producing the current $894K figure. Eight
+dimensions became four. Every dollar now has a receipt.
 
 ---
 
