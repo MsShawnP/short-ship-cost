@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   BarChart,
   Bar,
@@ -20,8 +20,18 @@ import styles from './BufferSimulation.module.css'
 
 const ORDER = DIMENSION_ORDER
 
-const PRIMARY_TEAL = '#063d32'
-const ACCENT_RED = '#cc100a'
+function useCSSColor(varName, fallback) {
+  const [color, setColor] = useState(fallback)
+  const resolved = useRef(false)
+  useEffect(() => {
+    if (!resolved.current) {
+      const val = getComputedStyle(document.documentElement).getPropertyValue(varName).trim()
+      if (val) setColor(val)
+      resolved.current = true
+    }
+  }, [varName])
+  return color
+}
 
 function buildScenarioBreakdown(scenario, activeDims) {
   return ORDER.filter((d) => activeDims.has(d))
@@ -124,7 +134,9 @@ export default function BufferSimulation({ bufferScenarios }) {
   const range = useTimeRange()
   const { activeDims } = range
   const scenarios = bufferScenarios.scenarios
-  const [pinned, setPinned] = useState(null) // target_fill_rate or null
+  const [pinned, setPinned] = useState(null)
+  const primaryTeal = useCSSColor('--color-hongkong-5', '#063d32')
+  const accentRed = useCSSColor('--color-red', '#cc100a')
 
   const scenariosFiltered = useMemo(
     () =>
@@ -263,13 +275,13 @@ export default function BufferSimulation({ bufferScenarios }) {
               />
               <ReferenceLine
                 y={baseline}
-                stroke={ACCENT_RED}
+                stroke={accentRed}
                 strokeDasharray="4 4"
                 strokeWidth={1.5}
                 label={{
                   value: `Current: ${fmtCompact(baseline)}`,
                   position: 'insideTopRight',
-                  fill: ACCENT_RED,
+                  fill: accentRed,
                   fontSize: 12,
                   fontWeight: 600,
                   offset: 6,
@@ -277,7 +289,7 @@ export default function BufferSimulation({ bufferScenarios }) {
               />
               <Bar
                 dataKey="total_cost"
-                fill={PRIMARY_TEAL}
+                fill={primaryTeal}
                 isAnimationActive={!REDUCED_MOTION}
                 animationDuration={250}
                 animationEasing="ease-out"
@@ -287,7 +299,7 @@ export default function BufferSimulation({ bufferScenarios }) {
                   return (
                     <Cell
                       key={b.target_fill_rate}
-                      fill={PRIMARY_TEAL}
+                      fill={primaryTeal}
                       fillOpacity={dimmed ? 0.3 : 1}
                     />
                   )

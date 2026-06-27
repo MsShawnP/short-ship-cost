@@ -16,8 +16,16 @@
   /* Brand red — text and 1px rules only, never background fill */
   --color-red: #cc100a;
 
+  /* Hong Kong teal */
+  --color-hongkong-5: #063d32;
+
   /* Semantic */
   --color-success: #158f75;
+
+  /* Dark card (PinnedCallout) */
+  --color-dark-card-bg: #1a1a1a;       /* London-10 */
+  --color-dark-card-text: #ededed;     /* ~London-93; body text on dark */
+  --color-dark-card-muted: #9a9a9a;    /* ~London-55; hints, pct on dark */
 
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
