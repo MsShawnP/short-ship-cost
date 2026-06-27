@@ -15,10 +15,10 @@ June 20 cinderhaven reseed).
 
 ### Tasks
 
-- [ ] P3-1: Update README.md with current figures
-    - Fill rate, total cost, dimension breakdown table, buffer
-      simulation table all stale (show $6.6M/92.7% from June 14)
-    - Shawn writes replacement prose; Claude reports figures
+- [x] P3-1: Update README.md with current figures
+    - Done 2026-06-26 (commit 8a5d219)
+    - $894K/99.3% fill, dimension table, buffer sim, Costco finding,
+      "What this replaced" all updated
 
 - [x] P3-2: Update CINDERHAVEN_CANONICAL.md
     - Done 2026-06-26 (commit 88049a1 in cinderhaven-data-platform)
@@ -35,9 +35,8 @@ June 20 cinderhaven reseed).
     - No changes needed — script parses figures from CINDERHAVEN_CANONICAL.md
     - 12/12 GREEN with updated figures
 
-- [ ] P3-5: Verify deployed app matches current data
-    - Confirm shortships.lailarallc.com shows $894K headline
-    - If stale, redeploy
+- [x] P3-5: Verify deployed app matches current data
+    - Done 2026-06-26 — deployed via `npm run deploy`, $894K confirmed
 
 ### Out of scope
 

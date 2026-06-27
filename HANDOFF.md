@@ -691,3 +691,15 @@ link.
 **Next:** Update README with current figures ($894K/3yr, 99.3% fill). CINDERHAVEN_CANONICAL.md update (pending OTIF overlap scoping). Thesis range recomputation with current ten-decision figures.
 
 ---
+
+## 2026-06-26 — Exec-readiness fixes + deferred wrap
+
+**Started from:** Deferred /wrap from prior session pending. README stale at $6.6M/92.7%. Design system compliance issues flagged.
+
+**Did:** Completed deferred /wrap (HANDOFF, FAILURES, DECISIONS, PLAN updates, tagged v2.0-platform-rebuild). Then exec-readiness: verified OG card ($894K confirmed), rewrote README to $894K/99.3% regime, fixed 3 DS compliance issues (modifiedDot red→navy, PinnedCallout hardcoded hex→tokens, BufferSimulation hex constants→getComputedStyle reads), built and deployed to Cloudflare Workers.
+
+**State:** Deployed at shortships.lailarallc.com with $894K headline. README, OG, meta all aligned. DS compliant. All pushed. Tagged v2.0-platform-rebuild.
+
+**Next:** Phase 3 remaining — P3-3 thesis range recomputation with post-reseed figures. P3-1/P3-2/P3-4/P3-5 all done.
+
+---
