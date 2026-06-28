@@ -715,3 +715,15 @@ link.
 **Next:** Phase 3 remaining — P3-3 thesis range recomputation with post-reseed figures. P3-1/P3-2/P3-4/P3-5 all done.
 
 ---
+
+## 2026-06-28 16:45
+
+**What changed:** Doc sweep complete — all internal docs updated to post-rebuild 4-dimension model ($894K/3yr at 99.2%/99.5% fill).
+
+**Why:** Internal docs were frozen pre-rebuild, still referencing 8 dimensions, synthetic orders, SQLite, Netlify, and $33.1M/$6.6M figures. Needed alignment before project can be handed off or revisited.
+
+**State:** All 5 docs updated and committed (f1c61f8). DECISIONS.md: 8 struck through, 5 replacements added. CLAUDE.md: project description, costs, stack, data relationship rewritten. PLAN.md: current state section added. HANDOFF.md: rebuild arc entry added. chat-project-instructions.md: description and costs updated. Deployed at shortships.lailarallc.com. No known issues.
+
+**Next:** No active work arc. P3-3 (thesis range recomputation) remains deferred — blocked on all ten decision figures being current.
+
+---
