@@ -10,13 +10,15 @@ Read `../lailara-design-system/LAILARA_DESIGN_SYSTEM.md` before any visual work 
 A portfolio piece for Lailara LLC that quantifies the full cost of
 short-shipping orders in a specialty food business. Built around
 Cinderhaven Provisions (~$25M fictional brand, 50 SKUs). The project
-generates synthetic order data (original orders from retail partners
-vs. edited/shipped orders), calculates the revenue gap and cascading
-costs (fines, chargebacks, deauthorization, DTC cancellations, margin
-leakage, returns), and presents findings through a polished interactive
-tool with an exportable Economist-style analysis document. The
-interactive tool is built in React or HTML/JS, hosted on Netlify or
-GitHub Pages, and designed to look like a product — not a prototype.
+queries causal fulfillment data from the Cinderhaven Data Platform
+(Postgres), computes four cost dimensions (forgone revenue, compliance
+fines, chargebacks, deductions), and presents findings through a
+polished interactive tool with an exportable Economist-style analysis.
+Total: $894K over 3 years ($298K/yr) at 99.3% portfolio fill
+(99.2% retailer / 99.5% distributor). The interactive tool is built
+in React 19 (Vite), deployed on Cloudflare Workers at
+shortships.lailarallc.com, and designed to look like a product —
+not a prototype.
 
 **Business question this project answers:** What does it cost a
 business when it can't fulfill retail partner orders as submitted,
@@ -69,49 +71,51 @@ completeness ("can we get this order to 75% and eat a smaller fine?").
 Even small 1-case orders get shorted because inventory simply does
 not exist.
 
-### Costs of a short
+### Costs of a short (4 dimensions, each traceable to platform data)
 
-1. Lost revenue — units not shipped, sale gone (or delayed for
-   backorder retailers)
-2. OTIF fines — significant, especially Walmart, Costco, UNFI, KeHE
-3. Chargebacks — retailer compliance charges
-4. Deauthorization — lost shelf placement = compounding future
-   revenue loss
-5. DTC full-order cancellations — hold-for-complete delays push
-   past customer patience
-6. DTC-to-retail margin leakage — cancelled DTC customer buys
-   in-store at wholesale margin instead
-7. Distributor returns/claims — over-ordered promo product returned
-   or written off
-8. Triage labor tax — cost of human time spent manually editing
-   every order
+1. Forgone revenue — units not shipped × wholesale price; secondary:
+   forgone contribution margin at 52% of forgone revenue
+2. Compliance fines — contractual OTIF fines applied to actual
+   shortfall events, modeled from published retailer fine schedules
+   (Walmart 3% of COGS, Costco $250 flat per any-short PO, etc.)
+3. Chargebacks — event-driven chargebacks for short_ship reason,
+   actual amounts from platform
+4. Deductions — event-driven deductions for short_ship type, actual
+   amounts withheld from remittance payments
 
 ### Buffer simulation
 
-Included as a "what if" — framed as "here's what even a small
-inventory buffer would have saved in fines alone." Not a production
-planning tool. Does not prescribe how to build the buffer.
+Included as a "what if" — models what a line-level fill floor
+recovers across all four dimensions. At 99.3% average fill,
+individual lines still fall below target; the simulation lifts the
+floor (95%/97%/98%/99%) and recomputes forgone revenue and compliance
+fines. Chargebacks and deductions are unaffected (actual platform
+events, not fill-rate-dependent). Not a production planning tool.
 
 ## Stack and tools
 
-- Primary language: JavaScript (React) for interactive tool, Python
-  for data generation and cost engine
-- Key packages/libraries: TBD — will be decided during build
-- Database: SQLite (Cinderhaven lineage) or JSON for order data
-- Rendering: React app hosted on Netlify or GitHub Pages
-- Export: Economist-style PDF generated from the tool
-- Data source: Synthetic order data generated in this repo, drawing
-  on Cinderhaven product master, sku_costs, stores, and retailer
-  data
+- **Frontend:** React 19, Vite — D3 / custom SVG for primary charts,
+  Recharts for time series and buffer staircase
+- **Data pipeline:** Python (`scripts/rebuild_from_platform.py`) —
+  queries Cinderhaven Data Platform Postgres, computes 4 dimensions,
+  exports 8 JSON files to `web/public/data/`
+- **Deployment:** Cloudflare Workers (`wrangler deploy`) at
+  shortships.lailarallc.com
+- **Export:** Print CSS (browser print-to-PDF)
+- **Data source:** Cinderhaven Data Platform (Postgres) — causal
+  fulfillment data from `fct_retailer_shipment_lines`,
+  `fct_distributor_shipment_lines`, chargeback and deduction tables
 
 ## Cinderhaven data relationship
 
-This project consumes data from the cinderhaven-data repo (product
-master, SKU costs, stores, retailer info). Whether we reference the
-full DB or include a self-contained extract will be decided when we
-design the schema and understand what we actually need. The synthetic
-order data (original orders, edited orders) is new to this project.
-Eventually the order data may move to its own repo.
+This project queries the Cinderhaven Data Platform (Postgres)
+directly via `rebuild_from_platform.py`. It consumes causal
+fulfillment data (shipment lines with units ordered vs shipped),
+event-driven chargebacks and deductions, and SKU cost data. The
+old self-contained SQLite extract (`cinderhaven_extract.db`) and
+synthetic order database (`short_ship_orders.db`) no longer exist.
+A local `data/short_ship_cost.db` is written as an archival artifact
+but is not consumed by the React app.
 
 ## Project files
 

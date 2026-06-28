@@ -4,15 +4,17 @@
 
 A portfolio piece that quantifies the full cost of short-shipping
 orders in a specialty food business. Uses Cinderhaven Provisions
-(~$25M fictional brand) to show what happens when a business can't
-fulfill retail partner orders as submitted: lost revenue, OTIF fines,
-chargebacks, deauthorization, DTC cancellations, margin leakage,
-distributor returns, and the labor cost of manual triage. The core
+(~$25M fictional brand, 50 SKUs) to show what happens when a
+business can't fulfill retail partner orders as submitted. Four cost
+dimensions — forgone revenue, compliance fines, chargebacks,
+deductions — totaling $894K over 3 years ($298K/yr) at 99.3%
+portfolio fill (99.2% retailer / 99.5% distributor). Every dollar
+traces to a platform event or a published fine schedule. The core
 insight is that the business can't even see this cost because their
 system overwrites original orders with edited orders — destroying
-the demand signal. Deliverables: a polished React/HTML interactive
-tool (hosted on Netlify/GitHub Pages) with an exportable
-Economist-style analysis document generated from the tool.
+the demand signal. Deliverables: a polished React 19 interactive
+tool (deployed on Cloudflare Workers at shortships.lailarallc.com)
+with an exportable Economist-style analysis via print CSS.
 
 ## Project files in knowledge
 
@@ -78,9 +80,10 @@ chat, flag the contradiction rather than silently picking one.
 - Retailer ordering patterns vary: Walmart (DC-level, 1–100 cases),
   Costco (contract-based), Whole Foods (stock-to-level), UNFI/KeHE
   (mixed replenishment/promo-overorder), DTC (held for 100% complete).
-- Costs of a short: lost revenue, OTIF fines, chargebacks,
-  deauthorization, DTC cancellations, DTC-to-retail margin leakage,
-  distributor returns/claims, triage labor.
+- Costs of a short (4 dimensions): forgone revenue (units not
+  shipped × wholesale price), compliance fines (retailer OTIF
+  schedules), chargebacks (platform events), deductions (platform
+  events).
 - The business is migrating to NetSuite. The message: make sure the
   new system captures both original and shipped orders.
 - Growth target: $50M by 2030. Can't get there while leaking demand

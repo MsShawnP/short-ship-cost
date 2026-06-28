@@ -5,7 +5,14 @@ session. For session-by-session state, see HANDOFF.md.
 
 ---
 
-## Current: Phase 3 — Post-reseed alignment
+## Current state (2026-06-28)
+
+Project is deployed and exec-ready at shortships.lailarallc.com.
+All figures verified against platform Postgres. No active work arc.
+
+---
+
+## Completed: Phase 3 — Post-reseed alignment
 
 ### Goal
 

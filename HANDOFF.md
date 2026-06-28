@@ -692,6 +692,18 @@ link.
 
 ---
 
+## 2026-06-28 — Platform rebuild complete, exec-ready
+
+**Started from:** Pre-rebuild state with synthetic 8-dimension model ($33.1M → $6.6M → $894K lineage).
+
+**Did:** Full rebuild to 4-dimension model sourced from platform Postgres causal fulfillment data. Canonical updated to $894K/3yr ($298K/yr) at 99.2%/99.5% fill. OG card regenerated. README rewritten. Three design system violations fixed (modifiedDot fill, PinnedCallout hardcoded hex, BufferSimulation hardcoded hex). Built and deployed. Internal doc sweep: DECISIONS.md (8 superseded entries, 5 replacement decisions), CLAUDE.md (project description, costs, stack, data relationship), PLAN.md (current state added), HANDOFF.md (this entry).
+
+**State:** Deployed at shortships.lailarallc.com. Canonical green (12/12). No known issues.
+
+**Next:** Internal doc sweep complete. No active work arc.
+
+---
+
 ## 2026-06-26 — Exec-readiness fixes + deferred wrap
 
 **Started from:** Deferred /wrap from prior session pending. README stale at $6.6M/92.7%. Design system compliance issues flagged.

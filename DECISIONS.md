@@ -24,45 +24,48 @@ Each entry:
 - **Scope:** Global
 - **Do not:** Use the prospective lead's company name, data, or identifiable details anywhere in this project.
 
-### 2026-05-07 — Build the interactive tool in React or polished HTML/JS, hosted on Netlify or GitHub Pages
-- **Why:** The portfolio already has Streamlit (velocity tool), R/Shiny (health audit), Python CLI tools, and SQL. The gap is a product-quality interactive web tool that a non-technical executive would open in a browser. This fills that gap and demonstrates front-end data storytelling.
-- **Scope:** Interactive tool deliverable
-- **Do not:** Use Streamlit, Power BI, or Shiny for this project's interactive piece.
+### ~~2026-05-07 — Build the interactive tool in React or polished HTML/JS, hosted on Netlify or GitHub Pages~~
+- **Superseded by:** 2026-06-28 — React (Vite) on Cloudflare Workers. Netlify/GitHub Pages never used; Cloudflare Workers provides edge-served static assets with SPA fallback.
 
 ### 2026-05-07 — Use React for the interactive tool framework
 - **Why:** Better fit for the kind of multi-control parameter-driven UI this project needs (channel filters, parameter overrides, scenario sliders). Component model gives cleaner state management than vanilla HTML/JS for the level of interactivity planned. Refines the earlier "React or polished HTML/JS" decision into a firm choice.
 - **Scope:** Interactive tool framework
 - **Do not:** Reach for vanilla HTML/JS or jQuery for this app.
 
-### 2026-05-07 — Deliver data to the browser as pre-extracted JSON, not by loading the SQLite files via sql.js
-- **Why:** The cost-engine output (`short_ship_cost.db`) is small enough to extract to JSON at build time. Avoiding `sql.js` keeps the bundle smaller, removes WASM loading overhead, and means the tool starts faster on first paint. The orders DB (22 MB) doesn't need to ship to the browser at all — only its summarized cost output does.
-- **Scope:** Data delivery to the interactive tool
-- **Do not:** Load `short_ship_orders.db` or `cinderhaven_extract.db` directly in the browser via `sql.js`. Pre-extract whatever the tool needs at build time.
+### ~~2026-05-07 — Deliver data to the browser as pre-extracted JSON, not by loading the SQLite files via sql.js~~
+- **Superseded by:** 2026-06-28 — JSON exported from platform Postgres via `rebuild_from_platform.py`. The old pipeline extracted from local SQLite files via a separate `export_json.py`; the rebuild script now queries Postgres directly and writes JSON in the same run. The browser still receives pre-aggregated JSON — the change is the data source, not the delivery mechanism.
 
-### 2026-05-07 — Use the same 18–24 month time window as existing Cinderhaven scan data
-- **Why:** Keeps the door open for future projects to JOIN the order data with scan data. Consistency across the Cinderhaven dataset.
-- **Scope:** Synthetic order data generation
-- **Do not:** Create a different time window that would make cross-referencing impossible.
+### 2026-06-28 — Pre-aggregated JSON from platform Postgres, not SQLite extraction
+- **Why:** The 4-dimension causal model queries the cinderhaven-data-platform Postgres directly. `rebuild_from_platform.py` computes all four dimensions, writes `data/short_ship_cost.db` as an archival artifact, and exports 8 JSON files to `web/public/data/`. No intermediate SQLite databases in the pipeline — Postgres is the single source. The old `cinderhaven_extract.db` and `short_ship_orders.db` no longer exist.
+- **Scope:** Data pipeline from platform to interactive tool
+- **Do not:** Reintroduce SQLite as an intermediate data source. Do not create a separate JSON export script — all export logic lives in `rebuild_from_platform.py`.
+
+### ~~2026-05-07 — Use the same 18–24 month time window as existing Cinderhaven scan data~~
+- **Superseded by:** 2026-06-14 — 4-dimension causal model. The platform uses a 36-month window (2023-01-02 to 2026-01-07). The synthetic order generator that needed time-window alignment no longer exists.
 
 ### 2026-05-08 — Use React (Vite) for the interactive tool
 - **Why:** React's component model and state management fit the parameter adjustment panel and drill-down interactions. Vite for fast dev/build. Portfolio gap is a product-quality web tool — React fills it.
 - **Scope:** Interactive tool
 - **Do not:** Use vanilla HTML/JS, Streamlit, or any other framework.
 
-### 2026-05-08 — Pre-computed JSON for data delivery, not client-side SQLite
-- **Why:** React's ecosystem is built around JS objects. JSON is native — no translation layer, no wasm dependency (sql.js), no async queries fighting React's rendering model. Data is small enough to bundle. Pre-aggregate in a Python export script so the app gets summary-level data, not 125K raw order lines.
-- **Scope:** Data pipeline from cost engine to interactive tool
-- **Do not:** Load SQLite files in the browser or build a backend API.
+### ~~2026-05-08 — Pre-computed JSON for data delivery, not client-side SQLite~~
+- **Superseded by:** 2026-06-28 — Pre-aggregated JSON from platform Postgres. The principle (pre-aggregated JSON, not client-side DB) still holds; the source changed from local SQLite to platform Postgres.
 
-### 2026-05-08 — Browser-side parameter overrides operate by ratio scaling on pre-aggregated JSON, not by re-running the cost engine
-- **Why:** The Python cost engine reads from `short_ship_orders.db` (22 MB) — too big for the browser. To make the parameter sliders responsive, `web/src/utils/costEngine.js` derives per-(dimension, retailer) ratios from `params / baseline_params` and multiplies the pre-aggregated JSON aggregates. Deauthorization is the exception: it filters `deauthorization_events.json` by the user's threshold settings. Buffer scenarios use ratio scaling for the scenario-by-dimension breakdowns.
+### ~~2026-05-08 — Browser-side parameter overrides operate by ratio scaling on pre-aggregated JSON, not by re-running the cost engine~~
+- **Superseded by:** 2026-06-28 — Ratio scaling narrowed to compliance fines only. See replacement entry below.
+
+### 2026-06-28 — Browser-side parameter overrides use ratio scaling for compliance fines only
+- **Why:** In the 4-dimension model, only compliance_fines have tunable parameters (per-channel fine rates). Forgone revenue, chargebacks, and deductions are actual platform event data — not scalable by user parameters. `web/src/utils/costEngine.js` derives per-channel ratios from `params / baseline_params` for fine rates and multiplies the pre-aggregated compliance_fines data. The old deauthorization event filtering and 8-dimension ratio scaling no longer apply.
 - **Scope:** `ParameterPanel` recompute path
-- **Do not:** Ship the orders DB to the browser. Do not attempt to re-run the cost engine in JS over raw order lines. When a new parameter is added, decide upfront whether it's ratio-scalable; if not (e.g., a velocity threshold being *raised*), document the limitation rather than bolt on a new data shape.
+- **Do not:** Add ratio scaling to chargebacks or deductions — these are actual platform events and cannot be meaningfully scaled by a parameter slider.
 
-### 2026-05-08 — Host on Netlify
-- **Why:** Zero-config for React apps, auto-detects build command, instant deploys from GitHub, free tier generous. Less friction than GitHub Pages for a Vite + React project.
+### ~~2026-05-08 — Host on Netlify~~
+- **Superseded by:** 2026-06-28 — Cloudflare Workers. Netlify was never actually used; the project deployed to Cloudflare Workers from the start of the deployment arc.
+
+### 2026-06-28 — Host on Cloudflare Workers
+- **Why:** Edge-served static assets with SPA fallback via `wrangler deploy`. Build pipeline: `vite build` → `wrangler deploy`. Custom domain at shortships.lailarallc.com. Free tier covers this project's traffic.
 - **Scope:** Deployment
-- **Do not:** Use GitHub Pages unless Netlify proves problematic.
+- **Do not:** Move to Netlify, Vercel, or GitHub Pages without a specific reason.
 
 ---
 
@@ -87,20 +90,26 @@ Each entry:
 - **Scope:** Interactive tool layout
 - **Do not:** Add client-side routing or multi-page navigation unless a section proves too heavy.
 
-### 2026-05-08 — Recharts for charting, validated for print compatibility
-- **Why:** SVG-based (critical for print CSS — renders as vectors, not rasterized canvas). React-native component API. Print compatibility spike in task 1 confirms it works before building all sections.
+### ~~2026-05-08 — Recharts for charting, validated for print compatibility~~
+- **Superseded by:** 2026-06-28 — D3 / custom SVG primary, Recharts retained for time series and buffer staircase only.
+
+### 2026-06-28 — D3 / custom SVG for primary charts, Recharts for time series and buffer simulation
+- **Why:** The flow-split chart (Section 1) and retailer stacked bar (Section 2) use custom SVG for precise layout control. Recharts is retained for the stacked area time series (Section 3) and bar chart staircase (Section 4) where its `ResponsiveContainer` and animation support justify the dependency. All rendering is SVG-based for print compatibility.
 - **Scope:** All charts in the interactive tool
-- **Do not:** Use Chart.js or other canvas-based charting libraries.
+- **Do not:** Use Chart.js or other canvas-based charting libraries. Do not replace the custom SVG charts with Recharts — the custom layouts provide better control over the flow-split and stacked-bar rendering.
 
 ### 2026-05-08 — Click-to-pin (no hover tooltips) is the canonical chart interaction
 - **Why:** Hover tooltips disappear when the mouse leaves; users want to read the breakdown at length, talk about it, hand the screen off. Click-to-pin keeps the detail visible. Dark `PinnedCallout` card above each chart unifies the pattern; dimming on non-selected items reinforces the focus.
 - **Scope:** All charts across all sections
 - **Do not:** Add hover tooltips. Do not put pinned details inline below the chart (they get lost). Do not vary the callout style per section.
 
-### 2026-05-08 — Sequential teal palette by magnitude rank for cost dimensions
-- **Why:** A categorical palette assigns colors by *type* (lost-revenue=navy, deauth=red), but eight categorical hues compete for attention. Sequential teal (`#0A3D3D` darkest → `#BDEEE8` lightest) sorted by dimension magnitude communicates the hierarchy at a glance and lets the same dimension read identically across every section. Documented in `docs/design-spec.md` and centralized in `web/src/lib/dimensions.js`.
+### ~~2026-05-08 — Sequential teal palette by magnitude rank for cost dimensions~~
+- **Superseded by:** 2026-06-28 — Updated to reflect 4 dimensions instead of 8. Same approach, narrower ramp.
+
+### 2026-06-28 — Sequential Hong Kong teal palette for 4 cost dimensions
+- **Why:** Same principle as the original 8-dimension palette — sequential teal sorted by magnitude — but with 4 stops instead of 8. Uses Hong Kong ramp steps 5, 25, 45, 70 (`#063d32` → `#0e6e5a` → `#1fa282` → `#6dcdb5`), per Lailara DS v2. Forgone revenue (darkest) through deductions (lightest). Centralized in `web/src/lib/dimensions.js`.
 - **Scope:** All charts and tables in the interactive tool
-- **Do not:** Reintroduce the categorical navy/red/gray palette. Do not assign a brand color (e.g., red) to a single dimension — palette ordering is by magnitude, not by meaning.
+- **Do not:** Reintroduce the categorical palette. Do not assign a brand color to a single dimension.
 
 ---
 
@@ -125,13 +134,11 @@ Each entry:
 - **Scope:** Global — interactive tool, export, README, all prose
 - **Do not:** Use McKinsey/consulting-deck style, marketing language, or data-science-prototype aesthetics.
 
-### 2026-05-15 — Keep the sequential teal palette unchanged after quantitative evaluation
-- **Why:** CIE76 deltaE analysis of all adjacent pairs shows distances of 8.7–15.5, all above the ~7–8 just-noticeable-difference threshold. The weakest pair is mid-palette (triage_labor ↔ dtc_cancellations at 8.7), not the lightest 3 as initially suspected. Every chart segment has text labels as a secondary identification channel. Adjusting 3 lightest shades to increase contrast would compress the remaining 5 pairs, likely making the mid-palette worse.
-- **Scope:** All charts and tables using `DIMENSION_COLOR` from `lib/dimensions.js`
-- **Do not:** Redesign the full palette. If a future section needs more contrast, consider using labels or patterns rather than shifting hues.
+### ~~2026-05-15 — Keep the sequential teal palette unchanged after quantitative evaluation~~
+- **Superseded by:** 2026-06-28 — Palette reduced from 8 stops to 4 as part of the 4-dimension rebuild. The deltaE analysis of the 8-stop palette is historical; the current 4-stop palette has wider spacing and no contrast concerns.
 
 ### 2026-05-15 — Use CSS Grid (not flex-wrap) for dimension toggle chips
-- **Why:** Flex-wrap with label text, hint, and 8 chips in one container wraps unpredictably (6+2, 5+3, etc.) depending on viewport width. CSS Grid with `repeat(4, 1fr)` desktop / `repeat(2, 1fr)` mobile guarantees even rows regardless of chip text length or container width. Follows the same pattern as `.benchmarks` in CostStack.module.css.
+- **Why:** Flex-wrap with label text, hint, and chips in one container wraps unpredictably depending on viewport width. CSS Grid with `repeat(4, 1fr)` desktop / `repeat(2, 1fr)` mobile guarantees even rows regardless of chip text length or container width. With 4 dimensions, this produces a single row on desktop and a 2×2 grid on mobile.
 - **Scope:** `DimensionToggle.jsx` and `DimensionToggle.module.css`
 - **Do not:** Put the label/hint text back inline with the chips. They live in a separate `.labelRow` flex container above the grid.
 
@@ -157,3 +164,27 @@ Each entry:
 
 ### ~~2026-05-08 — Browser-side parameter overrides operate by ratio scaling on pre-aggregated JSON~~
 - **Partially superseded:** Only compliance_fines have tunable parameters now. Chargebacks and deductions are actual platform events (not scalable). Forgone revenue is the actual gap. The ratio-scaling mechanism still applies to the fine schedule rates.
+
+### ~~2026-05-07 — Build the interactive tool in React or polished HTML/JS, hosted on Netlify or GitHub Pages~~
+- **Superseded by:** 2026-06-28 — React (Vite) on Cloudflare Workers.
+
+### ~~2026-05-07 — Deliver data to the browser as pre-extracted JSON, not by loading the SQLite files via sql.js~~
+- **Superseded by:** 2026-06-28 — JSON exported from platform Postgres via `rebuild_from_platform.py`. Principle (pre-aggregated JSON) still holds; source changed from SQLite to Postgres.
+
+### ~~2026-05-07 — Use the same 18–24 month time window as existing Cinderhaven scan data~~
+- **Superseded by:** 2026-06-14 — Platform uses 36-month window. Synthetic order generator retired.
+
+### ~~2026-05-08 — Pre-computed JSON for data delivery, not client-side SQLite~~
+- **Superseded by:** 2026-06-28 — Same principle, source changed from SQLite to platform Postgres.
+
+### ~~2026-05-08 — Host on Netlify~~
+- **Superseded by:** 2026-06-28 — Cloudflare Workers. Netlify was never used.
+
+### ~~2026-05-08 — Recharts for charting, validated for print compatibility~~
+- **Superseded by:** 2026-06-28 — D3 / custom SVG primary, Recharts retained for time series and buffer staircase only.
+
+### ~~2026-05-08 — Sequential teal palette by magnitude rank for cost dimensions~~
+- **Superseded by:** 2026-06-28 — Same approach with 4 Hong Kong teal stops instead of 8.
+
+### ~~2026-05-15 — Keep the sequential teal palette unchanged after quantitative evaluation~~
+- **Superseded by:** 2026-06-28 — 8-stop deltaE analysis is historical; 4-stop palette has no contrast concerns.
