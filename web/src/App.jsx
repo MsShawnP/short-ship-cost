@@ -263,11 +263,11 @@ function AppShell({ data }) {
               actual platform events attributed to short-ship causes.
             </p>
             <p>
-              The buffer simulation models structural improvements to fill rate
-              by lifting every shipment line to a target percentage, then
-              recomputing all four dimensions. It does not prescribe how to
-              build the buffer &mdash; only what even a modest improvement would
-              recover in quantifiable costs.
+              The buffer simulation models structural improvements by imposing a
+              per-line fill floor &mdash; lifting every shipment line that falls
+              below the target percentage, then recomputing all four dimensions.
+              It does not prescribe how to build the buffer &mdash; only what
+              even a modest floor would recover in quantifiable costs.
             </p>
             <p>
               Compliance fine parameters are tunable. The baseline values

@@ -21,10 +21,10 @@ export const DIMENSION_LABEL_SHORT = {
 }
 
 // Hong Kong (teal) sequential ramp — Lailara DS v2.
-// Four steps, darkest at largest dimension, lightest at smallest.
+// 4-series stops: 15, 35, 55, 85. Darkest = largest dimension.
 export const DIMENSION_COLOR = {
-  forgone_revenue: '#063d32',
-  compliance_fines: '#0e6e5a',
-  chargebacks: '#1fa282',
-  deductions: '#6dcdb5',
+  forgone_revenue: '#0a5c4b',
+  compliance_fines: '#158f75',
+  chargebacks: '#35b595',
+  deductions: '#b5e4d8',
 }

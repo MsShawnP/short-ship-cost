@@ -195,7 +195,8 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
         <div className={styles.calloutNumber}>{animTotal}</div>
         <p className={styles.calloutPrimary}>
           in {range.isFiltered ? 'short-shipping costs over the selected period' : 'total short-shipping costs'} &mdash;{' '}
-          {fmtPct(pctOfShipped)} of shipped revenue.
+          {fmtPct(pctOfShipped)} of shipped revenue, at a{' '}
+          {fmtPct(meta.overall_fill_rate)} portfolio fill rate ({fmtPct(meta.retailer_fill_rate)} retailer, {fmtPct(meta.distributor_fill_rate)} distributor).
         </p>
         <p className={styles.calloutSecondary}>
           Cinderhaven received {fmtCompact(demand)} in orders from retail and

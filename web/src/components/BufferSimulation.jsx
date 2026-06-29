@@ -124,7 +124,7 @@ function RecoveryTable({ scenarios, activeDims }) {
       <p className={styles.tableFootnote}>
         Chargebacks and deductions scale proportionally with remaining
         shortage ratio. Forgone revenue and compliance fines are recomputed
-        at each target fill rate.
+        at each per-line floor.
       </p>
     </div>
   )
@@ -135,7 +135,7 @@ export default function BufferSimulation({ bufferScenarios }) {
   const { activeDims } = range
   const scenarios = bufferScenarios.scenarios
   const [pinned, setPinned] = useState(null)
-  const primaryTeal = useCSSColor('--color-hongkong-5', '#063d32')
+  const primaryTeal = useCSSColor('--color-hongkong-15', '#0a5c4b')
   const accentRed = useCSSColor('--color-red', '#cc100a')
 
   const scenariosFiltered = useMemo(
@@ -174,7 +174,7 @@ export default function BufferSimulation({ bufferScenarios }) {
   const bestScenario = barData[barData.length - 1]
   const recoveredAtBest = baseline - (bestScenario?.total_cost ?? baseline)
 
-  const title = `At ${bestScenario?.targetLabel ?? '99%'} fill rate, ${fmtCompact(recoveredAtBest)} in costs disappear`
+  const title = `At a ${bestScenario?.targetLabel ?? '99%'} per-line floor, ${fmtCompact(recoveredAtBest)} in costs disappear`
 
   const pinnedScenario =
     pinned !== null ? scenarios.find((s) => s.target_fill_rate === pinned) : null
@@ -193,14 +193,14 @@ export default function BufferSimulation({ bufferScenarios }) {
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>What recovery looks like</h2>
         <p className={styles.sectionSubtitle}>
-          Cost savings from improving fill rate
+          Cost savings from imposing a per-line fill floor
         </p>
       </div>
 
       {range.isFiltered && (
         <div className={styles.fullPeriodNote}>
           Buffer simulation uses the full data period (not filtered) because
-          it models structural changes to fill rate.
+          it models structural per-line floor changes.
         </div>
       )}
 
@@ -208,13 +208,13 @@ export default function BufferSimulation({ bufferScenarios }) {
       <div className={styles.chartBlock}>
         <h3 className={styles.chartTitle}>{title}</h3>
         <p className={styles.chartSubtitle}>
-          Total cost of shorts at four target fill rates compared to the{' '}
+          Total cost of shorts at four per-line fill floors compared to the{' '}
           {fmtCompact(baseline)} baseline. Click any bar to pin its breakdown.
         </p>
 
         {pinnedScenario && (
           <PinnedCallout
-            title={`Target ${Math.round(pinnedScenario.target_fill_rate * 100)}% fill`}
+            title={`${Math.round(pinnedScenario.target_fill_rate * 100)}% per-line floor`}
             subtitle={`${fmtCompact(
               barData.find((b) => b.target_fill_rate === pinnedScenario.target_fill_rate)?.total_cost ?? 0,
             )} · ${fmtPct(pinnedScenario.achieved_fill_rate)} achieved · ${Math.round(pinnedScenario.recovery_pct * 100)}% recovered`}
@@ -232,7 +232,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         <div
           className={styles.chartContainer}
           role="img"
-          aria-label={`Bar chart: total cost of shorts across four target fill rates (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAtBest)} recovered at ${bestScenario?.targetLabel ?? '99%'} fill.`}
+          aria-label={`Bar chart: total cost of shorts across four per-line fill floors (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAtBest)} recovered at ${bestScenario?.targetLabel ?? '99%'} floor.`}
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -254,7 +254,7 @@ export default function BufferSimulation({ bufferScenarios }) {
                 tickLine={false}
                 axisLine={{ stroke: 'var(--color-border)' }}
                 label={{
-                  value: 'Target fill rate',
+                  value: 'Per-line fill floor',
                   position: 'insideBottom',
                   offset: -8,
                   fill: 'var(--color-text-secondary)',
@@ -333,8 +333,8 @@ export default function BufferSimulation({ bufferScenarios }) {
         )}
         <p className={styles.chartFootnote}>
           Source: Cinderhaven Provisions buffer-simulation outputs. Each
-          scenario lifts every retail/distributor line to the target fill
-          rate and recomputes all four cost dimensions. Click any bar for
+          scenario lifts every retail/distributor line to the per-line
+          floor and recomputes all four cost dimensions. Click any bar for
           a pinned breakdown.
         </p>
       </div>
