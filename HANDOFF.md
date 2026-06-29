@@ -739,3 +739,15 @@ link.
 **Next:** No active work arc. P3-3 (thesis range recomputation) remains deferred. Project is in maintenance/portfolio-ready state.
 
 ---
+
+## 2026-06-29 14:30
+
+**What changed:** Thesis range recomputed: $3.1M–$4.6M → $1.4M–$2.3M/yr. Decision 4 dropped from $2.0M–$2.4M to $298K after fill-rate retuning. Updated CINDERHAVEN_CANONICAL.md (154ffb4), manifesto.qmd + cinderhaven-findings.md (63926b4). Both repos pushed.
+
+**Why:** P3-3 (thesis range recomputation) was the last deferred task. Decision 4 fulfillment cost dropped from $2.2M/yr to $298K/yr after the 4-dimension rebuild with 99.2%/99.5% fill — the old $2.0M–$2.4M anchor assumed fill rates too low to survive scrutiny.
+
+**State:** All three files updated and pushed across two repos. P3-3 complete. short-ship-cost project itself unchanged (no code edits). Deployed and exec-ready.
+
+**Next:** No remaining deferred tasks. Decisions 2 ($93K) and 6 ($50K–$100K) still carry placeholder values pending regen in their respective projects — if those drop, thesis range low end slides toward $1.2M.
+
+---
