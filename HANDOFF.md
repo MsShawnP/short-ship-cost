@@ -763,3 +763,15 @@ link.
 **Next:** No remaining tasks. Return for /improve audit or to update range after Decisions 2/6 regen.
 
 ---
+
+## 2026-06-29 17:15
+
+**What changed:** Visual DS compliance + narrative audit — 5 fixes across 9 files, deployed. Section titles to DS spec (22px/18px). Dimension colors from HK 5/25/45/70 → DS-prescribed 15/35/55/85. Fill rates (99.3%/99.2%/99.5%) surfaced in opening section. Buffer simulation reframed from "target fill rate" to "per-line fill floor" throughout. Built and deployed to shortships.lailarallc.com. Commit 7778e63 pushed.
+
+**Why:** Post-rebuild polish pass — the fill rate shift to 99.3% and the 4-dimension model rebuild left DS color violations and narrative gaps (no fill rate in the headline, buffer simulation language implying portfolio averages instead of per-line floors).
+
+**State:** All 5 fixes complete and deployed. One item deferred: order-level in-full rate requires Postgres query (Docker offline) — add to pipeline in next rebuild. Triage language at 99.3% fill confirmed still accurate.
+
+**Next:** Deferred: add in-full rate to pipeline (rebuild_from_platform.py) and meta.json when Docker is available. Otherwise project is portfolio-ready.
+
+---
