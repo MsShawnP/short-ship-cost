@@ -5,10 +5,11 @@ session. For session-by-session state, see HANDOFF.md.
 
 ---
 
-## Current state (2026-06-28)
+## Current state (2026-06-29)
 
 Project is deployed and exec-ready at shortships.lailarallc.com.
-All figures verified against platform Postgres. No active work arc.
+All figures verified against platform Postgres. Phase 3 fully
+complete (P3-3 thesis range landed). No active work arc.
 
 ---
 
@@ -32,11 +33,11 @@ June 20 cinderhaven reseed).
     - 8 headline figures, 3 approved phrasings, overlap note, thesis flag, 2 SUPERSEDED
     - check_canonical.py 12/12 GREEN
 
-- [ ] P3-3: Thesis range recomputation
-    - Ten decision figures reported in June 14 session
-    - Need recomputation with post-reseed numbers
-    - Decision 4 dropped from ~$11M/yr to $2.2M/yr (pre-reseed);
-      will be lower still at 99.3% fill
+- [x] P3-3: Thesis range recomputation
+    - Done 2026-06-29 — $3.1M–$4.6M → $1.4M–$2.3M/yr
+    - Decision 4: $2.0M–$2.4M → $298K ($894K/3yr at 99.2%/99.5%)
+    - Updated CANONICAL (154ffb4), manifesto + findings (63926b4)
+    - Decisions 2/6 carry placeholder values pending regen
 
 - [x] P3-4: Update check_canonical.py
     - No changes needed — script parses figures from CINDERHAVEN_CANONICAL.md

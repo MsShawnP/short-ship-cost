@@ -751,3 +751,15 @@ link.
 **Next:** No remaining deferred tasks. Decisions 2 ($93K) and 6 ($50K–$100K) still carry placeholder values pending regen in their respective projects — if those drop, thesis range low end slides toward $1.2M.
 
 ---
+
+## 2026-06-29 15:00
+
+**Started from:** Project exec-ready, P3-3 (thesis range recomputation) last deferred task.
+
+**Did:** Recomputed thesis range: $3.1M–$4.6M → $1.4M–$2.3M/yr. Decision 4 dropped from $2.0M–$2.4M to $298K. Updated CINDERHAVEN_CANONICAL.md (154ffb4), manifesto.qmd + cinderhaven-findings.md (63926b4) across two repos. P3-3 complete — all Phase 3 tasks done.
+
+**State:** All deferred tasks complete. Project in maintenance/portfolio-ready state. Decisions 2/6 carry placeholder values; thesis range may tighten after their regen.
+
+**Next:** No remaining tasks. Return for /improve audit or to update range after Decisions 2/6 regen.
+
+---
