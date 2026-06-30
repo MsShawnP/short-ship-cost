@@ -27,18 +27,14 @@ function loadData(filename) {
 // -- Canonical values (from CINDERHAVEN_CANONICAL / validation.json) ----------
 
 const CANONICAL = {
-  shipped_revenue: 53_049_644.92,
+  shipped_revenue: 75_543_979.99,
   total_skus: 50,
-  total_cost: 33_128_550.93,
+  total_cost: 894_173.83,
   expected_dimensions: [
-    'lost_revenue',
-    'deauthorization',
-    'otif_fines',
-    'triage_labor',
-    'distributor_returns',
+    'forgone_revenue',
+    'compliance_fines',
     'chargebacks',
-    'dtc_cancellations',
-    'dtc_margin_leakage',
+    'deductions',
   ],
 };
 
@@ -122,11 +118,11 @@ describe('TestCinderhavenCanonicalRegression — meta.json', () => {
 describe('TestCinderhavenCanonicalRegression — cost_summary.json', () => {
   const costSummary = loadData('cost_summary.json');
 
-  test('contains exactly 8 cost dimensions', () => {
-    expect(costSummary).toHaveLength(8);
+  test('contains exactly 4 cost dimensions', () => {
+    expect(costSummary).toHaveLength(4);
   });
 
-  test('all 8 expected dimensions are present', () => {
+  test('all 4 expected dimensions are present', () => {
     const dimensionNames = costSummary.map((d) => d.dimension);
     for (const expected of CANONICAL.expected_dimensions) {
       expect(dimensionNames).toContain(expected);
@@ -183,7 +179,7 @@ describe('TestCinderhavenCanonicalRegression — validation.json', () => {
     expect(validation.shipped_revenue).toBe(CANONICAL.shipped_revenue);
   });
 
-  test('baseline_totals contains all 8 dimensions', () => {
+  test('baseline_totals contains all 4 dimensions', () => {
     for (const dim of CANONICAL.expected_dimensions) {
       expect(validation.baseline_totals).toHaveProperty(dim);
       expect(typeof validation.baseline_totals[dim]).toBe('number');

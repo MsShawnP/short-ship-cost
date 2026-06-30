@@ -762,7 +762,7 @@ the short-ship rebuild alone:
 - **manifesto.qmd line 165 (deductions):** Owned by
   retailer-deduction-recovery, not short-ship.
 - **manifesto.qmd line 326 (86.5¢):** Owned by contract-to-cash;
-  86¢ confirmed per canonical.
+  87¢ per canonical (live post-06-20-tuning mart; was 86¢ pre-tuning).
 - **research/cinderhaven-findings.md lines 19, 27, 29, 51, 59:**
   Owned by their respective projects (PDHA, deductions, channel,
   lifecycle).

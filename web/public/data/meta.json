@@ -1,9 +1,10 @@
 {
-  "last_updated": "2026-06-26T16:28:08.964266+00:00",
+  "last_updated": "2026-06-30T19:55:14.934123+00:00",
   "time_window": {
     "start": "2023-01-02",
     "end": "2026-01-07"
   },
+  "total_skus": 50,
   "shipped_revenue": 75543979.99,
   "total_demand": 76067306.16,
   "total_orders": 55802,

@@ -927,7 +927,7 @@ def _write_json(path: Path, data) -> int:
     return path.stat().st_size
 
 
-def _build_meta(rev_info: dict, start_date: str, end_date: str) -> dict:
+def _build_meta(rev_info: dict, start_date: str, end_date: str, total_skus: int = 50) -> dict:
     params = {}
     for name, info in FINE_SCHEDULE.items():
         basis_kind, rate, threshold = info
@@ -942,6 +942,7 @@ def _build_meta(rev_info: dict, start_date: str, end_date: str) -> dict:
     return {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "time_window": {"start": start_date, "end": end_date},
+        "total_skus": total_skus,
         "shipped_revenue": _rd(rev_info["total_shipped"]),
         "total_demand": _rd(rev_info["total_demand"]),
         "total_orders": rev_info["total_orders"],
@@ -1106,7 +1107,11 @@ def export_json(conn, results: dict, rev_info: dict, scenarios: list[dict],
     for f in JSON_DIR.glob("*.json"):
         f.unlink()
 
-    meta = _build_meta(rev_info, start_date, end_date)
+    with conn.cursor() as cur:
+        cur.execute("SELECT COUNT(DISTINCT sku) FROM raw.product_master")
+        total_skus = cur.fetchone()[0]
+
+    meta = _build_meta(rev_info, start_date, end_date, total_skus=total_skus)
     outputs = {
         "meta.json": meta,
         "cost_summary.json": _build_cost_summary(results, rev_info["total_shipped"]),
