@@ -45,6 +45,10 @@ node_modules/
 # Logs
 *.log
 
+# Security - secret leak prevention
+credentials.*
+secrets.*
+
 # OS
 .DS_Store
 Thumbs.db
