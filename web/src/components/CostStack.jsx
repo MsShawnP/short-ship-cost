@@ -202,8 +202,8 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
           Cinderhaven received {fmtCompact(demand)} in orders from retail and
           distributor partners. It shipped {fmtCompact(shipped)}. The{' '}
           {fmtCompact(demandGap)} gap &mdash; and the {fmtCompact(cascading)}{' '}
-          in cascading costs it triggers &mdash; are invisible because the
-          original orders are overwritten.
+          in cascading costs it triggers &mdash; are easy to miss because the
+          original orders are overwritten, which is exactly how a sub-1% shortfall still compounds into real cost.
         </p>
       </div>
 
@@ -212,14 +212,14 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
           Forgone revenue is {fmtPct(forgoneRevenue / total)} of the total. The
           other {fmtPct(cascading / total)}&mdash;led
           by {topCascading.label.toLowerCase()} at {fmtCompact(topCascading.value)}&mdash;are
-          costs no one can measure when the original order is overwritten.
+          costs no one is attributing when the original order is overwritten.
         </p>
       )}
 
       <div className={styles.chart}>
         <h2 className={styles.chartTitle}>
           Beyond the revenue gap: {fmtCompact(cascading)} in cascading costs
-          the business cannot see
+          that never hit the P&amp;L
         </h2>
         <p className={styles.chartSubtitle}>
           The {fmtCompact(total)} {range.isFiltered ? 'period' : 'total'}{' '}

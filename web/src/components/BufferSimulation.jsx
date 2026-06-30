@@ -186,8 +186,6 @@ export default function BufferSimulation({ bufferScenarios }) {
     }
   }
 
-  const baselineFillLabel = `${Math.round((scenarios[0]?.by_dimension?.forgone_revenue ? 92.7 : 75))}%`
-
   return (
     <section className={styles.section}>
       <div className={styles.sectionHead}>
