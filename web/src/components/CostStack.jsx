@@ -130,16 +130,38 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
   )
 
   const forgoneRevenue = costsByDim.forgone_revenue || 0
-  const cascading = total - forgoneRevenue
+  const cascading = total - forgoneRevenue // cash penalties: fines + chargebacks + deductions
+
+  const contributionMargin = meta.contribution_margin_pct || 0.52
+  const forgoneMargin = forgoneRevenue * contributionMargin
+  const economicLoss = cascading + forgoneMargin // cash penalties + forgone margin
 
   const shipped = filteredOrders.reduce((s, r) => s + r.shipped_revenue, 0)
   const demand = filteredOrders.reduce((s, r) => s + r.demand, 0)
   const demandGap = demand - shipped
 
-  const contributionMargin = meta.contribution_margin_pct || 0.52
   const estMargin = shipped * contributionMargin
-  const pctOfShipped = shipped > 0 ? total / shipped : 0
+  const pctOfShipped = shipped > 0 ? economicLoss / shipped : 0
   const pctOfMargin = estMargin > 0 ? cascading / estMargin : 0
+
+  // Full-window, all-dimension figures for the deck headline — independent of
+  // the time filter and dimension toggles, but still reflect parameter edits.
+  const fullTotals = summary.reduce(
+    (acc, d) => {
+      acc[d.dimension] = d.total_cost
+      acc.total += d.total_cost
+      return acc
+    },
+    { total: 0 },
+  )
+  const fullForgoneRevenue = fullTotals.forgone_revenue || 0
+  const fullCash = fullTotals.total - fullForgoneRevenue
+  const fullForgoneMargin = fullForgoneRevenue * contributionMargin
+  const fullEconomicLoss = fullCash + fullForgoneMargin
+  const windowYears = Math.round(
+    (new Date(meta.time_window.end) - new Date(meta.time_window.start)) /
+      (365.25 * 86400000),
+  )
 
   const topCascading = segs
     .filter((s) => s.key !== 'forgone_revenue' && s.value > 0)
@@ -147,7 +169,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
   const fmtC = useCallback((v) => fmtCompact(v), [])
   const fmtP = useCallback((v) => fmtPct(v), [])
-  const animTotal = useAnimatedValue(total, fmtC)
+  const animEconomicLoss = useAnimatedValue(economicLoss, fmtC)
   const animPctShipped = useAnimatedValue(pctOfShipped, fmtP)
   const animPctMargin = useAnimatedValue(pctOfMargin, fmtP)
   const animDemandGap = useAnimatedValue(demandGap, fmtC)
@@ -184,6 +206,17 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
 
   return (
     <section className={styles.section}>
+      <header className={styles.deck}>
+        <h1 className={styles.deckTitle}>What short-shipping actually costs</h1>
+        <p className={styles.deckLede}>
+          A sub-1% fill shortfall costs Cinderhaven about{' '}
+          {fmtCompact(fullEconomicLoss)} over the {windowYears}-year window
+          &mdash; {fmtCompact(fullCash)} in cash penalties plus{' '}
+          {fmtCompact(fullForgoneMargin)} in forgone margin &mdash; and almost
+          none of it is visible, because the original orders are overwritten.
+        </p>
+      </header>
+
       <p className={styles.framing}>
         When a business cannot ship an order in full, standard practice is to
         edit it down and ship what inventory allows. Most systems then overwrite
@@ -192,39 +225,54 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
       </p>
 
       <div className={styles.callout}>
-        <div className={styles.calloutNumber}>{animTotal}</div>
+        <div className={styles.calloutNumber}>{animEconomicLoss}</div>
         <p className={styles.calloutPrimary}>
-          in {range.isFiltered ? 'short-shipping costs over the selected period' : 'total short-shipping costs'} &mdash;{' '}
-          {fmtPct(pctOfShipped)} of shipped revenue, at a{' '}
-          {fmtPct(meta.overall_fill_rate)} portfolio fill rate ({fmtPct(meta.retailer_fill_rate)} retailer, {fmtPct(meta.distributor_fill_rate)} distributor).
+          in{' '}
+          {range.isFiltered
+            ? 'economic loss over the selected period'
+            : 'economic loss from short-shipping'}{' '}
+          &mdash; {fmtCompact(cascading)} in cash penalties (compliance fines,
+          chargebacks, and deductions) plus {fmtCompact(forgoneMargin)} in
+          forgone contribution margin, at a {fmtPct(meta.overall_fill_rate)}{' '}
+          portfolio fill rate ({fmtPct(meta.retailer_fill_rate)} retailer,{' '}
+          {fmtPct(meta.distributor_fill_rate)} distributor).
         </p>
         <p className={styles.calloutSecondary}>
           Cinderhaven received {fmtCompact(demand)} in orders from retail and
-          distributor partners. It shipped {fmtCompact(shipped)}. The{' '}
-          {fmtCompact(demandGap)} gap &mdash; and the {fmtCompact(cascading)}{' '}
-          in cascading costs it triggers &mdash; are easy to miss because the
-          original orders are overwritten, which is exactly how a sub-1% shortfall still compounds into real cost.
+          distributor partners and shipped {fmtCompact(shipped)}. The{' '}
+          {fmtCompact(forgoneRevenue)} it could not ship is forgone revenue at
+          full wholesale &mdash; a top-line opportunity carried at{' '}
+          {fmtPct(contributionMargin)} margin, not a cash cost, which is why the
+          economic loss counts its margin rather than its full price. The cash
+          penalties the shortfall triggers are easy to miss because the original
+          orders are overwritten, which is exactly how a sub-1% shortfall still
+          compounds into real cost.
         </p>
       </div>
 
       {topCascading && (
         <p className={styles.insightLine}>
-          Forgone revenue is {fmtPct(forgoneRevenue / total)} of the total. The
-          other {fmtPct(cascading / total)}&mdash;led
-          by {topCascading.label.toLowerCase()} at {fmtCompact(topCascading.value)}&mdash;are
-          costs no one is attributing when the original order is overwritten.
+          Forgone revenue of {fmtCompact(forgoneRevenue)} is a top-line
+          opportunity, not cash out the door; at {fmtPct(contributionMargin)}{' '}
+          margin it represents {fmtCompact(forgoneMargin)} in lost contribution.
+          The {fmtCompact(cascading)} in cash penalties it triggers &mdash; led
+          by {topCascading.label.toLowerCase()} at{' '}
+          {fmtCompact(topCascading.value)} &mdash; is the part no one is
+          attributing when the original order is overwritten.
         </p>
       )}
 
       <div className={styles.chart}>
         <h2 className={styles.chartTitle}>
           Beyond the revenue gap: {fmtCompact(cascading)} in cascading costs
-          that never hit the P&amp;L
+          no one is attributing
         </h2>
         <p className={styles.chartSubtitle}>
-          The {fmtCompact(total)} {range.isFiltered ? 'period' : 'total'}{' '}
-          flows into {dims.length} cost dimensions. Click any block to pin
-          its details.
+          Gross composition: {fmtCompact(total)} across {dims.length} cost
+          dimensions. Forgone revenue is drawn at full wholesale; only its{' '}
+          {fmtPct(contributionMargin)} margin enters the{' '}
+          {fmtCompact(economicLoss)} economic loss above. Click any block to
+          pin its details.
         </p>
 
         {pinned && activeSeg && (
@@ -263,7 +311,7 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
             y={totalCenterY + 14}
             textAnchor="middle"
           >
-            Total
+            Gross
           </text>
 
           {segs.map((s) => (
@@ -334,24 +382,31 @@ export default function CostStack({ meta, summary, costByMonth, ordersByMonth })
           block height for readability; the connecting flows preserve true
           proportional width on the left.
         </p>
+        <p className={styles.chartFootnote}>
+          Chargebacks and deductions are drawn from separate platform event
+          streams and counted once each. A chargeback is sometimes realized as
+          a deduction on remittance; where that occurs the two could overlap, so
+          they are reported as distinct line items rather than summed into a
+          single penalty figure.
+        </p>
 
       </div>
 
       <div className={styles.benchmarks}>
         <div className={styles.benchmark}>
           <div className={styles.benchmarkValue}>{animPctShipped}</div>
-          <div className={styles.benchmarkLabel}>of shipped revenue</div>
+          <div className={styles.benchmarkLabel}>economic loss, as a share of shipped revenue</div>
         </div>
         <div className={styles.benchmark}>
           <div className={styles.benchmarkValue}>{animPctMargin}</div>
-          <div className={styles.benchmarkLabel}>of contribution margin lost to cascading costs</div>
+          <div className={styles.benchmarkLabel}>of contribution margin, in cash penalties</div>
           <div className={styles.benchmarkNote}>
             assumes {fmtPct(contributionMargin)} contribution margin
           </div>
         </div>
         <div className={styles.benchmark}>
           <div className={styles.benchmarkValue}>{animDemandGap}</div>
-          <div className={styles.benchmarkLabel}>in unshipped demand</div>
+          <div className={styles.benchmarkLabel}>in forgone revenue, at full wholesale</div>
         </div>
       </div>
     </section>

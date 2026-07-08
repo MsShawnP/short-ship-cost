@@ -4,6 +4,31 @@
   gap: 40px;
 }
 
+.deck {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 760px;
+}
+
+.deckTitle {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.deckLede {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
 .framing {
   font-family: var(--font-sans);
   font-size: 17px;
@@ -315,6 +340,14 @@
 /* ---------- Mobile ---------- */
 
 @media (max-width: 640px) {
+  .deckTitle {
+    font-size: 26px;
+  }
+
+  .deckLede {
+    font-size: 16px;
+  }
+
   .calloutNumber {
     font-size: 44px;
   }
