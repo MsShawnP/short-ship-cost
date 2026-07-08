@@ -124,16 +124,19 @@ function RecoveryTable({ scenarios, activeDims }) {
       <p className={styles.tableFootnote}>
         Chargebacks and deductions scale proportionally with remaining
         shortage ratio. Forgone revenue and compliance fines are recomputed
-        at each per-line floor.
+        at each per-line floor. Forgone-revenue figures are shown at full
+        wholesale; their economic weight is the contribution margin on those
+        units.
       </p>
     </div>
   )
 }
 
-export default function BufferSimulation({ bufferScenarios }) {
+export default function BufferSimulation({ bufferScenarios, contributionMargin }) {
   const range = useTimeRange()
   const { activeDims } = range
   const scenarios = bufferScenarios.scenarios
+  const CM = contributionMargin ?? 0.52
   const [pinned, setPinned] = useState(null)
   const primaryTeal = useCSSColor('--color-hongkong-15', '#0a5c4b')
   const accentRed = useCSSColor('--color-red', '#cc100a')
@@ -164,7 +167,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         target_fill_rate: s.target_fill_rate,
         targetLabel: `${Math.round(s.target_fill_rate * 100)}%`,
         total_cost: s._filtered_total,
-        recoveryLabel: `${Math.round(((baseline - s._filtered_total) / Math.max(baseline, 1)) * 100)}% recovered`,
+        recoveryLabel: `${Math.round(((baseline - s._filtered_total) / Math.max(baseline, 1)) * 100)}% lower`,
         achieved_fill_rate: s.achieved_fill_rate,
         by_dimension: s.by_dimension,
       })),
@@ -172,9 +175,23 @@ export default function BufferSimulation({ bufferScenarios }) {
   )
 
   const bestScenario = barData[barData.length - 1]
-  const recoveredAtBest = baseline - (bestScenario?.total_cost ?? baseline)
 
-  const title = `At a ${bestScenario?.targetLabel ?? '99%'} per-line floor, ${fmtCompact(recoveredAtBest)} in costs disappear`
+  // Net economic recovery: forgone-revenue recovery is top-line, worth only
+  // its contribution margin; fines/chargebacks/deductions are already cash.
+  // Buffer holding cost is not modeled, so this is a ceiling, not net profit.
+  const netRecoveredAtBest = useMemo(() => {
+    const best = scenarios[scenarios.length - 1]
+    if (!best) return 0
+    let net = 0
+    for (const [dim, v] of Object.entries(best.by_dimension)) {
+      if (!activeDims.has(dim)) continue
+      const rec = v.recovery ?? 0
+      net += dim === 'forgone_revenue' ? rec * CM : rec
+    }
+    return net
+  }, [scenarios, activeDims, CM])
+
+  const title = `At a ${bestScenario?.targetLabel ?? '99%'} per-line floor, ${fmtCompact(netRecoveredAtBest)} of economic loss is recoverable`
 
   const pinnedScenario =
     pinned !== null ? scenarios.find((s) => s.target_fill_rate === pinned) : null
@@ -191,7 +208,7 @@ export default function BufferSimulation({ bufferScenarios }) {
       <div className={styles.sectionHead}>
         <h2 className={styles.sectionTitle}>What recovery looks like</h2>
         <p className={styles.sectionSubtitle}>
-          Cost savings from imposing a per-line fill floor
+          Recoverable economic loss from imposing a per-line fill floor
         </p>
       </div>
 
@@ -206,8 +223,11 @@ export default function BufferSimulation({ bufferScenarios }) {
       <div className={styles.chartBlock}>
         <h3 className={styles.chartTitle}>{title}</h3>
         <p className={styles.chartSubtitle}>
-          Total cost of shorts at four per-line fill floors compared to the{' '}
-          {fmtCompact(baseline)} baseline. Click any bar to pin its breakdown.
+          Gross cost of shorts at four per-line fill floors against the{' '}
+          {fmtCompact(baseline)} baseline. Most of the reduction is forgone
+          revenue recovered at full wholesale; netted to {fmtPct(CM)} margin,
+          the economic recovery is about {fmtCompact(netRecoveredAtBest)}. Click
+          any bar to pin its breakdown.
         </p>
 
         {pinnedScenario && (
@@ -230,7 +250,7 @@ export default function BufferSimulation({ bufferScenarios }) {
         <div
           className={styles.chartContainer}
           role="img"
-          aria-label={`Bar chart: total cost of shorts across four per-line fill floors (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}, ${fmtCompact(recoveredAtBest)} recovered at ${bestScenario?.targetLabel ?? '99%'} floor.`}
+          aria-label={`Bar chart: gross cost of shorts across four per-line fill floors (${barData.map((b) => b.targetLabel).join(', ')}). Baseline ${fmtCompact(baseline)}; net economic recovery about ${fmtCompact(netRecoveredAtBest)} at the ${bestScenario?.targetLabel ?? '99%'} floor.`}
         >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
@@ -331,9 +351,12 @@ export default function BufferSimulation({ bufferScenarios }) {
         )}
         <p className={styles.chartFootnote}>
           Source: Cinderhaven Provisions buffer-simulation outputs. Each
-          scenario lifts every retail/distributor line to the per-line
-          floor and recomputes all four cost dimensions. Click any bar for
-          a pinned breakdown.
+          scenario lifts every retail/distributor line to the per-line floor
+          and recomputes all four cost dimensions. Recovery is shown gross of
+          buffer holding cost, which this model does not estimate: a per-line
+          floor needs safety stock the business does not hold today, so the
+          buffer pays for itself only if its carrying cost stays below the net
+          recovery. Click any bar for a pinned breakdown.
         </p>
       </div>
       </div>

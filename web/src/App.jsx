@@ -234,7 +234,10 @@ function AppShell({ data }) {
         </SectionErrorBoundary>
         <SectionErrorBoundary>
           <Suspense fallback={<SectionFallback />}>
-            <BufferSimulation bufferScenarios={scaled.buffer_scenarios} />
+            <BufferSimulation
+              bufferScenarios={scaled.buffer_scenarios}
+              contributionMargin={data.meta.contribution_margin_pct}
+            />
           </Suspense>
         </SectionErrorBoundary>
       </main>
