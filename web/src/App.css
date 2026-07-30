@@ -12,7 +12,7 @@
   padding: 64px 0 96px;
   font-family: var(--font-sans);
   color: var(--color-text);
-  max-width: 640px;
+  max-width: var(--ll-body-max-width, 720px);
   margin: 0 auto;
 }
 
@@ -171,7 +171,7 @@ details[open] > .methodology-summary::before {
   line-height: 1.65;
   color: var(--color-text-secondary);
   margin: 0;
-  max-width: 660px;
+  max-width: var(--ll-body-max-width, 720px);
 }
 
 .footer-link {
