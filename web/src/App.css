@@ -281,7 +281,7 @@ details[open] > .methodology-summary::before {
   html,
   body {
     background: #ffffff !important;
-    color: #000000 !important;
+    color: #0d0d0d !important;  /* London-5 ink */
   }
 
   body {
@@ -294,7 +294,7 @@ details[open] > .methodology-summary::before {
 
   /* Header: keep brand block, drop the controls row. */
   header[class*='Header_header'] {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #0d0d0d;
     padding: 0 0 12px;
     margin: 0 0 16px;
   }
