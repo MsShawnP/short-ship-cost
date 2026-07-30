@@ -27,7 +27,7 @@ built database. Nine tables.
 | `distribution_log` | 12,565 | SKU × store authorization history with auth and deauth dates |
 | `promotions` | 198 | Retailer-specific promo events |
 | `price_history` | 398 | Time-keyed wholesale price changes by SKU × retailer |
-| `chargebacks` | 381 | Historical compliance chargebacks (data-quality and shipment) — **not the rate schedule the cost engine uses** |
+| `chargebacks` | 2,873 | Historical compliance chargebacks (data-quality and shipment) — **not the rate schedule the cost engine uses** |
 | `retailer_rules` | 90 | Per-(retailer, deduction_type) rules: dispute windows, auto-deduction, evidence requirements, typical recovery rates |
 | `sku_velocity` | 50 | Derived rollup from upstream `scan_data`: `avg_weekly_units`, `total_annual_units`, `velocity_rank` |
 
