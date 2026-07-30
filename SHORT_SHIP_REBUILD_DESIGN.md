@@ -1,5 +1,12 @@
 # Short-Ship Cost Rebuild — Design Document
 
+> **OUTCOME NOTE (2026-07-30).** The rebuild shipped. Measured results came in
+> well below this document's expected ranges: forgone revenue $523K/3yr, total
+> cost $894K/3yr (~$298K/yr), fill rates 99.2% retailer / 99.5% distributor
+> (this doc's 92.0%/94.2% "confirmed" pair predates the platform reseed).
+> The expected-value table below is design history — do NOT propagate it to
+> CINDERHAVEN_CANONICAL.md; the shipped figures are canonical.
+
 **Status:** DRAFT — awaiting Shawn's approval before any code
 **Date:** 2026-06-14
 **Supersedes:** The entire existing cost engine (`scripts/cost_engine/*`),

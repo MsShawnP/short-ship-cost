@@ -1,5 +1,14 @@
 # Interactive Tool — Design Spec
 
+> **SUPERSEDED (2026-07-30).** This document describes the retired synthetic
+> 8-dimension cost engine ($18.7M-lineage figures). The shipped tool reads
+> platform shipment lines at 99.2%/99.5% fill and reports the 4-dimension
+> $894K/36-month stack ($523K forgone revenue + $165K fines + $119K
+> chargebacks + $87K deductions; $643K economic loss at margin basis).
+> See README.md "Provenance" for the retirement of the $33.1M and $6.6M
+> lineages. Kept for design history only.
+
+
 Reference document for building the single-page React app.
 Chart types and layouts may be adjusted after seeing how they
 render — this is the starting point, not a locked contract.
