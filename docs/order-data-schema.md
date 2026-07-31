@@ -1,5 +1,7 @@
 # Order Data Schema
 
+> **SUPERSEDED (pre-rebuild planning doc).** See the current pipeline docs (`scripts/rebuild_from_platform.py`, README).
+
 Six new tables that together model order-as-submitted, order-as-shipped,
 and the consequences of the gap between them. They sit alongside the
 eight-table Cinderhaven extract in `data/cinderhaven_extract.db`; this

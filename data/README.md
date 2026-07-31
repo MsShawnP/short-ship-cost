@@ -1,5 +1,10 @@
 # data/
 
+> **SUPERSEDED (pre-rebuild doc).** The shipped model is 4 cost
+> dimensions on the Postgres pipeline; chargebacks 2,873; stores 640;
+> buffer scenarios 95/97/98/99%. Figures below describe the retired
+> extract, kept for history only.
+
 Self-contained data extract for `short-ship-cost`.
 
 ## `cinderhaven_extract.db`

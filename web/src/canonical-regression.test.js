@@ -98,7 +98,7 @@ describe('TestCinderhavenCanonicalRegression — meta.json', () => {
     expect(meta.shipped_revenue).toBe(CANONICAL.shipped_revenue);
   });
 
-  test('8 cost dimensions exist (cost_parameters keys cover all dimensions)', () => {
+  test('meta structural fields exist (dimension list is asserted from cost_summary.json)', () => {
     // meta.json carries cost_parameters — verify the count of top-level
     // scalar fields is reasonable, but the authoritative dimension list
     // comes from cost_summary.json. Here we just verify meta has the

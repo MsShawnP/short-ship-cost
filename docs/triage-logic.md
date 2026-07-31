@@ -1,5 +1,7 @@
 # Triage Logic
 
+> **SUPERSEDED (pre-rebuild planning doc).** See the current pipeline docs (`scripts/rebuild_from_platform.py`, README).
+
 How original orders get edited down during synthetic data generation.
 Documentation only; no code yet.
 
