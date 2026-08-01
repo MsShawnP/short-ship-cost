@@ -1,0 +1,7 @@
+# Legitimate uses of otherwise-retired tokens.
+#   path/glob   -> skip file    |    TOKEN @ path/glob -> skip token in file
+# Design/rebuild history doc: documents what the 4-dimension rebuild superseded.
+SHORT_SHIP_REBUILD_DESIGN.md
+# $458K here is the RECOVERY column of a fill-rate sensitivity table (98% floor),
+# a computed scenario output that coincides with the retired PDHA $458K figure.
+$458K @ README.md
