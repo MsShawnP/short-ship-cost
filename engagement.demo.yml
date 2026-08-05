@@ -1,0 +1,27 @@
+# Lailara LLC — Short-Ship Cost engagement config (DEMO)
+# Canonical Cinderhaven identity; demo: true so the deploy guard ignores it.
+# The deployed dashboard renders committed web JSON — this config exercises
+# client_mode.py on a demo-shaped shipment ledger under client-data/ (gitignored).
+client:
+  name: "Cinderhaven Provisions (demo)"
+engagement:
+  id: "CINDERHAVEN-DEMO"
+as_of_date: "2026-01-02"
+prepared_by: "Lailara LLC"
+demo: true
+basis:
+  forgone_basis: "revenue"     # REQUIRED: revenue (wholesale price) | margin (contribution margin)
+inputs:
+  input: "client-data/shipments.csv"
+columns:
+  line_id: "line_id"
+  retailer: "retailer"
+  sku: "sku"
+  ship_date: "ship_date"
+  units_ordered: "units_ordered"
+  units_shipped: "units_shipped"
+  unit_price: "unit_price"
+  unit_margin: "unit_margin"
+thresholds:
+  fail_on_missing_required_column: true
+  fail_on_duplicate_keys: true
