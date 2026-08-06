@@ -69,6 +69,39 @@ def test_deliverable_prints_the_basis_word(tmp_path):
     assert "DRAFT" in html
 
 
+def test_window_label_tracks_ship_date_span_not_a_hardcode(tmp_path):
+    """The rendered Window label must be the ACTUAL ship-date span, and must
+    change when the data does — a hardcoded span (e.g. 'trailing 52 weeks')
+    that happened to match the demo would pass a numbers-only check.
+
+    Both halves: the label tracks the distinctive input, AND a plausible
+    hardcoded default is absent. (Convention proven on trade-spend/retailer-
+    deduction; the trade-spend bug survived because tests asserted numbers,
+    never the window label text.)"""
+    # Span A: the default ledger, ship dates Jan 07 – Jan 21, 2023.
+    res_a = client_mode.run(str(_cfg(tmp_path, "revenue")), str(_write(tmp_path)),
+                            str(tmp_path / "out_a"))
+    html_a = Path(res_a["report"]).read_text(encoding="utf-8")
+    assert "Window: ship dates Jan 07, 2023 – Jan 21, 2023" in html_a
+    assert "Jun 15, 2024" not in html_a
+
+    # Span B: a single line on a different date -> the label must move with it.
+    ledger_b = ("line_id,retailer,sku,ship_date,units_ordered,units_shipped,unit_price,unit_margin\n"
+                "L9,Walmart,CHP-AS-001,2024-06-15,100,90,10,4\n")
+    res_b = client_mode.run(str(_cfg(tmp_path, "revenue")),
+                            str(_write(tmp_path, text=ledger_b, name="ship_b.csv")),
+                            str(tmp_path / "out_b"))
+    html_b = Path(res_b["report"]).read_text(encoding="utf-8")
+    assert "Window: ship dates Jun 15, 2024 – Jun 15, 2024" in html_b
+    assert "Jan 07, 2023" not in html_b          # the label is not fixed to span A
+
+    # Neither run may assert a data-independent trailing window it never computed.
+    for html in (html_a, html_b):
+        low = html.lower()
+        assert "trailing 52" not in low and "52-week" not in low and "52 week" not in low
+        assert "365d" not in low and "trailing 365" not in low
+
+
 def test_margin_basis_requires_unit_margin_column(tmp_path):
     import pandas as pd
     inp = tmp_path / "shipments.csv"
