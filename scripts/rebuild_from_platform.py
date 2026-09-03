@@ -12,6 +12,7 @@ Run from repo root:
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 import sys
 from collections import defaultdict
@@ -30,7 +31,29 @@ TOP_N_SKUS = 20
 DOLLAR_PLACES = 2
 PCT_PLACES = 4
 
-PG_DSN = "host=localhost port=5432 dbname=cinderhaven user=postgres password=postgres"
+# DB connection -- set DATABASE_URL in .env (see .env.example).
+# We require the full URL rather than assembling one from a password variable:
+# interpolating the credential into a connection string inline would reintroduce
+# the pattern the gitleaks rule forbids, and would duplicate connection config
+# that .env already owns.
+def _bootstrap_env() -> None:
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        return
+    for candidate in [REPO / ".env", REPO.parent / ".env"]:
+        if candidate.exists():
+            load_dotenv(candidate)
+            return
+
+
+_bootstrap_env()
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
+if not DATABASE_URL:
+    raise EnvironmentError(
+        "Set DATABASE_URL in .env before running the pipeline (see .env.example)."
+    )
 
 CHANNEL_MAP = {
     "RET-WALMART": "Walmart",
@@ -58,7 +81,7 @@ FINE_SCHEDULE = {
 
 
 def pg_connect():
-    return psycopg2.connect(PG_DSN)
+    return psycopg2.connect(DATABASE_URL)
 
 
 def ch(partner_id: str) -> str:

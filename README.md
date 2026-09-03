@@ -81,8 +81,14 @@ To regenerate the data from the platform (requires `psycopg2` and
 the Cinderhaven Postgres replica reachable at `localhost:5432`):
 
 ```bash
+cp .env.example .env   # then fill in DATABASE_URL
 python scripts/rebuild_from_platform.py
 ```
+
+The pipeline reads the connection string from `DATABASE_URL` and
+exits if it is unset. `.env` is gitignored. Loading it automatically
+needs `python-dotenv`; without that package, export `DATABASE_URL`
+in the shell instead.
 
 This rebuilds `data/short_ship_cost.db`, re-exports the JSON under
 `web/public/data/`, and prints the figure summary.

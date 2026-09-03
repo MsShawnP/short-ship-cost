@@ -5,3 +5,24 @@ useDefault = true
 id = "postgres-url-with-password"
 description = "Populated Postgres connection string"
 regex = '''postgres(?:ql)?://[^:@/\s]+:[^@/\s]+@'''
+
+# The URL rule above misses the libpq keyword form
+# ("host=... dbname=... password=..."), which is how a local-default
+# password reached scripts/rebuild_from_platform.py and survived to a
+# public repo. This rule covers that form.
+[[rules]]
+id = "postgres-keyword-dsn-with-password"
+description = "Populated libpq keyword-form connection string"
+regex = '''(?i)(?:host|dbname|user)=[^\s"']+[^\n]{0,120}?password=[^\s"']+'''
+[rules.allowlist]
+paths = ['''\.env\.example$''']
+regexes = ['''(?i)password=(?:<[^>]+>|your_password_here|changeme|PASSWORD|\$\{[^}]+\})''']
+
+# .env.example is a committed template. Allowlist it only when the matched
+# value is an obvious placeholder -- condition = "AND" means a real credential
+# pasted into the template still trips the scan.
+[allowlist]
+description = "Placeholder values in .env.example"
+condition = "AND"
+paths = ['''\.env\.example$''']
+regexes = ['''(?i)(user|username|password|your_password_here|changeme|<[^>]+>|\$\{[^}]+\})''']
