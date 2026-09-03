@@ -13,10 +13,12 @@ complete (P3-3 thesis range landed). No active work arc.
 
 Security maintenance 2026-09-02 (656ac07): the hardcoded local-default
 DSN is gone from `rebuild_from_platform.py`; connection now comes from
-`DATABASE_URL`. Not yet exercised against a live DB. Two tracked
-defects remain open in HANDOFF.md -- the missing `.gitleaks.toml` in
-otif-blind-spot and contract-to-cash, and `ci.yml` pinned to a branch
-that does not exist. Neither is an active arc; both are one-sitting fixes.
+`DATABASE_URL`. Not yet exercised against a live DB. Both tracked
+defects from that entry are now closed: `.gitleaks.toml` landed in
+otif-blind-spot (3727fb3) and contract-to-cash (352b8cd) on 2026-09-02,
+and `ci.yml` was repointed from `master` to `main` on 2026-09-03
+(cc1b620) -- CI green on both triggers. `master` deleted the same day;
+`main` is now the only long-lived branch (see DECISIONS.md).
 
 ---
 

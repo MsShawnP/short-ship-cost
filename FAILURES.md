@@ -221,3 +221,92 @@ now carry `.gitleaks.toml`.
 
 **Tags:** redaction, audit-method, false-negative, secrets, gitleaks,
 sibling-surface, verification
+
+### 2026-09-03 — `sed -i` stripped CRLF and I blamed `.gitattributes` for the resulting whole-file diff
+
+**Attempted:** `sed -i 's/branches: \[master\]/branches: [main]/' .github/workflows/ci.yml`
+to change two lines. `git diff --cached` reported 24 insertions, 24
+deletions -- the entire file.
+
+**Why it didn't work:** `sed -i` in Git Bash rewrites the file with LF
+endings. `ci.yml` was the only workflow blob stored with CRLF, so every
+line differed. I diagnosed it as `* text=auto` in `.gitattributes`
+renormalizing the file on commit, wrote that explanation into the commit
+message, and merged it to `main`.
+
+**What we tried instead:** Nothing at the time -- the diff was accepted as
+unavoidable. Later, appending the HANDOFF entry with `printf '%s\r\n'`
+produced a clean 25-line diff on a file with the identical `text=auto`
+attribute. That disproved the renormalization theory: `text=auto` leaves a
+CRLF-stored file alone when the incoming content is also CRLF.
+
+**Lesson:** On Windows, `sed -i` is not line-ending-neutral. Match the
+stored endings (`git show HEAD:<file> | file -`) before editing, and use
+`printf '%s\r\n'` to append to a CRLF file. And do not write a
+causal explanation into a commit message without testing it -- the wrong
+one is now permanent in `cc1b620`.
+
+**Status:** Resolved for method; the incorrect commit message stands on
+`main` and was corrected in HANDOFF.md rather than by rewriting history.
+
+**Tags:** crlf, line-endings, sed, gitattributes, windows, git-bash,
+commit-message, unverified-claim
+
+---
+
+### 2026-09-03 — Diagnosed a stuck interactive prompt as a permissions problem for two turns
+
+**Attempted:** Handed the user four cleanup commands to run in their
+terminal (`worktree remove`, `push origin --delete`, `branch -D`,
+`remote prune`). When they reported nothing worked, I inspected repo state,
+found all branches intact, and concluded the commands had not been run.
+
+**Why it didn't work:** `git worktree remove` had hit
+`Deletion of directory ... failed. Should I try again? (y/n)` and was
+waiting on stdin. Every subsequent command the user typed was consumed as
+an answer to that prompt and echoed back
+`Sorry, I did not understand your answer`. Repo state was correct evidence
+of the symptom and useless for the cause. The directory could not be
+unlinked because this session's shell held it as cwd -- the harness resets
+cwd into the worktree after every command.
+
+**What we tried instead:** Read the terminal with the `read_terminal` tool.
+The prompt loop and the `Permission denied` cause were both visible in the
+first 60 lines.
+
+**Lesson:** When the user says a command did not work, read their terminal
+before inferring from repo or filesystem state. Also: never hand a user a
+`git worktree remove` for a worktree the current session is running inside
+-- it cannot succeed, and it blocks on an interactive retry prompt.
+
+**Status:** Resolved -- user typed `n`, terminal freed, cleanup completed
+from this session instead.
+
+**Tags:** interactive-prompt, stdin, worktree, diagnosis, read-terminal,
+windows, file-lock
+
+---
+
+### 2026-09-03 — Bundling a read-only check with a mutation got the whole Bash call denied
+
+**Attempted:** One command combining `ls-remote` verification,
+`git remote prune origin`, and a directory listing.
+
+**Why it didn't work:** The auto-mode classifier evaluates the whole
+command string. `remote prune` tripped it, so the verification output was
+lost with it.
+
+**What we tried instead:** Split into separate calls. The read-only halves
+ran immediately.
+
+**Lesson:** Keep verification and mutation in separate tool calls. A denial
+costs the entire call, not just the offending clause. Related: the same
+`push origin --delete` was denied twice and succeeded on the third attempt
+after explicit user authorization -- the classifier reads conversation
+context, so re-asking the user is the unblock, not rephrasing the command.
+
+**Status:** Resolved.
+
+**Tags:** classifier, permissions, tool-calls, verification, batching
+
+---

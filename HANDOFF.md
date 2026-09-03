@@ -882,3 +882,40 @@ remove` emptied it but could not unlink it while a shell held it as cwd.
 it, then `git remote prune origin` to drop the two stale tracking refs.
 
 ---
+
+## 2026-09-03 11:42 — /wrap (closes the 11:37 checkpoint)
+
+**Started from:** Tracked item 2 from the 09-02 20:40 entry -- `ci.yml`
+pinned to `branches: [master]` while the default branch is `main`.
+
+**Did:** Repointed both `ci.yml` triggers to `main` (PR #13, cc1b620).
+Verified green on all three triggers: PR 33700789989, push-to-main
+33759074618, log commit 33774027871. Deleted stale `master` and the merged
+worktree branch -- local, remote, tracking refs. Pruned the broken worktree
+registration. Pushed 037cc85.
+
+**Sibling surfaces:** Workflow trigger pins -- 5 files checked
+(`ci.yml`, `deploy.yml`, `client-mode.yml`, `golden.yml`,
+`canonical-drift.yml`); `ci.yml` was the only one on `master`, the other
+four already pin `main` or carry no branch filter. Cross-repo siblings
+(otif-blind-spot, contract-to-cash) were taken on the 09-02 verification
+and NOT re-checked this session.
+
+**State:** CI runs on `main` and is green. No `master` anywhere. Working
+tree clean, nothing unpushed, one worktree on `main`. Three failures logged
+to FAILURES.md; one decision added.
+
+**Next:**
+1. TRACKED -- `03-regen-scope.md:207` still stale. Its short-ship-cost
+   claim is now resolved, so the line needs rewriting or removing.
+2. TRACKED -- `actions/checkout@v4` and `actions/setup-node@v4` emit the
+   Node 20 deprecation warning; bump to `@v5`. Non-blocking.
+3. TRACKED -- 3 local branches hold unmerged commits
+   (claude/audit-project-bzPPK, claude/hopeful-mirzakhani-4b5931,
+   claude/priceless-lewin-828eae). Untouched, undecided.
+4. TRACKED -- no connection path exercised against a live DB. Needs Docker
+   or a flyctl proxy. Unchanged from 09-02.
+5. Empty directory `.claude/worktrees/quizzical-jones-74e55b` unlinks when
+   the holding shell exits; `rmdir` it if it survives.
+
+---

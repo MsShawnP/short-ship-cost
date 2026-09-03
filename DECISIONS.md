@@ -67,6 +67,11 @@ Each entry:
 - **Scope:** Deployment
 - **Do not:** Move to Netlify, Vercel, or GitHub Pages without a specific reason.
 
+### 2026-09-03 — `main` is the only long-lived branch; `master` is deleted
+- **Why:** `ci.yml` sat pinned to `branches: [master]` after the default branch moved to `main`. CI had run ~15 times on `master` pushes through 2026-07-22, then went dormant for six weeks -- the frontend build and vitest ran on nothing that shipped to `main`. The trigger looked correct in isolation; only the branch name was stale. `master` was a strict ancestor of `main` (0 unique commits) and was deleted 2026-09-03 along with its remote ref. Keeping a second long-lived branch is what made the misdiagnosis possible -- and it cost a wrong 'CI never ran' claim that survived into a merged commit message.
+- **Scope:** Branching, all five files in `.github/workflows/`
+- **Do not:** Recreate `master`, or pin any workflow trigger to it. When changing a branch filter in one workflow, check all five -- `ci.yml`, `deploy.yml`, `client-mode.yml`, `golden.yml`, `canonical-drift.yml` -- in the same pass.
+
 ---
 
 ## Data & Schema
