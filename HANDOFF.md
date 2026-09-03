@@ -815,3 +815,45 @@ tracked defects found and left open (see Next).
 4. Carried over: add order-level in-full rate to the pipeline when Docker is up.
 
 ---
+
+## 2026-09-02 20:50 — correction + tracked items 1 closed
+
+**Correction to the 20:40 entry.** That entry's sibling sweep recorded
+"contract-to-cash: `scripts/db.py`, checked, `DATABASE_URL` with
+`POSTGRES_PASSWORD` fallback, no hardcode." That verdict was wrong.
+`scripts/db.py:32` held a literal local-default password, the identical
+defect to this repo's, live at HEAD in a public repo since 820a570
+(2026-05-22). The sweep missed it because the inspection command piped the
+file through `sed -E 's#://[^@]*@#://<REDACTED>@#g'` to keep the credential
+out of terminal output -- and that mask made a literal password and a
+`{pw}` interpolation render identically. The redaction protecting the
+output defeated the audit reading it.
+
+Caught only because installing `.gitleaks.toml` in contract-to-cash raised
+a finding on that line, and testing the shape of the matched slot (8 plain
+alpha chars, no braces) contradicted the assumption. `pw` was assigned on
+line 31 and never referenced again; the env-var check above it made the
+branch read as safe.
+
+**Did:** Added `.gitleaks.toml` to otif-blind-spot (3727fb3) and
+contract-to-cash (352b8cd), both pushed -- closes tracked item 1. Removed
+the hardcoded password from contract-to-cash `scripts/db.py`, dropping the
+dead `POSTGRES_PASSWORD` branch so `connect()` requires `DATABASE_URL` like
+every other script in that repo (b91bd7b). Both repos' working trees now
+scan clean under both DSN rules. otif-blind-spot had no live finding --
+`otif_config.py` was already on `DATABASE_URL`.
+
+**State:** All three DB-backed tools now have a real `.gitleaks.toml`
+covering both DSN forms, and none carries a credential at HEAD. The rotated
+password remains in all three repos' histories.
+
+**Next:**
+1. TRACKED -- `03-regen-scope.md:207` still stale (unchanged from 20:40).
+   Its short-ship-cost claim is now resolved; its contract-to-cash claim was
+   wrong about the residual but that repo did have a real password bug the
+   line never mentioned.
+2. `.github/workflows/ci.yml` still pinned to `branches: [master]`.
+3. Neither this repo's nor contract-to-cash's connection path has been run
+   against a live DB. Needs Docker or a flyctl proxy.
+
+---

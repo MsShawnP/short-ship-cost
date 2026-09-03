@@ -187,3 +187,37 @@ matching files immediately.
 **Status:** Resolved
 
 **Tags:** grep, ripgrep, windows, tooling, performance
+
+### 2026-09-02 — Output redaction masked a real hardcoded password and produced a false "clean" audit verdict
+
+**Attempted:** Swept all three DB-backed repos for the same hardcoded-DSN
+defect, inspecting each connection site through
+`sed -E 's#://[^@]*@#://<REDACTED>@#g'` so no credential could reach
+terminal output.
+
+**Why it didn't work:** The mask replaced everything between `://` and `@`,
+so a literal password and a `{pw}` interpolation rendered as the same
+string. contract-to-cash's `scripts/db.py:32` showed as
+`postgresql://<REDACTED>@localhost:5432/cinderhaven`, the line above it read
+`pw = os.environ["POSTGRES_PASSWORD"]`, and the obvious inference -- that
+the masked span was `{pw}` -- was wrong. It was a literal. The sweep was
+recorded as "checked, no hardcode" and committed to HANDOFF.md that way.
+
+**What we tried instead:** Classified the masked span instead of reading it:
+matched the URL regex, then printed only `len(slot)` and its character
+shape (`re.sub(r'[A-Za-z]','a',slot)`). Shape came back as 8 plain alpha
+characters with no braces, which an interpolation cannot be. Confirmed by
+counting `pw` occurrences in the file -- exactly one, its own assignment.
+
+**Lesson:** A redaction that collapses distinct inputs to the same output is
+not safe for auditing, only for display. When the question is *what shape is
+this value*, redact by reporting derived properties (length, character
+class, brace presence) rather than by substituting a constant. Also: the
+scanner found this, the manual sweep did not -- install the tool before
+trusting the sweep.
+
+**Status:** Resolved -- b91bd7b removed the credential; both sibling repos
+now carry `.gitleaks.toml`.
+
+**Tags:** redaction, audit-method, false-negative, secrets, gitleaks,
+sibling-surface, verification
