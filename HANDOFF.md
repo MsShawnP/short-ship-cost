@@ -857,3 +857,28 @@ password remains in all three repos' histories.
    against a live DB. Needs Docker or a flyctl proxy.
 
 ---
+
+## 2026-09-03 11:37
+
+**What changed:** `ci.yml` triggers repointed `master` -> `main` (cc1b620,
+PR #13); stale `master` branch and the merged worktree branch deleted, local
+and remote.
+
+**Why:** Tracked item 2 in the 20:40 entry. The 813 note said CI "never ran"
+-- wrong. CI ran ~15 times on `master` pushes through 2026-07-22, then went
+dormant when the default branch moved to `main`, six weeks unnoticed.
+Deleting `master` (a strict ancestor of main, 0 unique commits) removes the
+ambiguity that caused the misdiagnosis.
+
+**State:** CI green on both triggers -- pull_request 33700789989,
+push-to-main 33759074618. `npm ci` / vitest 23 passed / `vite build` all
+clean on node 24. Origin down to 9 branches, no `master`. Three local
+branches still hold unmerged commits (audit-project-bzPPK,
+hopeful-mirzakhani-4b5931, priceless-lewin-828eae) -- untouched. One empty
+directory left at `.claude/worktrees/quizzical-jones-74e55b`; `worktree
+remove` emptied it but could not unlink it while a shell held it as cwd.
+
+**Next:** `rmdir` that empty worktree directory once no shell is sitting in
+it, then `git remote prune origin` to drop the two stale tracking refs.
+
+---
