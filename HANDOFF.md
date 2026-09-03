@@ -775,3 +775,43 @@ link.
 **Next:** Deferred: add in-full rate to pipeline (rebuild_from_platform.py) and meta.json when Docker is available. Otherwise project is portfolio-ready.
 
 ---
+
+## 2026-09-02 20:40
+
+**Started from:** Project portfolio-ready and deployed. Entry point was external:
+`cinderhaven-data-realism/docs/brainstorms/realism-regen-2026/03-regen-scope.md:207`
+listing three cross-repo tool bugs, one of them a local-default password here.
+
+**Did:** Removed the hardcoded libpq keyword-form DSN at
+`scripts/rebuild_from_platform.py:33`; replaced with `DATABASE_URL` from env plus
+optional dotenv bootstrap and a fail-fast `EnvironmentError`. Added `.env.example`,
+`!.env.example` to `.gitignore`, README note, and a gitleaks rule for the keyword
+form (the existing rule only caught `postgres://user:pass@`). Commit 656ac07,
+pushed, CI green. Credential remains in public git history (introduced 87c6ebe);
+owner rotated the local Postgres password rather than rewriting history.
+Sibling sweep: all three DB-backed tools checked for the same hardcode --
+otif-blind-spot (2 sites) and contract-to-cash (`scripts/db.py`) were already on
+`DATABASE_URL`; this repo was the laggard. Also fixed
+`otif-blind-spot/DECISIONS.md:72-82` (stale, cb5980d) and confirmed
+contract-to-cash's $5.5M `count: 0` residual is by design, not a bug.
+
+**State:** Working tree clean of credentials; pipeline fails fast without
+`DATABASE_URL`. NOT exercised against a live DB -- no Docker/flyctl proxy this
+session, so the new connection path has never opened a real connection. Two
+tracked defects found and left open (see Next).
+
+**Next:**
+1. TRACKED SIBLING -- otif-blind-spot and contract-to-cash both pass
+   `--config .gitleaks.toml` in `.pre-commit-config.yaml`, but neither file
+   exists. gitleaks silently falls back to defaults and exits 0, so both scan
+   with the same ruleset that missed this form for three months. Latent, not
+   live (neither hardcodes a credential today). Copy this repo's `.gitleaks.toml`
+   into both.
+2. TRACKED SIBLING -- `03-regen-scope.md:207` is now stale on all three of its
+   claims. Left alone because that repo has another session's uncommitted work
+   in the same file.
+3. `.github/workflows/ci.yml` triggers on `branches: [master]`; default branch is
+   `main`, so it has never run. Chip spawned. Expect a backlog of failures.
+4. Carried over: add order-level in-full rate to the pipeline when Docker is up.
+
+---

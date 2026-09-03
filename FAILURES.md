@@ -128,3 +128,62 @@ quarto" or "scope, scrollytelling, decoration"]
 **Tags:** docker, container-name, postgres, rebuild
 
 ---
+
+### 2026-09-02 — gitleaks silently falls back to default rules when `--config` points at a missing file
+
+**Attempted:** Assumed that because otif-blind-spot and contract-to-cash both
+pass `args: ["--config", ".gitleaks.toml"]` in `.pre-commit-config.yaml`, a
+missing `.gitleaks.toml` would make the hook fail loudly and be noticed.
+
+**Why it didn't work:** It doesn't fail. Ran `gitleaks protect --staged --config
+.gitleaks.toml` in otif-blind-spot, where no such file exists: exit 0, "no leaks
+found", no warning that the config was unreadable. gitleaks quietly uses its
+default ruleset. Both repos have therefore been scanning with defaults only —
+the same ruleset that missed the keyword-form DSN in this repo for three months
+— while presenting a green hook. False assurance one level up from the original
+blind spot.
+
+**What we tried instead:** Nothing yet. Recorded as a tracked sibling in
+HANDOFF.md: copy this repo's `.gitleaks.toml` into both. Latent rather than
+live — neither repo hardcodes a credential today, both are on `DATABASE_URL`.
+
+**Status:** Open
+
+**Tags:** gitleaks, pre-commit, secrets, config, false-negative, sibling-surface
+
+---
+
+### 2026-09-02 — Over-literal grep produced a false "`.env` not gitignored" finding
+
+**Attempted:** Checked `.env` coverage across three repos with
+`grep -c '^\.env$' .gitignore`.
+
+**Why it didn't work:** Anchored on an exact line match. contract-to-cash
+ignores env files via `.env*`, which the pattern missed, so the check reported
+zero and nearly went into the summary as a live secret-exposure finding in a
+public repo. The audit was wrong, not the repo.
+
+**What we tried instead:** Re-ran as `grep -nE "^!?\.env|\.env"` and printed
+the matched lines rather than a count. Reading the actual patterns showed all
+three repos covered.
+
+**Status:** Resolved
+
+**Tags:** grep, gitignore, false-positive, audit-method, verification
+
+---
+
+### 2026-09-02 — Recursive Bash grep over the repo timed out
+
+**Attempted:** `grep -rniIl -E "password|passwd|..."` from the Bash tool to find
+credential keywords across the working tree.
+
+**Why it didn't work:** Exceeded the 120s tool timeout on this tree under Git
+Bash on Windows and was backgrounded, stalling the search.
+
+**What we tried instead:** The ripgrep-backed Grep tool, which returned the three
+matching files immediately.
+
+**Status:** Resolved
+
+**Tags:** grep, ripgrep, windows, tooling, performance

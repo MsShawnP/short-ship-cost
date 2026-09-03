@@ -5,11 +5,18 @@ session. For session-by-session state, see HANDOFF.md.
 
 ---
 
-## Current state (2026-06-29)
+## Current state (2026-09-02)
 
 Project is deployed and exec-ready at shortships.lailarallc.com.
 All figures verified against platform Postgres. Phase 3 fully
 complete (P3-3 thesis range landed). No active work arc.
+
+Security maintenance 2026-09-02 (656ac07): the hardcoded local-default
+DSN is gone from `rebuild_from_platform.py`; connection now comes from
+`DATABASE_URL`. Not yet exercised against a live DB. Two tracked
+defects remain open in HANDOFF.md -- the missing `.gitleaks.toml` in
+otif-blind-spot and contract-to-cash, and `ci.yml` pinned to a branch
+that does not exist. Neither is an active arc; both are one-sitting fixes.
 
 ---
 

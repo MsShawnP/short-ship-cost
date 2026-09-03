@@ -152,6 +152,21 @@ Each entry:
 - **Scope:** Data pipeline
 - **Do not:** Create a separate JSON export script. If new JSON shapes are needed, add builder functions to `rebuild_from_platform.py`.
 
+### 2026-09-02 — Require a full `DATABASE_URL`; never assemble a DSN from a password variable
+- **Why:** Replacing the hardcoded DSN, the obvious alternative was keeping the connection string in code and injecting only `POSTGRES_PASSWORD`. That reintroduces the exact pattern the new gitleaks rule forbids — a literal connection string with a `password=` slot, one edit away from being populated again — and it duplicates connection config that `.env` already owns. contract-to-cash's `scripts/db.py` does assemble this way; it is not a leak, but it is not the pattern to copy.
+- **Scope:** Every DB-backed script in this repo.
+- **Do not:** Build a connection string by interpolating a credential. Read `DATABASE_URL` whole, fail fast when unset, and put the URL in `.env`.
+
+### 2026-09-02 — The rotated local-default password stays in git history; do not rewrite history to purge it
+- **Why:** The value sat in `scripts/rebuild_from_platform.py` from 87c6ebe, in a public repo. Owner rotated the local Postgres password instead of rewriting history, which makes the historical string worthless. A `filter-repo` purge would rewrite 54 commits, break every published SHA, and force-push a public repo — real cost to remove a string that no longer opens anything.
+- **Scope:** short-ship-cost git history.
+- **Do not:** Propose `git filter-repo`, BFG, or a force-push for this credential again. The decision is made. This applies only to a rotated local-default; a live or shared credential is a different call.
+
+### 2026-09-02 — Every DB-backed tool ships a real `.gitleaks.toml` covering both DSN forms
+- **Why:** The keyword form (`host=... password=...`) survived three months here because the rule only matched `postgres://user:pass@`. Worse, gitleaks exits 0 and reports "no leaks found" when `--config` points at a file that does not exist — otif-blind-spot and contract-to-cash both reference `.gitleaks.toml` in pre-commit and neither has one, so both scan on defaults while showing green.
+- **Scope:** short-ship-cost, otif-blind-spot, contract-to-cash — every repo whose pre-commit config names a gitleaks config file.
+- **Do not:** Point `--config` at a file you have not confirmed exists; a missing config is silent, not loud. Do not add a URL-form rule without the keyword-form rule beside it.
+
 ---
 
 ## Reversed / Superseded
